@@ -37,15 +37,15 @@ export function Nav() {
 
           </div>
         </div>
-        <div className=" flex items-center justify-center border-solid flex-row rounded-[5px] h-[95%] w-[25%]">
+        <div className=" flex items-center justify-center flex-row rounded-[5px] h-[95%] w-[25%]">
           <div style={{boxShadow: '0px 0px 5px yellow'}}  className="cursor-pointer w-[50px] h-[50px] border-solid border-white border-[2px] rounded-[50%]">
             <img src={pic} onClick={() => (functionVisible(visible, setVisible))} className="rounded-[50%]" />
+          </div>
             {visible &&
-                <div onClick={() => functioLOGOUT(setLogs)} className="absolute flex font-bars2 items-center justify-center  w-[100px] h-[30px] rounded-[20px] bg-white">
+                <div onClick={() => functioLOGOUT(setLogs)} className="absolute cursor-pointer flex top-[60px] font-bars2 items-center justify-center  w-[100px] h-[30px] rounded-[20px] bg-white duration-300 hover:bg-slate-300">
                   <p className="text-black font-extrabold"> Logout </p>
                 </div>
             }
-          </div>
         </div>
       </div>
     );

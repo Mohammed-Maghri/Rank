@@ -65,12 +65,6 @@ export function Home() {
   ];
   return (
     <div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">
-      <Starfield
-            starCount={40000}
-            starColor={[255, 255, 0]}
-            speedFactor={0.01}
-            backgroundColor="black"
-          />
         {visible2 &&
           <Load/>
         }
