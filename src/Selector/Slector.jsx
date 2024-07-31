@@ -54,7 +54,7 @@ export function Selector() {
                 <p className="text-black"> Pool </p>
               </div>
               <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
-                <p className="text-black"> Cursur </p>
+                <p className="text-black"> Cursus </p>
               </div>
             </div>
             }
