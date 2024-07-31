@@ -3,15 +3,21 @@ import { IoMdLogOut } from "react-icons/io";
 import { IoSettings } from "react-icons/io5";
 import pic from "../clips/mmaghri.jpg";
 import { useState } from "react";
+import {context } from "../context";
+import { useContext } from "react";
 
 export const functionVisible = (thevis, setthe) => {
     setthe(!thevis);
 }
 export function Nav() {
-    const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
-    const [visible, setVisible] = useState(false);
-    const obj = [{year : 2013}, {year : 2014}, {year : 2015}, {year : 2016}, {year : 2017}, 
-        {year : 2018}, {year : 2019}, {year : 2020}, {year : 2021}, {year : 2022}, {year : 2023}, {year : 2024}];
+  const {logs, setLogs} = useContext(context);
+  const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
+  const [visible, setVisible] = useState(false);
+  const obj = [{year : 2013}, {year : 2014}, {year : 2015}, {year : 2016}, {year : 2017}, 
+    {year : 2018}, {year : 2019}, {year : 2020}, {year : 2021}, {year : 2022}, {year : 2023}, {year : 2024}];
+    const functioLOGOUT = (seter) => {
+      seter(false);
+    }
     return ( 
         <div className="flex items-center justify-ithems-center h-[80px] gap-[5px] max-w-[1800px]  w-[100%]">
         <div className="flex items-center  justify-center rounded-[5px] h-[95%] w-[25%]">
@@ -23,7 +29,7 @@ export function Nav() {
           <div style={{boxShadow: '0px 0px 10px yellow'}} className="flex items-center xs:gap-1 gap-5 justify-center duration-300 lg:w-[600px] 
           sm:w-[400px] xs:w-[200px] custom-yellow h-[60%] bg-yellow-300 rounded-[30px]">
             {object.map((item, index) => (
-              <div className="font-bars text-lg font-medium xs:text-sm flex items-center cursor-pointer justify-center w-[150px] h-[90%] duration-300 hover:scale-110">
+              <div className="font-bars text-lg text-black font-medium xs:text-sm flex items-center cursor-pointer justify-center w-[150px] h-[90%] duration-300 hover:scale-110">
                 <p key={index}> {item.bars} </p>
               </div>
               ))
@@ -35,7 +41,9 @@ export function Nav() {
           <div style={{boxShadow: '0px 0px 5px yellow'}}  className="cursor-pointer w-[50px] h-[50px] border-solid border-white border-[2px] rounded-[50%]">
             <img src={pic} onClick={() => (functionVisible(visible, setVisible))} className="rounded-[50%]" />
             {visible &&
-                <div className="absolute  w-[100px] h-[30px] rounded-[20px] bg-white"></div>
+                <div onClick={() => functioLOGOUT(setLogs)} className="absolute flex font-bars2 items-center justify-center  w-[100px] h-[30px] rounded-[20px] bg-white">
+                  <p className="text-black font-extrabold"> Logout </p>
+                </div>
             }
           </div>
         </div>

@@ -11,6 +11,7 @@ module.exports = {
         'bars': ['Poppins', 'sans-serif'],
         'bars2': ['Chakra Petch', 'sans-serif'],
         'bars3': ['Space Grotesk', 'sans-serif'],
+        'bars4': ['Sankofa Display', 'sans-serif'],
       },
       screens: {
         'xs' : '250px',
@@ -20,6 +21,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('daisyui'),
   ],
 }
 
