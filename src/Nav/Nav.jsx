@@ -10,7 +10,8 @@ export const functionVisible = (thevis, setthe) => {
 export function Nav() {
     const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
     const [visible, setVisible] = useState(false);
-
+    const obj = [{year : 2013}, {year : 2014}, {year : 2015}, {year : 2016}, {year : 2017}, 
+        {year : 2018}, {year : 2019}, {year : 2020}, {year : 2021}, {year : 2022}, {year : 2023}, {year : 2024}];
     return ( 
         <div className="flex items-center justify-ithems-center h-[80px] gap-[5px] max-w-[1800px]  w-[100%]">
         <div className="flex items-center  justify-center rounded-[5px] h-[95%] w-[25%]">
@@ -34,11 +35,7 @@ export function Nav() {
           <div style={{boxShadow: '0px 0px 5px yellow'}}  className="cursor-pointer w-[50px] h-[50px] border-solid border-white border-[2px] rounded-[50%]">
             <img src={pic} onClick={() => (functionVisible(visible, setVisible))} className="rounded-[50%]" />
             {visible &&
-              <div className="h-[40px] w-[110px] rounded-[10px] bg-white absolute flex text-sm items-center justify-center font-medium  top-[80px] gap-1 z-10">
-                <div className="w-[90%] h-[35px] flex  items-center gap-1 justify-center duration-300 rounded-[10px] hover:bg-slate-200">
-                  <p> Logout </p> <IoMdLogOut />
-                </div>
-              </div>
+                <div className="absolute  w-[100px] h-[30px] rounded-[20px] bg-white"></div>
             }
           </div>
         </div>
