@@ -21,6 +21,7 @@ import Load from "../Loader/Loader";
 
 export function Home() {
   const {logs, setLogs} = useContext(context);
+  const {tok, setTok} = useContext(context);
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(true);
   const [value, setValue] = useState(80);
@@ -29,6 +30,24 @@ export function Home() {
   const test = {code: ""};
   const [token, setToken] = useState("");
   const [number, setNumber] = useState(0);
+  const obj = {access_token: ""};
+  const {all} = useContext(context);
+  const getapi = (api, testtok) => {
+    obj.access_token = testtok;
+    fetch(api ,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(obj)
+    }).then((res) => {
+      return res.json();
+    }).then((data) => {
+      all.push(data);
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
   const functionapi = (api) => {
     // const url = new URLSearchParams(window.location.search);
     // console.log("this  "  + url.get('code'));
@@ -42,16 +61,15 @@ export function Home() {
     body: JSON.stringify(test),
   }).then(response => response.json())
     .then(data => {
-      console.log(data.access_token);
+      Cookies.set('access_token', data.access_token);
     }).catch((error) => {
       console.log("waaa error ");
     });
   }
   test.code = new URLSearchParams(window.location.search).get('code');
   useEffect(() => {
-    functionapi('http://10.13.7.8:8080/api/v1/authenticate');
-    const tok =  Cookies.get('access_token');
-    console.log(tok);
+    functionapi('http://10.32.100.25:8080/api/v1/authenticate');
+      getapi("http://10.32.100.25:8080/api/v1/campus/users", Cookies.get('access_token'));
     setTimeout(() => {
       if (logs == true){
         setVisible(true);                                                                                                                                                                                                                                                                                                    
@@ -61,6 +79,10 @@ export function Home() {
       setVisible2(false);
   }, 1000);
   }, [logs]);
+
+  console.log("this is the code " + Cookies.get('access_token'));
+  setTok(Cookies.get('access_token'));
+  getapi("http://10.32.100.25:8080/api/v1/campus/users ", Cookies.get('access_token'));
   const student = [{pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 80, rank : 4, promo : "2023", campus : "Khouribga"}, 
     {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 80, rank : 3, promo : "2023", campus : "Khouribga"},
     {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 70, rank : 3, promo : "2023", campus : "Khouribga"},

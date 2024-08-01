@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { IoSettings } from "react-icons/io5";
 import pic from "../clips/mmaghri.jpg";
@@ -8,6 +8,7 @@ import { FaChevronDown } from "react-icons/fa";
 import { Selector } from "../Selector/Slector";
 import taj from "../clips/crown.png";
 import redirect from "../clips/maximize.png";
+import { context } from "../context";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import "./Scrol.css";
 
@@ -15,7 +16,9 @@ export default function Scrol() {
     const [visible, setVisible] = useState(false);
     const [visible2, setVisible2] = useState(false);
     const [value, setValue] = useState(80);
-
+    const {all} = useContext(context);
+  
+    console.log(all);
     const student = [{pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 80, rank : 4, promo : "2023", campus : "Khouribga", color : "rgb(255, 214, 51)"}, 
     {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 100, rank : 3, promo : "2023", campus : "Khouribga" , color : "rgb(194, 194, 214)"},
     {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 70, rank : 3, promo : "2023", campus : "Khouribga" , color : "rgb(255, 153, 102)"},
@@ -38,7 +41,7 @@ export default function Scrol() {
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
             <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-600 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[120]">
-              <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={item.pic}/>
+              <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={"https://cdn.intra.42.fr/users/028863f91d5de9ae18c2cff2544bcb05/bkali.jpeg"}/>
             </div>
             <div style={{boxShadow: '0px 0px 5px black'}} className="flex pan items-center  flex-col justify-center h-[115px] max-h-[130px] rounded-r-[10px] rounded-l-[2px] xs:w-[260px] xm:w-[520px] sm:w-[660px] md:w-[600px] lg:w-[670px] mr-[5px] bg-white">
               <div className="w-[90%] h-[100%] rounded-[10px] flex   items-center justify-start flex-row">
