@@ -9,7 +9,6 @@ export default function Auth() {
     const navigate = useNavigate();
 
     const api = "http://10.13.7.8:8080/api/v1/authenticate";
-    
     const functionApi = (api) => {
         fetch(api).then((res) => {
             return res.json();
@@ -18,16 +17,41 @@ export default function Auth() {
         }).catch((err) => {
             console.log(err);})
     }
+    const obj = {code: ""};
+    // const functionApi2 = (api) => {
+    //     console.log(obj);
+    //     fetch(api, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(obj)
+    //     }).then((res) => {
+    //         return res.json();
+    //     }).then((data) => {
+    //         console.log(data.access_token);
+    //         localStorage.setItem('access_token', data.access_token);
+    //         Cookies.set('access_token', data.access_token);
+    //     }).catch((err) => {
+    //         console.log(err);
+    //     })
+    // }
 
     const functionNavigate = (path) => {
         window.open(path, '_blank');
     }
-    const functionNav = (path, api) => {
-        window.location.href = path;
+    const getQueryParam = (param) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    };
+    
+    const cally = (thepath) => {
+        window.location.href = thepath;
+        obj.code = getQueryParam('code');
     }
     localStorage.setItem('pics', me);
     localStorage.setItem('lou', lou);
-    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=http%3A%2F%2F10.13.7.8%3A8080%2Fapi%2Fv1%2Fauthenticate&response_type=code";
+    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=http%3A%2F%2F10.13.7.10%3A3000%2Fhome&response_type=code";
     return (
         <div className="w-[100%] bg-black h-[100vh] flex items-center justify-center">
           <Starfield
@@ -45,7 +69,7 @@ export default function Auth() {
                     <p className="font-bars4 font-bold text-6xl text-white"> 42Leets </p>
                 </div>
                 <div className="flex items-center min-w-[300px] flex-col justify-start  w-[80%] h-[200px]">
-                    <div style={{boxShadow: '0px 0px 5px yellow'}} onClick={() => (functionNav(token, api))} className=" cursor-pointer w-[200px] flex items-center 
+                    <div style={{boxShadow: '0px 0px 5px yellow'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
                      justify-center h-[60px] border-solid rounded-[20px] border-yellow-400 border-[2px] duration-300 hover:scale-105">
                         <p className="text-yellow-400 font-bars3"> Login </p>
                     </div>

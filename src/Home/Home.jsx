@@ -26,35 +26,41 @@ export function Home() {
   const [value, setValue] = useState(80);
   const navigate = useNavigate();
   const [timer , setTimer] = useState(false);
-
-  console.log('this ' + logs);
+  const test = {code: ""};
+  const [token, setToken] = useState("");
+  const [number, setNumber] = useState(0);
   const functionapi = (api) => {
-    console.log('this is the api ' + api);
+    // const url = new URLSearchParams(window.location.search);
+    // console.log("this  "  + url.get('code'));
+    // test.code = url.get('code');
+    console.log(test);
     fetch(api, {
-      method: 'GET',
-      credentials: 'include',
+      method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
-    }}).then(response => response.json())
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(test),
+  }).then(response => response.json())
     .then(data => {
-      console.log(data);
+      console.log(data.access_token);
     }).catch((error) => {
-      console.error(error);
+      console.log("waaa error ");
     });
   }
-
-  functionapi('http://10.13.7.8:8080/api/v1/authenticate');
-  console.log("Acsees Token " + Cookies.get('access_token'));
+  test.code = new URLSearchParams(window.location.search).get('code');
   useEffect(() => {
+    functionapi('http://10.13.7.8:8080/api/v1/authenticate');
+    const tok =  Cookies.get('access_token');
+    console.log(tok);
     setTimeout(() => {
       if (logs == true){
-        setVisible(true);
+        setVisible(true);                                                                                                                                                                                                                                                                                                    
       }
       else
-        navigate('/');
+      navigate('/');
       setVisible2(false);
   }, 1000);
-  }, [logs, navigate, setVisible, setVisible2]);
+  }, [logs]);
   const student = [{pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 80, rank : 4, promo : "2023", campus : "Khouribga"}, 
     {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 80, rank : 3, promo : "2023", campus : "Khouribga"},
     {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 70, rank : 3, promo : "2023", campus : "Khouribga"},
