@@ -29,11 +29,12 @@ export function Home() {
 
   console.log('this ' + logs);
   const functionapi = (api) => {
+    console.log('this is the api ' + api);
     fetch(api, {
       method: 'GET',
+      credentials: 'include',
       headers: {
-        'Content-Type': 'application/json',
-        'AUTHORIZATION': "bearer 89ec76869ff03b80da5e91c9d6aaf87041bd9e509ea2ca5df653d46096ce0a51"
+        'Content-Type': 'application/json'
     }}).then(response => response.json())
     .then(data => {
       console.log(data);
@@ -42,7 +43,8 @@ export function Home() {
     });
   }
 
-  functionapi('10.32.100.25:8080/api/v1/campus/users');
+  functionapi('http://10.13.7.8:8080/api/v1/authenticate');
+  console.log("Acsees Token " + Cookies.get('access_token'));
   useEffect(() => {
     setTimeout(() => {
       if (logs == true){
