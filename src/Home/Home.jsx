@@ -20,90 +20,72 @@ import Load from "../Loader/Loader";
 
 
 export function Home() {
-  const {logs, setLogs} = useContext(context);
-  const {tok, setTok} = useContext(context);
-  const [visible, setVisible] = useState(false);
-  const [visible2, setVisible2] = useState(true);
-  const [value, setValue] = useState(80);
-  const navigate = useNavigate();
-  const [timer , setTimer] = useState(false);
-  const test = {code: ""};
-  const [token, setToken] = useState("");
-  const [number, setNumber] = useState(0);
-  const obj = {access_token: ""};
-  const {all} = useContext(context);
-  const getapi = (api, testtok) => {
-    obj.access_token = testtok;
-    fetch(api ,{
-      method: 'POST',
-      headers: {
+	const {logs, setLogs} = useContext(context);
+	const {tok, setTok} = useContext(context);
+	let test = {code: ""};
+	const obj = {access_token: ""};
+	const {all, setAll} = useContext(context);
+	const [thetrue, seTrue] = useState(false);
+
+	const  getapi =  (api, testtok) => {
+		obj.access_token = testtok;
+		fetch(api ,{
+			method: 'POST',
+			headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(obj)
     }).then((res) => {
-      return res.json();
+		return res.json();
     }).then((data) => {
-      all.push(data);
+		setAll(data);
+		setTimeout(() => {
+			setLogs(true);
+		});
     }).catch((err) => {
-      console.log(err);
+		console.log("erro has been occured", err);
     })
-  }
-  const functionapi = (api) => {
-    // const url = new URLSearchParams(window.location.search);
-    // console.log("this  "  + url.get('code'));
-    // test.code = url.get('code');
-    console.log(test);
-    fetch(api, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(test),
-  }).then(response => response.json())
-    .then(data => {
-      Cookies.set('access_token', data.access_token);
-    }).catch((error) => {
-      console.log("waaa error ");
-    });
-  }
-  test.code = new URLSearchParams(window.location.search).get('code');
-  useEffect(() => {
-    functionapi('http://10.32.100.25:8080/api/v1/authenticate');
-      getapi("http://10.32.100.25:8080/api/v1/campus/users", Cookies.get('access_token'));
-    setTimeout(() => {
-      if (logs == true){
-        setVisible(true);                                                                                                                                                                                                                                                                                                    
-      }
-      else
-      navigate('/');
-      setVisible2(false);
-  }, 1000);
-  }, [logs]);
+}
 
-  console.log("this is the code " + Cookies.get('access_token'));
-  setTok(Cookies.get('access_token'));
-  getapi("http://10.32.100.25:8080/api/v1/campus/users ", Cookies.get('access_token'));
-  const student = [{pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 80, rank : 4, promo : "2023", campus : "Khouribga"}, 
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 80, rank : 3, promo : "2023", campus : "Khouribga"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 70, rank : 3, promo : "2023", campus : "Khouribga"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 20, rank : 3, promo : "2023", campus : "Khouribga"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 90, rank : 2, promo : "2023", campus : "Khouribga"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 99, rank : 1, promo : "2023", campus : "Khouribga"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 99, rank : 1, promo : "2023", campus : "Khouribga"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 20, rank : 1, promo : "2023", campus : "Khouribga"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 20, rank : 1, promo : "2023", campus : "Khouribga"}
-  ];
-  return (
-    <div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">
-        {visible2 &&
+const functionapi = async (api) => {
+    await fetch(api, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: await JSON.stringify(test),
+	}).then(response =>  response.json())
+    .then(data => {
+		console.log(data.access_token);
+		Cookies.set('access_token', data.access_token);
+		seTrue(true);
+    }).catch((error) => {
+      console.log(error);
+    });
+}
+
+useEffect(() => {
+	const val  =  new URLSearchParams(window.location.search).get('code');
+	test.code = val;
+	functionapi('http://10.13.10.6:8080/api/v1/authenticate');
+}, [])
+
+useEffect(() => {
+	console.log("ee" , Cookies.get('access_token'));
+	getapi("http://10.13.10.6:8080/api/v1/campus/users", Cookies.get('access_token'));
+}, [])
+
+return (
+	<div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">
+        {!logs &&
           <Load/>
         }
-        {visible &&
-        <>
-          <Nav />
-          <Selector />
-          <Scrool />
-        </>
+        {logs &&
+          <>
+            <Nav />
+            <Selector />
+            <Scrool  />
+          </>
         }
     </div>
   );

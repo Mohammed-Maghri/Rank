@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { IoSettings } from "react-icons/io5";
 import pic from "../clips/mmaghri.jpg";
@@ -12,46 +12,41 @@ import { context } from "../context";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import "./Scrol.css";
 
-export default function Scrol() {
+export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
     const [visible2, setVisible2] = useState(false);
     const [value, setValue] = useState(80);
-    const {all} = useContext(context);
-  
-    console.log(all);
-    const student = [{pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 80, rank : 4, promo : "2023", campus : "Khouribga", color : "rgb(255, 214, 51)"}, 
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 100, rank : 3, promo : "2023", campus : "Khouribga" , color : "rgb(194, 194, 214)"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 70, rank : 3, promo : "2023", campus : "Khouribga" , color : "rgb(255, 153, 102)"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 20, rank : 3, promo : "2023", campus : "Khouribga" , color : "black"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 90, rank : 2, promo : "2023", campus : "Khouribga" , color : "black"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 99, rank : 1, promo : "2023", campus : "Khouribga" , color : "black"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 99, rank : 1, promo : "2023", campus : "Khouribga" , color : "black"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 20, rank : 1, promo : "2023", campus : "Khouribga" , color : "black"},
-    {pic: pic , username : "mmaghri", name : "Mohammed Maghri", ranklvl : 20, rank : 1, promo : "2023", campus : "Khouribga", color : "black"}
-  ];
+    const {all, setAll} = useContext(context);
+  const functionClick = (path) => {
+    // window.open(path, '_blank');
+    console.log(path);
+  };
+
+  console.log(all);
+  console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
     return(
         <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
         <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
         <div className=" border-solid border-white border-white  flex items-center justify-center gap-[10px] flex-col  w-[100%] h-[50px] "></div>
 
         {
-          student.map((item, index) => (
-            <div style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer hover:scale-110">
+          all.map((item, index) => (
+            <div  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer hover:scale-110">
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
             <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-600 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[120]">
-              <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={"https://cdn.intra.42.fr/users/028863f91d5de9ae18c2cff2544bcb05/bkali.jpeg"}/>
+              <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={item.image.link}/>
             </div>
             <div style={{boxShadow: '0px 0px 5px black'}} className="flex pan items-center  flex-col justify-center h-[115px] max-h-[130px] rounded-r-[10px] rounded-l-[2px] xs:w-[260px] xm:w-[520px] sm:w-[660px] md:w-[600px] lg:w-[670px] mr-[5px] bg-white">
               <div className="w-[90%] h-[100%] rounded-[10px] flex   items-center justify-start flex-row">
                 <div className=" xs:w-[70%] xf:w-[100%] sm:w-[70%] md:w-[70%] h-[100%]">
-                  <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col" > <p className="font-bars3 text-black font-extrabold"> {item.username} </p>
-                  <p  className="font-bars3 text-[15px] text-black font-normal"> {item.name}</p> </div>
+                  <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col" > <p className="font-bars3 text-black font-extrabold"> {item.login} </p>
+                  <p  className="font-bars3 text-[15px] text-black font-normal"> {item.first_name}</p> </div>
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
                     <p className="text-black font-bold "> Lvl : </p>
                     <div  className="w-[30px] border-solid border-[2px] border-black flex items-center justify-center h-[30px]  rounded-[50%]">
-                      <p className="text-black font-extrabold font-bars3"> {item.rank}</p>
+                      <p className="text-black font-extrabold font-bars3"> {index}</p>
                     </div>
                   </div>
                 </div>
@@ -68,11 +63,11 @@ export default function Scrol() {
               <div className="w-[90%] h-[20%] rounded-[10px] flex flex-row items-center justify-start">
                 <div className="flex items-center justify-start w-[80%] h-[100%]">
                   <div  className="border-solid w-[100%] mb-[4px] border-black border-[2px] flex items-center justify-start rounded-[20px] h-[70%]">
-                    <div style={{width : `${item.ranklvl}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
+                    <div style={{width : `${70}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
                   </div>
                 </div>
                 <div className="w-[20%] max-w-[70px] ml-[10px] mb-[5px] flex items-center justify-center h-[100px]">
-                  <p className="text-2xl font-bars3 text-black font-black "> {item.ranklvl + "%"} </p>
+                  <p className="text-2xl font-bars3 text-black font-black "> {80 + "%"} </p>
                 </div>
               </div>
             </div>

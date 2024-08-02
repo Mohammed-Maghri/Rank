@@ -38,7 +38,7 @@ export function Selector() {
               value &&
               <div style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px] h-[150px] overflow-auto flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
                 {object.map((item, index) => (
-                  <div  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+                  <div key={index}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
                     <p className="text-black"> {item.promo} </p>
                     </div>
                   ))

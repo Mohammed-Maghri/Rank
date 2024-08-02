@@ -5,12 +5,19 @@ import pic from "../clips/mmaghri.jpg";
 import { useState } from "react";
 import {context } from "../context";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const functionVisible = (thevis, setthe) => {
     setthe(!thevis);
 }
 export function Nav() {
   const {logs, setLogs} = useContext(context);
+  const navigate =  useNavigate();
+  const functionLogout = () => {
+    setLogs(false);
+    navigate("/");
+    console.log("Logout");
+  }
   const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
   const [visible, setVisible] = useState(false);
   const obj = [{year : 2013}, {year : 2014}, {year : 2015}, {year : 2016}, {year : 2017}, 
@@ -43,7 +50,7 @@ export function Nav() {
           </div>
             {visible &&
                 <div onClick={() => functioLOGOUT(setLogs)} className="absolute cursor-pointer flex top-[60px] font-bars2 items-center justify-center  w-[100px] h-[30px] rounded-[20px] bg-white duration-300 hover:bg-slate-300">
-                  <p className="text-black font-extrabold"> Logout </p>
+                  <p onClick={functionLogout} className="text-black font-extrabold"> Logout </p>
                 </div>
             }
         </div>
