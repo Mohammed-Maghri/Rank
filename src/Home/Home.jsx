@@ -67,12 +67,12 @@ const functionapi = async (api) => {
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
-	functionapi('http://10.13.10.6:8080/api/v1/authenticate');
+	functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 }, [])
 
 useEffect(() => {
 	console.log("ee" , Cookies.get('access_token'));
-	getapi("http://10.13.10.6:8080/api/v1/campus/users", Cookies.get('access_token'));
+	getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/campus/users", Cookies.get('access_token'));
 }, [])
 
 return (

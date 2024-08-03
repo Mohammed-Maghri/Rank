@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 export default function Auth() {
     const navigate = useNavigate();
 
-    const api = "http://10.13.11.8:8080/api/v1/authenticate";
+    const api = "https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate";
     const functionNavigate = (path) => {
         window.open(path, '_blank');
     }
@@ -45,7 +45,7 @@ export default function Auth() {
                         <p className="text-white font-bars3"> By : mmaghri && mlouazir </p>
                     </div>
                     <div className="flex items-center justify-around w-[200px] h-[50px]">
-                        <div  className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mmaghri')}> <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem('pics')}/> </div>
+                        <div  className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://github.com/MohammedMaghri')}> <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem('pics')}/> </div>
                         <div className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mlouazir')} > <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem('lou')}/> </div>
                     </div>
                 </div>

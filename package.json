@@ -13,12 +13,13 @@
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
     "react-starfield": "^1.0.3",
+    "vercel": "^35.2.3",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://10.13.11.10",
+  "proxy": "http://192.168.1.115",
   "scripts": {
     "start": "react-scripts start",
-    "start:local": "react-scripts start --host   10.13.11.10",
+    "start:local": "react-scripts start --host   192.168.1.115",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
