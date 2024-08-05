@@ -29,6 +29,7 @@ export function Home() {
 
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
+		console.log("Tok From : ", testtok);
 		fetch(api ,{
 			method: 'POST',
 			headers: {
@@ -56,7 +57,7 @@ const functionapi = async (api) => {
 		body: await JSON.stringify(test),
 	}).then(response =>  response.json())
     .then(data => {
-		console.log(data.access_token);
+		console.log("tok : ", data.access_token);
 		Cookies.set('access_token', data.access_token);
 		seTrue(true);
     }).catch((error) => {
@@ -67,6 +68,7 @@ const functionapi = async (api) => {
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
+	console.log(test.code);
 	functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 }, [])
 
