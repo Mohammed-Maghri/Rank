@@ -71,7 +71,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-	console.log("ee" , Cookies.get('access_token'));
+	console.log("ee test " , Cookies.get('access_token'));
 	getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/campus/users", Cookies.get('access_token'));
 }, [])
 
