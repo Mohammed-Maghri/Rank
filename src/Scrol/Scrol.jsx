@@ -17,7 +17,7 @@ export default function Scrol({objectvalue}) {
     const [visible2, setVisible2] = useState(false);
     const [value, setValue] = useState(80);
     const {all, setAll} = useContext(context);
-    const [color, setColor] = useState("white");
+    let color = "white";
   const functionClick = (path) => {
     // window.open(path, '_blank');
     console.log(path);
@@ -47,7 +47,7 @@ export default function Scrol({objectvalue}) {
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
                     <p className="text-black font-bold "> Lvl : </p> 
                     <>
-                    {(index + 1) == 1 ? setColor("rgb(255, 247, 0)") : (index == 2) ? setColor("rgb(135, 135, 135)") : (index + 1) == 3 ? setColor("rgb(204, 102, 0)") : setColor("white")}
+                    {(index + 1) == 1 ? color = "rgb(255, 247, 0)" : (index == 2) ? color = "rgb(135, 135, 135)" : (index + 1) == 3 ? color = "rgb(204, 102, 0)" : color = "white"}
                       <div  style={{backgroundColor : {color}}} className="w-[30px] border-solid border-[2px] border-black flex items-center justify-center h-[30px]  rounded-[50%]">
                       <p className="text-black font-extrabold font-bars3"> {String(item.level).split(".")[0]}</p>
                     </div>
