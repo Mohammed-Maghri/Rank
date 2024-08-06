@@ -71,7 +71,7 @@ export default function Scrol({objectvalue}) {
               <div className="w-[90%] h-[20%] rounded-[10px] flex flex-row items-center justify-start">
                 <div className="flex items-center justify-start w-[80%] h-[100%]">
                   <div  className="border-solid w-[100%] mb-[4px] border-black border-[2px] flex items-center justify-start rounded-[20px] h-[70%]">
-                    <div style={{width : `${item.level}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
+                    <div style={{width : `${String(item.level).split(".")[1].substring(0, 2)}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
                   </div>
                 </div>
                 <div className="w-[20%] max-w-[70px] ml-[10px] mb-[5px] flex items-center justify-center h-[100px]">
