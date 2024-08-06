@@ -16,7 +16,7 @@ export function Nav() {
   const navigate =  useNavigate();
   const functionLogout = () => {
     setLogs(false);
-    navigate("/");
+    window.location.href = "/";
     console.log("Logout");
   }
   const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
