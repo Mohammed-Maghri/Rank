@@ -59,6 +59,7 @@ const functionapi = async (api) => {
     .then(data => {
 		console.log("tok : ", data.access_token);
 		Cookies.set('access_token', data.access_token);
+		console.log(Cookies.get('access_token'));
 		seTrue(true);
     }).catch((error) => {
       console.log(error);
@@ -72,9 +73,9 @@ useEffect(() => {
 	functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 }, [])
 
-useEffect(() => {
+useEffect( async () => {
 	console.log("ee test " , Cookies.get('access_token'));
-	getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/campus/users", Cookies.get('access_token'));
+	await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/campus/users", Cookies.get('access_token'));
 }, [])
 
 return (
