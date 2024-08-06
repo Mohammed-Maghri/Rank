@@ -11,7 +11,7 @@ import redirect from "../clips/maximize.png";
 import { context } from "../context";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import "./Scrol.css";
-import me from "../clips/mmaghri.jpg";
+import me from "../clips/this.png";
 import loua from "../clips/loua.png";
 import asad from "../clips/asad.png";
 
