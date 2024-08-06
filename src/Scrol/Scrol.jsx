@@ -11,6 +11,9 @@ import redirect from "../clips/maximize.png";
 import { context } from "../context";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import "./Scrol.css";
+import me from "../clips/mmaghri.jpg";
+import loua from "../clips/loua.png";
+import asad from "../clips/asad.png";
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
@@ -37,13 +40,22 @@ export default function Scrol({objectvalue}) {
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
             <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-600 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[120]">
-              <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={item.profileImage}/>
+              {item.login == "mmaghri" ? (
+                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
+                ):item.login == "mlouazir" ? (
+                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={loua}/>
+                ):item.login == "asnaji" ?(
+                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={asad}/>
+                ):(
+                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={item.profileImage}/>
+                )
+              }
             </div>
             <div style={{boxShadow: '0px 0px 5px black'}} className="flex pan items-center  flex-col justify-center h-[115px] max-h-[130px] rounded-r-[10px] rounded-l-[2px] xs:w-[260px] xm:w-[520px] sm:w-[660px] md:w-[600px] lg:w-[670px] mr-[5px] bg-white">
               <div className="w-[90%] h-[100%] rounded-[10px] flex   items-center justify-start flex-row">
                 <div className=" xs:w-[70%] xf:w-[100%] sm:w-[70%] md:w-[70%] h-[100%]">
                   <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col" > <p className="font-bars3 text-black font-extrabold"> {item.login} </p>
-                  <p  className="font-bars3 text-[15px] xm:text-sm xs:text-sm  text-black font-normal"> {item.firstName + " " + item.lastName} </p> </div>
+                  <p  className="font-bars3 text-[15px] xm:text-xs xs:text-xs  text-black font-normal"> {item.firstName + " " + item.lastName} </p> </div>
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
                     <p className="text-black font-bold "> Lvl : </p> 
                     {/* {(index + 1) == 1 ? color = "rgb(255, 247, 0)" : (index == 2) ? color = "rgb(135, 135, 135)" : (index + 1) == 3 ? color = "rgb(204, 102, 0)" : color = "white"} */}
