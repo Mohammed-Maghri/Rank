@@ -74,8 +74,11 @@ useEffect(() => {
 }, [])
 
 useEffect( async () => {
-	console.log("ee test " , Cookies.get('access_token'));
-	await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/campus/users", Cookies.get('access_token'));
+
+	setTimeout(async () => {
+		await console.log("ee test " , Cookies.get('access_token'));
+		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/campus/users", Cookies.get('access_token'));
+	}, 3000);
 }, [])
 
 return (
