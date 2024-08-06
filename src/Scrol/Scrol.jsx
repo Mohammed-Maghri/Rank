@@ -24,7 +24,6 @@ export default function Scrol({objectvalue}) {
 
   console.log(all);
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
-  console.log(all[1].level.split(".")[0]);
     return(
         <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
         <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
@@ -32,7 +31,7 @@ export default function Scrol({objectvalue}) {
 
         {
           all.map((item, index) => (
-            <div  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer hover:scale-110">
+            <div  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer">
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
