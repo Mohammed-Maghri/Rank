@@ -17,6 +17,7 @@ export default function Scrol({objectvalue}) {
     const [visible2, setVisible2] = useState(false);
     const [value, setValue] = useState(80);
     const {all, setAll} = useContext(context);
+    const [color, setColor] = useState("white");
   const functionClick = (path) => {
     // window.open(path, '_blank');
     console.log(path);
@@ -44,10 +45,12 @@ export default function Scrol({objectvalue}) {
                   <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col" > <p className="font-bars3 text-black font-extrabold"> {item.login} </p>
                   <p  className="font-bars3 text-[15px] text-black font-normal"> test </p> </div>
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
-                    <p className="text-black font-bold "> Lvl : </p>
-                    <div  className="w-[30px] border-solid border-[2px] border-black flex items-center justify-center h-[30px]  rounded-[50%]">
+                    <p className="text-black font-bold "> Lvl : </p> 
+                    {index == 1 ? setColor("rgb(255, 247, 0)") : index == 2 ? setColor("rgb(255, 153, 0)") : index == 3 ? setColor("rgb(204, 102, 0)") : setColor("white")}
+                      <div style={{backgroundColor : {color}}}  className="w-[30px] border-solid border-[2px] border-black flex items-center justify-center h-[30px]  rounded-[50%]">
                       <p className="text-black font-extrabold font-bars3"> {String(item.level).split(".")[0]}</p>
                     </div>
+                    }
                   </div>
                 </div>
                 <div className="flex  flex-col  items-center justify-around  md:w-[30%] xf:w-[30%] xm:w-[30%] xs:w-[30%] sm:w-[30%]  duration-300 lg:w-[30%] h-[100%]">
@@ -57,12 +60,12 @@ export default function Scrol({objectvalue}) {
                   <div className="border-solid gap-1 w-[100%] h-[30px] flex items-center justify-center ">
                     {item.location != "unavailable" ?(
                     <>
-                      <div className="w-[10px] h-[10px] rounded-[50%] border-solid border- bg-green-500 border-[2px]"></div>
-                    <p className="text-black font-bars2 font-medium text-[15px]">{item.location}</p>
+                      <div className="w-[8px] h-[8px] rounded-[50%] border-solid border- bg-green-500 border-[2px]"></div>
+                    <p className="text-black font-bars2 font-medium text-[13px]">{item.location}</p>
                     </>) :(
                       <>
-                       <div className="w-[10px] h-[10px] rounded-[50%] border-solid border- bg-red-500 border-[2px]"></div>
-                       <p className="text-black font-bars2 font-medium text-[15px]">unavailable</p>
+                       <div className="w-[8px] h-[8px] rounded-[50%] border-solid border- bg-red-500 border-[2px]"></div>
+                       <p className="text-black font-bars2 font-medium text-[13px]">unavailable</p>
                       </>
                     )}
                   </div>
