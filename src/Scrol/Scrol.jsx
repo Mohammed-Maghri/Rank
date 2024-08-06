@@ -75,7 +75,7 @@ export default function Scrol({objectvalue}) {
                   </div>
                 </div>
                 <div className="w-[20%] max-w-[70px] ml-[10px] mb-[5px] flex items-center justify-center h-[100px]">
-                  <p className="text-2xl font-bars3 text-black font-black "> {String(item.level).substring(0, 2) + "%"} </p>
+                  <p className="text-2xl font-bars3 text-black font-black "> {String(item.level).split(".")[1].substring(0, 2) + "%"} </p>
                 </div>
               </div>
             </div>
