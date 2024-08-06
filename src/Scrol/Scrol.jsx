@@ -42,7 +42,7 @@ export default function Scrol({objectvalue}) {
               <div className="w-[90%] h-[100%] rounded-[10px] flex   items-center justify-start flex-row">
                 <div className=" xs:w-[70%] xf:w-[100%] sm:w-[70%] md:w-[70%] h-[100%]">
                   <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col" > <p className="font-bars3 text-black font-extrabold"> {item.login} </p>
-                  <p  className="font-bars3 text-[15px] text-black font-normal"> {test}</p> </div>
+                  <p  className="font-bars3 text-[15px] text-black font-normal"> test </p> </div>
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
                     <p className="text-black font-bold "> Lvl : </p>
                     <div  className="w-[30px] border-solid border-[2px] border-black flex items-center justify-center h-[30px]  rounded-[50%]">
