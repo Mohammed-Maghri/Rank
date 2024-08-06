@@ -25,6 +25,7 @@ export function Nav() {
     {year : 2018}, {year : 2019}, {year : 2020}, {year : 2021}, {year : 2022}, {year : 2023}, {year : 2024}];
     const functioLOGOUT = (seter) => {
       seter(false);
+      navigate("/");
     }
     return ( 
         <div className="flex items-center justify-ithems-center h-[80px] gap-[5px] max-w-[1800px]  w-[100%]">
