@@ -33,7 +33,7 @@ export default function Auth() {
             items-center justify-start  rounded-[20px]  h-[70%] bg-transparent 
              max-w-[600px] gap-[20px] flex-col">
                 <div  className="w-[80%] flex items-end justify-center h-[30%] rounded-[10px] bg-black">
-                    <p className="font-bars4 font-bold text-6xl text-white"> 42Leets </p>
+                    <p className="font-bars4 font-bold text-6xl text-white"> 1337Leets </p>
                 </div>
                 <div className="flex items-center min-w-[300px] flex-col justify-start  w-[80%] h-[200px]">
                     <div style={{boxShadow: '0px 0px 5px yellow'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
