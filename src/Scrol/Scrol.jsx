@@ -52,7 +52,7 @@ export default function Scrol({objectvalue}) {
                 </div>
                 <div className="flex  flex-col  items-center justify-around  md:w-[30%] xf:w-[30%] xm:w-[30%] xs:w-[30%] sm:w-[30%]  duration-300 lg:w-[30%] h-[100%]">
                   <div className="w-[29px] flex items-center bg-yellow-300 justify-center  h-[17px] duration-200 cursor-pointer rounded-[5px] hover:scale-105">
-                    <p  className="text-black font-bars3 font-extrabold"> index </p>
+                    <p  className="text-black font-bars3 font-extrabold"> {index} </p>
                   </div>
                   <div className="border-solid gap-1 w-[100%] h-[30px] flex items-center justify-center ">
                     <div className="w-[10px] h-[10px] rounded-[50%] border-solid border- bg-green-500 border-[2px]"></div>
