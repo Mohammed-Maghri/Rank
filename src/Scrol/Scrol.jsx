@@ -84,7 +84,9 @@ export default function Scrol({objectvalue}) {
           </div>
           ))
         }
-        {/* <div></div> */}
+        <div className="border-solid border-white border-[2px] h-[30px] w-[100%] flex items-center justify-center">
+          <button class="btn glass">Load More </button>
+        </div>
         </div>
         </div>
     );
