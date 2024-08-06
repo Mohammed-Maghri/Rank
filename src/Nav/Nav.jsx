@@ -52,7 +52,7 @@ export function Nav() {
           </div>
             {visible &&
                 <div onClick={() => functioLOGOUT(setLogs)} className="absolute cursor-pointer flex top-[60px] font-bars2 items-center justify-center  w-[100px] h-[30px] rounded-[20px] bg-white duration-300 hover:bg-slate-300">
-                  <p onClick={functionLogout} className="text-black font-extrabold"> Logout </p>
+                  <p  className="text-black font-extrabold"> Logout </p>
                 </div>
             }
         </div>
