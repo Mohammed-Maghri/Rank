@@ -51,7 +51,7 @@ export function Nav() {
             <img src={all[0].profileImage} onClick={() => (functionVisible(visible, setVisible))} className="rounded-[50%]" />
           </div>
             {visible &&
-                <div onClick={() => functioLOGOUT(setLogs)} className="absolute cursor-pointer flex top-[60px] font-bars2 items-center justify-center  w-[100px] h-[30px] rounded-[20px] bg-white duration-300 hover:bg-slate-300">
+                <div onClick={() => functionLogout()} className="absolute cursor-pointer flex top-[60px] font-bars2 items-center justify-center  w-[100px] h-[30px] rounded-[20px] bg-white duration-300 hover:bg-slate-300">
                   <p  className="text-black font-extrabold"> Logout </p>
                 </div>
             }
