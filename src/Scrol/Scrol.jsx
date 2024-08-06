@@ -62,7 +62,7 @@ export default function Scrol({objectvalue}) {
                     </>) :(
                       <>
                        <div className="w-[10px] h-[10px] rounded-[50%] border-solid border- bg-red-500 border-[2px]"></div>
-                       <p className="text-black font-bars2 font-medium text-[15px]">{unavailable}</p>
+                       <p className="text-black font-bars2 font-medium text-[15px]">unavailable</p>
                       </>
                     )}
                   </div>
