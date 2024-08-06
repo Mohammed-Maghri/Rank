@@ -24,6 +24,7 @@ export default function Scrol({objectvalue}) {
 
   console.log(all);
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
+  console.log(all[1].level.split(".")[0]);
     return(
         <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
         <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
@@ -46,7 +47,7 @@ export default function Scrol({objectvalue}) {
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
                     <p className="text-black font-bold "> Lvl : </p>
                     <div  className="w-[30px] border-solid border-[2px] border-black flex items-center justify-center h-[30px]  rounded-[50%]">
-                      <p className="text-black font-extrabold font-bars3"> {item.level.split(".")[0]}</p>
+                      <p className="text-black font-extrabold font-bars3"> {item.level}</p>
                     </div>
                   </div>
                 </div>
