@@ -59,12 +59,12 @@ export default function Scrol({objectvalue}) {
                   <div className="border-solid gap-1 w-[100%] h-[30px] flex items-center justify-center ">
                     {item.location != "unavailable" ?(
                     <>
-                      <div className="w-[8px] h-[8px] rounded-[50%] border-solid border- bg-green-500 border-[2px]"></div>
+                      <div className="w-[10px] h-[10px] rounded-[50%] border-solid border- bg-green-500 border-[2px]"></div>
                     <p className="text-black font-bars2 font-medium text-[13px]">{item.location}</p>
                     </>) :(
                       <>
-                       <div className="w-[8px] h-[8px] rounded-[50%] border-solid border- bg-red-500 border-[2px]"></div>
-                       <p className="text-black font-bars2 font-medium text-[13px]">unavailable</p>
+                       <div className="w-[10px] h-[10px] rounded-[50%] border-solid border- bg-red-500 border-[2px]"></div>
+                       <p className="text-black font-bars2 font-medium text-[13px]">unav</p>
                       </>
                     )}
                   </div>
