@@ -31,11 +31,11 @@ export function Home() {
 		obj.access_token = testtok;
 		console.log("Tok From : ", testtok);
 		fetch(api ,{
-			method: 'POST',
+			method: 'GET',
 			headers: {
         'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(obj)
+		'Authorization': `Bearer ${testtok}`
+      }
     }).then((res) => {
 		return res.json();
     }).then((data) => {
