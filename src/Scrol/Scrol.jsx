@@ -46,12 +46,10 @@ export default function Scrol({objectvalue}) {
                   <p  className="font-bars3 text-[15px] text-black font-normal"> test </p> </div>
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
                     <p className="text-black font-bold "> Lvl : </p> 
-                    <>
                     {(index + 1) == 1 ? color = "rgb(255, 247, 0)" : (index == 2) ? color = "rgb(135, 135, 135)" : (index + 1) == 3 ? color = "rgb(204, 102, 0)" : color = "white"}
                       <div  style={{backgroundColor : {color}}} className="w-[30px] border-solid border-[2px] border-black flex items-center justify-center h-[30px]  rounded-[50%]">
                       <p className="text-black font-extrabold font-bars3"> {String(item.level).split(".")[0]}</p>
                     </div>
-                    </>
                   </div>
                 </div>
                 <div className="flex  flex-col  items-center justify-around  md:w-[30%] xf:w-[30%] xm:w-[30%] xs:w-[30%] sm:w-[30%]  duration-300 lg:w-[30%] h-[100%]">
