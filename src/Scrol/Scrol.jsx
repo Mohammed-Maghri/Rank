@@ -52,7 +52,7 @@ export default function Scrol({objectvalue}) {
                 </div>
                 <div className="flex  flex-col  items-center justify-around  md:w-[30%] xf:w-[30%] xm:w-[30%] xs:w-[30%] sm:w-[30%]  duration-300 lg:w-[30%] h-[100%]">
                   <div className="w-[29px] flex items-center bg-yellow-300 justify-center  h-[17px] duration-200 cursor-pointer rounded-[5px] hover:scale-105">
-                    <p  className="text-black font-bars3 font-extrabold"> {index} </p>
+                    <p  className="text-black font-bars3 font-extrabold"> {index + 1} </p>
                   </div>
                   <div className="border-solid gap-1 w-[100%] h-[30px] flex items-center justify-center ">
                     {item.location != "unavailable" ?(
@@ -75,7 +75,7 @@ export default function Scrol({objectvalue}) {
                   </div>
                 </div>
                 <div className="w-[20%] max-w-[70px] ml-[10px] mb-[5px] flex items-center justify-center h-[100px]">
-                  <p className="text-2xl font-bars3 text-black font-black "> {item.level + "%"} </p>
+                  <p className="text-2xl font-bars3 text-black font-black "> {String(item.level).substring(0, 2) + "%"} </p>
                 </div>
               </div>
             </div>
