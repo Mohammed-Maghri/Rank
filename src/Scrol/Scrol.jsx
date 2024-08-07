@@ -47,7 +47,7 @@ export default function Scrol({objectvalue}) {
                 ):item.login == "asnaji" ?(
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={asad}/>
                 ):(
-                <img  className=" h-[100%] w-[100%] rounded-l-[20px] object-cover" src={item.profileImage}/>
+                <img  className=" h-[100%] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
                 )
               }
             </div>
