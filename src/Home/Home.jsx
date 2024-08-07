@@ -13,7 +13,7 @@ import { PiInstagramLogoFill } from "react-icons/pi";
 import Scrool from "../Scrol/Scrol";
 import Starfield from 'react-starfield';
 import { context } from "../context";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import Load from "../Loader/Loader";
@@ -27,10 +27,15 @@ export function Home() {
 	const {all, setAll} = useContext(context);
 	const [thetrue, seTrue] = useState(false);
     const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2F1337leet.vercel.app%2Fhome&response_type=code";
-	
+	const navigate = useNavigate();
+
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		console.log("Tok From : ", testtok);
+		if (testtok == undefined) {
+			setLogs(false);
+			navigate("/");
+		}
 		fetch(api ,{
 			method: 'GET',
 			headers: {
