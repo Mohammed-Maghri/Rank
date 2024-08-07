@@ -68,9 +68,6 @@ export function Home() {
 	}
 	
 useEffect(() => {
-	window.location.href = token;
-},[]);
-useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
 	console.log(test.code);
