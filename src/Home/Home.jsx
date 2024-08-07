@@ -27,7 +27,6 @@ export function Home() {
 	const {all, setAll} = useContext(context);
 	const [thetrue, seTrue] = useState(false);
     const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2F1337leet.vercel.app%2Fhome&response_type=code";
-	window.location.href = token;
 	
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
@@ -35,39 +34,42 @@ export function Home() {
 		fetch(api ,{
 			method: 'GET',
 			headers: {
-        'Content-Type': 'application/json',
-		'Authorization': `Bearer ${testtok}`
-      }
-    }).then((res) => {
-		return res.json();
-    }).then((data) => {
-		setAll(data);
-		setTimeout(() => {
-			setLogs(true);
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${testtok}`
+			}
+		}).then((res) => {
+			return res.json();
+		}).then((data) => {
+			setAll(data);
+			setTimeout(() => {
+				setLogs(true);
+			});
+		}).catch((err) => {
+			console.log("erro has been occured", err);
+		})
+	}
+	
+	const functionapi = async (api) => {
+		await fetch(api, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: await JSON.stringify(test),
+		}).then(response =>  response.json())
+		.then(data => {
+			console.log("tok : ", data.access_token);
+			Cookies.set('access_token', data.access_token);
+			console.log(Cookies.get('access_token'));
+			seTrue(true);
+		}).catch((error) => {
+			console.log("Error in fetching ", error);
 		});
-    }).catch((err) => {
-		console.log("erro has been occured", err);
-    })
-}
-
-const functionapi = async (api) => {
-    await fetch(api, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: await JSON.stringify(test),
-	}).then(response =>  response.json())
-    .then(data => {
-		console.log("tok : ", data.access_token);
-		Cookies.set('access_token', data.access_token);
-		console.log(Cookies.get('access_token'));
-		seTrue(true);
-    }).catch((error) => {
-      console.log("Error in fetching ", error);
-    });
-}
-
+	}
+	
+useEffect(() => {
+	window.location.href = token;
+},[]);
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
