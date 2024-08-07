@@ -62,7 +62,7 @@ const functionapi = async (api) => {
 		console.log(Cookies.get('access_token'));
 		seTrue(true);
     }).catch((error) => {
-      console.log(error);
+      console.log("Error in fetching ", error);
     });
 }
 
