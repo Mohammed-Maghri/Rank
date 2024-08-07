@@ -55,6 +55,8 @@ export function Home() {
 	}
 	
 	const functionapi = async (api) => {
+		if (Cookies.get('access_token') != undefined) 
+			return;
 		await fetch(api, {
 			method: 'POST',
 			headers: {
