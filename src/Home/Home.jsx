@@ -67,7 +67,7 @@ export function Home() {
 			console.log("heere");
 			if (data.access_token == undefined) {
 				setLogs(false);
-				navigate("/");
+				window.location.href =  "https://1337leet.vercel.app/";
 			}
 			Cookies.set('access_token', data.access_token);
 			console.log(Cookies.get('access_token'));
