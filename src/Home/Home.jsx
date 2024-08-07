@@ -64,6 +64,11 @@ export function Home() {
 		}).then(response =>  response.json())
 		.then(data => {
 			console.log("tok : ", data.access_token);
+			console.log("heere");
+			if (data.access_token == undefined) {
+				setLogs(false);
+				navigate("/");
+			}
 			Cookies.set('access_token', data.access_token);
 			console.log(Cookies.get('access_token'));
 			seTrue(true);
