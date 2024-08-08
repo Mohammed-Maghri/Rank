@@ -49,8 +49,8 @@ export default function Scrol({objectvalue}) {
         return  res.json();
       }).then((data) => {
         console.log(data);
-        const newObject = {...all, ...data};
-        console.log(newObject);
+        all = {...all, ...data};
+        console.log(all);
       }).catch((err) => {
         console.log("Error has been occured", err);
       })
