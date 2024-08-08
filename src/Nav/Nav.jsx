@@ -7,7 +7,7 @@ import {context } from "../context";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import taj from "../clips/crown.png";
+import taj from "../clips/crown.jpeg";
 export const functionVisible = (thevis, setthe) => {
     setthe(!thevis);
 }
