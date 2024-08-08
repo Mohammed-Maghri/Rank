@@ -40,7 +40,6 @@ export default function Scrol({objectvalue}) {
         'Content-Type': 'application/json',
         'AUTHORIZATION': `Bearer ${tok}`
       },
-      body : await JSON.stringify(obj),
       }).then((res) => {
         if (res.status >= 400 && res.status < 600) {
           setLogs(false);
