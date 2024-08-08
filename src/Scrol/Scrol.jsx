@@ -93,7 +93,12 @@ export default function Scrol({objectvalue}) {
                     <p className="text-black font-bold "> Lvl : </p> 
                     {/* {(index + 1) == 1 ? color = "rgb(255, 247, 0)" : (index == 2) ? color = "rgb(135, 135, 135)" : (index + 1) == 3 ? color = "rgb(204, 102, 0)" : color = "white"} */}
                       <div  style={{backgroundColor : {color}}} className="w-[30px] border-solid border-[2px] border-black flex items-center justify-center h-[30px]  rounded-[50%]">
-                      <p className="text-black font-extrabold font-bars3"> {String(item.level).split(".")[0]}</p>
+                        {String(item.level).includes(".") ?(
+                          <p className="text-black font-extrabold font-bars3"> {String(item.level).split(".")[0]}</p>
+                        ):(
+                          <p className="text-black font-extrabold font-bars3"> {item.level}</p>
+                        )
+                        }
                     </div>
                   </div>
                 </div>
@@ -118,11 +123,21 @@ export default function Scrol({objectvalue}) {
               <div className="w-[90%] h-[20%] rounded-[10px] flex flex-row items-center justify-start">
                 <div className="flex items-center justify-start w-[80%] h-[100%]">
                   <div  className="border-solid w-[100%] mb-[4px] border-black border-[2px] flex items-center justify-start rounded-[20px] h-[70%]">
+                    {String(item.level).includes(".") ?(
                     <div style={{width : `${String(item.level).split(".")[1].substring(0, 2)}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
+                    ):(
+                    <div style={{width : `${0}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
+                    )
+                    }
                   </div>
                 </div>
                 <div className="w-[20%] max-w-[70px] ml-[10px] mb-[5px] flex items-center justify-center h-[100px]">
+                  { String(item.level).includes(".") ?(
                   <p className="text-2xl font-bars3 text-black font-black "> {String(item.level).split(".")[1].substring(0, 2) + "%"} </p>
+                  ):(
+                  <p className="text-2xl font-bars3 text-black font-black "> {0 + "%"} </p>
+                  )
+                  }
                 </div>
               </div>
             </div>
