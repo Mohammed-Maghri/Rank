@@ -55,8 +55,6 @@ export function Home() {
 	}
 	
 	const functionapi = async (api) => {
-		if (Cookies.get('access_token') != undefined) 
-			return;
 		await fetch(api, {
 			method: 'POST',
 			headers: {
@@ -83,7 +81,9 @@ useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
 	console.log(test.code);
-	functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
+	if (Cookies.get('access_token') == undefined || Cookies.get('access_token') == null) {
+		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
+	}
 }, [])
 
 useEffect( async () => {
