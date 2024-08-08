@@ -23,6 +23,8 @@ export default function Scrol({objectvalue}) {
     const [value, setValue] = useState(80);
     const {all, setAll} = useContext(context);
     const {pages, setPages} = useContext(context);
+    const [wait, setWait] = useState(false);
+
     const obj = {pageNumber : pages};
     let color = "white";
   const functionClick = (path) => {
@@ -32,6 +34,7 @@ export default function Scrol({objectvalue}) {
 
 
   const fuctionFetchmore = async (url) => {
+    setWait(true);
     const tok = Cookies.get('access_token');
     setPages(pages + 1);
     await fetch(`${url}?pageNumber=${pages}`, {
@@ -51,6 +54,7 @@ export default function Scrol({objectvalue}) {
         console.log(data);
         const newObject = {...all, ...data};
         setAll(all.concat(data));
+        setWait(false);
       }).catch((err) => {
         console.log("Error has been occured", err);
       })
@@ -63,7 +67,7 @@ export default function Scrol({objectvalue}) {
         <div className=" border-solid border-white border-white  flex items-center justify-center gap-[10px] flex-col  w-[100%] h-[50px] "></div>
 
         {
-          all.slice(1).map((item, index) => (
+          all.slice(0).map((item, index) => (
             <div  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer">
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
@@ -126,7 +130,12 @@ export default function Scrol({objectvalue}) {
           ))
         }
         <div className="h-[100px] w-[100%] flex items-center justify-center">
-          <button onClick={() => fuctionFetchmore("https://leets1337-3f387c570577.herokuapp.com/api/v1/home")} className="btn btn-outline btn-warning">Load More</button>
+          {!wait &&
+            <button onClick={() => fuctionFetchmore("https://leets1337-3f387c570577.herokuapp.com/api/v1/home")} className="btn btn-outline btn-warning">Load More</button>
+          }
+          {wait &&
+          <span className="loading loading-dots loading-lg"></span>
+          }
         </div>
         </div>
         </div>

@@ -7,7 +7,7 @@ import {context } from "../context";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-
+import taj from "../clips/crown.png";
 export const functionVisible = (thevis, setthe) => {
     setthe(!thevis);
 }
@@ -50,7 +50,7 @@ export function Nav() {
         </div>
         <div className=" flex items-center justify-center flex-row rounded-[5px] h-[95%] w-[25%]">
           <div style={{boxShadow: '0px 0px 5px yellow'}}  className="cursor-pointer w-[50px] h-[50px] border-solid border-white border-[2px] rounded-[50%]">
-            <img src={all[0].profileImage} onClick={() => (functionVisible(visible, setVisible))} className="rounded-[50%] h-[100%] w-[100%] object-cover" />
+            <img src={taj} onClick={() => (functionVisible(visible, setVisible))} className="rounded-[50%] h-[100%] w-[100%] object-cover" />
           </div>
             {visible &&
                 <div onClick={functionLogout} className="absolute cursor-pointer flex top-[60px] font-bars2 items-center justify-center  w-[100px] h-[30px] rounded-[20px] bg-white duration-300 hover:bg-slate-300">
