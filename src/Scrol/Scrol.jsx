@@ -50,7 +50,8 @@ export default function Scrol({objectvalue}) {
       }).then((data) => {
         console.log(data);
         const newObject = {...all, ...data};
-        console.log(newObject);
+        const newarray = all + data;
+        console.log(newarray);
       }).catch((err) => {
         console.log("Error has been occured", err);
       })
