@@ -149,7 +149,7 @@ export default function Scrol({objectvalue}) {
             <button onClick={() => fuctionFetchmore("https://leets1337-3f387c570577.herokuapp.com/api/v1/home")} className="btn btn-outline btn-warning">Load More</button>
           }
           {wait &&
-          <span className="loading loading-dots loading-lg"></span>
+          <span className="loading loading-dots bg-yellow-300 loading-lg"></span>
           }
         </div>
         </div>
