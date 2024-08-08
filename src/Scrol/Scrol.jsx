@@ -34,7 +34,7 @@ export default function Scrol({objectvalue}) {
   const fuctionFetchmore = async (url) => {
     const tok = Cookies.get('access_token');
     setPages(pages + 1);
-    await fetch(url, {
+    await fetch(`${url}?pageNumber=${pages}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
