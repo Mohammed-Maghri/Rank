@@ -14,6 +14,7 @@ import "./Scrol.css";
 import me from "../clips/this.png";
 import loua from "../clips/loua.png";
 import asad from "../clips/asad.png";
+import Cookies from "js-cookie";
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
