@@ -8,10 +8,12 @@ import {functionVisible, Nav} from "../Nav/Nav";
 import { FaChevronDown, FaLeaf } from "react-icons/fa";
 
 export function Selector() {
-    const [visible, setVisible] = useState(false);
-    const [visible2, setVisible2] = useState(false);
-    const [ value, setValue ] = useState(false);
-    const object = [{promo : 2013} , {promo : 2014}, {promo : 2015}, {promo : 2016}, {promo: 2017}, {promo: 2018}, 
+  const [visible, setVisible] = useState(false);
+  const [visible2, setVisible2] = useState(false);
+  const [ value, setValue ] = useState(false);
+  const [pool, setPool] = useState(false);
+
+  const object = [{promo : 2013} , {promo : 2014}, {promo : 2015}, {promo : 2016}, {promo: 2017}, {promo: 2018}, 
       {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
     return (
         <div className="w-[100%] h-[40px] flex items-center justify-center">
@@ -46,7 +48,7 @@ export function Selector() {
             </div>
             }
           </div>
-          <div  onClick={() => (visible2 == false ? (setVisible2(true), setValue(false), setVisible(false)) : (setVisible2(false)))}  className="w-[100px] h-[100%]  rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer  
+          <div  onClick={() => (visible2 == false ? (setVisible2(true),setPool(true) ,setValue(false), setVisible(false)) : (setPool(false), setVisible2(false)))}  className="w-[100px] h-[100%]  rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer  
           duration-300 gap-1 hover:bg-gray-800"> <p> Cursus </p> <FaChevronDown className="w-[10px] h-[10px]" />
             {visible2 &&
             <div style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px] h-[70px] flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
@@ -59,6 +61,22 @@ export function Selector() {
             </div>
             }
           </div>
+          {
+            pool &&
+            <div onClick={() => (value == false ? (setValue(true), setVisible(false), setVisible2(false)) : setValue(false))} className="w-[100px] h-[100%] duration-500 rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer  
+            duration-300 gap-1 hover:bg-gray-800"> <p> Promo </p> <FaChevronDown className="w-[10px] h-[10px]" />
+            {
+              value &&
+              <div style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px] h-[150px] overflow-auto flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
+                  <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+                    <p className="text-black"> 7 </p>
+                    <p className="text-black"> 8 </p>
+                    <p className="text-black"> 9 </p>
+                    </div>
+            </div>
+            }
+          </div>
+                }
         </div>
       </div>
     );
