@@ -81,9 +81,10 @@ useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
 	console.log(test.code);
-	if (!Cookies.get('access_token') || Cookies.get('access_token') == undefined) {
+	console.log(Cookies.get('access'));
+	// if (Cookies.get('access_token') == undefined) {
 		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
-	}
+	// }
 }, [])
 
 useEffect( async () => {
