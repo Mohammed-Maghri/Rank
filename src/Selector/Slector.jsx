@@ -16,7 +16,7 @@ export function Selector() {
     return (
         <div className="w-[100%] h-[40px] flex items-center justify-center">
         <div className="flex items-center gap-[10px] justify-around min-w-[400px]w-[40%] h-[100%]">
-          <div onClick={() => (visible == false ? (setVisible(true)) : (setVisible(false)))} className="w-[100px] h-[100%]  rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer  
+          <div onClick={() => (visible == false ? (setVisible(true) , setVisible2(false), setValue(false)) : (setVisible(false)))} className="w-[100px] h-[100%]  rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer  
           duration-300 gap-1 hover:bg-gray-800"> <p> Campus </p> <FaChevronDown className="w-[10px] h-[10px]" />
           {visible &&
             <div style={{boxShadow : '0px 0px 3px black'}} className="w-[100px] h-[100px] flex items-center  flex-col justify-center bg-slate-50 absolute z-20 top-[125px] rounded-[10px]">
