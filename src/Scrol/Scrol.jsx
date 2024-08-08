@@ -39,7 +39,7 @@ export default function Scrol({objectvalue}) {
       headers: {
         'Content-Type': 'application/json',
         'AUTHORIZATION': `Bearer ${tok}`
-      },
+      }
       }).then((res) => {
         if (res.status >= 400 && res.status < 600) {
           setLogs(false);
@@ -49,6 +49,8 @@ export default function Scrol({objectvalue}) {
         return  res.json();
       }).then((data) => {
         console.log(data);
+        const newObject = {...all, ...data};
+        console.log(newObject);
       }).catch((err) => {
         console.log("Error has been occured", err);
       })
