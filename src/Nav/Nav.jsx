@@ -6,6 +6,7 @@ import { useState } from "react";
 import {context } from "../context";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export const functionVisible = (thevis, setthe) => {
     setthe(!thevis);
