@@ -51,7 +51,6 @@ export default function Scrol({objectvalue}) {
         console.log(data);
         const newObject = {...all, ...data};
         setAll(all.concat(data));
-        console.log(newarray);
       }).catch((err) => {
         console.log("Error has been occured", err);
       })
