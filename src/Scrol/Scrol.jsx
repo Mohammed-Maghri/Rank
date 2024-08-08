@@ -17,15 +17,42 @@ import asad from "../clips/asad.png";
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
+    const {logs, setLogs} = useContext(context);
     const [visible2, setVisible2] = useState(false);
     const [value, setValue] = useState(80);
     const {all, setAll} = useContext(context);
+    const {pages, setPages} = useContext(context);
+    const obj = {pageNumber : pages};
     let color = "white";
   const functionClick = (path) => {
     // window.open(path, '_blank');
     console.log(path);
   };
 
+
+  const fuctionFetchmore = async (url) => {
+    const tok = Cookies.get('access_token');
+    setPages(pages + 1);
+    await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'AUTHORIZATION': `Bearer ${tok}`
+      },
+      body : await JSON.stringify(obj),
+      }).then((res) => {
+        if (res.status >= 400 && res.status < 600) {
+          setLogs(false);
+          Cookies.remove('access_token');
+          window.location.href = "https://1337leet.vercel.app/";
+        }
+        return  res.json();
+      }).then((data) => {
+        console.log(data);
+      }).catch((err) => {
+        console.log("Error has been occured", err);
+      })
+  }
   console.log(all);
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
     return(
@@ -97,7 +124,7 @@ export default function Scrol({objectvalue}) {
           ))
         }
         <div className="h-[100px] w-[100%] flex items-center justify-center">
-          <button className="btn btn-outline btn-warning">Load More</button>
+          <button onClick={() => fuctionFetchmore("https://leets1337-3f387c570577.herokuapp.com/api/v1/home")} className="btn btn-outline btn-warning">Load More</button>
         </div>
         </div>
         </div>
