@@ -64,7 +64,7 @@ export function Selector() {
           </div>
           {
             pool &&
-            <div onClick={() => (value == false ? (setPodrop(true), setVisible(false),setValue(false), setVisible2(false)) : setPodrop(false))} className="w-[100px] h-[100%] duration-500 rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer  
+            <div onClick={() => (podrop == false ? (setPodrop(true), setVisible(false),setValue(false), setVisible2(false)) : setPodrop(false))} className="w-[100px] h-[100%] duration-500 rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer  
             duration-300 gap-1 hover:bg-gray-800"> <p> Promo </p> <FaChevronDown className="w-[10px] h-[10px]" />
             {
               podrop &&
