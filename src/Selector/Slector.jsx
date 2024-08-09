@@ -6,6 +6,7 @@ import pic from "../clips/mmaghri.jpg";
 import { IoMdLogOut } from "react-icons/io";
 import {functionVisible, Nav} from "../Nav/Nav";
 import { FaChevronDown, FaLeaf } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 export function Selector() {
     const [visible, setVisible] = useState(false);
@@ -60,12 +61,9 @@ export function Selector() {
           </div>
           }
         </div>
-        {pool &&
-        <div className="w-[100px] h-[100%]  rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer
-          duration-300 gap-1 hover:bg-gray-800">
-          <p> Month </p>
+        <div className="w-[50px] h-[50px] flex items-center justify-center border-solid border-white border-[2px] border-opacity-100 ">
+          <FaSearch className="w-[40px] h-[40px]" />
           </div>
-        }
       </div>
     </div>
     );
