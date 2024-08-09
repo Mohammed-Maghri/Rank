@@ -39,7 +39,7 @@ export function Home() {
 			setLogs(false);
 			navigate("/");
 		}
-		fetch(`${api}?campusId=${setDetails.campusId}?cursusId=${setDetails.cursusId}?pageNumber=${setDetails.pageNumber}?poolYear=${setDetails.poolYear}` ,{
+		fetch(`${api}?campusId=${setDetails.campusId}&cursusId=${setDetails.cursusId}&pageNumber=${setDetails.pageNumber}&poolYear=${setDetails.poolYear}` ,{
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
