@@ -38,7 +38,6 @@ export default function Scrol({objectvalue}) {
     console.log(path);
   };
 
-
   const fuctionFetchmore = async (url) => {
     setWait(true);
     const tok = Cookies.get('access_token');
@@ -97,7 +96,7 @@ export default function Scrol({objectvalue}) {
                 ):item.login == "mozennou" ? (
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={moz}/>
                 ):(
-                <img  className=" h-[100%] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
+                <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
                 )
               }
             </div>
