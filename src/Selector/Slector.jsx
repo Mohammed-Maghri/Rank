@@ -10,7 +10,7 @@ import { FaSearch } from "react-icons/fa";
 import { context } from "../context";
 import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-
+import Cookies from "js-cookie";
 export function Selector() {
     const [visible, setVisible] = useState(false);
     const [visible2, setVisible2] = useState(false);
@@ -20,7 +20,11 @@ export function Selector() {
     const [month, setMoth] = useState(1);
     const {all, setAll} = useContext(context);
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
-
+  
+    const functionGet = () => {
+      Cookies.set('poolYear', addyear);
+      Cookies.set('poolYear', month);
+    }
     return (
       <div className="w-[100%] h-[40px] flex items-center justify-center">
       <div className="flex items-center gap-[10px] justify-around min-w-[400px]w-[40%] h-[100%]">
@@ -47,7 +51,7 @@ export function Selector() {
             value &&
             <div  style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px]  overflow-auto flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
               
-                {pol == 0 ? (
+                {pol == 9 ? (
                   object.map((item, index) => (
                     <div key={index}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
                   <p className="text-black"> {item.promo} </p>
@@ -87,17 +91,17 @@ export function Selector() {
         duration-300 gap-1 border-solid border-white border-[2px] border-opacity-20 font-extrabold duration-700 hover:bg-yellow-500 hover:border-opacity-100 "> <p> Cursus </p> <FaChevronDown className="w-[10px] h-[10px]" />
           {visible2 &&
           <div style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px] h-[70px] flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
-            <div onClick={() => (setPol(1), console.log(pol))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setPol(9), console.log(pol))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p  className="text-black"> Pool </p>
             </div>
-            <div  onClick={() => (setPol(0), console.log(pol))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div  onClick={() => (setPol(21), console.log(pol))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Cursus </p>
             </div>
           </div>
           }
         </div>
       </div>
-      <div onClick={() => console.log(addyear, month, all)} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
+      <div onClick={() => console.log(all)} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
           <FaSearch   className="w-[15px] h-[15px] text-white" />
           </div>
     </div>
