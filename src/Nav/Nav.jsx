@@ -5,7 +5,6 @@ import { IoSettings } from "react-icons/io5";
 import pic from "../clips/mmaghri.jpg";
 import { useState } from "react";
 import {context } from "../context";
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { context } from "../context";
