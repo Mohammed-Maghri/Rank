@@ -14,6 +14,8 @@ export const functionVisible = (thevis, setthe) => {
 export function Nav() {
   const {logs, setLogs} = useContext(context);
   const {all, setAll} = useContext(context);
+  const {enable, setEnable} = useContext(context);
+
   const navigate =  useNavigate();
   const functionLogout = () => {
     setLogs(false);
@@ -27,6 +29,7 @@ export function Nav() {
     const functioLOGOUT = (seter) => {
       seter(false);
       Cookies.remove('access_token');
+      setEnable(false);
       navigate("/");
     }
     return ( 
