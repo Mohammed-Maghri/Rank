@@ -44,11 +44,11 @@ export function Home() {
 				'Authorization': `Bearer ${testtok}`
 			}
 		}).then((res) => {
-			if (res.status >= 400 && res.status < 600) {
-				setLogs(false);
-				Cookies.remove('access_token');
-				window.location.href =  "https://1337leet.vercel.app/";
-			}
+			// if (res.status >= 400 && res.status < 600) {
+			// 	setLogs(false);
+			// 	Cookies.remove('access_token');
+			// 	window.location.href =  "https://1337leet.vercel.app/";
+			// }
 			return res.json();
 		}).then((data) => {
 			setAll(data);
@@ -56,7 +56,7 @@ export function Home() {
 				setLogs(true);
 			});
 		}).catch((err) => {
-			window.location.href =  "https://1337leet.vercel.app/";
+			// window.location.href =  "https://1337leet.vercel.app/";
 			console.log("erro has been occured", err);
 		})
 	}
