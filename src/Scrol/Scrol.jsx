@@ -65,6 +65,9 @@ export default function Scrol({objectvalue}) {
         console.log("Error has been occured", err);
       })
   }
+  const cardSlect = (id) => {
+    console.log(id);
+  }
   console.log(all);
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
     return(
@@ -74,7 +77,7 @@ export default function Scrol({objectvalue}) {
 
         {
           all.slice(0).map((item, index) => (
-            <div  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer">
+            <div onClick={() => (cardSlect(index))}  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer">
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
