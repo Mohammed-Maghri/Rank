@@ -52,8 +52,8 @@ export function Selector() {
           duration-300 gap-1 hover:bg-gray-800"> <p> Cursus </p> <FaChevronDown className="w-[10px] h-[10px]" />
             {visible2 &&
             <div style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px] h-[70px] flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
-              <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
-                <p onClick={pool == false ? (setPool(true), setVisible(false), setValue(false), setVisible2(false)) : setPool(false)} className="text-black"> Pool </p>
+              <div onClick={pool == false ? (setPool(true), setVisible(false), setValue(false), setVisible2(false)) : setPool(false)}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+                <p className="text-black"> Pool </p>
               </div>
               <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
                 <p className="text-black"> Cursus </p>
