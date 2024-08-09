@@ -88,9 +88,6 @@ useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
 	console.log(test.code);
-	if (enable == false) {
-		window.location.href = "https://1337leet.vercel.app/";
-	}
 	if (Cookies.get('access_token') == undefined) {
 		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 	}

@@ -14,7 +14,6 @@ export default function Auth() {
         window.open(path, '_blank');
     }
     const cally = (thepath) => {
-        setEnable(true);
         window.location.href = thepath;
     }
 
