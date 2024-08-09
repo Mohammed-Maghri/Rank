@@ -71,12 +71,20 @@ export function Selector() {
             value &&
             <div  style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px]  overflow-auto flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
               
-                {pol == 21 ? (
-                  object.map((item, index) => (
-                  <div  key={index}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
-                  <p className="text-black"> {item.promo} </p>
+              {pol == 0 ? (
+                    <div  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer ">
+                       <div className="w-[100%] flex-row flex items-center justify-center  ">
+                    <div onClick={() => (setAddyear(addyear + 1))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                        <FaChevronLeft className="text-black"/>
+                    </div>
+                    <div className="w-[50%] text-black flex items-center justify-center h-[100%]">
+                      <p>{addyear}</p>
+                    </div>
+                    <div onClick={() => (addyear < 2018 ? (setAddyear(2024)) : (setAddyear(addyear - 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                        <FaChevronRight className="text-black"/>
+                    </div>
                   </div>
-                ))
+                  </div>
               ):(
                 <div className=" w-[95%] felx items-center justify-start mt-1 rounded-[10px]">
                   <div className="w-[100%] flex-row flex items-center justify-center  ">
