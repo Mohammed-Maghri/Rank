@@ -43,6 +43,7 @@ export default function Scrol({objectvalue}) {
     setWait(true);
     const tok = Cookies.get('access_token');
     setPages((pages) => (pages + 1));
+    console.log(pages);
     await fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
       method: 'GET',
       headers: {
