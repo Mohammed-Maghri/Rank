@@ -1,4 +1,6 @@
 import React from "react";
+import React , {useContext} from "react";
+
 import { IoMdLogOut } from "react-icons/io";
 import { IoSettings } from "react-icons/io5";
 import pic from "../clips/mmaghri.jpg";
@@ -7,7 +9,7 @@ import {context } from "../context";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
-import { context, useContext } from "../context";
+import { context } from "../context";
 
 import taj from "../clips/taj.jpeg";
 export const functionVisible = (thevis, setthe) => {
