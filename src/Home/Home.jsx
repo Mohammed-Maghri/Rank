@@ -29,6 +29,7 @@ export function Home() {
     const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2F1337leet.vercel.app%2Fhome&response_type=code";
 	const navigate = useNavigate();
 	const {enable, setEnable} = useContext(context);
+	const setDetails = {campusId : "", cursusId : "", pageNumber : "", poolYear : ""};
 
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
@@ -37,7 +38,7 @@ export function Home() {
 			setLogs(false);
 			navigate("/");
 		}
-		fetch(api ,{
+		fetch(`${api}?campusId=${setDetails.campusId}?cursusId=${setDetails.cursusId}?pageNumber=${setDetails.pageNumber}?poolYear=${setDetails.poolYear}` ,{
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -71,8 +72,10 @@ export function Home() {
 		}).then(response =>  response.json())
 		.then(data => {
 			console.log(data);
-			console.log("tok : ", data.access_token);
-			console.log("heere");
+			setDetails.campusId = data.campusId;
+			setDetails.cursusId = data.cursusId;
+			setDetails.pageNumber = data.pageNumber;
+			setDetails.poolYear = data.poolYear;
 			if (data.access_token == undefined) {
 				setLogs(false);
 				window.location.href =  "https://1337leet.vercel.app/";
