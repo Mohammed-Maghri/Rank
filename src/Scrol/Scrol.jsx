@@ -21,7 +21,7 @@ import first from "../clips/crown.png"
 import sec from "../clips/22.png"
 import third from "../clips/33.png"
 import king from "../clips/pass.png"
-
+import moz from "../clips/moz.png"
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
     const {logs, setLogs} = useContext(context);
@@ -85,6 +85,8 @@ export default function Scrol({objectvalue}) {
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={loua}/>
                 ):item.login == "asnaji" ?(
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={asad}/>
+                ):item.login == "mozennou" ? (
+                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={moz}/>
                 ):(
                 <img  className=" h-[100%] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
                 )
