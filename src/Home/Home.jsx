@@ -77,6 +77,7 @@ export function Home() {
 			setDetails.cursusId = data.cursusId;
 			setDetails.pageNumber = data.pageNumber;
 			setDetails.poolYear = data.poolYear;
+			console.log(setDetails);
 			if (data.access_token == undefined) {
 				setLogs(false);
 				window.location.href =  "https://1337leet.vercel.app/";
