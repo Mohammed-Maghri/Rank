@@ -18,7 +18,7 @@ export function Selector() {
     const {pol, setPol} = useContext(context);
     const [addyear, setAddyear] = useState(2018);
     const [month, setMoth] = useState(1);
-    const [all, setAll] = useContext(context);
+    const {all, setAll} = useContext(context);
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
 
     return (
