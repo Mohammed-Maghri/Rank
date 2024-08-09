@@ -61,7 +61,7 @@ export function Selector() {
           </div>
           }
         </div>
-        <div className="w-[50px] h-[50px] flex items-center justify-center border-solid border-white border-[2px] border-opacity-20">
+        <div className="w-[30px] h-[30px] flex items-center justify-center border-solid border-white border-[2px] border-opacity-20">
           <FaSearch className="w-[20px] h-[20px] text-white" />
           </div>
       </div>
