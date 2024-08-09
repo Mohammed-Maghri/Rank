@@ -32,7 +32,12 @@ export default function Scrol({objectvalue}) {
     const {all, setAll} = useContext(context);
     const {pages, setPages} = useContext(context);
     const [wait, setWait] = useState(false);
+<<<<<<< HEAD
     const {show, setShow} = useContext(context);
+=======
+    const {loadingstate, setLoadingstate} = useContext(context);
+
+>>>>>>> 99840bee757f7702d19121bfb5c68f342dcc5e32
     const obj = {pageNumber : pages};
     let color = "white";
   const functionClick = (path) => {
@@ -40,12 +45,12 @@ export default function Scrol({objectvalue}) {
     console.log(path);
   };
 
-
   const fuctionFetchmore = async (url) => {
     setWait(true);
     const tok = Cookies.get('access_token');
-    setPages(pages + 1);
-    await fetch(`${url}?pageNumber=${pages}`, {
+    setPages((pages) => (pages + 1));
+    console.log(pages);
+    await fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -105,7 +110,7 @@ export default function Scrol({objectvalue}) {
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
-            <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[120]">
+            <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[118px]">
               {item.login == "mmaghri" ? (
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
                 ):item.login == "mlouazir" ? (
@@ -115,7 +120,11 @@ export default function Scrol({objectvalue}) {
                 ):item.login == "mozennou" ? (
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={moz}/>
                 ):(
-                <img  className=" h-[100%] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
+                  loadingstate == false ?(
+                  <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
+                  ):(
+                    <div className="skeleton h-[105px] w-32"></div>
+                  )
                 )
               }
             </div>

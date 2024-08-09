@@ -29,15 +29,19 @@ export function Home() {
     const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2F1337leet.vercel.app%2Fhome&response_type=code";
 	const navigate = useNavigate();
 	const {enable, setEnable} = useContext(context);
+	const {poolYear, setPoolYear} = useContext(context);
+	const {campusId, setCampusId} = useContext(context);
+	const {cursusId, setCursusId} = useContext(context);
 
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		console.log("Tok From : ", testtok);
+		console.log(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${Cookies.get('pageNumber')}&poolYear=${Cookies.get('poolYear')}`);
 		if (testtok == undefined) {
 			setLogs(false);
 			navigate("/");
 		}
-		fetch(api ,{
+		fetch(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${Cookies.get('pageNumber')}&poolYear=${Cookies.get('poolYear')}` ,{
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -56,7 +60,7 @@ export function Home() {
 				setLogs(true);
 			});
 		}).catch((err) => {
-			window.location.href =  "https://1337leet.vercel.app/";
+			// window.location.href =  "https://1337leet.vercel.app/";
 			console.log("erro has been occured", err);
 		})
 	}
@@ -70,8 +74,16 @@ export function Home() {
 			body: await JSON.stringify(test),
 		}).then(response =>  response.json())
 		.then(data => {
-			console.log("tok : ", data.access_token);
-			console.log("heere");
+			console.log(data);
+			setPoolYear(data.poolYear);
+			setCampusId(data.campusId);
+			setCursusId(data.cursusId);
+			console.log(data.poolYear, data.campusId, data.cursusId);
+			console.log(" ++++ ");
+			Cookies.set("campusId", data.campusId);
+			Cookies.set("cursusId", data.cursusId);
+			Cookies.set("pageNumber", data.pageNumber);
+			Cookies.set("poolYear", data.poolYear);
 			if (data.access_token == undefined) {
 				setLogs(false);
 				window.location.href =  "https://1337leet.vercel.app/";
@@ -88,6 +100,7 @@ useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
 	console.log(test.code);
+<<<<<<< HEAD
 	// if (Cookies.get('access_token') == undefined) {
 	// 	functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 	// }
@@ -99,6 +112,19 @@ useEffect(  () => {
 	// 	await console.log("ee test " , Cookies.get('access_token'));
 	// 	await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
 	// }, 2000);
+=======
+	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == "" 
+	|| Cookies.get('cursusId') == "" || Cookies.get('pageNumber') == "" || Cookies.get('poolYear') == "") {
+		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
+	}
+}, [])
+
+useEffect( async () => {
+	setTimeout(async () => {
+		await console.log("ee test " , Cookies.get('access_token'));
+		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
+	}, 2000);
+>>>>>>> 99840bee757f7702d19121bfb5c68f342dcc5e32
 }, [])
 
 return (
