@@ -34,6 +34,7 @@ export function Home() {
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		console.log("Tok From : ", testtok);
+		console.log(`${api}?campusId=${setDetails.campusId}?cursusId=${setDetails.cursusId}?pageNumber=${setDetails.pageNumber}?poolYear=${setDetails.poolYear}`);
 		if (testtok == undefined) {
 			setLogs(false);
 			navigate("/");
