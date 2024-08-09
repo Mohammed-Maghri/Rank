@@ -11,6 +11,8 @@ export function Selector() {
     const [visible, setVisible] = useState(false);
     const [visible2, setVisible2] = useState(false);
     const [ value, setValue ] = useState(false);
+    const [pool , setPool] = useState(false);
+
     const object = [{promo : 2013} , {promo : 2014}, {promo : 2015}, {promo : 2016}, {promo: 2017}, {promo: 2018}, 
       {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
     return (
@@ -51,7 +53,7 @@ export function Selector() {
             {visible2 &&
             <div style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px] h-[70px] flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
               <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
-                <p className="text-black"> Pool </p>
+                <p onClick={pool == false ? (setPool(true), setVisible(false), setValue(false), setVisible2(false)) : setPool(false)} className="text-black"> Pool </p>
               </div>
               <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
                 <p className="text-black"> Cursus </p>
@@ -59,7 +61,12 @@ export function Selector() {
             </div>
             }
           </div>
-          
+          {pool &&
+          <div className="w-[100px] h-[100%]  rounded-[5px] bg-gray-900 flex items-center justify-center text-sm font-bars2 text-white cursor-pointer
+            duration-300 gap-1 hover:bg-gray-800">
+            <p> Month </p>
+            </div>
+          }
         </div>
       </div>
     );
