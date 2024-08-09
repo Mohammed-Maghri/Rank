@@ -65,10 +65,16 @@ export default function Scrol({objectvalue}) {
         console.log("Error has been occured", err);
       })
   }
-  const cardSlect = (id) => {
-    console.log(id);
-  }
   console.log(all);
+  const cardSlect = (id) => {
+    console.log(id + 1);
+    console.log(all[id].profileImage);
+    console.log(all[id].login);
+    console.log(all[id].firstName);
+    console.log(all[id].lastName);
+    console.log(all[id].level);
+    console.log(all[id].location);
+  }
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
     return(
         <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
