@@ -15,7 +15,7 @@ const MycontextProvider = ({children}) =>{
     const [pol, setPol] = useState(0);
     
     return (
-        <context.Provider value={{campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
+        <context.Provider value={{pol, setPol,campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
         poolYear  ,enable , setEnable, pages, setPages, all, setAll, logs, setLogs, tok, setTok}}>
             {children}
         </context.Provider>
