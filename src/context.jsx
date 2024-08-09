@@ -9,8 +9,9 @@ const MycontextProvider = ({children}) =>{
     const [tok, setTok] = useState("");
     const [enable, setEnable] = useState(false);
     const [pages, setPages] = useState(2);
+    const setDetails = {campusId : "", cursusId : "", pageNumber : "", poolYear : ""};
     return (
-        <context.Provider value={{enable , setEnable, pages, setPages, all, setAll, logs, setLogs, tok, setTok}}>
+        <context.Provider value={{setDetails ,enable , setEnable, pages, setPages, all, setAll, logs, setLogs, tok, setTok}}>
             {children}
         </context.Provider>
     );
