@@ -18,6 +18,12 @@ module.exports = {
         'xm' : '300px',
         'xf' : '400px',
       },
+      keyframes: {
+        fadeout: {
+          '0%': { opacity: '1' }, // Start fully opaque
+          '100%': { opacity: '0' }, // End fully transparent
+        },
+      },
     },
   },
   plugins: [
