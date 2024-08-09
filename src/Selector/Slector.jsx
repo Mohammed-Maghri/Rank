@@ -73,7 +73,7 @@ export function Selector() {
                     <div className="w-[40%] text-black flex items-center justify-center h-[100%]">
                       <p>{month}</p>
                     </div>
-                    <div onClick={() => (month <= 0 ? (setMoth(12)) : (setMoth(month - 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (month <= 1 ? (setMoth(12)) : (setMoth(month - 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronRight className="text-black"/>
                     </div>
                   </div>
