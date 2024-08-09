@@ -12,10 +12,11 @@ const MycontextProvider = ({children}) =>{
     const [campusId, setCampusId] = useState("");
     const [cursusId, setCursusId] = useState("");
     const [poolYear, setPoolYear] = useState("");
+    const [loadingstate, setLoadingstate] = useState(false);
     const [pol, setPol] = useState(0);
     
     return (
-        <context.Provider value={{pol, setPol,campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
+        <context.Provider value={{loadingstate , setLoadingstate, pol, setPol,campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
         poolYear  ,enable , setEnable, pages, setPages, all, setAll, logs, setLogs, tok, setTok}}>
             {children}
         </context.Provider>
