@@ -87,7 +87,7 @@ export default function Scrol({objectvalue}) {
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
-            <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[120]">
+            <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[120px]">
               {item.login == "mmaghri" ? (
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
                 ):item.login == "mlouazir" ? (
