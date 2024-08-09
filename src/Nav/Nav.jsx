@@ -23,8 +23,8 @@ export function Nav() {
     Cookies.remove('cursusId');
     Cookies.remove('poolYear');
     Cookies.remove('month');
-    setLogs(false);
     console.log("Logout");
+    setLogs(false);
     window.location.href = "https://1337leet.vercel.app/";
   }
   const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
