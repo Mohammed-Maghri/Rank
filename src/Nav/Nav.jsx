@@ -20,6 +20,11 @@ export function Nav() {
   const functionLogout = () => {
     setLogs(false);
     window.location.href = "/";
+    Cookies.remove('access_token');
+    Cookies.remove('campusId');
+    Cookies.remove('cursusId');
+    Cookies.remove('poolYear');
+    Cookies.remove('month');
     console.log("Logout");
   }
   const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
@@ -28,11 +33,6 @@ export function Nav() {
     {year : 2018}, {year : 2019}, {year : 2020}, {year : 2021}, {year : 2022}, {year : 2023}, {year : 2024}];
     const functioLOGOUT = (seter) => {
       seter(false);
-      Cookies.remove('access_token');
-      Cookies.remove('campusId');
-      Cookies.remove('cursusId');
-      Cookies.remove('poolYear');
-      Cookies.remove('month');
       setEnable(false);
       navigate("/");
     }
