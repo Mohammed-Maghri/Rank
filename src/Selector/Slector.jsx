@@ -17,6 +17,7 @@ export function Selector() {
     const [ value, setValue ] = useState(false);
     const {pol, setPol} = useContext(context);
     const [addyear, setAddyear] = useState(2018);
+    const [campus, setCampus] = useState(Cookies.get('campusId'));
     const [month, setMoth] = useState(1);
     const {all, setAll} = useContext(context);
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
@@ -25,6 +26,7 @@ export function Selector() {
       Cookies.set('poolYear', addyear);
       Cookies.set('cursusId', pol);
       Cookies.set('month', month);
+      Cookies.set('campusId', campus);
     }
     return (
       <div className="w-[100%] h-[40px] flex items-center justify-center">
@@ -33,13 +35,13 @@ export function Selector() {
         duration-300 gap-1 border-solid border-white border-[2px] border-opacity-20  font-extrabold duration-700 hover:bg-yellow-500 hover:border-opacity-100"> <p> Campus </p> <FaChevronDown className="w-[10px] h-[10px]" />
         {visible &&
           <div style={{boxShadow : '0px 0px 3px black'}} className="w-[100px] h-[100px] flex items-center  flex-col justify-center bg-slate-50 absolute z-20 top-[125px] rounded-[10px]">
-            <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCampus(16))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Khouribga </p>
             </div>
-            <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCampus(21))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Bengrir </p>
             </div>
-            <div className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCampus(55))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Tetouan </p>
             </div>
           </div>
@@ -102,7 +104,7 @@ export function Selector() {
           }
         </div>
       </div>
-      <div onClick={() => console.log(all)} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
+      <div onClick={() => console.log(() => functionGet)} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
           <FaSearch   className="w-[15px] h-[15px] text-white" />
           </div>
     </div>
