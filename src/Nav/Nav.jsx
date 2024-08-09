@@ -18,14 +18,14 @@ export function Nav() {
 
   const navigate =  useNavigate();
   const functionLogout = () => {
-    setLogs(false);
-    window.location.href = "/";
     Cookies.remove('access_token');
     Cookies.remove('campusId');
     Cookies.remove('cursusId');
     Cookies.remove('poolYear');
     Cookies.remove('month');
+    setLogs(false);
     console.log("Logout");
+    window.location.href = "https://1337leet.vercel.app/";
   }
   const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
   const [visible, setVisible] = useState(false);
