@@ -88,25 +88,25 @@ useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
 	console.log(test.code);
-	if (Cookies.get('access_token') == undefined) {
-		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
-	}
+	// if (Cookies.get('access_token') == undefined) {
+	// 	functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
+	// }
 }, [])
 
-useEffect( async () => {
-
-	setTimeout(async () => {
-		await console.log("ee test " , Cookies.get('access_token'));
-		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
-	}, 2000);
+useEffect(  () => {
+	setLogs(false);
+	// setTimeout(async () => {
+	// 	await console.log("ee test " , Cookies.get('access_token'));
+	// 	await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
+	// }, 2000);
 }, [])
 
 return (
 	<div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">
-        {!logs &&
+        {logs &&
           <Load/>
         }
-        {logs &&
+        {!logs &&
           <>
             <Nav />
             <Selector />
