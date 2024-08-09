@@ -23,7 +23,8 @@ export function Selector() {
   
     const functionGet = () => {
       Cookies.set('poolYear', addyear);
-      Cookies.set('poolYear', month);
+      Cookies.set('cursusId', pol);
+      Cookies.set('month', month);
     }
     return (
       <div className="w-[100%] h-[40px] flex items-center justify-center">
