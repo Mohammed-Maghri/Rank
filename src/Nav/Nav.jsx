@@ -29,6 +29,10 @@ export function Nav() {
     const functioLOGOUT = (seter) => {
       seter(false);
       Cookies.remove('access_token');
+      Cookies.remove('campusId');
+      Cookies.remove('cursusId');
+      Cookies.remove('poolYear');
+      Cookies.remove('month');
       setEnable(false);
       navigate("/");
     }
