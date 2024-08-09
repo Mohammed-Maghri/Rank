@@ -24,8 +24,8 @@ export function Nav() {
     Cookies.remove('poolYear');
     Cookies.remove('month');
     console.log("Logout");
-    setLogs(false);
     window.location.href = "https://1337leet.vercel.app/";
+    setLogs(false);
   }
   const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
   const [visible, setVisible] = useState(false);
