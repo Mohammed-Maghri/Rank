@@ -78,6 +78,7 @@ export function Home() {
 			setPoolYear(data.poolYear);
 			setCampusId(data.campusId);
 			setCursusId(data.cursusId);
+			console.log(poolYear, campusId, cursusId);
 			Cookies.set("campusId", data.campusId);
 			Cookies.set("cursusId", data.cursusId);
 			Cookies.set("pageNumber", data.pageNumber);
