@@ -32,7 +32,7 @@ export function Selector() {
       Cookies.set('month', month);
       Cookies.set('campusId', campus);
       setPages((prev) => (prev + 1));
-      fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
+      fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -77,13 +77,13 @@ export function Selector() {
               {pol == 21 ? (
                     <div  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer ">
                        <div className="w-[100%] flex-row flex items-center justify-center  ">
-                    <div onClick={() => (setAddyear(addyear + 1))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (addyear < 2018 ? (setAddyear(2024)) : (setAddyear(addyear + 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronLeft className="text-black"/>
                     </div>
                     <div className="w-[50%] text-black flex items-center justify-center h-[100%]">
                       <p>{addyear}</p>
                     </div>
-                    <div onClick={() => (addyear < 2018 ? (setAddyear(2024)) : (setAddyear(addyear - 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => ((setAddyear(addyear - 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronRight className="text-black"/>
                     </div>
                   </div>
