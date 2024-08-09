@@ -30,6 +30,7 @@ export default function Scrol({objectvalue}) {
     const {all, setAll} = useContext(context);
     const {pages, setPages} = useContext(context);
     const [wait, setWait] = useState(false);
+    const {loadingstate, setLoadingstate} = useContext(context);
 
     const obj = {pageNumber : pages};
     let color = "white";
@@ -96,7 +97,11 @@ export default function Scrol({objectvalue}) {
                 ):item.login == "mozennou" ? (
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={moz}/>
                 ):(
-                <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
+                  loadingstate == false ?(
+                  <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
+                  ):(
+                    <div className="skeleton h-[100%] w-[100%]"></div>
+                  )
                 )
               }
             </div>

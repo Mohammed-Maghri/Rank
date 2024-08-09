@@ -20,6 +20,8 @@ export function Selector() {
     const [campus, setCampus] = useState(Cookies.get('campusId'));
     const [month, setMoth] = useState(1);
     const {pages, setPages} = useContext(context);
+    const {loadingstate, setLoadingstate} = useContext(context);
+
     const {all, setAll} = useContext(context);
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
   
@@ -41,6 +43,7 @@ export function Selector() {
       }).then((data) => {
         console.log(data);
         setAll(data);
+        setLoadingstate(false);
       }).catch((err) => {
         console.log(err);
       })
@@ -129,7 +132,7 @@ export function Selector() {
           }
         </div>
       </div>
-      <div onClick={() => (functionGet("https://leets1337-3f387c570577.herokuapp.com/api/v1/home"))} className="ml-4 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
+      <div onClick={() => (setLoadingstate(true), functionGet("https://leets1337-3f387c570577.herokuapp.com/api/v1/home"))} className="ml-4 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
           <FaSearch   className="w-[15px] h-[15px] text-white" />
           </div>
     </div>
