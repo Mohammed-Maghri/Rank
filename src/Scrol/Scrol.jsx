@@ -15,6 +15,12 @@ import me from "../clips/this.png";
 import loua from "../clips/loua.png";
 import asad from "../clips/asad.png";
 import Cookies from "js-cookie";
+import mma from "../clips/mmaghri.jpg"
+import cat from "../clips/taj.jpeg"
+import first from "../clips/crown.png"
+import sec from "../clips/22.png"
+import third from "../clips/33.png"
+import king from "../clips/pass.png"
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
@@ -72,7 +78,7 @@ export default function Scrol({objectvalue}) {
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
-            <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-600 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[120]">
+            <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[120]">
               {item.login == "mmaghri" ? (
                 <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
                 ):item.login == "mlouazir" ? (
@@ -87,7 +93,15 @@ export default function Scrol({objectvalue}) {
             <div style={{boxShadow: '0px 0px 5px black'}} className="flex pan items-center  flex-col justify-center h-[115px] max-h-[130px] rounded-r-[10px]  xs:w-[260px] xm:w-[520px] sm:w-[660px] md:w-[600px] lg:w-[670px] mr-[5px] bg-white">
               <div className="w-[90%] h-[100%] rounded-[10px] flex   items-center justify-start flex-row">
                 <div className=" xs:w-[70%] xf:w-[100%] sm:w-[70%] md:w-[70%] h-[100%]">
-                  <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col" > <p className="font-bars3 text-black font-extrabold"> {item.login} </p>
+                  <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col " > <p className="font-bars3 text-black gap-[10px] font-extrabold flex"> {item.login} 
+                  {item.login == "mmaghri" || item.login == "mlouazir" ? (
+
+                    <img className="w-[22px] h-[22px]  rounded-[50%] object-cover z-10 " src={king}/>
+                  ):(
+                    <></>
+                  )
+                    }
+                </p>
                   <p  className="font-bars3 text-[15px] xm:text-xs xs:text-xs  text-black font-normal"> {item.firstName + " " + item.lastName} </p> </div>
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
                     <p className="text-black font-bold "> Lvl : </p> 
@@ -103,9 +117,21 @@ export default function Scrol({objectvalue}) {
                   </div>
                 </div>
                 <div className="flex  flex-col  items-center justify-around  md:w-[30%] xf:w-[30%] xm:w-[30%] xs:w-[30%] sm:w-[30%]  duration-300 lg:w-[30%] h-[100%]">
-                  <div className="w-[35px] flex items-center bg-yellow-300 justify-center  h-[17px] duration-200 cursor-pointer rounded-[5px] hover:scale-105">
+                  <div className="w-[45px] flex items-center bg-yellow-300 justify-center gap-[2px] h-[20px] duration-200 cursor-pointer rounded-[5px] hover:scale-105">
                     <p  className="text-black font-bars3 font-extrabold"> {index + 1} </p>
+                    {index + 1 == 1 ? (
+                    <img className="w-[19px] h-[19px]  rounded-[50%] object-cover z-10 " src={first}/>
+                    ): index + 1 == 2 ? (
+                      <img className="w-[19px] h-[19px]  rounded-[50%] object-cover z-10 " src={sec}/>
+                    ):index + 1 == 3 ?(
+                      <img className="w-[19px] h-[19px]  rounded-[50%] object-cover z-10 " src={third}/>
+                    ):
+                    (
+                      <></> 
+                    )
+                    }
                   </div>
+
                   <div className="border-solid gap-1 w-[100%] h-[30px] flex items-center justify-center ">
                     {item.location != "unavailable" ?(
                     <>
