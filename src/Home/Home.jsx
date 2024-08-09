@@ -107,10 +107,10 @@ useEffect(() => {
 }, [])
 
 useEffect( async () => {
-	console.log(poolYear);
 	setTimeout(async () => {
 		await console.log("ee test " , Cookies.get('access_token'));
 		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
+		console.log(poolYear);
 	}, 2000);
 }, [])
 
