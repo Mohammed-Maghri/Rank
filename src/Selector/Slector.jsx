@@ -29,6 +29,7 @@ export function Selector() {
       Cookies.set('month', month);
       Cookies.set('campusId', campus);
       setPages(2);
+      setPages(pages + 1);
       fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
         method: 'GET',
         headers: {
