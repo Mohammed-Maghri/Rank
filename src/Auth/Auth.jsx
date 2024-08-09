@@ -4,6 +4,7 @@ import Starfield from 'react-starfield';
 import me from "../clips/this.png"
 import lou from "../clips/loua.png"
 import Cookies from "js-cookie";
+import { context } from "../context";
 
 export default function Auth() {
     const navigate = useNavigate();
