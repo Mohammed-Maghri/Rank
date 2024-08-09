@@ -22,8 +22,6 @@ import sec from "../clips/22.png"
 import third from "../clips/33.png"
 import king from "../clips/pass.png"
 import moz from "../clips/moz.png"
-import About from "../About/About";
-
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
     const {logs, setLogs} = useContext(context);
@@ -32,12 +30,8 @@ export default function Scrol({objectvalue}) {
     const {all, setAll} = useContext(context);
     const {pages, setPages} = useContext(context);
     const [wait, setWait] = useState(false);
-<<<<<<< HEAD
-    const {show, setShow} = useContext(context);
-=======
     const {loadingstate, setLoadingstate} = useContext(context);
 
->>>>>>> 99840bee757f7702d19121bfb5c68f342dcc5e32
     const obj = {pageNumber : pages};
     let color = "white";
   const functionClick = (path) => {
@@ -75,38 +69,22 @@ export default function Scrol({objectvalue}) {
   console.log(all);
   const cardSlect = (id) => {
     console.log(id + 1);
-    console.log(obaj[id].login);
-    console.log(obaj[id].firstName);
-    console.log(obaj[id].lastName);
-    console.log(obaj[id].level);
-    console.log(obaj[id].location);
+    console.log(all[id].profileImage);
+    console.log(all[id].login);
+    console.log(all[id].firstName);
+    console.log(all[id].lastName);
+    console.log(all[id].level);
+    console.log(all[id].location);
   }
-
-  const obaj = [{ login : "mmaghri" , profileImage : pic, firstName : "Mohamed", lastName : "Maghri", level : 1.5, location : "unavailable"},
-    { login : "mlouazir" , profileImage : loua, firstName : "Mohamed", lastName : "Louazir", level : 1.5, location : "unavailable"},
-    { login : "asnaji" , profileImage : asad, firstName : "Asmae", lastName : "Snaji", level : 1.5, location : "unavailable"},
-    { login : "mozennou" , profileImage : moz, firstName : "Mohamed", lastName : "Ozennou", level : 1.5, location : "unavailable"},
-    { login : "mmaghri" , profileImage : pic, firstName : "Mohamed", lastName : "Maghri", level : 1.5, location : "unavailable"},
-    { login : "cat" , profileImage : cat, firstName : "Mohamed", lastName : "Maghri", level : 1.5, location : "unavailable"} ,
-    { login : "mmaghri" , profileImage : pic, firstName : "Mohamed", lastName : "Maghri", level : 1.5, location : "unavailable"},
-    { login : "mlouazir" , profileImage : loua, firstName : "Mohamed", lastName : "Louazir", level : 1.5, location : "unavailable"},
-    { login : "asnaji" , profileImage : asad, firstName : "Asmae", lastName : "Snaji", level : 1.5, location : "unavailable"},
-    { login : "mozennou" , profileImage : moz, firstName : "Mohamed", lastName : "Ozennou", level : 1.5, location : "unavailable"},
-    { login : "mmaghri" , profileImage : pic, firstName : "Mohamed", lastName : "Maghri", level : 1.5, location : "unavailable"},
-    { login : "cat" , profileImage : cat, firstName : "Mohamed", lastName : "Maghri", level : 1.5, location : "unavailable"} 
-  ]
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
     return(
         <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
-          {show && 
-            <About/>
-          }
-        <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[10px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
-        <div className=" border-solid border-white border-white  flex items-center justify-center  flex-col  w-[100%] h-[50px] "></div>
+        <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
+        <div className=" border-solid border-white border-white  flex items-center justify-center gap-[10px] flex-col  w-[100%] h-[50px] "></div>
 
         {
-          obaj.slice(0).map((item, index) => (
-            <div onClick={() => (cardSlect(index), setShow(true))}  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 duration-500 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer hover:w-[102%] h-[140px]">
+          all.slice(0).map((item, index) => (
+            <div onClick={() => (cardSlect(index))}  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 duration-500 flex items-center justify-start w-[100%] max-w-[800px] h-[135px]  rounded-[20px] duration-500 cursor-pointer hover:w-[102%] h-[140px]">
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
