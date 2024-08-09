@@ -13,8 +13,7 @@ export function Selector() {
     const [ value, setValue ] = useState(false);
     const [pool , setPool] = useState(false);
 
-    const object = [{promo : 2013} , {promo : 2014}, {promo : 2015}, {promo : 2016}, {promo: 2017}, {promo: 2018}, 
-      {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
+    const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
     return (
       <div className="w-[100%] h-[40px] flex items-center justify-center">
       <div className="flex items-center gap-[10px] justify-around min-w-[400px]w-[40%] h-[100%]">
