@@ -43,7 +43,7 @@ export default function Scrol({objectvalue}) {
     setWait(true);
     const tok = Cookies.get('access_token');
     setPages(pages + 1);
-    await fetch(`${url}?pageNumber=${pages}`, {
+    await fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
