@@ -31,7 +31,7 @@ export function Home() {
 	const {enable, setEnable} = useContext(context);
 	const {poolYear, setPoolYear} = useContext(context);
 	const {campusId, setCampusId} = useContext(context);
-	
+	const {cursusId, setCursusId} = useContext(context);
 
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
@@ -75,6 +75,9 @@ export function Home() {
 		}).then(response =>  response.json())
 		.then(data => {
 			console.log(data);
+			setPoolYear(data.poolYear);
+			setCampusId(data.campusId);
+			setCursusId(data.cursusId);
 			Cookies.set("campusId", data.campusId);
 			Cookies.set("cursusId", data.cursusId);
 			Cookies.set("pageNumber", data.pageNumber);
