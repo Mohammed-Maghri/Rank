@@ -70,6 +70,7 @@ export function Home() {
 			body: await JSON.stringify(test),
 		}).then(response =>  response.json())
 		.then(data => {
+			console.log(data);
 			console.log("tok : ", data.access_token);
 			console.log("heere");
 			if (data.access_token == undefined) {
