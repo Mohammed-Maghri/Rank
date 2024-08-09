@@ -23,13 +23,13 @@ export function Selector() {
     const {all, setAll} = useContext(context);
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
   
-    const functionGet = (url) => {
+    const functionGet =  (url) => {
       Cookies.set('poolYear', addyear);
       Cookies.set('cursusId', pol);
       Cookies.set('month', month);
       Cookies.set('campusId', campus);
+      setPages(() => (1));
       setPages((prev) => (prev + 1));
-      setPages(pages + 1);
       fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
         method: 'GET',
         headers: {
