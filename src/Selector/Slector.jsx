@@ -19,14 +19,29 @@ export function Selector() {
     const [addyear, setAddyear] = useState(2018);
     const [campus, setCampus] = useState(Cookies.get('campusId'));
     const [month, setMoth] = useState(1);
+    const {pages, setPages} = useContext(context);
     const {all, setAll} = useContext(context);
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
   
-    const functionGet = () => {
+    const functionGet = (url) => {
       Cookies.set('poolYear', addyear);
       Cookies.set('cursusId', pol);
       Cookies.set('month', month);
       Cookies.set('campusId', campus);
+      setPages(2);
+      fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${Cookies.get('access_token')}`
+        }
+      }).then((res) => {
+        return res.json();
+      }).then((data) => {
+        console.log(data);
+      }).catch((err) => {
+        console.log(err);
+      })
     }
     return (
       <div className="w-[100%] h-[40px] flex items-center justify-center">
