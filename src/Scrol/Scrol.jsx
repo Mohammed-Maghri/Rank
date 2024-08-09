@@ -42,7 +42,7 @@ export default function Scrol({objectvalue}) {
   const fuctionFetchmore = async (url) => {
     setWait(true);
     const tok = Cookies.get('access_token');
-    setPages(pages + 1);
+    setPages((pages) => (pages + 1));
     await fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
       method: 'GET',
       headers: {

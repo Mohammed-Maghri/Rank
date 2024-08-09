@@ -26,7 +26,7 @@ export function Selector() {
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
   
     const functionGet =  (url) => {
-      setPages(() => (2));
+      setPages(2);
       Cookies.set('poolYear', addyear);
       Cookies.set('cursusId', pol);
       Cookies.set('month', month);
