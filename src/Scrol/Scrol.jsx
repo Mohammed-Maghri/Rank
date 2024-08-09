@@ -132,10 +132,13 @@ export default function Scrol({objectvalue}) {
                   </div>
                 </div>
                 <div className="w-[20%] max-w-[70px] ml-[10px] mb-[5px] flex items-center justify-center h-[100px]">
-                  { String(item.level).includes(".") ?(
-                  <p className="text-2xl font-bars3 text-black font-black "> {String(item.level).split(".")[1].substring(0, 2) + "%"} </p>
+                  {String(item.level).includes(".") ?(
+                    String(item.level).split(".")[1].substring(0, 2).length == 1 ? (
+                    <p className="text-2xl font-bars3 text-black font-black "> {String(item.level).split(".")[1].substring(0, 2) + "0" + "%"} </p>
+                    ):
+                    <p className="text-2xl font-bars3 text-black font-black "> {String(item.level).split(".")[1].substring(0, 2) + "%"} </p>
                   ):(
-                  <p className="text-2xl font-bars3 text-black font-black "> {0 + "%"} </p>
+                    <p className="text-2xl font-bars3 text-black font-black "> {0 + "%"} </p>
                   )
                   }
                 </div>
