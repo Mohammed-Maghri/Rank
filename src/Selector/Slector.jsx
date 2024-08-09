@@ -39,6 +39,7 @@ export function Selector() {
         return res.json();
       }).then((data) => {
         console.log(data);
+        setAll(data);
       }).catch((err) => {
         console.log(err);
       })
