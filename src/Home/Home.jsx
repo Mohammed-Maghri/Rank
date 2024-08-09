@@ -34,12 +34,12 @@ export function Home() {
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		console.log("Tok From : ", testtok);
-		console.log(`${api}?campusId=${setDetails.campusId}&cursusId=${setDetails.cursusId}&pageNumber=${setDetails.pageNumber}&poolYear=${setDetails.poolYear}`);
+		console.log(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${Cookies.get('pageNumber')}&poolYear=${Cookies.get('poolYear')}`);
 		if (testtok == undefined) {
 			setLogs(false);
 			navigate("/");
 		}
-		fetch(`${api}?campusId=${setDetails.campusId}&cursusId=${setDetails.cursusId}&pageNumber=${setDetails.pageNumber}&poolYear=${setDetails.poolYear}` ,{
+		fetch(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${Cookies.get('pageNumber')}&poolYear=${Cookies.get('poolYear')}` ,{
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -73,10 +73,10 @@ export function Home() {
 		}).then(response =>  response.json())
 		.then(data => {
 			console.log(data);
-			setDetails.campusId = data.campusId;
-			setDetails.cursusId = data.cursusId;
-			setDetails.pageNumber = data.pageNumber;
-			setDetails.poolYear = data.poolYear;
+			Cookies.set("campusId", data.campusId);
+			Cookies.set("cursusId", data.cursusId);
+			Cookies.set("pageNumber", data.pageNumber);
+			Cookies.set("poolYear", data.poolYear);
 			console.log(setDetails);
 			if (data.access_token == undefined) {
 				setLogs(false);
@@ -94,7 +94,8 @@ useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
 	console.log(test.code);
-	if (Cookies.get('access_token') == undefined) {
+	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == "" 
+	|| Cookies.get('cursusId') == "" || Cookies.get('pageNumber') == "" || Cookies.get('poolYear') == "") {
 		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 	}
 }, [])
