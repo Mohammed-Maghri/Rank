@@ -18,7 +18,7 @@ export function Selector() {
     const {pol, setPol} = useContext(context);
     const [addyear, setAddyear] = useState(2018);
     const [month, setMoth] = useState(1);
-
+    const [all, setAll] = useContext(context);
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
 
     return (
@@ -97,7 +97,7 @@ export function Selector() {
           }
         </div>
       </div>
-      <div onClick={() => console.log(addyear, month)} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
+      <div onClick={() => console.log(addyear, month, all)} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
           <FaSearch   className="w-[15px] h-[15px] text-white" />
           </div>
     </div>
