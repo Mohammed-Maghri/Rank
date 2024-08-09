@@ -9,9 +9,11 @@ const MycontextProvider = ({children}) =>{
     const [tok, setTok] = useState("");
     const [enable, setEnable] = useState(false);
     const [pages, setPages] = useState(2);
-    const setDetails = {campusId : "", cursusId : "", pageNumber : "", poolYear : ""};
+    const [campusId, setCampusId] = useState("");
+    const [cursusId, setCursusId] = useState("");
+    const [poolYear, setPoolYear] = useState("");
     return (
-        <context.Provider value={{setDetails ,enable , setEnable, pages, setPages, all, setAll, logs, setLogs, tok, setTok}}>
+        <context.Provider value={{campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, poolYear ,setDetails ,enable , setEnable, pages, setPages, all, setAll, logs, setLogs, tok, setTok}}>
             {children}
         </context.Provider>
     );
