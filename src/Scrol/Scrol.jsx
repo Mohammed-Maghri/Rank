@@ -100,7 +100,7 @@ export default function Scrol({objectvalue}) {
                   loadingstate == false ?(
                   <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
                   ):(
-                    <div className="skeleton h-[100%] w-[100%]"></div>
+                    <div className="skeleton h-32 w-32"></div>
                   )
                 )
               }
