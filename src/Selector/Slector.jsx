@@ -54,7 +54,7 @@ export function Selector() {
             value &&
             <div  style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px]  overflow-auto flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
               
-                {pol == 9 ? (
+                {pol == 21 ? (
                   object.map((item, index) => (
                     <div key={index}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
                   <p className="text-black"> {item.promo} </p>
@@ -104,7 +104,7 @@ export function Selector() {
           }
         </div>
       </div>
-      <div onClick={() => console.log(() => functionGet())} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
+      <div onClick={() => functionGet()} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
           <FaSearch   className="w-[15px] h-[15px] text-white" />
           </div>
     </div>
