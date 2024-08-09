@@ -124,7 +124,10 @@ export default function Scrol({objectvalue}) {
                 <div className="flex items-center justify-start w-[80%] h-[100%]">
                   <div  className="border-solid w-[100%] mb-[4px] border-black border-[2px] flex items-center justify-start rounded-[20px] h-[70%]">
                     {String(item.level).includes(".") ?(
-                    <div style={{width : `${String(item.level).split(".")[1].substring(0, 2)}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
+                      String(item.level).split(".")[1].substring(0, 2).length == 1 ? (
+                      <div style={{width : `${String(item.level).split(".")[1].substring(0, 2)}0%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
+                      ):
+                      <div style={{width : `${String(item.level).split(".")[1].substring(0, 2)}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
                     ):(
                     <div style={{width : `${0}%`}} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
                     )
