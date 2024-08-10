@@ -39,7 +39,7 @@ export function Home() {
 			setLogs(false);
 			navigate("/");
 		}
-		fetch(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${Cookies.get('pageNumber')}&poolYear=${Cookies.get('poolYear')}` ,{
+		fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}` ,{
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -78,6 +78,7 @@ export function Home() {
 			setCursusId(data.cursusId);
 			console.log(data.poolYear, data.campusId, data.cursusId);
 			console.log(" ++++ ");
+			Cookies.set("month", data.poolMonth);
 			Cookies.set("campusId", data.campusId);
 			Cookies.set("cursusId", data.cursusId);
 			Cookies.set("pageNumber", data.pageNumber);
