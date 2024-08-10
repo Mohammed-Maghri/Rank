@@ -22,6 +22,7 @@ export function Selector() {
     const {pages, setPages} = useContext(context);
     const {loadingstate, setLoadingstate} = useContext(context);
     const [changed, setChange] = useState("Cursus");
+    const [camp, setCamp] = useState("Campus");
     const {all, setAll} = useContext(context);
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
   
@@ -50,16 +51,16 @@ export function Selector() {
       <div className="w-[100%] h-[40px] flex items-center justify-center">
       <div className="flex items-center gap-[10px] justify-around min-w-[400px]w-[40%] h-[100%]">
         <div  onClick={() => (visible == false ? (setVisible(true) , setVisible2(false), setValue(false)) : (setVisible(false)))} className="w-[120px] h-[100%]  rounded-[20px]  flex items-center justify-center text-sm font-bars2 text-white  cursor-pointer  
-        duration-300 gap-1 border-solid border-white border-[2px] border-opacity-20  font-extrabold duration-700 hover:bg-yellow-500 hover:border-opacity-100"> <p> Campus </p> <FaChevronDown className="w-[10px] h-[10px]" />
+        duration-300 gap-1 border-solid border-white border-[2px] border-opacity-20  font-extrabold duration-700 hover:bg-yellow-500 hover:border-opacity-100"> <p> {camp} </p> <FaChevronDown className="w-[10px] h-[10px]" />
         {visible &&
           <div style={{boxShadow : '0px 0px 3px black'}} className="w-[100px] h-[100px] flex items-center  flex-col justify-center bg-slate-50 absolute z-20 top-[125px] rounded-[10px]">
-            <div onClick={() => (setCampus(16))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCampus("Khouribga"), setCampus(16))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Khouribga </p>
             </div>
-            <div onClick={() => (setCampus(21))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCampus("Bengrir"),setCampus(21))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Bengrir </p>
             </div>
-            <div onClick={() => (setCampus(55))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCampus("Tetouan"), setCampus(55))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Tetouan </p>
             </div>
           </div>
