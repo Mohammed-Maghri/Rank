@@ -65,7 +65,6 @@ export default function Scrol({objectvalue}) {
         console.log("Error has been occured", err);
       })
   }
-  console.log(all);
   const cardSlect = (id) => {
     console.log(id + 1);
     console.log(all[id].profileImage);
