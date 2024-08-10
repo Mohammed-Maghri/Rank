@@ -5,6 +5,7 @@ import me from "../clips/this.png"
 import lou from "../clips/loua.png"
 import Cookies from "js-cookie";
 import { context } from "../context";
+import { BsFillLightningFill } from "react-icons/bs";
 
 export default function Auth() {
     const navigate = useNavigate();
@@ -28,8 +29,18 @@ export default function Auth() {
             speedFactor={0.05}                                                                                    
             backgroundColor="black"
           />
-          <div className="w-[100%] h-[100%]
-          flex items-center justify-center absolute z-50">
+          <div className="w-[100%] h-[100%] 
+          flex items-center justify-start  flex-col absolute z-50">
+            <div className="  w-[100%] flex items-start justify-end h-[200px]">
+                <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className=" w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
+                    <div className="w-[70%] font-medium text-white text-sm font-bars2 flex items-center  justify-center h-[100%]">
+                        <p> Beta-V </p>
+                    </div>
+                    <div className="w-[20%] flex items-center justify-start text-white">
+                        <BsFillLightningFill />
+                    </div>
+                </div>
+            </div>
             <div  className="xs:w-[80%] flex items-center justify-start  rounded-[20px] h-[70%] max-w-[600px] gap-[20px] flex-col">
                 <div  className="w-[80%] flex items-end justify-center h-[30%] rounded-[10px] bg-transparent">
                     <p className="font-bars4 font-bold text-6xl text-white"> 1337Leets </p>
@@ -40,8 +51,8 @@ export default function Auth() {
                         <p className="text-yellow-400 font-bars3"> Login </p>
                     </div>
                     <div className="flex flex-col items-center justify-center  h-[100px]">
-                        <p className="font-bars2 text-white font-black text-sm">Welcome to the Rank School Students Board.</p>
-                        <p className="text-white font-bars3"> By : mmaghri && mlouazir </p>
+                        <p className="font-bars2 text-white font-black text-xs">Welcome to the Rank School Students Board.</p>
+                        <p className="text-white text-[15px] font-bars3"> By : mmaghri && mlouazir </p>
                     </div>
                     <div className="flex items-center justify-around w-[200px] h-[50px]">
                         <div  className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://github.com/MohammedMaghri')}> <img className="h-[100%] w-[100%] rounded-[50%]" src={"https://i.postimg.cc/sxMRwvbV/IMG-9256.jpg"}/> </div>
