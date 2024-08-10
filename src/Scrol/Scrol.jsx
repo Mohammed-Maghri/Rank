@@ -23,6 +23,8 @@ import third from "../clips/33.png"
 import king from "../clips/pass.png"
 import moz from "../clips/moz.png"
 import { WiDaySnow } from "react-icons/wi";
+import promo from "../clips/18.png"
+
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
     const {logs, setLogs} = useContext(context);
@@ -67,6 +69,7 @@ export default function Scrol({objectvalue}) {
   }
   const cardSlect = (id) => {
     console.log(id + 1);
+    console.log(all[id]);
     console.log(all[id].profileImage);
     console.log(all[id].login);
     console.log(all[id].firstName);
@@ -87,7 +90,7 @@ export default function Scrol({objectvalue}) {
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
-            <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[118px]">
+            <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[118px]">
               
               {loadingstate == false ? (
                 item.login == "mmaghri" ? (
@@ -101,7 +104,7 @@ export default function Scrol({objectvalue}) {
                 ):(
                   <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
                 )):(
-                    <div className="skeleton h-[105px] w-32"></div>
+                    <div className="skeleton bg-yellow-200 h-[100%] rounded-l-[20px] rounded-[0px] w-[100%]"></div>
                   )
               }
             </div>
@@ -110,12 +113,11 @@ export default function Scrol({objectvalue}) {
                 <div className=" xs:w-[70%] xf:w-[100%] sm:w-[70%] md:w-[70%] h-[100%]">
                   <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col " > <p className="font-bars3 text-black gap-[10px] font-extrabold flex"> {item.login} 
                   {item.login == "mmaghri" || item.login == "mlouazir" ? (
-
                     <img className="w-[22px] h-[22px]  rounded-[50%] object-cover z-10 " src={king}/>
                   ):(
                     <></>
                   )
-                    }
+                }
                 </p>
                   <p  className="font-bars3 text-[15px] xm:text-xs xs:text-xs  text-black font-normal"> {item.firstName + " " + item.lastName} </p> </div>
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
