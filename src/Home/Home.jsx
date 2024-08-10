@@ -115,7 +115,7 @@ useEffect( async () => {
 }, [])
 
 useEffect(() => {
-	{Cookies.get('profileImage') == undefined ? (
+	if (Cookies.get('profileImage') == undefined ) {
 			Cookies.remove('access_token'),
 			Cookies.remove('campusId'),
 			Cookies.remove('cursusId'),
@@ -125,10 +125,8 @@ useEffect(() => {
 			Cookies.remove('profileImage'),
 			setLogs(false),
 			window.location.href =  "https://1337leets.com"
-		) : (
-			setPrf(Cookies.get('profileImage'))
-		)
-	}
+	 } 
+	 else {setPrf(Cookies.get('profileImage'))}
 },[Cookies.get('profileImage')])
 return (
 	<div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">
