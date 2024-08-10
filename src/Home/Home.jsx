@@ -34,7 +34,7 @@ export function Home() {
 	const {cursusId, setCursusId} = useContext(context);
 	const {prf, setPrf} = useContext(context);
 
-	
+
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		if (testtok == undefined) {
@@ -86,6 +86,7 @@ export function Home() {
 			Cookies.set("cursusId", data.cursusId);
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
+			Cookies.set("profileImage", data.profileImage);
 			if (data.access_token == undefined) {
 				setLogs(false);
 				window.location.href =  "https://1337leets.com/";
@@ -100,7 +101,7 @@ export function Home() {
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
-	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == "" 
+	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == "" || Cookies.get('month') == ""
 	|| Cookies.get('cursusId') == "" || Cookies.get('pageNumber') == "" || Cookies.get('poolYear') == "") {
 		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 	}
@@ -113,6 +114,21 @@ useEffect( async () => {
 
 }, [])
 
+useEffect(() => {
+	Cookies.get('profileImage') == undefined ? (
+		Cookies.remove('access_token'),
+		Cookies.remove('campusId'),
+		Cookies.remove('cursusId'),
+		Cookies.remove('poolYear'),
+		Cookies.remove('month'),
+		Cookies.remove('pageNumber'),
+		Cookies.remove('profileImage'),
+		setLogs(false),
+		window.location.href =  "https://1337leets.com"
+	) : (
+		setPrf(Cookies.get('profileImage'))
+	)
+},[Cookies.get('profileImage')])
 return (
 	<div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">
         {!logs &&
