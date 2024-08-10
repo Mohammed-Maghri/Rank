@@ -74,12 +74,10 @@ export function Home() {
 			body: await JSON.stringify(test),
 		}).then(response =>  response.json())
 		.then(data => {
-			console.log(data);
 			setPrf(data.profileImage);
 			setPoolYear(data.poolYear);
 			setCampusId(data.campusId);
 			setCursusId(data.cursusId);
-			console.log(data.poolYear, data.campusId, data.cursusId);
 			console.log(" ++++ ");
 			Cookies.set("month", data.poolMonth);
 			Cookies.set("campusId", data.campusId);

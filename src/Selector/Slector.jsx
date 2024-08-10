@@ -48,7 +48,6 @@ export function Selector() {
         }
         return res.json();
       }).then((data) => {
-        console.log(data);
         setAll(data);
         setLoadingstate(false);
       }).catch((err) => {

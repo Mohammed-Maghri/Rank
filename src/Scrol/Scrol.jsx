@@ -70,14 +70,6 @@ export default function Scrol({objectvalue}) {
       })
   }
   const cardSlect = (id) => {
-    console.log(id + 1);
-    console.log(all[id]);
-    console.log(all[id].profileImage);
-    console.log(all[id].login);
-    console.log(all[id].firstName);
-    console.log(all[id].lastName);
-    console.log(all[id].level);
-    console.log(all[id].location);
     window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
   
