@@ -86,7 +86,7 @@ export default function Scrol({objectvalue}) {
             <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[118px]">
               
               {loadingstate == false ? (
-                item.login == "ymkhlou" ? (
+                item.login == "ymakhlou" ? (
                   <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={yass}/>
                 ):
                 item.login == "mmaghri" ? (
