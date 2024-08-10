@@ -24,6 +24,7 @@ import king from "../clips/pass.png"
 import moz from "../clips/moz.png"
 import { WiDaySnow } from "react-icons/wi";
 import promo from "../clips/18.png"
+import yass from "../clips/yas.png"
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
@@ -85,6 +86,9 @@ export default function Scrol({objectvalue}) {
             <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[118px]">
               
               {loadingstate == false ? (
+                item.login == "ymkhlou" ? (
+                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={yass}/>
+                ):
                 item.login == "mmaghri" ? (
                   <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
                 ):item.login == "mlouazir" ? (
