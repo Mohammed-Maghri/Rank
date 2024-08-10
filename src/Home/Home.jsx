@@ -120,7 +120,7 @@ return (
 			<Starfield
             starCount={10000}
             starColor={[255, 255, 0]}
-            speedFactor={0.08}                                                                                    
+            speedFactor={0.04}                                                                                    
             backgroundColor="black"
           />
             <Scrool  />
