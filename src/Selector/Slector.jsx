@@ -52,18 +52,18 @@ export function Selector() {
       let other = 0;
       console.log(value);
       if (check == "+") {other = value;
-        if (check == "+" && wh == "pool" && ((other + 1) == 13)) {console.log("con"); other = 1; console.log(other); setOnlyprom("Mon : " + other)}
+        if (check == "+" && wh == "pool" && ((other + 1) == 13)) {console.log("con"); other = 1; console.log(other); setOnlyprom("Month : " + other)}
         else {
           other += 1;
-          if (wh == "pool") {setOnlyprom("Mon : " + other)}
+          if (wh == "pool") {setOnlyprom("Month : " + other)}
           else {setOnlyprom(other);}
         }
         }
       else if (check == "-") {other = value;
-        if (wh  == "pool" && ((other - 1) == 0)) {console.log("Condition"); other = 12; console.log(other); setOnlyprom("Mon : " + other)}
-        else if (wh == "not") {if((other - 1) == 2017){other = 2024; console.log("l") ; setOnlyprom("Mon : " +other)}}
+        if (wh  == "pool" && ((other - 1) == 0)) {console.log("Condition"); other = 12; console.log(other); setOnlyprom("Month : " + other)}
+        else if (wh == "not") {if((other - 1) == 2017){other = 2024; console.log("l") ; setOnlyprom("Month : " +other)}}
         else {other -= 1;}
-        if (wh == "pool") {setOnlyprom("Mon : " + other)}
+        if (wh == "pool") {setOnlyprom("Month : " + other)}
         else {setOnlyprom(other);}
       other = 0;
     }}
@@ -144,7 +144,7 @@ export function Selector() {
         duration-300 gap-1 border-solid border-white border-[2px] border-opacity-20 font-extrabold duration-700 hover:bg-yellow-500 hover:border-opacity-100 "> <p> {changed} </p> <FaChevronDown className="w-[10px] h-[10px]" />
           {visible2 &&
           <div style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px] h-[70px] flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
-            <div onClick={() => (setOnlyprom("Mon : " + month) , setChange("pool"), setPol(9))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setOnlyprom("Month : " + month) , setChange("pool"), setPol(9))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p  className="text-black"> Pool </p>
             </div>
             <div  onClick={() => (setOnlyprom(addyear), setChange("Cursus"), setPol(21))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
