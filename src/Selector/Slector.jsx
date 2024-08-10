@@ -106,7 +106,7 @@ export function Selector() {
               {pol == 21 ? (
                     <div  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer ">
                        <div className="w-[100%] flex-row flex items-center justify-center  ">
-                    <div onClick={() => (setAddyear(addyear - 1) , funcSeter(addyear, "-", "not"))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (setAddyear(addyear - 1) , funcSeter(addyear - 1, "-", "not"))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronLeft className="text-black"/>
                     </div>
                     <div className="w-[50%] text-black flex items-center justify-center h-[100%]">
