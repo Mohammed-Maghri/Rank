@@ -49,7 +49,7 @@ export function Home() {
 			if (res.status >= 400 && res.status < 600) {
 				setLogs(false);
 				Cookies.remove('access_token');
-				window.location.href =  "https://1337leet.vercel.app/";
+				window.location.href =  "https://1337leets.com";
 			}
 			return res.json();
 		}).then((data) => {
