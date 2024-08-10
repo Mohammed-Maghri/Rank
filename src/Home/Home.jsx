@@ -83,7 +83,7 @@ export function Home() {
 			Cookies.set("poolYear", data.poolYear);
 			if (data.access_token == undefined) {
 				setLogs(false);
-				window.location.href =  "https://1337leet.vercel.app/";
+				window.location.href =  "https://1337leets.com/";
 			}
 			Cookies.set('access_token', data.access_token);
 			seTrue(true);
