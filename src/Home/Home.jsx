@@ -26,7 +26,7 @@ export function Home() {
 	const obj = {access_token: ""};
 	const {all, setAll} = useContext(context);
 	const [thetrue, seTrue] = useState(false);
-    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2F1337leets.com%2Fhome&response_type=code";
+    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2Fhome&response_type=code";
 	const navigate = useNavigate();
 	const {enable, setEnable} = useContext(context);
 	const {poolYear, setPoolYear} = useContext(context);
