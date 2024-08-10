@@ -32,7 +32,9 @@ export function Home() {
 	const {poolYear, setPoolYear} = useContext(context);
 	const {campusId, setCampusId} = useContext(context);
 	const {cursusId, setCursusId} = useContext(context);
+	const {prf, setPrf} = useContext(context);
 
+	
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		if (testtok == undefined) {
@@ -73,6 +75,7 @@ export function Home() {
 		}).then(response =>  response.json())
 		.then(data => {
 			console.log(data);
+			setPrf(data.profileImage);
 			setPoolYear(data.poolYear);
 			setCampusId(data.campusId);
 			setCursusId(data.cursusId);
