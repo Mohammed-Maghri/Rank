@@ -95,7 +95,6 @@ export function Home() {
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
-	console.log(test.code);
 	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == "" 
 	|| Cookies.get('cursusId') == "" || Cookies.get('pageNumber') == "" || Cookies.get('poolYear') == "") {
 		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
@@ -104,7 +103,6 @@ useEffect(() => {
 
 useEffect( async () => {
 	setTimeout(async () => {
-		await console.log("ee test " , Cookies.get('access_token'));
 		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
 	}, 2000);
 
