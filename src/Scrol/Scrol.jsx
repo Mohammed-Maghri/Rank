@@ -22,6 +22,7 @@ import sec from "../clips/22.png"
 import third from "../clips/33.png"
 import king from "../clips/pass.png"
 import moz from "../clips/moz.png"
+import { WiDaySnow } from "react-icons/wi";
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
     const {logs, setLogs} = useContext(context);
@@ -75,6 +76,7 @@ export default function Scrol({objectvalue}) {
     console.log(all[id].lastName);
     console.log(all[id].level);
     console.log(all[id].location);
+    window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
     return(
