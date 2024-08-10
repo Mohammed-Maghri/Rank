@@ -29,11 +29,9 @@ export default function Auth() {
             backgroundColor="black"
           />
           <div className="w-[100%] h-[100%]
-          flex items-center justify-center">
-            <div  className="xs:w-[80%] flex
-            items-center justify-start  rounded-[20px]  h-[70%] bg-transparent 
-             max-w-[600px] gap-[20px] flex-col">
-                <div  className="w-[80%] flex items-end justify-center h-[30%] rounded-[10px] bg-black">
+          flex items-center justify-center absolute z-50">
+            <div  className="xs:w-[80%] flex items-center justify-start  rounded-[20px] h-[70%] max-w-[600px] gap-[20px] flex-col">
+                <div  className="w-[80%] flex items-end justify-center h-[30%] rounded-[10px] bg-transparent">
                     <p className="font-bars4 font-bold text-6xl text-white"> 1337Leets </p>
                 </div>
                 <div className="flex items-center min-w-[300px] flex-col justify-start  w-[80%] h-[200px]">
@@ -42,7 +40,7 @@ export default function Auth() {
                         <p className="text-yellow-400 font-bars3"> Login </p>
                     </div>
                     <div className="flex flex-col items-center justify-center  h-[100px]">
-                        <p className="font-bars2 text-white font-black text-sm font-light">Welcome to the Rank School Students Board.</p>
+                        <p className="font-bars2 text-white font-black text-sm">Welcome to the Rank School Students Board.</p>
                         <p className="text-white font-bars3"> By : mmaghri && mlouazir </p>
                     </div>
                     <div className="flex items-center justify-around w-[200px] h-[50px]">
