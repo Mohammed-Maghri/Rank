@@ -47,7 +47,7 @@ export default function Scrol({objectvalue}) {
     setWait(true);
     const tok = Cookies.get('access_token');
     setPages((pages) => (pages + 1));
-    await fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
+    await fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export default function Scrol({objectvalue}) {
         if (res.status >= 400 && res.status < 600) {
           setLogs(false);
           Cookies.remove('access_token');
-          window.location.href = "https://1337leet.vercel.app/";
+          window.location.href = "https://1337leets.com";
         }
         return  res.json();
       }).then((data) => {
