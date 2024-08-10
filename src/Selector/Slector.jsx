@@ -48,6 +48,25 @@ export function Selector() {
         console.log(err);
       })
     }
+    const funcSeter =  (value, check, wh) => {
+      let other = 0;
+      console.log(value);
+      if (check == "+") {other = value;
+        if (check == "+" && wh == "pool" && ((other + 1) == 13)) {console.log("con"); other = 1; console.log(other); setOnlyprom("Mon : " + other)}
+        else {
+          other += 1;
+          if (wh == "pool") {setOnlyprom("Mon : " + other)}
+          else {setOnlyprom(other);}
+        }
+        }
+      else if (check == "-") {other = value;
+        if (wh  == "pool" && ((other - 1) == 0)) {console.log("Condition"); other = 12; console.log(other); setOnlyprom("Mon : " + other)}
+        else if (wh == "not") {if((other - 1) == 2017){other = 2024; console.log("l") ; setOnlyprom("Mon : " +other)}}
+        else {other -= 1;}
+        if (wh == "pool") {setOnlyprom("Mon : " + other)}
+        else {setOnlyprom(other);}
+      other = 0;
+    }}
     return (
       <div className="w-[100%] h-[40px] flex items-center justify-center">
       <div className="flex items-center gap-[10px] justify-around min-w-[400px]w-[40%] h-[100%]">
@@ -80,13 +99,13 @@ export function Selector() {
               {pol == 21 ? (
                     <div  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer ">
                        <div className="w-[100%] flex-row flex items-center justify-center  ">
-                    <div onClick={() => (setOnlyprom(addyear), setAddyear(addyear - 1))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (setAddyear(addyear - 1) , funcSeter(addyear, "-", "not"))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronLeft className="text-black"/>
                     </div>
                     <div className="w-[50%] text-black flex items-center justify-center h-[100%]">
                       <p>{addyear}</p>
                     </div>
-                    <div onClick={() => (setOnlyprom(addyear), addyear < 2018 ? (setAddyear(2024)) : (setAddyear(addyear + 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (addyear < 2018 ? (setAddyear(2024)) : (setAddyear(addyear + 1)), funcSeter(addyear, "+", "not"))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronRight className="text-black"/>
                     </div>
                   </div>
@@ -94,24 +113,24 @@ export function Selector() {
               ):(
                 <div className=" w-[95%] felx items-center justify-start mt-1 rounded-[10px]">
                   <div className="w-[100%] flex-row flex items-center justify-center  ">
-                    <div onClick={() => (setOnlyprom(addyear + "/" + month), setAddyear(addyear + 1))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (setAddyear(addyear + 1))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronLeft className="text-black"/>
                     </div>
                     <div className="w-[50%] text-black flex items-center justify-center h-[100%]">
                       <p>{addyear}</p>
                     </div>
-                    <div onClick={() => (setOnlyprom(addyear + "/" + month),addyear < 2018 ? (setAddyear(2024)) : (setAddyear(addyear - 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (addyear == 2018 ? (setAddyear(2024)) : (setAddyear(addyear - 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronRight className="text-black"/>
                     </div>
                   </div>
                   <div className="w-[100%] flex-row flex items-center justify-center h-[30px]">
-                    <div onClick={() => (setOnlyprom(addyear + "/" + month) , month > 12 ? (setMoth(0)) : (setMoth(month + 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (month == 12 ? (setMoth(1)) : (setMoth(month + 1)), funcSeter((month), "+", "pool"))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronLeft className="text-black"/>
                     </div>
                     <div className="w-[40%] text-black flex items-center justify-center h-[100%]">
                       <p>{month}</p>
                     </div>
-                    <div onClick={() => (setOnlyprom(addyear + "/" + month), month == 1 ? (setMoth(12)) : (setMoth(month - 1)))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
+                    <div onClick={() => (month == 1 ? (setMoth(12)) : (setMoth(month - 1)), funcSeter((month), "-", "pool"))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronRight className="text-black"/>
                     </div>
                   </div>
@@ -125,7 +144,7 @@ export function Selector() {
         duration-300 gap-1 border-solid border-white border-[2px] border-opacity-20 font-extrabold duration-700 hover:bg-yellow-500 hover:border-opacity-100 "> <p> {changed} </p> <FaChevronDown className="w-[10px] h-[10px]" />
           {visible2 &&
           <div style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px] h-[70px] flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
-            <div onClick={() => (setOnlyprom(addyear + "/" + month) , setChange("pool"), setPol(9))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setOnlyprom("Mon : " + month) , setChange("pool"), setPol(9))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p  className="text-black"> Pool </p>
             </div>
             <div  onClick={() => (setOnlyprom(addyear), setChange("Cursus"), setPol(21))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
