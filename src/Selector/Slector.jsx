@@ -12,18 +12,19 @@ import { FaChevronLeft } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import Cookies from "js-cookie";
 export function Selector() {
-    const [visible, setVisible] = useState(false);
-    const [visible2, setVisible2] = useState(false);
-    const [ value, setValue ] = useState(false);
-    const {pol, setPol} = useContext(context);
-    const [addyear, setAddyear] = useState(2018);
-    const [campus, setCampus] = useState(Cookies.get('campusId'));
-    const [month, setMoth] = useState(1);
-    const {pages, setPages} = useContext(context);
-    const {loadingstate, setLoadingstate} = useContext(context);
-    const [changed, setChange] = useState("Cursus");
-    const [camp, setCamp] = useState("Campus");
-    const {all, setAll} = useContext(context);
+  const [visible, setVisible] = useState(false);
+  const [visible2, setVisible2] = useState(false);
+  const [ value, setValue ] = useState(false);
+  const {pol, setPol} = useContext(context);
+  const [addyear, setAddyear] = useState(2018);
+  const [campus, setCampus] = useState(Cookies.get('campusId'));
+  const [month, setMoth] = useState(1);
+  const {pages, setPages} = useContext(context);
+  const {loadingstate, setLoadingstate} = useContext(context);
+  const [changed, setChange] = useState("Cursus");
+  const [camp, setCamp] = useState("Campus");
+  const {all, setAll} = useContext(context);
+  const [onlyprom, setOnlyprom] = useState("Promo");
     const object = [{promo: 2018}, {promo: 2019}, {promo: 2020}, {promo: 2021}, {promo: 2022}, {promo: 2023}, {promo: 2024}];
   
     const functionGet =  (url) => {
