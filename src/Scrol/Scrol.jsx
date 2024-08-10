@@ -79,20 +79,7 @@ export default function Scrol({objectvalue}) {
     console.log(all[id].location);
     window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
-  useEffect(() => {
-    if (Cookies.get('profileImage') == undefined ) {
-        Cookies.remove('access_token');
-        Cookies.remove('campusId');
-        Cookies.remove('cursusId');
-        Cookies.remove('poolYear');
-        Cookies.remove('month');
-        Cookies.remove('pageNumber');
-        Cookies.remove('profileImage');
-        setLogs(false);
-        window.location.href =  "https://1337leets.com";
-     } 
-     else {setPrf(Cookies.get('profileImage'));}
-  },[Cookies.get('profileImage')])
+  
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
   useEffect(() => {
     {
