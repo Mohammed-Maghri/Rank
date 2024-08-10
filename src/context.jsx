@@ -13,7 +13,7 @@ const MycontextProvider = ({children}) =>{
     const [cursusId, setCursusId] = useState("");
     const [poolYear, setPoolYear] = useState("");
     const [loadingstate, setLoadingstate] = useState(false);
-    const [pol, setPol] = useState(0);
+    const [pol, setPol] = useState(21);
     
     return (
         <context.Provider value={{loadingstate , setLoadingstate, pol, setPol,campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
