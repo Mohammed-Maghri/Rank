@@ -54,13 +54,13 @@ export function Selector() {
         duration-300 gap-1 border-solid border-white border-[2px] border-opacity-20  font-extrabold duration-700 hover:bg-yellow-500 hover:border-opacity-100"> <p> {camp} </p> <FaChevronDown className="w-[10px] h-[10px]" />
         {visible &&
           <div style={{boxShadow : '0px 0px 3px black'}} className="w-[100px] h-[100px] flex items-center  flex-col justify-center bg-slate-50 absolute z-20 top-[125px] rounded-[10px]">
-            <div onClick={() => (setCampus("Khouribga"), setCampus(16))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCamp("Khouribga"), setCampus(16))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Khouribga </p>
             </div>
-            <div onClick={() => (setCampus("Bengrir"),setCampus(21))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCamp("Bengrir"),setCampus(21))}  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Bengrir </p>
             </div>
-            <div onClick={() => (setCampus("Tetouan"), setCampus(55))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+            <div onClick={() => (setCamp("Tetouan"), setCampus(55))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Tetouan </p>
             </div>
           </div>
