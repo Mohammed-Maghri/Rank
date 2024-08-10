@@ -32,7 +32,7 @@ export function Selector() {
       Cookies.set('cursusId', pol);
       Cookies.set('month', month);
       Cookies.set('campusId', campus);
-      fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}`, {
+      fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.set('month', month)}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
