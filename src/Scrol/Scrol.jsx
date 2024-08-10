@@ -88,22 +88,22 @@ export default function Scrol({objectvalue}) {
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
-            <div style={{borderRight : '0px'}} className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[118px]">
-              {item.login == "mmaghri" ? (
-                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
+            <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[20px] md:w-[118px] md:min-w-[118px] h-[118px]">
+              
+              {loadingstate == false ? (
+                item.login == "mmaghri" ? (
+                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
                 ):item.login == "mlouazir" ? (
-                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={loua}/>
+                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={loua}/>
                 ):item.login == "asnaji" ?(
-                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={asad}/>
+                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={asad}/>
                 ):item.login == "mozennou" ? (
-                <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={moz}/>
+                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={moz}/>
                 ):(
-                  loadingstate == false ?(
                   <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
-                  ):(
+                )):(
                     <div className="skeleton h-[105px] w-32"></div>
                   )
-                )
               }
             </div>
             <div style={{boxShadow: '0px 0px 5px black'}} className="flex pan items-center  flex-col justify-center h-[115px] max-h-[130px] rounded-r-[10px]  xs:w-[260px] xm:w-[520px] sm:w-[660px] md:w-[600px] lg:w-[670px] mr-[5px] bg-white">
