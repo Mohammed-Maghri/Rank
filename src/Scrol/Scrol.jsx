@@ -24,7 +24,6 @@ import king from "../clips/pass.png"
 import moz from "../clips/moz.png"
 import { WiDaySnow } from "react-icons/wi";
 import promo from "../clips/18.png"
-import yass from "../clips/yas.png"
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
@@ -35,6 +34,7 @@ export default function Scrol({objectvalue}) {
     const {pages, setPages} = useContext(context);
     const [wait, setWait] = useState(false);
     const {loadingstate, setLoadingstate} = useContext(context);
+    const [forloads, setForloads] = useState(false);
 
     const obj = {pageNumber : pages};
     let color = "white";
@@ -47,7 +47,7 @@ export default function Scrol({objectvalue}) {
     setWait(true);
     const tok = Cookies.get('access_token');
     setPages((pages) => (pages + 1));
-    await fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}`, {
+    await fetch(`${url}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${pages}&poolYear=${Cookies.get('poolYear')}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -57,7 +57,7 @@ export default function Scrol({objectvalue}) {
         if (res.status >= 400 && res.status < 600) {
           setLogs(false);
           Cookies.remove('access_token');
-          window.location.href = "https://1337leets.com";
+          window.location.href = "https://1337leet.vercel.app/";
         }
         return  res.json();
       }).then((data) => {
@@ -69,14 +69,44 @@ export default function Scrol({objectvalue}) {
       })
   }
   const cardSlect = (id) => {
+    console.log(id + 1);
+    console.log(all[id]);
+    console.log(all[id].profileImage);
+    console.log(all[id].login);
+    console.log(all[id].firstName);
+    console.log(all[id].lastName);
+    console.log(all[id].level);
+    console.log(all[id].location);
     window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
+
   console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
+  useEffect(() => {
+    {
+      all.length == 0 ? (
+        setForloads(false)
+      ):(
+        setForloads(true)
+      )
+      }
+  },[])
     return(
         <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
         <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
         <div className=" border-solid border-white  flex items-center justify-center gap-[10px] flex-col  w-[100%] h-[50px] "></div>
-
+        {!forloads &&
+          <div className="flex items-center justify-start  w-[100%] flex-col h-[100%]">
+            {loadingstate == false ? (
+            <div className=" flex items-center justify-center w-[100%]"> 
+              <div className="divider  text-white w-[80%] h-[50px]  font-extrabold divider-warning">No resources found !</div>
+              </div>
+              ):(
+              <div className=" flex items-center justify-center w-[100%] h-[200px]" >
+                <span className="loading loading-ball w-[120px] h-[120px] text-yellow-300 loading-lg"></span>
+                </div>
+              )}
+          </div>
+        }
         {
           all.slice(0).map((item, index) => (
             <div onClick={() => (cardSlect(index))}  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] rounded-[20px] duration-500 cursor-pointer hover:w-[102%] h-[140px]">
@@ -86,9 +116,6 @@ export default function Scrol({objectvalue}) {
             <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[118px]">
               
               {loadingstate == false ? (
-                item.login == "ymakhlou" ? (
-                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={yass}/>
-                ):
                 item.login == "mmaghri" ? (
                   <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
                 ):item.login == "mlouazir" ? (
@@ -189,6 +216,8 @@ export default function Scrol({objectvalue}) {
           </div>
           ))
         }
+        {
+          forloads &&
         <div className="h-[100px] w-[100%] flex items-center justify-center">
           {!wait &&
             <button onClick={() => fuctionFetchmore("https://leets1337-3f387c570577.herokuapp.com/api/v1/home")} className="btn btn-outline btn-warning">Load More</button>
@@ -197,6 +226,7 @@ export default function Scrol({objectvalue}) {
           <span className="loading loading-dots bg-yellow-500 loading-lg"></span>
           }
         </div>
+        }
         </div>
         </div>
     );
