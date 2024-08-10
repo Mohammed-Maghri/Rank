@@ -35,8 +35,6 @@ export function Home() {
 
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
-		console.log("Tok From : ", testtok);
-		console.log(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${Cookies.get('pageNumber')}&poolYear=${Cookies.get('poolYear')}`);
 		if (testtok == undefined) {
 			setLogs(false);
 			navigate("/");
@@ -74,7 +72,6 @@ export function Home() {
 			body: await JSON.stringify(test),
 		}).then(response =>  response.json())
 		.then(data => {
-			console.log(data);
 			setPoolYear(data.poolYear);
 			setCampusId(data.campusId);
 			setCursusId(data.cursusId);
@@ -89,7 +86,6 @@ export function Home() {
 				window.location.href =  "https://1337leet.vercel.app/";
 			}
 			Cookies.set('access_token', data.access_token);
-			console.log(Cookies.get('access_token'));
 			seTrue(true);
 		}).catch((error) => {
 			console.log("Error in fetching ", error);
