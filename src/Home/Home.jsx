@@ -115,19 +115,20 @@ useEffect( async () => {
 }, [])
 
 useEffect(() => {
-	Cookies.get('profileImage') == undefined ? (
-		Cookies.remove('access_token'),
-		Cookies.remove('campusId'),
-		Cookies.remove('cursusId'),
-		Cookies.remove('poolYear'),
-		Cookies.remove('month'),
-		Cookies.remove('pageNumber'),
-		Cookies.remove('profileImage'),
-		setLogs(false),
-		window.location.href =  "https://1337leets.com"
-	) : (
-		setPrf(Cookies.get('profileImage'))
-	)
+	{Cookies.get('profileImage') == undefined ? (
+			Cookies.remove('access_token'),
+			Cookies.remove('campusId'),
+			Cookies.remove('cursusId'),
+			Cookies.remove('poolYear'),
+			Cookies.remove('month'),
+			Cookies.remove('pageNumber'),
+			Cookies.remove('profileImage'),
+			setLogs(false),
+			window.location.href =  "https://1337leets.com"
+		) : (
+			setPrf(Cookies.get('profileImage'))
+		)
+	}
 },[Cookies.get('profileImage')])
 return (
 	<div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">

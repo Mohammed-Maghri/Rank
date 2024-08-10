@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { useState } from "react";
 const context = createContext();
 
-const MycontextProvider = ({children}) =>{
+const MycontextProvider = ({children}) => {
     const [logs, setLogs] = useState(false);
     const [all, setAll] = useState({});
     const [tok, setTok] = useState("");
