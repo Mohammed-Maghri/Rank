@@ -52,7 +52,7 @@ export default function Auth() {
                         <p className="text-yellow-400 font-bars3"> Login </p>
                     </div>
                     <div className="flex flex-col items-center justify-center  h-[100px]">
-                        <p className="font-bars2 text-white font-black text-xs">Welcome to the Rank School Students Board.</p>
+                        <p className="font-bars2 text-white font-black text-xs">Welcome to the School Rankings Board</p>
                         <p className="text-white text-[15px] font-bars3"> By : mmaghri && mlouazir </p>
                     </div>
                     <div className="flex items-center justify-around w-[200px] h-[50px]">
