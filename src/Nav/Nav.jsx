@@ -42,7 +42,7 @@ export function Nav() {
       navigate("/");
     }
     return ( 
-      <div  className="z-50 flex items-center justify-ithems-center h-[80px] gap-[5px] max-w-[1800px]  w-[100%]">
+      <div className="flex items-center justify-ithems-center h-[80px] gap-[5px] max-w-[1800px]  w-[100%]">
       <div className="flex items-center  justify-center rounded-[5px] h-[95%] w-[25%] flex-col">
         <div onClick={() => (thetrue == false ? (seTrue(true)) : (seTrue(false)))} className="flex items-center justify-center w-[50px] h-[50px] ml-[10px]  bg-yellow-200 border-solid border-yellow-500 border-[3px] rounded-[10px]">
           <FaUserSecret  className=" text-black  w-[20px] h-[20px] duration-200 cursor-pointer hover:scale-105" />

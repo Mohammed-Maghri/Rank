@@ -71,7 +71,6 @@ export default function Scrol({objectvalue}) {
       })
   }
   const cardSlect = (id) => {
-
     window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
   
@@ -86,9 +85,9 @@ export default function Scrol({objectvalue}) {
       }
   },[all])
     return(
-        <div className="z-50 flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
+        <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
         <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
-        <div className="border-solid border-white  flex items-center justify-center gap-[10px] flex-col  w-[100%] h-[50px] "></div>
+        <div className=" border-solid border-white  flex items-center justify-center gap-[10px] flex-col  w-[100%] h-[50px] "></div>
         {!forloads &&
           <div className="flex items-center justify-start  w-[100%] flex-col h-[100%]">
             {loadingstate == false ? (
@@ -104,7 +103,7 @@ export default function Scrol({objectvalue}) {
         }
         {
           all.slice(0).map((item, index) => (
-            <div onClick={() => (cardSlect(index))}  key={index} style={{ backgroundColor : `transparent`}} className="z-10 bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] rounded-[20px] duration-500 cursor-pointer  h-[140px]">
+            <div onClick={() => (cardSlect(index))}  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] rounded-[20px] duration-500 cursor-pointer  h-[140px]">
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
