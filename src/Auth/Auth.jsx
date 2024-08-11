@@ -6,7 +6,7 @@ import lou from "../clips/loua.png"
 import Cookies from "js-cookie";
 import { context } from "../context";
 import { BsFillLightningFill } from "react-icons/bs";
-import meme from "../clips/meme.jpeg";
+import meme from "../clips/memem.jpeg";
 
 export default function Auth() {
     const navigate = useNavigate();
