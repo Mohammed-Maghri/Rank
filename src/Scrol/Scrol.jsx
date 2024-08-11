@@ -111,19 +111,19 @@ export default function Scrol({objectvalue}) {
               
               {loadingstate == false ? (
                 item.login == "sel-jett" ? (
-                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={kta}/>
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={kta}/>
                 ):item.login == "mmaghri" ? (
-                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={meme}/>
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={me}/>
                 ):item.login == "mlouazir" ? (
-                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={loua}/>
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={loua}/>
                 ):item.login == "asnaji" ?(
-                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={asad}/>
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={asad}/>
                 ):item.login == "mozennou" ? (
-                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={moz}/>
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={moz}/>
                 ):(
-                  <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
+                  <img  className=" h-[115px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
                 )):(
-                    <div className="skeleton bg-yellow-100 h-[100%] rounded-l-[20px] rounded-[0px] w-[100%]"></div>
+                    <div className="skeleton bg-yellow-200 h-[100%] rounded-l-[20px] rounded-[0px] w-[100%]"></div>
                   )
               }
             </div>
