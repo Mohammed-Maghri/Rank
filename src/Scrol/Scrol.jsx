@@ -96,7 +96,7 @@ export default function Scrol({objectvalue}) {
               </div>
               ):(
               <div className=" flex items-center justify-center w-[100%] h-[200px]" >
-                <span className="loading loading-ball w-[120px] h-[120px] text-yellow-300 loading-lg"></span>
+                <span className="loading loading-spinner text-warning"></span>
                 </div>
               )}
           </div>
@@ -123,7 +123,7 @@ export default function Scrol({objectvalue}) {
                 ):(
                   <img  className=" h-[118px] w-[100%] max-h-[110px] rounded-l-[20px] object-cover" src={item.profileImage}/>
                 )):(
-                    <div className="skeleton bg-yellow-200 h-[100%] rounded-l-[20px] rounded-[0px] w-[100%]"></div>
+                    <div className="skeleton bg-yellow-100 h-[100%] rounded-l-[20px] rounded-[0px] w-[100%]"></div>
                   )
               }
             </div>
