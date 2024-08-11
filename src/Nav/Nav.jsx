@@ -19,6 +19,7 @@ export function Nav() {
   const {all, setAll} = useContext(context);
   const {enable, setEnable} = useContext(context);
 	const {prf, setPrf} = useContext(context);
+  const [thetrue, seTrue] = useState(false);
 
   const navigate =  useNavigate();
   const functionLogout = () => {
