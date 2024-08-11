@@ -129,7 +129,14 @@ export default function Scrol({objectvalue}) {
             <div style={{boxShadow: '0px 0px 5px black'}} className="flex pan items-center  flex-col justify-center h-[115px] max-h-[130px] rounded-r-[10px]  xs:w-[260px] xm:w-[520px] sm:w-[660px] md:w-[600px] lg:w-[670px] mr-[5px] bg-white">
               <div className="w-[90%] h-[100%] rounded-[10px] flex   items-center justify-start flex-row">
                 <div className=" xs:w-[70%] xf:w-[100%] sm:w-[70%] md:w-[70%] h-[100%]">
-                  <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col " > <p className="font-bars3 text-black gap-[10px] font-extrabold flex"> {item.login} 
+                  <div  className="w-[100%] h-[60%] flex items-start justify-center flex-col ">
+                    <p className="font-bars3 text-black gap-[10px] font-extrabold flex"> {
+                      item.login == "wabolles" ? (
+                        "wabolles-Aka-theF"
+                      ):(
+                        `${item.login}`
+                      )
+                    }
                   {item.login == "mmaghri" || item.login == "mlouazir" ? (
                     <img className="w-[22px] h-[22px]  rounded-[50%] object-cover z-10 " src={king}/>
                   ):(
@@ -137,7 +144,8 @@ export default function Scrol({objectvalue}) {
                   )
                 }
                 </p>
-                  <p  className="font-bars3 text-[15px] xm:text-xs xs:text-xs  text-black font-normal"> {item.firstName + " " + item.lastName} </p> </div>
+                  <p  className="font-bars3 text-[15px] xm:text-xs xs:text-xs  text-black font-normal"> {item.firstName + " " + item.lastName} </p>
+                  </div>
                   <div className="w-[100%] gap-[10px] h-[30%] flex items-center justify-start flex-row" >
                     <p className="text-black font-bold "> Lvl : </p> 
                     {/* {(index + 1) == 1 ? color = "rgb(255, 247, 0)" : (index == 2) ? color = "rgb(135, 135, 135)" : (index + 1) == 3 ? color = "rgb(204, 102, 0)" : color = "white"} */}
