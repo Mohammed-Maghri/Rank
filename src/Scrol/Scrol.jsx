@@ -25,6 +25,7 @@ import moz from "../clips/moz.png"
 import { WiDaySnow } from "react-icons/wi";
 import promo from "../clips/18.png"
 import kta from "../clips/kta.png"
+import meme from "../clips/memem.jpeg";
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
@@ -112,7 +113,7 @@ export default function Scrol({objectvalue}) {
                 item.login == "sel-jett" ? (
                   <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={kta}/>
                 ):item.login == "mmaghri" ? (
-                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={me}/>
+                  <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={meme}/>
                 ):item.login == "mlouazir" ? (
                   <img  className="w-[97%] h-[111px] min-h-[105px] rounded-l-[20px]" src={loua}/>
                 ):item.login == "asnaji" ?(
