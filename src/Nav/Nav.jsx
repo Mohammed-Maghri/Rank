@@ -1,5 +1,4 @@
 import React , {useContext} from "react";
-
 import { IoMdLogOut } from "react-icons/io";
 import { IoSettings } from "react-icons/io5";
 import pic from "../clips/mmaghri.jpg";
@@ -8,6 +7,10 @@ import {context } from "../context";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import taj from "../clips/taj.jpeg";
+import pas from "../clips/pass.png";
+import { Dropdown } from "../Dropdown/Dropdown";
+import { FaUserSecret } from "react-icons/fa";
+
 export const functionVisible = (thevis, setthe) => {
     setthe(!thevis);
 }
@@ -39,10 +42,13 @@ export function Nav() {
     }
     return ( 
       <div className="flex items-center justify-ithems-center h-[80px] gap-[5px] max-w-[1800px]  w-[100%]">
-      <div className="flex items-center  justify-center rounded-[5px] h-[95%] w-[25%]">
-        <div className="flex items-center justify-center w-[50px] h-[50px] ml-[10px]  bg-yellow-200 border-solid border-yellow-500 border-[3px] rounded-[10px]">
-          <IoSettings className=" text-black  w-[34px] h-[35px] duration-200 cursor-pointer hover:scale-105" />
+      <div className="flex items-center  justify-center rounded-[5px] h-[95%] w-[25%] flex-col">
+        <div onClick={() => (thetrue == false ? (seTrue(true)) : (seTrue(false)))} className="flex items-center justify-center w-[50px] h-[50px] ml-[10px]  bg-yellow-200 border-solid border-yellow-500 border-[3px] rounded-[10px]">
+          <FaUserSecret  className=" text-black  w-[20px] h-[20px] duration-200 cursor-pointer hover:scale-105" />
         </div>
+        {thetrue &&
+          <Dropdown />
+        }
       </div>
       <div className="w-[50%] flex items-center justify-center h-[95%]  rounded-[5px] h-[95%]">
         <div style={{boxShadow: '0px 0px 10px yellow'}} className="flex items-center xs:gap-1 gap-5 justify-center duration-300 lg:w-[800px] 

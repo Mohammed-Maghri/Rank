@@ -71,6 +71,7 @@ export default function Scrol({objectvalue}) {
       })
   }
   const cardSlect = (id) => {
+    
     window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
   
