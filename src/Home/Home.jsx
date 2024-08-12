@@ -23,7 +23,7 @@ export function Home() {
 	const {logs, setLogs} = useContext(context);
 	const {tok, setTok} = useContext(context);
 	let test = {code: ""};
-	const obj = {access_token: ""};
+	const obj = {token: ""};
 	const {all, setAll} = useContext(context);
 	const [thetrue, seTrue] = useState(false);
     const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2Fhome&response_type=code";
@@ -36,7 +36,7 @@ export function Home() {
 
 
 	const  getapi =  (api, testtok) => {
-		obj.access_token = testtok;
+		obj.token = testtok;
 		if (testtok == undefined) {
 			setLogs(false);
 			navigate("/");
