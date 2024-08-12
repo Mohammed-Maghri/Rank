@@ -15,6 +15,7 @@ export function Calculator() {
     const [difficulty, setDifficulty] = useState("");
     const [Loader, setLoader] = useState(false);
     const [setjson, setJson] = useState([]);
+    const [beta , setBeta] = useState(false);
     const [vel, setVel] = useState({
         level : '',
         score : ''
@@ -89,11 +90,33 @@ export function Calculator() {
     setTimeout(() => {
         setLoader(true);
     }, 1000);
+    setTimeout(() => {
+        setLoader(true);
+    }, 6000);
     return (
         <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
             <div className="h-[100px] flex items-start justify-center w-[100%]">
                 <Nav />
             </div>
+            {
+                !beta &&
+                <div className="border-solid flex items-center flex-col justify-center text-xs  font-bars2   w-[400px] ">
+            <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className="  w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
+                    <div className="w-[70%] font-medium text-white text-sm font-bars2 flex items-center  justify-center h-[100%]">
+                        <p> Beta-V </p>
+                    </div>
+                    <div className="w-[20%] flex items-center justify-start text-white">
+                        <BsFillLightningFill />
+                    </div>
+                </div>
+                <p > ⚠️ Beta Version : </p>
+                <p >  This site is currently in beta. </p>
+                <p >   While we're aware of some responsiveness issues and minor problems,</p>
+                <p >  we're keeping things simple for now. </p>
+                <p > We appreciate your understanding and feedback as we continue</p>
+                <p>to refine it.</p>
+            </div>
+        }
             <Starfield
             starCount={3000}
             starColor={[255, 255, 0]}
