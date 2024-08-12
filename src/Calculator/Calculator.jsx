@@ -101,7 +101,7 @@ export function Calculator() {
     }, 1000);
 
     setTimeout(() => {
-        setLoader(false);
+        setObv(false);
     }, 8000);
     return (
         <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
