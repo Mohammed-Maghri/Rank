@@ -77,7 +77,6 @@ export function Calculator() {
     const logsS = (index) => {
         console.log(index);
     }
-    console.log(setjson);
     const Calculate = () => {
         setjson.map((item, index) => {
         });
