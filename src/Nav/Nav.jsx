@@ -34,7 +34,7 @@ export function Nav() {
   }
   const functionClick = ((index) => {
     console.log(index);
-    index == 0 ? (navigate("/home")) : index == 1 ? (navigate("/calculator")): (<></>);
+    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"): (<></>);
   })
 
   const object = [{bars: 'Rank'}, {bars: 'Calculator'}, {bars: 'Soon'}];
