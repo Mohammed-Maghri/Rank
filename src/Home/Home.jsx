@@ -122,7 +122,7 @@ return (
             <Nav />
             <Selector />
 			<Starfield
-            starCount={7000}
+            starCount={600}
             starColor={[255, 255, 0]}
             speedFactor={0.04}                                                                                    
             backgroundColor="black"

@@ -6,17 +6,18 @@ import Starfield from 'react-starfield';
 import { useEffect } from "react";
 import Loads from "../Loader/Loader";
 import { BsFillLightningFill } from "react-icons/bs";
+import { IoMdAddCircle } from "react-icons/io";
 
 export function Calculator() {
-    const [color, setColor] = useState("rgb(0, 255, 0)");
-    const [coalition, setCoalition] = useState("Coalition ON");
+    const [color, setColor] = useState("rgb(255, 51, 0)");
+    const [coalition, setCoalition] = useState("Coalition off");
+    const [desplay, setDesplay] = useState("Current Level 0.0 ?");
     const [cols, setCols] = useState("off");
     const [las , setLas] = useState("");
     const [getproject, setProject] = useState("");
     const [difficulty, setDifficulty] = useState("");
     const [Loader, setLoader] = useState(false);
     const [setjson, setJson] = useState([]);
-    const [beta , setBeta] = useState(false);
     const [vel, setVel] = useState({
         level : '',
         score : ''
@@ -64,7 +65,6 @@ export function Calculator() {
     }
 
     useEffect(() => {
-        console.log("here");
         fetch("/Project_lvl.json").then((response) => {
         return response.json();
         }).then((data) => {
@@ -76,6 +76,13 @@ export function Calculator() {
 
     const logsS = (index) => {
         console.log(index);
+    }
+
+    const funcAdd = () => {
+        vel.level = las;
+        if (las != "fill the form" || las != "NaN" || las != "") {
+            setDesplay(las);
+        }
     }
     const Calculate = () => {
         setjson.map((item, index) => {
@@ -90,18 +97,13 @@ export function Calculator() {
     setTimeout(() => {
         setLoader(true);
     }, 1000);
-    setTimeout(() => {
-        setBeta(true);
-    }, 6000);
     return (
-        <div className="flex items-center  flex-col justify-start w-[100%] h-[100vh] bg-black">
-            <div className="h-[100px] flex items-start justify-center w-[100%]">
+        <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
+            <div className=" flex items-start justify-center w-[100%]">
                 <Nav />
             </div>
-            {
-                !beta &&
-                <div className="border-solid flex items-center flex-col justify-center text-xs  font-bars2   w-[400px] ">
-            <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className=" z-30 w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
+            <div className="border-solid flex items-center flex-col justify-center text-xs  font-bars2   w-[400px] ">
+            <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className="  w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
                     <div className="w-[70%] font-medium text-white text-sm font-bars2 flex items-center  justify-center h-[100%]">
                         <p> Beta-V </p>
                     </div>
@@ -116,9 +118,8 @@ export function Calculator() {
                 <p > We appreciate your understanding and feedback as we continue</p>
                 <p>to refine it.</p>
             </div>
-        }
             <Starfield
-            starCount={3000}
+            starCount={700}
             starColor={[255, 255, 0]}
             speedFactor={0.05}                                                                                    
             backgroundColor="black"
@@ -126,7 +127,7 @@ export function Calculator() {
           {
             Loader &&
               <div className=" flex h-[80%]  flex-col items-center justify-start w-[100%] z-30">
-            <div className="duration-300  flex items-center justify-center w-[95%] max-w-[1000px] flex-col">
+            <div className="duration-300   flex items-center justify-center w-[95%] max-w-[1000px] flex-col">
                 <div className="bg-black duration-300 border-solid mt-4 border-[2px] flex-col  max-w-[1000px] bg-opacity-70 pl-3 pr-3 border-yellow-200
                   w-[100%] rounded-[20px] flex justify-start items-center">
                      <div className=" flex items-center justify-center  w-[100%] rounded-[10px] h-[70px]">
@@ -138,29 +139,32 @@ export function Calculator() {
                      </div>
                         <div className="gap-[6px] p-1  flex items-center justify-center rounded-[10px] mt-4 flex-row 
                          w-[100%] h-[60px]">
-                        <input  type="text" name="level" onChange={(e) => functioHandlechange(e)} value={vel.level} placeholder=" Current Level  0.0 ?" className="input text-white font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
-                        <input type="text" name="score" onChange={(e) => functioHandlechange(e)} value={vel.score} placeholder=" Score 100 - 125 ?" className="input text-white font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
+                        <input  type="text" name="level" onChange={(e) => functioHandlechange(e)} value={vel.level} placeholder={desplay} className="input font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
+                        <input type="text" name="score" onChange={(e) => functioHandlechange(e)} value={vel.score} placeholder=" Score 100 - 125 ?" className="input font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
                         </div>
                         <div className="min-w-[355px] xm:w-[100%] xs:100%  sm:w-[100%] md:w-[65%]  rounded-[10px] ">
                             <div className="flex items-center justify-center w-[100%]   h-[60px] rounded-[10px] ">
-                                <select  onChange={(e) => functioHandlechange(e)} name="project" className="text-white select select-warning border-yellow-200 border-[2px] bg-black w-[100%] ">
-                                    <option className="text-white" disabled selected> Select Project ?</option>
+                                <select onChange={(e) => functioHandlechange(e)} name="project" className="select select-warning border-yellow-200 border-[2px] bg-black w-[100%] ">
+                                    <option disabled selected> Select Project ?</option>
                                     {
                                         setjson.map((item, index) => (
-                                            <option key={index} value={item.name}  onClick={() => (console.log(index))}>{item.name}</option>
+                                            <option key={index} value={item.name} onClick={() => (console.log(index))}>{item.name}</option>
                                         ))
                                     }
                                     </select>
                             </div>
                             <div  className=" flex items-center justify-center   w-[100%] h-[170px]">
                                 <div style={{boxShadow: "0px 0px 10px rgb(255, 247, 0)"}} onClick={() => (Calculate())} className="bg-yellow-200 flex items-center 
-                                text-black  font-bars2 font-bold cursor-pointer duration-200 hover:scale-110 justify-center h-[100px] w-[100px] rounded-[50%]" >
+                                text-black font-bars2 font-bold cursor-pointer duration-200 hover:scale-110 justify-center h-[100px] w-[100px] rounded-[50%]" >
                                     <p> Calculate </p>
                                 </div>
                             </div>
                             <div>
-                                <div className="flex items-center justify-center w-[100%] h-[60px] rounded-[10px] ">
+                                <div className="flex gap-[10px] items-center justify-center w-[100%] h-[60px] rounded-[10px] ">
                                     <p className="font-bars2  text-[30px] font-extrabold text-white"> {las} </p>
+                                <div onClick={() => (funcAdd())} className="w-[30px] cursor-pointer duration-300 hover:scale-110 h-[30px] ">
+                                    <IoMdAddCircle className="text-green-500 w-[100%] h-[100%]" />
+                                </div>
                                 </div>
                             </div>
                         </div>
