@@ -5,6 +5,7 @@ import { Nav } from "../Nav/Nav";
 import Starfield from 'react-starfield';
 import { useEffect } from "react";
 import Loads from "../Loader/Loader";
+import { BsFillLightningFill } from "react-icons/bs";
 
 export function Calculator() {
     const [color, setColor] = useState("rgb(0, 255, 0)");
@@ -94,7 +95,7 @@ export function Calculator() {
         setLoader(true);
     }, 6000);
     return (
-        <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
+        <div className="flex items-center  flex-col justify-start w-[100%] h-[100vh] bg-black">
             <div className="h-[100px] flex items-start justify-center w-[100%]">
                 <Nav />
             </div>
