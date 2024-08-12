@@ -92,7 +92,7 @@ export function Calculator() {
         setLoader(true);
     }, 1000);
     setTimeout(() => {
-        setLoader(true);
+        setBeta(true);
     }, 6000);
     return (
         <div className="flex items-center  flex-col justify-start w-[100%] h-[100vh] bg-black">
@@ -127,9 +127,7 @@ export function Calculator() {
           {
             Loader &&
               <div className=" flex h-[80%]  flex-col items-center justify-start w-[100%] z-30">
-            <div className=" h-[100%] duration-300  flex items-center justify-center w-[95%] max-w-[1000px] flex-col">
-                <div className="mockup-browser  duration-300   w-[100%] bg-slate-900  ">
-                </div>
+            <div className="duration-300  flex items-center justify-center w-[95%] max-w-[1000px] flex-col">
                 <div className="bg-black duration-300 border-solid mt-4 border-[2px] flex-col  max-w-[1000px] bg-opacity-70 pl-3 pr-3 border-yellow-200
                   w-[100%] rounded-[20px] flex justify-start items-center">
                      <div className=" flex items-center justify-center  w-[100%] rounded-[10px] h-[70px]">
