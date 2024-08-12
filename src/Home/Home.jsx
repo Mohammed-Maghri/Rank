@@ -36,7 +36,7 @@ export function Home() {
 
 
 	const  getapi =  (api, testtok) => {
-		obj.token = testtok;
+		obj.access_token = testtok;
 		if (testtok == undefined) {
 			setLogs(false);
 			navigate("/");
@@ -89,7 +89,7 @@ export function Home() {
 				setLogs(false);
 				window.location.href =  "https://1337leets.com/";
 			}
-			Cookies.set('access_token', data.access_token);
+			Cookies.set('access_token', data.token);
 			seTrue(true);
 		}).catch((error) => {
 			console.log("Error in fetching ", error);
