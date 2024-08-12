@@ -108,7 +108,7 @@ useEffect(() => {
 useEffect( async () => {
 	setTimeout(async () => {
 		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
-	}, 2000);
+	}, 1000);
 
 }, [])
 
