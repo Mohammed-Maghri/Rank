@@ -18,6 +18,8 @@ export function Calculator() {
     const [difficulty, setDifficulty] = useState("");
     const [Loader, setLoader] = useState(false);
     const [setjson, setJson] = useState([]);
+    const [setobv, setObv] = useState(true);
+
     const [vel, setVel] = useState({
         level : '',
         score : ''
@@ -97,12 +99,18 @@ export function Calculator() {
     setTimeout(() => {
         setLoader(true);
     }, 1000);
+
+    setTimeout(() => {
+        setLoader(false);
+    }, 8000);
     return (
         <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
             <div className=" flex items-start justify-center w-[100%]">
                 <Nav />
             </div>
-            <div className="border-solid flex items-center flex-col justify-center text-xs  font-bars2   w-[400px] ">
+            {
+                setobv &&
+                <div className="border-solid flex text-white items-center flex-col justify-center text-xs  font-bars2   w-[400px] ">
             <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className="  w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
                     <div className="w-[70%] font-medium text-white text-sm font-bars2 flex items-center  justify-center h-[100%]">
                         <p> Beta-V </p>
@@ -118,6 +126,7 @@ export function Calculator() {
                 <p > We appreciate your understanding and feedback as we continue</p>
                 <p>to refine it.</p>
             </div>
+            }
             <Starfield
             starCount={700}
             starColor={[255, 255, 0]}
