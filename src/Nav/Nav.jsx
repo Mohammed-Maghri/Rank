@@ -32,6 +32,11 @@ export function Nav() {
     window.location.href = "https://1337leets.com";
     setLogs(false);
   }
+  const functionClick = ((index) => {
+    console.log(index);
+    index == 0 ? (navigate("/home")) : index == 2 ? (navigate("/calculator")): (<></>);
+  })
+
   const object = [{bars: 'Rank'}, {bars: 'Soon'}, {bars: 'Soon'}];
   const [visible, setVisible] = useState(false);
   const obj = [{year : 2013}, {year : 2014}, {year : 2015}, {year : 2016}, {year : 2017}, 
@@ -55,7 +60,7 @@ export function Nav() {
         <div style={{boxShadow: '0px 0px 10px yellow'}} className="flex items-center xs:gap-1 gap-5 justify-center duration-300 lg:w-[800px] 
         sm:w-[400px] xs:w-[200px] custom-yellow h-[60%] bg-yellow-200 border-solid border-yellow-500 border-[3px] rounded-[15px]">
           {object.map((item, index) => (
-            <div className="font-bars2  text-lg text-black font-bold xs:text-sm flex items-center cursor-pointer justify-center w-[150px] h-[90%] duration-300 hover:scale-110">
+            <div onClick={() => (functionClick(index))} className="font-bars2  text-lg text-black font-bold xs:text-sm flex items-center cursor-pointer justify-center w-[150px] h-[90%] duration-300 hover:scale-110">
               <p key={index}> {item.bars} </p>
             </div>
             ))
