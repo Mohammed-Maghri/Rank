@@ -85,7 +85,7 @@ export function Calculator() {
             return;
         }
 
-        setLas(String(levelCalculator(vel.level, difficulty, vel.score, cols)).substring(0, 8));
+        setLas(String(levelCalculator(vel.level, difficulty, vel.score, cols)).substring(0, 4));
     }
     setTimeout(() => {
         setLoader(true);
