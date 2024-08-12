@@ -4,6 +4,7 @@ import "../Scrol/Scrol.css";
 import { Nav } from "../Nav/Nav";
 import Starfield from 'react-starfield';
 import { useEffect } from "react";
+import Loads from "../Loader/Loader";
 
 export function Calculator() {
     const [color, setColor] = useState("rgb(0, 255, 0)");
@@ -12,7 +13,7 @@ export function Calculator() {
     const [las , setLas] = useState("");
     const [getproject, setProject] = useState("");
     const [difficulty, setDifficulty] = useState("");
-
+    const [Loader, setLoader] = useState(false);
     const [setjson, setJson] = useState([]);
     const [vel, setVel] = useState({
         level : '',
@@ -85,6 +86,9 @@ export function Calculator() {
 
         setLas(String(levelCalculator(vel.level, difficulty, vel.score, cols)).substring(0, 8));
     }
+    setTimeout(() => {
+        setLoader(true);
+    }, 1000);
     return (
         <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
             <div className="h-[100px] flex items-start justify-center w-[100%]">
@@ -96,7 +100,9 @@ export function Calculator() {
             speedFactor={0.05}                                                                                    
             backgroundColor="black"
           />
-          <div className=" flex h-[80%]  flex-col items-center justify-start w-[100%] z-30">
+          {
+            Loader &&
+              <div className=" flex h-[80%]  flex-col items-center justify-start w-[100%] z-30">
             <div className=" h-[100%] duration-300  flex items-center justify-center w-[95%] max-w-[1000px] flex-col">
                 <div className="mockup-browser  duration-300   w-[100%] bg-slate-900  ">
                 </div>
@@ -105,7 +111,7 @@ export function Calculator() {
                      <div className=" flex items-center justify-center  w-[100%] rounded-[10px] h-[70px]">
                         <div onClick={() => (coalition == "Coalition ON" ? (setCoalition("Coalition OFF"), setColor("rgb(255, 51, 0)"), setCols("off")): 
                         (setColor("rgb(0, 255, 0)"), setCoalition("Coalition ON"), setCols("on")))} style={{boxShadow: `0px 0px 10px ${color}`, backgroundColor : `${color}`}}
-                         className="font-bars2 text-black font-bold cursor-pointer duration-150 hover:scale-110   w-[140px] rounded-[10px] h-[40px]  flex items-center justify-center">
+                        className="font-bars2 text-black font-bold cursor-pointer duration-150 hover:scale-110   w-[140px] rounded-[10px] h-[40px]  flex items-center justify-center">
                             <p>{coalition}</p>
                         </div>
                      </div>
@@ -141,6 +147,12 @@ export function Calculator() {
                     </div>
                 </div>
           </div>
+    }
+    {!Loader &&
+    <div className="w-[100%] flex items-center justify-center h-[100%] ">
+        <span className="loading loading-spinner text-warning"></span>
+    </div>
+    }
         </div>
     );
 }
