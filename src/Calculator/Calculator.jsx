@@ -101,7 +101,7 @@ export function Calculator() {
             {
                 !beta &&
                 <div className="border-solid flex items-center flex-col justify-center text-xs  font-bars2   w-[400px] ">
-            <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className="  w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
+            <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className=" z-30 w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
                     <div className="w-[70%] font-medium text-white text-sm font-bars2 flex items-center  justify-center h-[100%]">
                         <p> Beta-V </p>
                     </div>
@@ -138,23 +138,23 @@ export function Calculator() {
                      </div>
                         <div className="gap-[6px] p-1  flex items-center justify-center rounded-[10px] mt-4 flex-row 
                          w-[100%] h-[60px]">
-                        <input  type="text" name="level" onChange={(e) => functioHandlechange(e)} value={vel.level} placeholder=" Current Level ?" className="input font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
-                        <input type="text" name="score" onChange={(e) => functioHandlechange(e)} value={vel.score} placeholder=" Score 100 - 125 ?" className="input font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
+                        <input  type="text" name="level" onChange={(e) => functioHandlechange(e)} value={vel.level} placeholder=" Current Level ?" className="input text-white font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
+                        <input type="text" name="score" onChange={(e) => functioHandlechange(e)} value={vel.score} placeholder=" Score 100 - 125 ?" className="input text-white font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
                         </div>
                         <div className="min-w-[355px] xm:w-[100%] xs:100%  sm:w-[100%] md:w-[65%]  rounded-[10px] ">
                             <div className="flex items-center justify-center w-[100%]   h-[60px] rounded-[10px] ">
-                                <select onChange={(e) => functioHandlechange(e)} name="project" className="select select-warning border-yellow-200 border-[2px] bg-black w-[100%] ">
-                                    <option disabled selected> Select Project ?</option>
+                                <select  onChange={(e) => functioHandlechange(e)} name="project" className="text-white select select-warning border-yellow-200 border-[2px] bg-black w-[100%] ">
+                                    <option className="text-white" disabled selected> Select Project ?</option>
                                     {
                                         setjson.map((item, index) => (
-                                            <option key={index} value={item.name} onClick={() => (console.log(index))}>{item.name}</option>
+                                            <option key={index} value={item.name}  onClick={() => (console.log(index))}>{item.name}</option>
                                         ))
                                     }
                                     </select>
                             </div>
                             <div  className=" flex items-center justify-center   w-[100%] h-[170px]">
                                 <div style={{boxShadow: "0px 0px 10px rgb(255, 247, 0)"}} onClick={() => (Calculate())} className="bg-yellow-200 flex items-center 
-                                text-black font-bars2 font-bold cursor-pointer duration-200 hover:scale-110 justify-center h-[100px] w-[100px] rounded-[50%]" >
+                                text-black  font-bars2 font-bold cursor-pointer duration-200 hover:scale-110 justify-center h-[100px] w-[100px] rounded-[50%]" >
                                     <p> Calculate </p>
                                 </div>
                             </div>
