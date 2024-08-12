@@ -138,7 +138,7 @@ export function Calculator() {
                      </div>
                         <div className="gap-[6px] p-1  flex items-center justify-center rounded-[10px] mt-4 flex-row 
                          w-[100%] h-[60px]">
-                        <input  type="text" name="level" onChange={(e) => functioHandlechange(e)} value={vel.level} placeholder=" Current Level ?" className="input text-white font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
+                        <input  type="text" name="level" onChange={(e) => functioHandlechange(e)} value={vel.level} placeholder=" Current Level  0.0 ?" className="input text-white font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
                         <input type="text" name="score" onChange={(e) => functioHandlechange(e)} value={vel.score} placeholder=" Score 100 - 125 ?" className="input text-white font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
                         </div>
                         <div className="min-w-[355px] xm:w-[100%] xs:100%  sm:w-[100%] md:w-[65%]  rounded-[10px] ">
