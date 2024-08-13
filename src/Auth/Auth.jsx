@@ -16,12 +16,6 @@ export default function Auth() {
         window.open(path, '_blank');
     }
     const cally = (thepath) => {
-        Cookies.remove('access_token');
-        Cookies.remove('campusId');
-        Cookies.remove('cursusId');
-        Cookies.remove('poolYear');
-        Cookies.remove('month');
-
         setTimeout(() => {
             window.location.href = thepath;
         }, 1000);
