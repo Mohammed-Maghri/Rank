@@ -63,7 +63,7 @@ export function Home() {
 				setLogs(true);
 			});
 		}).catch((err) => {
-			// window.location.href =  "https://1337leet.vercel.app/";
+			window.location.href =  "https://1337leets.com";
 			console.log("erro has been occured", err);
 		})
 	}
