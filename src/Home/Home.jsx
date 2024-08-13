@@ -37,6 +37,7 @@ export function Home() {
 
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
+		console.log(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}`);
 		if (testtok == undefined) {
 			setLogs(false);
 			navigate("/");
@@ -102,10 +103,7 @@ export function Home() {
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
-	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == undefined || Cookies.get('month') == undefined
-	|| Cookies.get('cursusId') == undefined || Cookies.get('pageNumber') == undefined || Cookies.get('poolYear') == undefined) {
-		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
-	}
+	functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 }, [])
 
 useEffect( async () => {
