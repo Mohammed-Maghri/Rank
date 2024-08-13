@@ -1,4 +1,4 @@
-<img width="1454" alt="Screen Shot 2024-08-11 at 4 11 14 PM" src="https://github.com/user-attachments/assets/2e5bd79b-75d7-49a7-90dd-e4cb416c90cf"># Getting Started with Create React App
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -73,5 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 <img width="1454" alt="Screen Shot 2024-08-11 at 4 11 32 PM" src="https://github.com/user-attachments/assets/880fe3b1-66b9-46e9-bca7-e4875e9270c0">
 
+<img width="1454" alt="Screen Shot 2024-08-11 at 4 11 14 PM" src="https://github.com/user-attachments/assets/2e5bd79b-75d7-49a7-90dd-e4cb416c90cf">
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
