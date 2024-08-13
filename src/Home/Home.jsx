@@ -96,8 +96,7 @@ export function Home() {
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
-	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == undefined || Cookies.get('month') == undefined
-	|| Cookies.get('cursusId') == undefined || Cookies.get('pageNumber') == undefined || Cookies.get('poolYear') == undefined) {
+	if (Cookies.get('access_token') == undefined ) {
 		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 	}
 }, [])
@@ -105,7 +104,7 @@ useEffect(() => {
 useEffect( async () => {
 	setTimeout(async () => {
 		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
-	}, 400);
+	}, 1000);
 
 }, [])
 
