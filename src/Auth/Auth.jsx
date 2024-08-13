@@ -21,7 +21,10 @@ export default function Auth() {
         Cookies.remove('cursusId');
         Cookies.remove('poolYear');
         Cookies.remove('month');
-        window.location.href = thepath;
+
+        setTimeout(() => {
+            window.location.href = thepath;
+        }, 1000);
     }
 
     localStorage.setItem('pics', me);
