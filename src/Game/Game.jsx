@@ -41,8 +41,12 @@ export function Game() {
                             </div>
                         }
                         <div className="w-[100%] flex items-center gap-6 justify-center mb-4">
-                            <img src={keys} alt="keys" className="w-[100px]  h-[100px]" />
-                            <img src={click} alt="keys" className="w-[50px]  h-[50px]" />
+                            {!game &&
+                                <img src={keys} alt="keys" className="w-[100px]  h-[100px]" />
+                            }
+                            {game &&
+                                <img src={click} alt="keys" className="w-[50px]  h-[50px]" />
+                            }
                         </div>
                         <div className="border-solid text-white gap-2 text-md flex items-center justify-center flex-col font-bars2  w-[800px] h-[30%]">
                             <p> Game Created By : </p>
