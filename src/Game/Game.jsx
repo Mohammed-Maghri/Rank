@@ -8,6 +8,7 @@ import cat from "../clips/kta.png";
 import keys from "../clips/game.png";
 import click from "../clips/cli.png";
 import { useContext } from "react";
+import { context } from "../context";
 
 export function Game() {
 
