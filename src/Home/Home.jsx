@@ -112,15 +112,7 @@ useEffect( async () => {
 
 }, [])
 
-setTimeout(() => {
-	if (logs == false) {
-		Cookies.remove('access_token');
-		Cookies.remove('campusId');
-		Cookies.remove('cursusId');
-		Cookies.remove('poolYear');
-		window.location.href = "https://1337leets.com";
-	}
-}, 5000);
+
 return (
 	<div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">
         {!logs &&
