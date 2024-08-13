@@ -51,7 +51,7 @@ export function Home() {
 			if (res.status >= 400 && res.status < 600) {
 				setLogs(false);
 				Cookies.remove('access_token');
-				window.location.href =  "https://1337leets.com";
+				console.log("error has been in res");
 			}
 			return res.json();
 		}).then((data) => {
@@ -60,7 +60,6 @@ export function Home() {
 				setLogs(true);
 			});
 		}).catch((err) => {
-			window.location.href =  "https://1337leets.com";
 			Cookies.remove('access_token');
 			Cookies.remove('campusId');
 			Cookies.remove('cursusId');
@@ -84,7 +83,6 @@ export function Home() {
 			setPoolYear(data.poolYear);
 			setCampusId(data.campusId);
 			setCursusId(data.cursusId);
-			console.log(" ++++ ");
 			Cookies.set("month", data.poolMonth);
 			Cookies.set("campusId", data.campusId);
 			Cookies.set("cursusId", data.cursusId);
