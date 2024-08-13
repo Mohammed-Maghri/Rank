@@ -102,8 +102,8 @@ export function Home() {
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
-	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == "" || Cookies.get('month') == ""
-	|| Cookies.get('cursusId') == "" || Cookies.get('pageNumber') == "" || Cookies.get('poolYear') == "") {
+	if (Cookies.get('access_token') == undefined || Cookies.get('campusId') == undefined || Cookies.get('month') == undefined
+	|| Cookies.get('cursusId') == undefined || Cookies.get('pageNumber') == undefined || Cookies.get('poolYear') == undefined) {
 		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 	}
 }, [])
