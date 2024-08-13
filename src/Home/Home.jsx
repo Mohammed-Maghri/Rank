@@ -41,14 +41,6 @@ export function Home() {
 			setLogs(false);
 			navigate("/");
 		}
-		if (Cookies.get('access_token') == undefined) {
-			Cookies.remove('access_token');
-			Cookies.remove('campusId');
-			Cookies.remove('cursusId');
-			Cookies.remove('poolYear');
-			Cookies.remove('month');
-			window.location.href =  "https://1337leets.com/";
-		}
 		fetch(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}` ,{
 			method: 'GET',
 			headers: {
@@ -87,6 +79,7 @@ export function Home() {
 			body: await JSON.stringify(test),
 		}).then(response =>  response.json())
 		.then(data => {
+			Cookies.set('access_token', data.token);
 			setPrf(data.profileImage);
 			setPoolYear(data.poolYear);
 			setCampusId(data.campusId);
@@ -98,11 +91,6 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
-			if (data.access_token == undefined) {
-				setLogs(false);
-				window.location.href =  "https://1337leets.com/";
-			}
-			Cookies.set('access_token', data.token);
 			seTrue(true);
 		}).catch((error) => {
 			console.log("Error in fetching ", error);
