@@ -34,10 +34,10 @@ export function Nav() {
   }
   const functionClick = ((index) => {
     console.log(index);
-    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"): (<></>);
+    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"):  (index == 2 ? (window.location.href = "https://www.1337leets.com/game") : (<></>));
   })
 
-  const object = [{bars: 'Rank'}, {bars: 'Calculator'}, {bars: 'Soon'}];
+  const object = [{bars: 'Rank'}, {bars: 'Calculator'}, {bars: 'Game'}];
   const [visible, setVisible] = useState(false);
   const obj = [{year : 2013}, {year : 2014}, {year : 2015}, {year : 2016}, {year : 2017}, 
     {year : 2018}, {year : 2019}, {year : 2020}, {year : 2021}, {year : 2022}, {year : 2023}, {year : 2024}];
