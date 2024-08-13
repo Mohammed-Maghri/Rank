@@ -28,7 +28,7 @@ export function Calculator() {
         score : ''
     });
     if (logs == false) {
-        window.location.href = "www.1337leets.com";
+        window.location.href = "https://www.1337leets.com/";
     }
 
     function levelCalculator(startLevel, plannedXp, score, switchValue) {

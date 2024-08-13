@@ -16,7 +16,7 @@ export function Game() {
     const {logs, setLogs} = useContext(context);
     const studetns = [{pic : cat }];
     if (logs == false) {
-        window.location.href = "www.1337leets.com";
+        window.location.href = "https://www.1337leets.com/";
     }
     return (
         <div className="flex items-center  flex-col justify-center w-[100%] h-[100vh] bg-black" >
