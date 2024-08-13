@@ -34,7 +34,7 @@ export function Dropdown(name, pic) {
                             </div>
                         ))
                 ):(
-                    <div className="w-[100%] flex-col h-[100%] flex font-bars2 text-sm items-center justify-center">
+                    <div className="w-[100%] text-white flex-col h-[100%] flex font-bars2 text-sm items-center justify-center">
                     <p> Sorry ! The Vip Option only</p>
                     <p> Accessible</p>
                     <p> To the Owners Of the</p>
