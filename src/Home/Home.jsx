@@ -61,10 +61,6 @@ export function Home() {
 			});
 		}).catch((err) => {
 			Cookies.remove('access_token');
-			Cookies.remove('campusId');
-			Cookies.remove('cursusId');
-			Cookies.remove('poolYear');
-			Cookies.remove('month');
 			console.log("erro has been occured", err);
 		})
 	}
