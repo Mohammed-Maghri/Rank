@@ -24,6 +24,9 @@ export function Calculator() {
     const [setjson, setJson] = useState([]);
     const [setobv, setObv] = useState(true);
 	const {logs, setLogs} = useContext(context);
+    const [setvalt, setValt] = useState("");
+    const [setdif, setDif] = useState("");
+    const [sename, setSename] = useState("Please Write the Project Name  ?");
     
     const [vel, setVel] = useState({
         level : '',
@@ -31,9 +34,9 @@ export function Calculator() {
     });
 
     const navigate = useNavigate();
-    if (Cookies.get('log') == undefined) {
-        navigate("/");
-    }
+    // if (Cookies.get('log') == undefined) {
+    //     navigate("/");
+    // }
     function levelCalculator(startLevel, plannedXp, score, switchValue) {
         const levelsXp = [0, 462, 2688, 5885, 11777, 29217, 46255, 63559, 74340, 85483, 95000, 105630, 
                            124446, 145782, 169932, 197316, 228354, 263508, 303366, 348516, 399672, 457632, 
@@ -69,12 +72,19 @@ export function Calculator() {
         if (e.target.name == "project") {
             setjson.forEach((item, index) => {
                 if (item.name == e.target.value) {
-                    setDifficulty(item.difficulty);
+                    console.log(item.difficulty);
                 }
             });
         }
     }
 
+    const getdif = (get) => {
+        setjson.forEach((item, index) => {
+            if (get == item.name) {
+                setDif(String(item.difficulty));
+            }
+        });
+    }
     useEffect(() => {
         fetch("/Project_lvl.json").then((response) => {
         return response.json();
@@ -85,10 +95,6 @@ export function Calculator() {
         })
     }, []);
 
-    const logsS = (index) => {
-        console.log(index);
-    }
-
     const funcAdd = () => {
         vel.level = las;
         if (las != "fill the form" || las != "NaN" || las != "") {
@@ -98,12 +104,11 @@ export function Calculator() {
     const Calculate = () => {
         setjson.map((item, index) => {
         });
-        if (String(vel.level).length == 0 || String(vel.score).length == 0) {
+        if (String(vel.level).length == 0 || String(vel.score).length == 0 || sename == "Please Write the Project Name  ?" || sename == "") {
             setLas("fill the form");
             return;
         }
-
-        setLas(String(levelCalculator(vel.level, difficulty, vel.score, cols)).substring(0, 4));
+        setLas(String(levelCalculator(vel.level, setdif, vel.score, cols)).substring(0, 4));
     }
     setTimeout(() => {
         setLoader(true);
@@ -112,6 +117,10 @@ export function Calculator() {
     setTimeout(() => {
         setObv(false);
     }, 8000);
+    const functionGet = (e) => {
+        setSename(e.target.value);
+        setValt(e.target.value);
+    }
     return (
         <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
             <div className=" flex items-start justify-center w-[100%]">
@@ -161,19 +170,26 @@ export function Calculator() {
                         <input type="text" name="score" onChange={(e) => functioHandlechange(e)} value={vel.score} placeholder=" Score 100 - 125 ?" className="input text-white font-bars2 input-bordered bg-black border-[2px] border-yellow-200 input-warning w-full max-w-xs" />
                         </div>
                         <div className="min-w-[355px] xm:w-[100%] xs:100%  sm:w-[100%] md:w-[65%]  rounded-[10px] ">
-                            <div className="flex items-center justify-center w-[100%]   h-[60px] rounded-[10px] ">
-                                <select onChange={(e) => functioHandlechange(e)} name="project" className="select text-white select-warning border-yellow-200 border-[2px] bg-black w-[100%] ">
-                                    <option disabled selected> Select Project ?</option>
-                                    {
-                                        setjson.map((item, index) => (
-                                            <option key={index} value={item.name} onClick={() => (console.log(index))}>{item.name}</option>
-                                        ))
-                                    }
-                                    </select>
+                            <div className="flex items-center border-solid  border-yellow-200 border-[2px] justify-center w-[100%]   h-[60px] rounded-[10px] ">
+                            <div className="dropdown w-[100%] flex flex-col items-center justify-center bg-black h-[100%] dropdown-bottom">
+                                <input onClick={() => (setSename(""))} onChange={(e) => functionGet(e)} inputMode="text" value={sename} className="w-[95%] z-50  bg-black placeholder-white  font-bars2 outline-none h-[100%]" placeholder={sename}/>
+                                <div className= "dropdown-content gap-2 bg-slate-800 overflow-y-auto overflow-x-hidden flex-col rounded-[10px] w-[200px] absolute top-14 max-h-[300px] flex items-start justify-start">
+                                    {setjson.filter(item => {
+                                        const vao = item.name.toLowerCase();
+                                        const sec = setvalt.toLowerCase();
+                                        return (vao.startsWith(sec));
+
+                                    }).map((item, index) => 
+                                    <div onClick={() => (setSename(item.name), getdif(item.name))} key={index} className="w-[100%] flex-row h-10 pt-2 pb-2 rounded-[10px] cursor-pointer flex pl-4 items-center duration-300 justify-start hover:bg-slate-700">
+                                        <p className="text-white text-sm font-bars2">{item.name}</p>
+                                        </div>
+                                )}
+                                </div>
+                                    </div>
                             </div>
                             <div  className=" flex items-center justify-center   w-[100%] h-[170px]">
                                 <div style={{boxShadow: "0px 0px 10px rgb(255, 247, 0)"}} onClick={() => (Calculate())} className="bg-yellow-200 flex items-center 
-                                text-black font-bars2 font-bold cursor-pointer duration-200 hover:scale-110 justify-center h-[100px] w-[100px] rounded-[50%]" >
+                                text-black font-bars2 font-bold cursor-pointer duration-200  justify-center h-[100px] w-[100px] rounded-[50%]" >
                                     <p> Calculate </p>
                                 </div>
                             </div>
