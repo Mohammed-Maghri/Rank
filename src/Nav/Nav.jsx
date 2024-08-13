@@ -24,10 +24,6 @@ export function Nav() {
   const navigate =  useNavigate();
   const functionLogout = () => {
     Cookies.remove('access_token');
-    Cookies.remove('campusId');
-    Cookies.remove('cursusId');
-    Cookies.remove('poolYear');
-    Cookies.remove('month');
     console.log("Logout");
     window.location.href = "https://1337leets.com";
     setLogs(false);
