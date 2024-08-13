@@ -9,7 +9,8 @@ import { BsFillLightningFill } from "react-icons/bs";
 import { IoMdAddCircle } from "react-icons/io";
 import { useContext } from "react";
 import { context } from "../context";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 export function Calculator() {
     const [color, setColor] = useState("rgb(255, 51, 0)");

@@ -10,6 +10,8 @@ import click from "../clips/cli.png";
 import { useContext } from "react";
 import { context } from "../context";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+
 export function Game() {
 
     const [game, setGame] = useState(false);
