@@ -57,6 +57,7 @@ export function Home() {
 		}).then((data) => {
 			setAll(data);
 			setTimeout(() => {
+				Cookies.set('log', 1337);
 				setLogs(true);
 			});
 		}).catch((err) => {

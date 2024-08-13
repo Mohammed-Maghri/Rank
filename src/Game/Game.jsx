@@ -9,12 +9,16 @@ import keys from "../clips/game.png";
 import click from "../clips/cli.png";
 import { useContext } from "react";
 import { context } from "../context";
-
+import { useNavigate } from "react-router-dom";
 export function Game() {
 
     const [game, setGame] = useState(false);
     const {logs, setLogs} = useContext(context);
     const studetns = [{pic : cat }];
+    const navigate = useNavigate();
+    if (Cookies.get('log') == undefined) {
+        navigate("/");
+    }
     return (
         <div className="flex items-center  flex-col justify-center w-[100%] h-[100vh] bg-black" >
             <Starfield
