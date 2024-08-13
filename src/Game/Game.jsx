@@ -31,7 +31,7 @@ export function Game() {
                     </div>
                 <div className="w-[95%] h-[100%] flex items-center xs:hidden md:flex lg:flex justify-center flex-col gap-3">
                 <iframe className="z-50 bg-black w-[900px] rounded-[10px] h-[550px]" allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" id="game_drop"
-                 src="https://html-classic.itch.zone/html/11163585/index.html" 
+                 src="https://html-classic.itch.zone/html/11169816/index.html" 
                  allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated;
                  web-share" msallowfullscreen="true" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
                     <div className="w-[80%] text-[20px] font-bars2  flex-col flex items-center justify-center text-white h-[20%]">
