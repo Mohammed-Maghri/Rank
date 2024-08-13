@@ -68,7 +68,7 @@ export function Home() {
 				setLogs(true);
 			});
 		}).catch((err) => {
-			window.location.href =  "https://1337leet.com";
+			window.location.href =  "https://1337leets.com";
 			Cookies.remove('access_token');
 			Cookies.remove('campusId');
 			Cookies.remove('cursusId');
