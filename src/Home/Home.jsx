@@ -42,6 +42,11 @@ export function Home() {
 			navigate("/");
 		}
 		if (Cookies.get('access_token') == undefined) {
+			Cookies.remove('access_token');
+			Cookies.remove('campusId');
+			Cookies.remove('cursusId');
+			Cookies.remove('poolYear');
+			Cookies.remove('month');
 			window.location.href =  "https://1337leets.com/";
 		}
 		fetch(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}` ,{
