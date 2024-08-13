@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Loads from "../Loader/Loader";
 import { BsFillLightningFill } from "react-icons/bs";
 import { IoMdAddCircle } from "react-icons/io";
+import { useContext } from "react";
 
 export function Calculator() {
     const [color, setColor] = useState("rgb(255, 51, 0)");
@@ -19,12 +20,16 @@ export function Calculator() {
     const [Loader, setLoader] = useState(false);
     const [setjson, setJson] = useState([]);
     const [setobv, setObv] = useState(true);
-
+	const {logs, setLogs} = useContext(context);
+    
     const [vel, setVel] = useState({
         level : '',
         score : ''
     });
-
+    if (logs == false) {
+        window.location.href = "www.1337leets.com";
+    }
+    
     function levelCalculator(startLevel, plannedXp, score, switchValue) {
         const levelsXp = [0, 462, 2688, 5885, 11777, 29217, 46255, 63559, 74340, 85483, 95000, 105630, 
                            124446, 145782, 169932, 197316, 228354, 263508, 303366, 348516, 399672, 457632, 

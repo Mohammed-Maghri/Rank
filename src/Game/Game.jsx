@@ -7,12 +7,16 @@ import pic from "../clips/mmaghri.jpg";
 import cat from "../clips/kta.png";
 import keys from "../clips/game.png";
 import click from "../clips/cli.png";
+import { useContext } from "react";
 
 export function Game() {
 
     const [game, setGame] = useState(false);
+    const {logs, setLogs} = useContext(context);
     const studetns = [{pic : cat }];
-
+    if (logs == false) {
+        window.location.href = "www.1337leets.com";
+    }
     return (
         <div className="flex items-center  flex-col justify-center w-[100%] h-[100vh] bg-black" >
             <Starfield
