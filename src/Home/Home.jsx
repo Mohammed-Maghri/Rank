@@ -62,6 +62,7 @@ export function Home() {
 		}).catch((err) => {
 			Cookies.remove('access_token');
 			console.log("erro has been occured", err);
+			window.location.href = "https://1337leets.com";
 		})
 	}
 	
@@ -88,6 +89,7 @@ export function Home() {
 			seTrue(true);
 		}).catch((error) => {
 			console.log("Error in fetching ", error);
+			window.location.href = "https://1337leets.com";
 		});
 	}
 	
