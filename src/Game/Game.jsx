@@ -10,7 +10,12 @@ import click from "../clips/cli.png";
 
 export function Game() {
 
-    const studetns = [{pic : cat }]
+    const [game, setGame] = useState(false);
+    const studetns = [{pic : cat }];
+
+    setTimeout(() => {
+        setGame(true);
+    }, 9000);
     return (
         <div className="flex items-center  flex-col justify-center w-[100%] h-[100vh] bg-black" >
             <Starfield
@@ -20,7 +25,7 @@ export function Game() {
             backgroundColor="black"
             />
             <Nav />
-            <div className="w-[100%] border-solid bg-black flex flex-col items-center justify-center h-[100%] overflow-auto ">
+            <div className="w-[100%] border-solid bg-black flex flex-col items-start justify-center h-[100%] overflow-auto ">
                     <div className=" xs:flex lg:hidden items-center justify-center  w-[100%] text-white h-[100%]">
                         <p> The Game Only playable On Big screens </p>
                     </div>
@@ -30,9 +35,11 @@ export function Game() {
                  allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated;
                  web-share" msallowfullscreen="true" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
                     <div className="w-[80%] text-[20px] font-bars2  flex-col flex items-center justify-center text-white h-[20%]">
-                        <div>
-                            <p> To start the Game Please click on the game window First then Use the Keys Below </p>
-                        </div>
+                        {!game &&
+                            <div>
+                                <p> To start the Game Please click on the game window First then Use the Keys Below </p>
+                            </div>
+                        }
                         <div className="w-[100%] flex items-center gap-6 justify-center mb-4">
                             <img src={keys} alt="keys" className="w-[100px]  h-[100px]" />
                             <img src={click} alt="keys" className="w-[50px]  h-[50px]" />
