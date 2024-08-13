@@ -21,18 +21,14 @@ export function Game() {
             />
             <Nav />
             <div className="w-[100%] border-solid bg-black flex flex-col items-start justify-center h-[100%] overflow-auto ">
-                <div className="w-[95%] h-[100%] flex items-center justify-center flex-col gap-3">
-                <iframe className="z-50 bg-black w-[900px] h-[550px]" allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" id="game_drop"
+                    <div className=" xs:flex lg:hidden items-center justify-center  w-[100%] text-white h-[100%]">
+                        <p> The Game Only playable On Big screens </p>
+                    </div>
+                <div className="w-[95%] h-[100%] flex items-center xs:hidden md:flex lg:flex justify-center flex-col gap-3">
+                <iframe className="z-50 bg-black w-[900px] rounded-[10px] h-[550px]" allowtransparency="true" webkitallowfullscreen="true" mozallowfullscreen="true" id="game_drop"
                  src="https://html-classic.itch.zone/html/11163585/index.html" 
                  allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; xr; cross-origin-isolated;
                  web-share" msallowfullscreen="true" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-                    {/* <div className="flex font-extralight bg-slate-900 rounded-[10px] text-white font-bars2 text-[30px]
-                     items-end justify-center w-[100%] h-[60px]">
-                     <p> Minishell</p>
-                     </div>
-                     <div className="w-[90%]">
-                     <div className="border-solid border-white w-[100%] h-[200px] border-[1px]"></div>
-                    </div> */}
                     <div className="w-[80%] text-[20px] font-bars2  flex-col flex items-center justify-center text-white h-[20%]">
                         <div>
                             <p> To start the Game Please click on the game window First then Use the Keys Below </p>
