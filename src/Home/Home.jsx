@@ -120,7 +120,7 @@ setTimeout(() => {
 		Cookies.remove('poolYear');
 		window.location.href = "https://1337leets.com";
 	}
-}, 3000);
+}, 5000);
 return (
 	<div className="flex items-center w-[100%]  flex-col justify-center h-screen bg-black ">
         {!logs &&
