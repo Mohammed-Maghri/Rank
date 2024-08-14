@@ -31,6 +31,7 @@ import notab from "../clips/notab.png";
 import hamza from "../clips/pas.png";
 import yas from "../clips/yas.png";
 import pilo from "../clips/pilo.png";
+import mod from "../clips/mod.png";
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
@@ -114,6 +115,9 @@ export default function Scrol({objectvalue}) {
             <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[115px]">
               
               {loadingstate == false ? (
+                item.login == "mkimdil" ? (
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={mod}/>
+                ):
                 item.login == "mes-salh" ? (
                   <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={pilo}/>
                 ):
