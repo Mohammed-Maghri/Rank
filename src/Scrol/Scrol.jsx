@@ -26,7 +26,7 @@ import { WiDaySnow } from "react-icons/wi";
 import promo from "../clips/18.png"
 import kta from "../clips/kta.png"
 import meme from "../clips/memem.jpeg";
-import abdel from "../clips/abel.png";
+import abdel from "../clips/abel.jpeg";
 
 export default function Scrol({objectvalue}) {
     const [visible, setVisible] = useState(false);
