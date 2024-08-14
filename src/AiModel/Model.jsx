@@ -81,16 +81,16 @@ export function Model() {
                         <>
                         {item.text &&
                         <div key={index} className="w-[100%] flex items-center justify-end ">
-                            <div key={index} className="chat chat-end w-[60%]">
-                                <div key={index} className="chat-bubble text-white">{item.text}</div>
+                            <div  className="chat chat-end w-[60%]">
+                                <div className="chat-bubble text-white">{item.text}</div>
                             </div>
                         </div>
                             }
                         {item.Ai &&
                         <div key={index}  className="w-[100%]  flex items-center justify-start ">
 
-                            <div key={index} className="chat  chat-start w-[60%]">
-                                <div key={index} className="chat-bubble bg-slate-800 text-white font-bold font-bars2">{item.Ai}</div>
+                            <div className="chat  chat-start w-[60%]">
+                                <div  className="chat-bubble bg-slate-800 text-white font-bold font-bars2">{item.Ai}</div>
                                 </div>
                         </div>
                         }
@@ -106,7 +106,7 @@ export function Model() {
             </div>
             }
             <div className="md:w-[60%]  gap-2 flex items-center justify-center h-[60px] rounded-[15px]">
-                <input onChange={(e) => (fillInput(e))} value={fill} type="text" placeholder="Type here" className="input w-[100%] bg-slate-900 placeholder-white text-white input-bordered " />
+                <input onChange={(e) => (fillInput(e))} value={setthis} type="text" placeholder="Type here" className="input w-[100%] bg-slate-900 placeholder-white text-white input-bordered " />
                 <div className="w-[40px] h-[40px] flex items-center justify-center ">
                     <IoSend onClick={() => (functionAddmodel(fill))} className="w-[40px] cursor-pointer duration-200 text-white  hover:scale-105 h-[40px]" />
                 </div>
