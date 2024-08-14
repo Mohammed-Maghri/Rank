@@ -72,7 +72,7 @@ export function Model() {
             speedFactor={0.04}                                                                                    
             backgroundColor="black"
             />
-            <div className="in-box md:w-[60%] flex flex-col gap-5  items-center justify-end overflow-y-auto overflow-x-hidden   rounded-[20px]  h-[80%]">
+            <div className="in-box md:w-[60%] flex flex-col gap-5  items-center justify-end overflow-x-auto overflow-y-hidden   rounded-[20px]  h-[80%]">
                 {
                     model.map((item, index) => (
                         <>
