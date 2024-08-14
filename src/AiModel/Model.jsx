@@ -65,7 +65,6 @@ export function Model() {
         setThis(e.target.value);
         setFill(e.target.value);
     }
-
     return (
         <div className="flex items-center justify-start flex-col bg-black h-[100vh]">
             <Nav />
