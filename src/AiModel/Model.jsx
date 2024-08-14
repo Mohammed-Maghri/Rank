@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 export function Model() {
+    const [setthis, setThis] = useState(false);
     const [model, setModel] = useState([]);
     const [fill , setFill] = useState("");
     const [respond, setRespond] = useState([]);
@@ -49,6 +50,7 @@ export function Model() {
     }, [value])
 
     const functionAddmodel = (th) => {
+        setThis("");
         setSeen(true);
         const newModl = {
             id: Date.now(),
@@ -60,6 +62,7 @@ export function Model() {
         }, 1000);
     }
     const fillInput = (e) => {
+        setThis(e.target.value);
         setFill(e.target.value);
     }
 
@@ -72,7 +75,7 @@ export function Model() {
             speedFactor={0.04}                                                                                    
             backgroundColor="black"
             />
-            <div className="in-box md:w-[60%] flex flex-col gap-5  items-center justify-end overflow-x-auto overflow-y-hidden   rounded-[20px]  h-[80%]">
+            <div className="in-box md:w-[60%] flex flex-col gap-5  items-center justify-end overflow-aut   rounded-[20px]  h-[80%]">
                 {
                     model.map((item, index) => (
                         <>
@@ -103,7 +106,7 @@ export function Model() {
             </div>
             }
             <div className="md:w-[60%]  gap-2 flex items-center justify-center h-[60px] rounded-[15px]">
-                <input onChange={(e) => (fillInput(e))} type="text" placeholder="Type here" className="input w-[100%] text-white input-bordered " />
+                <input onChange={(e) => (fillInput(e))} type="text" value={setthis} placeholder="Type here" className="input w-[100%] text-white input-bordered " />
                 <div className="w-[40px] h-[40px] flex items-center justify-center ">
                     <IoSend onClick={() => (functionAddmodel(fill))} className="w-[40px] cursor-pointer duration-200 hover:scale-105 h-[40px]" />
                 </div>
