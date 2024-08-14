@@ -18,7 +18,7 @@ export function Game() {
     const {logs, setLogs} = useContext(context);
     const studetns = [{pic : cat }];
     const navigate = useNavigate();
-    if (Cookies.get('log') == undefined) {
+    if (Cookies.get('log') == undefined || Cookies.get('log') != "1337") {
         navigate("/");
     }
     return (
