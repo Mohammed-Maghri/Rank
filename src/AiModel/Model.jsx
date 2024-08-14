@@ -102,13 +102,13 @@ export function Model() {
             {
                 seeen &&
                 <div className="flex items-center justify-center  w-[100%] h-[40px]">
-                <span className="loading loading-infinity loading-[80px]"></span>
+                <span className="loading loading-infinity bg-white loading-[80px]"></span>
             </div>
             }
             <div className="md:w-[60%]  gap-2 flex items-center justify-center h-[60px] rounded-[15px]">
-                <input onChange={(e) => (fillInput(e))} type="text" value={setthis} placeholder="Type here" className="input w-[100%] text-white input-bordered " />
+                <input onChange={(e) => (fillInput(e))} value={fill} type="text" placeholder="Type here" className="input w-[100%] bg-slate-900 placeholder-white text-white input-bordered " />
                 <div className="w-[40px] h-[40px] flex items-center justify-center ">
-                    <IoSend onClick={() => (functionAddmodel(fill))} className="w-[40px] cursor-pointer duration-200 hover:scale-105 h-[40px]" />
+                    <IoSend onClick={() => (functionAddmodel(fill))} className="w-[40px] cursor-pointer duration-200 text-white  hover:scale-105 h-[40px]" />
                 </div>
             </div>
         </div>
