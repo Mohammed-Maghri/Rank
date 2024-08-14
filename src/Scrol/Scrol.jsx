@@ -77,7 +77,6 @@ export default function Scrol({objectvalue}) {
     window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
   
-  console.log('Is all an array?', Array.isArray(all)); // Should log true if all is an array
   useEffect(() => {
     {
       all.length == 0 ? (

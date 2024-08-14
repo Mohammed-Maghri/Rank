@@ -56,9 +56,8 @@ export function Selector() {
     }
     const funcSeter =  (value, check, wh) => {
       let other = 0;
-      console.log(value);
       if (check == "+") {other = value;
-        if (check == "+" && wh == "pool" && ((other + 1) == 13)) {console.log("con"); other = 1; console.log(other); setOnlyprom("Month : " + other)}
+        if (check == "+" && wh == "pool" && ((other + 1) == 13)) {other = 1; setOnlyprom("Month : " + other)}
         else {
           other += 1;
           if (wh == "pool") {setOnlyprom("Month : " + other)}
@@ -66,8 +65,8 @@ export function Selector() {
         }
         }
       else if (check == "-") {other = value;
-        if (wh  == "pool" && ((other - 1) == 0)) {console.log("Condition"); other = 12; console.log(other); setOnlyprom("Month : " + other)}
-        else if (wh == "not") {if((other - 1) < 2017){other = 2024; console.log("l") ; setOnlyprom("Month : " + other)}}
+        if (wh  == "pool" && ((other - 1) == 0)) {other = 12; setOnlyprom("Month : " + other)}
+        else if (wh == "not") {if((other - 1) < 2017){other = 2024;  ; setOnlyprom("Month : " + other)}}
         else {other -= 1;}
         if (wh == "pool") {setOnlyprom("Month : " + other)}
         else {setOnlyprom(other);}

@@ -29,7 +29,6 @@ export function Nav() {
     setLogs(false);
   }
   const functionClick = ((index) => {
-    console.log(index);
     index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"):  (index == 2 ? (window.location.href = "https://www.1337leets.com/game") : (index == 3 ? (window.location.href = "https://www.1337leets.com/model") : (<></>)));
   })
 
