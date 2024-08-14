@@ -70,7 +70,7 @@ export function Model() {
         <div className="flex items-center justify-start flex-col bg-black h-[100vh]">
             <Nav />
             <Starfield
-            starCount={600}
+            starCount={700}
             starColor={[255, 255, 0]}
             speedFactor={0.04}                                                                                    
             backgroundColor="black"
