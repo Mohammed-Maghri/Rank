@@ -172,7 +172,7 @@ export function Calculator() {
                         <div className="min-w-[355px] xm:w-[100%] xs:100%  sm:w-[100%] md:w-[65%]  rounded-[10px] ">
                             <div className="flex items-center border-solid  border-yellow-200 border-[2px] justify-center w-[100%]   h-[60px] rounded-[10px] ">
                             <div className="dropdown w-[100%] flex flex-col items-center justify-center bg-black h-[100%] dropdown-bottom">
-                                <input onClick={() => (setSename(""))} onChange={(e) => functionGet(e)} inputMode="text" value={sename} className="w-[95%] z-50  bg-black placeholder-white  font-bars2 outline-none h-[100%]" placeholder={sename}/>
+                                <input onClick={() => (setSename(""))} onChange={(e) => functionGet(e)} inputMode="text" value={sename} className="w-[95%] text-white z-50  bg-black placeholder-white  font-bars2 outline-none h-[100%]" placeholder={sename}/>
                                 <div className= "dropdown-content gap-2 bg-slate-800 overflow-y-auto overflow-x-hidden flex-col rounded-[10px] w-[200px] absolute top-14 max-h-[300px] flex items-start justify-start">
                                     {setjson.filter(item => {
                                         const vao = item.name.toLowerCase();
