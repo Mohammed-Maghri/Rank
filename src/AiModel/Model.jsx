@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 export function Model() {
-    const [setthis, setThis] = useState(false);
+    const [setthis, setThis] = useState("");
     const [model, setModel] = useState([]);
     const [fill , setFill] = useState("");
     const [respond, setRespond] = useState([]);
@@ -75,7 +75,7 @@ export function Model() {
             speedFactor={0.04}                                                                                    
             backgroundColor="black"
             />
-            <div className="in-box md:w-[60%] flex flex-col gap-5  items-center justify-end overflow-aut   rounded-[20px]  h-[80%]">
+            <div className="in-box md:w-[60%] flex flex-col gap-5  items-center justify-end overflow-hidden   rounded-[20px]  h-[80%]">
                 {
                     model.map((item, index) => (
                         <>
