@@ -75,30 +75,29 @@ export function Model() {
             speedFactor={0.04}                                                                                    
             backgroundColor="black"
             />
-            <div className="in-box md:w-[60%] flex flex-col gap-5  items-center justify-end overflow-hidden   rounded-[20px]  h-[80%]">
-                {
-                    model.map((item, index) => (
-                        <>
-                        {item.text &&
-                        <div key={index} className="w-[100%] flex items-center justify-end ">
-                            <div  className="chat chat-end w-[60%]">
-                                <div className="chat-bubble text-white">{item.text}</div>
-                            </div>
-                        </div>
-                            }
-                        {item.Ai &&
-                        <div key={index}  className="w-[100%]  flex items-center justify-start ">
-
-                            <div className="chat  chat-start w-[60%]">
-                                <div  className="chat-bubble bg-slate-800 text-white font-bold font-bars2">{item.Ai}</div>
-                                </div>
-                        </div>
-                        }
-                        </>
-
-                    ))
-                }
-            </div>
+             <div className="md:w-[60%] flex flex-col  gap-5  rounded-[20px]  h-[80%] overflow-y-auto">
+              <div className="w-[80%] h-[90%]"> </div>
+    {
+        model.map((item, index) => (
+            <>
+            {item.text &&
+                <div key={index} className="w-[100%] flex items-center justify-end ">
+                    <div className="chat chat-end w-[60%]">
+                        <div className="chat-bubble text-white">{item.text}</div>
+                    </div>
+                </div>
+            }
+            {item.Ai &&
+                <div key={index} className="w-[100%] flex items-center justify-start ">
+                    <div className="chat chat-start w-[60%]">
+                        <div className="chat-bubble bg-slate-800 text-white font-bold font-bars2">{item.Ai}</div>
+                    </div>
+                </div>
+            }
+            </>
+        ))
+    }
+</div>
             {
                 seeen &&
                 <div className="flex items-center justify-center  w-[100%] h-[40px]">
