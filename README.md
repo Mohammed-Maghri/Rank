@@ -85,7 +85,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 <img width="1971" alt="Screen Shot 2024-08-14 at 6 34 40 PM" src="https://github.com/user-attachments/assets/168b827a-d164-4422-abe5-e691fbb516f7">
 
-<img width="2560" alt="Screen Shot 2024-08-14 at 6 29 13 PM" src="https://github.com/user-attachments/assets/1c369661-8886-4d57-b61f-09be0f84c691">
 
 
 
