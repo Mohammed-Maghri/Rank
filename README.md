@@ -66,13 +66,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### `npm run build` fails to minify
+
+### Ranking Board For All Student's
+
 <img width="1541" alt="Screen Shot 2024-08-11 at 4 10 42 PM" src="https://github.com/user-attachments/assets/bfd92c3a-12d2-449a-b2f3-4bf984df150e">
+<img width="2245" alt="Screen Shot 2024-08-14 at 6 37 47 PM" src="https://github.com/user-attachments/assets/224c8fc3-d6ed-4fcb-bf13-1a0ea3c50bd7">
+<img width="2245" alt="Screen Shot 2024-08-14 at 6 37 50 PM" src="https://github.com/user-attachments/assets/c2d5c5f4-bfbe-474d-94a3-f07984a82e0c">
+<img width="2245" alt="Screen Shot 2024-08-14 at 6 38 07 PM" src="https://github.com/user-attachments/assets/52b606e1-cb04-496b-b9fa-54e5ba751c47">
+<img width="2245" alt="Screen Shot 2024-08-14 at 6 38 18 PM" src="https://github.com/user-attachments/assets/3f851d89-c299-4bd5-b58e-de926ef28170">
+<img width="2245" alt="Screen Shot 2024-08-14 at 6 38 22 PM" src="https://github.com/user-attachments/assets/430a9643-9fc0-4b42-b644-19ee205c5aaa">
 
-<img width="1454" alt="Screen Shot 2024-08-11 at 4 11 14 PM" src="https://github.com/user-attachments/assets/30609417-1a5b-4b4c-8133-0b48fab0f7ca">
 
-
-<img width="1454" alt="Screen Shot 2024-08-11 at 4 11 32 PM" src="https://github.com/user-attachments/assets/880fe3b1-66b9-46e9-bca7-e4875e9270c0">
-
-<img width="1454" alt="Screen Shot 2024-08-11 at 4 11 14 PM" src="https://github.com/user-attachments/assets/2e5bd79b-75d7-49a7-90dd-e4cb416c90cf">
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Xp-Level Calculator For The School Project's Let u know what Ur xp Will be
+<img width="1971" alt="Screen Shot 2024-08-14 at 6 34 11 PM" src="https://github.com/user-attachments/assets/c8bbdffb-1c4b-41e2-93cf-7faf4402c4cc">
+
+### Ai Same As Gpt U can ask Him what Ever on ur mind 
+<img width="1971" alt="Screen Shot 2024-08-14 at 6 34 18 PM" src="https://github.com/user-attachments/assets/83bfbf33-e27d-4384-b867-c2b351cce9b1">
+<img width="2199" alt="Screen Shot 2024-08-14 at 6 41 36 PM" src="https://github.com/user-attachments/assets/94aea2f4-4746-4e19-8b01-8902075af3a7">
+<img width="2199" alt="Screen Shot 2024-08-14 at 6 42 18 PM" src="https://github.com/user-attachments/assets/30ce0f9f-d857-40be-b991-e57c0a951603">
+
+
+
+
+
+
+
+
+
+
+
