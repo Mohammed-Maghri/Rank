@@ -6,6 +6,7 @@ import { Home } from './Home/Home';
 import Auth from './Auth/Auth';
 import { Calculator } from './Calculator/Calculator';
 import {Game} from "./Game/Game";
+import {Model} from "./AiModel/Model";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/home" element={<Home/>} />
         <Route path="/calculator" element={<Calculator/>} />
         <Route path="/Game" element={<Game/>} />
+        <Route path="/Model" element={<Model/>} />
       </Routes>
     </Router>
   );

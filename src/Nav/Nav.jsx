@@ -30,10 +30,10 @@ export function Nav() {
   }
   const functionClick = ((index) => {
     console.log(index);
-    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"):  (index == 2 ? (window.location.href = "https://www.1337leets.com/game") : (<></>));
+    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"):  (index == 2 ? (window.location.href = "https://www.1337leets.com/game") : (index == 3 ? (window.location.href = "https://www.1337leets.com/model") : (<></>)));
   })
 
-  const object = [{bars: 'Rank'}, {bars: 'Calculator'}, {bars: 'Game'}];
+  const object = [{bars: 'Rank'}, {bars: 'Xp-Cal'}, {bars: 'Game'}, {bars: 'Ai'}];
   const [visible, setVisible] = useState(false);
   const obj = [{year : 2013}, {year : 2014}, {year : 2015}, {year : 2016}, {year : 2017}, 
     {year : 2018}, {year : 2019}, {year : 2020}, {year : 2021}, {year : 2022}, {year : 2023}, {year : 2024}];
@@ -53,11 +53,11 @@ export function Nav() {
           <Dropdown />
         }
       </div>
-      <div className="w-[50%] flex items-center justify-center h-[95%]  rounded-[5px] h-[95%]">
+      <div className="w-[50%] flex items-center justify-center h-[95%]  rounded-[5px] ">
         <div style={{boxShadow: '0px 0px 10px yellow'}} className="flex items-center xs:gap-1 gap-5 justify-center duration-300 lg:w-[800px] 
-        sm:w-[400px] xs:w-[200px] custom-yellow h-[60%] bg-yellow-200 border-solid border-yellow-500 border-[3px] rounded-[15px]">
+        sm:w-[400px] xs:w-[220px] custom-yellow h-[60%] bg-yellow-200 border-solid border-yellow-500 border-[3px] rounded-[15px]">
           {object.map((item, index) => (
-            <div onClick={() => (functionClick(index))} className="font-bars2  text-lg text-black font-bold xs:text-sm flex items-center cursor-pointer justify-center w-[150px] h-[90%] duration-300 hover:scale-110">
+            <div key={index} onClick={() => (functionClick(index))} className="font-bars2  text-lg text-black font-bold xs:text-sm flex items-center cursor-pointer justify-center w-[150px] h-[90%] duration-300 hover:scale-110">
               <p key={index}> {item.bars} </p>
             </div>
             ))
