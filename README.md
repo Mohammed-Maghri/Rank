@@ -70,8 +70,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### Ranking Board For All Student's
 
 <img width="1541" alt="Screen Shot 2024-08-11 at 4 10 42 PM" src="https://github.com/user-attachments/assets/bfd92c3a-12d2-449a-b2f3-4bf984df150e">
-
-<img width="1971" alt="Screen Shot 2024-08-14 at 6 34 40 PM" src="https://github.com/user-attachments/assets/168b827a-d164-4422-abe5-e691fbb516f7">
 <img width="2245" alt="Screen Shot 2024-08-14 at 6 37 47 PM" src="https://github.com/user-attachments/assets/224c8fc3-d6ed-4fcb-bf13-1a0ea3c50bd7">
 <img width="2245" alt="Screen Shot 2024-08-14 at 6 37 50 PM" src="https://github.com/user-attachments/assets/c2d5c5f4-bfbe-474d-94a3-f07984a82e0c">
 <img width="2245" alt="Screen Shot 2024-08-14 at 6 38 07 PM" src="https://github.com/user-attachments/assets/52b606e1-cb04-496b-b9fa-54e5ba751c47">
