@@ -75,7 +75,7 @@ export function Model() {
             speedFactor={0.04}                                                                                    
             backgroundColor="black"
             />
-             <div className="md:w-[60%] flex flex-col  gap-5  rounded-[20px]  h-[80%] overflow-y-auto">
+             <div className="md:w-[60%] flex flex-col  gap-5  rounded-[20px]  h-[80%] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               <div className="w-[80%] h-[90%]"> </div>
     {
         model.map((item, index) => (
