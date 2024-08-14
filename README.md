@@ -78,7 +78,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ### Xp-Level Calculator For The School Project's Let u know what Ur xp Will be
-<img width="1971" alt="Screen Shot 2024-08-14 at 6 34 11 PM" src="https://github.com/user-attachments/assets/5f9c7b25-cb7d-4a10-99d4-afa8cf70b85c">
 
 ### Ai Same As Gpt U can ask Him what Ever on ur mind <img width="2560" alt="Screen Shot 2024-08-14 at 6 30 10 PM" src="https://github.com/user-attachments/assets/74e49b7c-7716-41f6-89f0-d17cacfb6f3b">
 <img width="1971" alt="Screen Shot 2024-08-14 at 6 34 18 PM" src="https://github.com/user-attachments/assets/7037ab68-6fbe-457d-b38c-1e467e08a1a7">
