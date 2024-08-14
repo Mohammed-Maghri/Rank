@@ -66,13 +66,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ### `npm run build` fails to minify
+
+### Ranking Board For All Student's
+
 <img width="1541" alt="Screen Shot 2024-08-11 at 4 10 42 PM" src="https://github.com/user-attachments/assets/bfd92c3a-12d2-449a-b2f3-4bf984df150e">
-
-<img width="1454" alt="Screen Shot 2024-08-11 at 4 11 14 PM" src="https://github.com/user-attachments/assets/30609417-1a5b-4b4c-8133-0b48fab0f7ca">
-
 
 <img width="1454" alt="Screen Shot 2024-08-11 at 4 11 32 PM" src="https://github.com/user-attachments/assets/880fe3b1-66b9-46e9-bca7-e4875e9270c0">
 
 <img width="1454" alt="Screen Shot 2024-08-11 at 4 11 14 PM" src="https://github.com/user-attachments/assets/2e5bd79b-75d7-49a7-90dd-e4cb416c90cf">
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Xp-Level Calculator For The School Project's Let u know what Ur xp Will be
+<img width="2560" alt="Screen Shot 2024-08-14 at 6 30 19 PM" src="https://github.com/user-attachments/assets/2e8f311f-eebe-4d95-acc2-960639cc7636">
+### Ai Same As Gpt U can ask Him what Ever on ur mind <img width="2560" alt="Screen Shot 2024-08-14 at 6 30 10 PM" src="https://github.com/user-attachments/assets/74e49b7c-7716-41f6-89f0-d17cacfb6f3b">
+<img width="2560" alt="Screen Shot 2024-08-14 at 6 30 00 PM" src="https://github.com/user-attachments/assets/521d6194-8204-44a2-af97-5eee39afda78">
+
+
+
+
+
+
