@@ -70,6 +70,7 @@ export default function Auth() {
                 <div className=" flex items-center justify-center flex-col  w-[200px] h-[100px]">
                         <span className="loading loading-spinner text-error"></span>
                          <p className="font-bars2 text-sm text-red-500" > Site Under Maintenance </p>
+                         <p className="font-bars2 text-xs text-red-500" > Please Try to re-login if You face any Login Prob !</p>
                     </div>
              </div>
           </div>
