@@ -107,7 +107,7 @@ export function Model() {
                 <span className="loading loading-infinity bg-white loading-[80px]"></span>
             </div>
             }
-            <div className="md:w-[60%]  gap-2 flex items-center justify-center h-[60px] rounded-[15px]">
+            <div className="md:w-[60%] mt-[20px]  gap-2 flex items-center justify-center h-[60px] rounded-[15px]">
                 <input onKeyDown={(e) => (onKey(e))} onChange={(e) => (fillInput(e))} value={setthis} type="text" placeholder="Type here" className="input w-[100%] bg-slate-900 placeholder-white text-white input-bordered " />
                 <div className="w-[40px] h-[40px] flex items-center justify-center ">
                     <IoSend onClick={() => (functionAddmodel(fill))} className="w-[40px] cursor-pointer duration-200 text-white hover:scale-105 h-[40px]" />
