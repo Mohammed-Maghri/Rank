@@ -65,6 +65,10 @@ export function Model() {
         setThis(e.target.value);
         setFill(e.target.value);
     }
+    const onKey = (e) => {
+        if (e.key === "Enter")
+            functionAddmodel(fill);
+      }
     return (
         <div className="flex items-center justify-start flex-col bg-black h-[100vh]">
             <Nav />
@@ -104,7 +108,7 @@ export function Model() {
             </div>
             }
             <div className="md:w-[60%]  gap-2 flex items-center justify-center h-[60px] rounded-[15px]">
-                <input onChange={(e) => (fillInput(e))} value={setthis} type="text" placeholder="Type here" className="input w-[100%] bg-slate-900 placeholder-white text-white input-bordered " />
+                <input onKeyDown={(e) => (onKey(e))} onChange={(e) => (fillInput(e))} value={setthis} type="text" placeholder="Type here" className="input w-[100%] bg-slate-900 placeholder-white text-white input-bordered " />
                 <div className="w-[40px] h-[40px] flex items-center justify-center ">
                     <IoSend onClick={() => (functionAddmodel(fill))} className="w-[40px] cursor-pointer duration-200 text-white  hover:scale-105 h-[40px]" />
                 </div>
