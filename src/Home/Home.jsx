@@ -26,7 +26,6 @@ export function Home() {
 	const obj = {token: ""};
 	const {all, setAll} = useContext(context);
 	const [thetrue, seTrue] = useState(false);
-    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2Fhome&response_type=code";
 	const navigate = useNavigate();
 	const {enable, setEnable} = useContext(context);
 	const {poolYear, setPoolYear} = useContext(context);
@@ -97,7 +96,7 @@ export function Home() {
 useEffect(() => {
 	const val  =  new URLSearchParams(window.location.search).get('code');
 	test.code = val;
-	if (Cookies.get('access_token') == undefined ) {
+	if (Cookies.get('access_token') == undefined) {
 		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 	}
 }, [])
@@ -105,7 +104,7 @@ useEffect(() => {
 useEffect( async () => {
 	setTimeout(async () => {
 		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
-	}, 1000);
+	}, 1500);
 
 }, [])
 
