@@ -25,7 +25,7 @@ export default function Auth() {
     Cookies.remove('cursusId');
     Cookies.remove('poolYear');
     Cookies.remove('month');
-    
+    Cookies.remove('log');
     localStorage.setItem('pics', me);
     localStorage.setItem('lou', lou);
     const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-6734cea9d925c671f887c117afed7807dfa8e7d9796b1f68084b6b9d1db6bb25&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2Fhome&response_type=code";
