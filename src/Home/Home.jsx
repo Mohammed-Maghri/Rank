@@ -76,7 +76,7 @@ export function Home() {
 		}).then(response =>  response.json())
 		.then(data => {
 			Cookies.set('access_token', data.token);
-			setPrf(data.profileImage);
+			localStorage.setItem('profileImage', data.profileImage);
 			setPoolYear(data.poolYear);
 			setCampusId(data.campusId);
 			setCursusId(data.cursusId);
