@@ -65,7 +65,7 @@ export function Nav() {
         </div>
       </div>
       <div className=" flex items-center justify-center flex-row rounded-[5px] h-[95%] w-[25%]">
-        <div style={{boxShadow: '0px 0px 10px yellow'}}  className="cursor-pointer w-[50px] h-[50px] border-solid border-yellow-500  border-[2px] rounded-[50%]">
+        <div style={{boxShadow: '0px 0px 10px yellow'}}  className="cursor-pointer w-[50px] h-[50px] border-solid border-yellow-200  border-[2px] rounded-[50%]">
           <img src={localStorage.getItem('profileImage')} onClick={() => (functionVisible(visible, setVisible))} className="rounded-[50%] h-[100%] w-[100%] object-cover" />
         </div>
           {visible &&
