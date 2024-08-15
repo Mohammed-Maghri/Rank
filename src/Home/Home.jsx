@@ -50,6 +50,7 @@ export function Home() {
 			if (res.status >= 400 && res.status < 600) {
 				setLogs(false);
 				Cookies.remove('access_token');
+				console.log(testtok);
 				console.log("error has been in res");
 			}
 			return res.json();
