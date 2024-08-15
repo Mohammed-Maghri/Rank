@@ -28,7 +28,7 @@ export function Home() {
 	const navigate = useNavigate();
 	const val =  new  URLSearchParams(window.location.search).get('code');
 		test.code = val;
-
+	
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		if (testtok == undefined) {
@@ -56,9 +56,7 @@ export function Home() {
 				setLogs(true);
 			});
 		}).catch((err) => {
-			console.log(Cookies.get('access_token'));
 			Cookies.remove('access_token');
-			console.log(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}`);
 			console.log("erro has been occured", err);
 			window.location.href = "https://1337leets.com";
 		})
