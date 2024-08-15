@@ -97,10 +97,10 @@ useEffect(() => {
 	setTimeout(() => {
 		const val  =  new URLSearchParams(window.location.search).get('code');
 		test.code = val;
+		if (Cookies.get('access_token') == undefined) {
+			functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
+		}
 	}, 500);
-	if (Cookies.get('access_token') == undefined) {
-		functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
-	}
 }, [])
 
 useEffect( async () => {
