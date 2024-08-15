@@ -56,6 +56,7 @@ export function Home() {
 				setLogs(true);
 			});
 		}).catch((err) => {
+			console.log(Cookies.get('access_token'));
 			Cookies.remove('access_token');
 			console.log(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}`);
 			console.log("erro has been occured", err);
