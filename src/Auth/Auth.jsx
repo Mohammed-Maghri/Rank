@@ -67,6 +67,10 @@ export default function Auth() {
                         <div className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mlouazir')} > <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem('lou')}/> </div>
                     </div>
                 </div>
+                <div className=" flex items-center justify-center flex-col  w-[200px] h-[100px]">
+                        <span className="loading loading-spinner text-error"></span>
+                         <p className="font-bars2 text-sm text-red-500" > Site Under Maintenance </p>
+                    </div>
              </div>
           </div>
         </div>
