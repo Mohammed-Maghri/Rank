@@ -26,7 +26,8 @@ export function Home() {
 	const {all, setAll} = useContext(context);
 	const [thetrue, seTrue] = useState(false);
 	const navigate = useNavigate();
-
+	const val =  new  URLSearchParams(window.location.search).get('code');
+		test.code = val;
 
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
@@ -87,8 +88,6 @@ export function Home() {
 	
 useEffect(() => {
 	setTimeout( async () => {
-		const val =  new  URLSearchParams(window.location.search).get('code');
-		test.code = val;
 		if (Cookies.get('access_token') == undefined || !Cookies.get('access_token')) {
 			functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 		}
