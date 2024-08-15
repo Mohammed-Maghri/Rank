@@ -36,10 +36,7 @@ import mso from "../clips/maso.png";
 import bou from "../clips/bou.png";
 
 export default function Scrol({objectvalue}) {
-    const [visible, setVisible] = useState(false);
     const {logs, setLogs} = useContext(context);
-    const [visible2, setVisible2] = useState(false);
-    const [value, setValue] = useState(80);
     const {all, setAll} = useContext(context);
     const {pages, setPages} = useContext(context);
     const [wait, setWait] = useState(false);

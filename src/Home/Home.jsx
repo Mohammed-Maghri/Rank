@@ -21,17 +21,11 @@ import Load from "../Loader/Loader";
 
 export function Home() {
 	const {logs, setLogs} = useContext(context);
-	const {tok, setTok} = useContext(context);
 	let test = {code: ""};
 	const obj = {token: ""};
 	const {all, setAll} = useContext(context);
 	const [thetrue, seTrue] = useState(false);
 	const navigate = useNavigate();
-	const {enable, setEnable} = useContext(context);
-	const {poolYear, setPoolYear} = useContext(context);
-	const {campusId, setCampusId} = useContext(context);
-	const {cursusId, setCursusId} = useContext(context);
-	const {prf, setPrf} = useContext(context);
 
 
 	const  getapi =  (api, testtok) => {
@@ -78,9 +72,6 @@ export function Home() {
 		.then(data => {
 			Cookies.set('access_token', data.token);
 			localStorage.setItem('profileImage', data.profileImage);
-			setPoolYear(data.poolYear);
-			setCampusId(data.campusId);
-			setCursusId(data.cursusId);
 			Cookies.set("month", data.poolMonth);
 			Cookies.set("campusId", data.campusId);
 			Cookies.set("cursusId", data.cursusId);
