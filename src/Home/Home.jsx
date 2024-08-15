@@ -97,7 +97,7 @@ useEffect(() => {
 	setTimeout(() => {
 		const val  =  new URLSearchParams(window.location.search).get('code');
 		test.code = val;
-		if (Cookies.get('access_token') == undefined) {
+		if (Cookies.get('access_token') == undefined || !Cookies.get('access_token')) {
 			functionapi('https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate');
 		}
 	}, 300);
