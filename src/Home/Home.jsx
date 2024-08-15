@@ -57,6 +57,7 @@ export function Home() {
 			});
 		}).catch((err) => {
 			Cookies.remove('access_token');
+			console.log(`${api}?campusId=${Cookies.get('campusId')}&cursusId=${Cookies.get('cursusId')}&pageNumber=${1}&poolYear=${Cookies.get('poolYear')}&month=${Cookies.get('month')}`);
 			console.log("erro has been occured", err);
 			window.location.href = "https://1337leets.com";
 		})
@@ -98,7 +99,6 @@ useEffect( async () => {
 	setTimeout(async () => {
 		await getapi("https://leets1337-3f387c570577.herokuapp.com/api/v1/home", Cookies.get('access_token'));
 	}, 1200);
-
 }, [])
 
 
