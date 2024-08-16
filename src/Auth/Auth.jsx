@@ -68,6 +68,11 @@ export default function Auth() {
                     </div>
                 </div>
              </div>
+             <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
+            <p className="font-bars2 text-[8px] text-white"> We are still in the process of approving this website. If you encounter any issues or have any improvement suggestions</p>
+            <p className="font-bars2 text-[8px] text-white "> please contact me on Discord : </p>
+            <p className="text-[10px] font-extrabold  font-bars2 text-white"> tr1ple.x.x.x </p>
+          </div>
           </div>
         </div>
       );
