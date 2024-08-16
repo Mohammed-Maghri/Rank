@@ -102,7 +102,7 @@ export function Selector() {
             <div  style={{boxShadow : '0px 0px 3px black'}}  className="w-[100px]  overflow-auto flex items-center  flex-col justify-center bg-white absolute z-20 top-[125px] rounded-[10px]">
               
               {pol == 21 ? (
-                    <div  className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer ">
+                    <div  className="w-[90%] flex items-center justify-center h-[50px] rounded-[5px] duration-300 cursor-pointer ">
                        <div className="w-[100%] flex-row flex items-center justify-center  ">
                     <div onClick={() => (addyear == 2018 ? (setAddyear(2024)) : (setAddyear(addyear - 1)), funcSeter(addyear - 1, "-", "not"))} className="w-[30%] cursor-pointer h-[100%] flex items-center justify-center">
                         <FaChevronLeft className="text-black"/>
