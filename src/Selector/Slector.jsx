@@ -159,7 +159,7 @@ export function Selector() {
           }
         </div>
       </div>
-      <div onClick={() => (setLoadingstate(true), setPages((2)), functionGet("https://leets1337-3f387c570577.herokuapp.com/api/v1/home"), setVisible2(false), setValue(false), setVisible(false))} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
+      <div onClick={() => (setLoadingstate(true), setPages((2)), functionGet("https://leets1337-3f387c570577.herokuapp.com/api/v1/home") , setVisible2(false), setValue(false), setVisible(false))} className="ml-1 w-[30px] h-[30px] flex items-center justify-center  border-solid border-white duration-200 bg-slate-900 rounded-[10px] border-[2px] cursor-pointer border-opacity-20 hover:scale-105">
           <FaSearch   className="w-[15px] h-[15px] text-white" />
           </div>
     </div>
