@@ -8,7 +8,6 @@ import { context } from '../context';
 import Starfield from 'react-starfield';
 import { useState } from 'react';
 import Listpeer from "./Listpeer";
-import Cookies from 'js-cookie';
 
 const FunctionDiv = () => {
     const {peerfinder, setPeerfinder} = useContext(context);
