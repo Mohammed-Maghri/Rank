@@ -16,7 +16,7 @@ export function Selector() {
   const [visible2, setVisible2] = useState(false);
   const [ value, setValue ] = useState(false);
   const {pol, setPol} = useContext(context);
-  const [addyear, setAddyear] = useState(Cookies.get('poolYear'));
+  const [addyear, setAddyear] = useState(2018);
   const [campus, setCampus] = useState(Cookies.get('campusId'));
   const [month, setMoth] = useState(1);
   const {pages, setPages} = useContext(context);
