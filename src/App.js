@@ -7,6 +7,8 @@ import Auth from './Auth/Auth';
 import { Calculator } from './Calculator/Calculator';
 import {Game} from "./Game/Game";
 import {Model} from "./AiModel/Model";
+import { Peer } from './Peer/Peer';
+
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/home" element={<Home/>} />
         <Route path="/calculator" element={<Calculator/>} />
         <Route path="/Model" element={<Model/>} />
+        <Route path="/PeerFinder" element={<Peer/>} />
+
       </Routes>
     </Router>
   );
