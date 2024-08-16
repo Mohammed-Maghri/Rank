@@ -15,9 +15,12 @@ const MycontextProvider = ({children}) => {
     const [loadingstate, setLoadingstate] = useState(false);
     const [pol, setPol] = useState(21);
     const [prf, setPrf] = useState("");
-    
+    const [peerfinder , setPeerfinder] = useState({});
+    const [peertracker, setPeertracker] = useState(false);
+    const [othload, setOthload] = useState(false);
+    const [iftr, setIftr] = useState(false);
     return (
-        <context.Provider value={{prf, setPrf, loadingstate , setLoadingstate, pol, setPol,campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
+        <context.Provider value={{iftr, setIftr, othload, setOthload, peertracker, setPeertracker, peerfinder , setPeerfinder, prf, setPrf, loadingstate , setLoadingstate, pol, setPol,campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
         poolYear  ,enable , setEnable, pages, setPages, all, setAll, logs, setLogs, tok, setTok}}>
             {children}
         </context.Provider>
