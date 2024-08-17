@@ -24,7 +24,6 @@ const FunctionDiv = () => {
     const [id, setId] = useState("");
 
     const functionCallApi = async (theid) => {
-            console.log(Cookies.get('access_token'));
             try {
                 const res = await fetch(`https://leets1337-3f387c570577.herokuapp.com/api/v1/peer-finder?campusId=${Cookies.get('campusId')}&projectId=${theid}`,{
                     method: 'GET',
