@@ -56,12 +56,13 @@ export default function Auth() {
                     <div className="text-red-500 text-sm font-bars2   w-[100%] h-[100px] flex items-center justify-center flex-col">
                     <span className="loading loading-spinner text-error"></span>
                     <p> site on maintenance </p>
+                    <p> Try Later </p>
                     </div>
                 <div className="flex items-center min-w-[300px] flex-col justify-start  w-[80%] h-[200px]">
-                    <div style={{boxShadow: '0px 0px 5px red'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
+                    {/* <div style={{boxShadow: '0px 0px 5px red'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
                      justify-center h-[60px] border-solid rounded-[20px] border-red-500 border-[2px] duration-300 hover:scale-105">
                         <p className="text-red-500 font-bars3"> Try-Later </p>
-                    </div>
+                    </div> */}
                     <div className="flex flex-col items-center justify-center  h-[100px]">
                         <p className="font-bars2 text-white font-black text-xs">Welcome to the School Rankings Board</p>
                         <p className="text-white text-[15px] font-bars3"> By : mmaghri && mlouazir </p>
