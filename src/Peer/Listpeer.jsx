@@ -25,7 +25,7 @@ export default function Listpeer() {
                                         rounded-[50px]  ">
                                     <div style={{boxShadow : "0px 0px 20px green "}} className="border-solid  border-green-500 w-[100px] rounded-[50px] h-[100px] mt-2 border-[3px]">
                                         {othload == false ? (
-                                            <img src={item.user.image.link} alt="me" className="w-[100%] h-[100%] ab rounded-[50%] object-cover "/>
+                                            <img src={item.user.image.link}  className="w-[100%] h-[100%] ab rounded-[50%] object-cover "/>
                                         ):(
                                             <div className="skeleton w-[100%] h-[100%] rounded-[50%]"></div>
                                         )
