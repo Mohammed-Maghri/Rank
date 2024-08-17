@@ -29,10 +29,10 @@ export function Nav() {
     setLogs(false);
   }
   const functionClick = ((index) => {
-    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"):  index == 2 ? (window.location.href = "https://www.1337leets.com/model") : (<></>);
+    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"):  index == 2 ? (window.location.href = "https://www.1337leets.com/model") : (index == 3 ? (window.location.href = "https://www.1337leets.com/PeerFinder") : (<></>));
   })
 
-  const object = [{bars: 'Rank'}, {bars: 'Xp-Cal'}, {bars: 'Ai'}];
+  const object = [{bars: 'Rank'}, {bars: 'Xp-Cal'}, {bars: 'Ai'}, {bars: 'PeerFinder'}];
   const [visible, setVisible] = useState(false);
   const obj = [{year : 2013}, {year : 2014}, {year : 2015}, {year : 2016}, {year : 2017}, 
     {year : 2018}, {year : 2019}, {year : 2020}, {year : 2021}, {year : 2022}, {year : 2023}, {year : 2024}];

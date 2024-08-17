@@ -10,7 +10,6 @@ export default function Listpeer() {
     const {peerfinder, setPeerfinder} = useContext(context);
     const {peertracker, setPeertracker} = useContext(context);
     const {othload, setOthload} = useContext(context);
-    console.log(peerfinder);
 
     const Redirect = (text) => {
         window.open(text, "_blank");

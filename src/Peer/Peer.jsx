@@ -73,7 +73,7 @@ const FunctionDiv = () => {
 
         <div className="flex items-center justify-center w-[100%]  h-[50px]">
             <div className="w-[300px] h-[100%] ">
-                <input onClick={() => (setSeem(true), setProjectName(""), console.log(list))} onChange={(e) => eventFunction(e)}  type="text"  value={projectName} className="outline-none w-[100%]
+                <input onClick={() => (setSeem(true), setProjectName(""))} onChange={(e) => eventFunction(e)}  type="text"  value={projectName} className="outline-none w-[100%]
                 bg-transparent border-solid border-[1px] border-yellow-200 placeholder-white text-xs font-bars2 h-[80%] pl-2 rounded-[5px] text-white" />
                 <div className="absolute w-[300px] h-[170px] flex items-center justify-center z-50">
                     {seem &&
