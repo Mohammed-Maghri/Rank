@@ -124,8 +124,8 @@ export function Peer() {
                     !peertracker && !othload &&
                     <div className=' w-[100%] h-[90%]  flex items-center flex-col justify-center '>
                         <span className="loading loading-ball loading-lg bg-yellow-400 text-[40px]"></span>
-                        <p  className='text-white font-bold font-bars2 text-xs '> To comply with the 42 API's data caching rules, we need to minimize the number</p>
-                        <p className='text-white font-bold font-bars2 text-xs '>of API requests as much as possible.</p>
+                        <p  className='text-white font-bold font-bars2 text-xs '> To comply with the 42 API's data caching rules, we need to minimize</p>
+                        <p className='text-white font-bold font-bars2 text-xs '>minimize the number of API requests as much as possible.</p>
                         <p className='text-white font-bold font-bars2 text-xs '>So Please Search For the Project to Get Data </p>
 
                     </div>
