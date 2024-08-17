@@ -17,6 +17,9 @@ module.exports = {
         'xs' : '250px',
         'xm' : '300px',
         'xf' : '400px',
+        'bgs' : '1372px',
+        'balf' : '1371px',
+        'tsa' : '928px',
       },
       keyframes: {
         fadeout: {
