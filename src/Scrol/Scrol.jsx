@@ -166,7 +166,7 @@ export default function Scrol({objectvalue}) {
                       item.login == "wabolles" ? (
                         "wabolles-Aka-theF"
                       ): item.login == "ael-mouz" ? (
-                        "ael-mouz-Aka- ( MakeFile )"
+                        "ael-mouz Aka-( MakeFile )"
                       ):(
                         `${item.login}`
                       )
