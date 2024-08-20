@@ -20,6 +20,8 @@ export default function Auth() {
             window.location.href = thepath;
         }, 1000);
     }
+
+
     Cookies.remove('access_token');
     Cookies.remove('campusId');
     Cookies.remove('cursusId');
