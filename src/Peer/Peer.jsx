@@ -81,7 +81,7 @@ const FunctionDiv = () => {
                                 const lower = item.name.toLowerCase();
                                 const filter = event.toLowerCase();
 
-                                return (lower.startsWith(filter));
+                                return (lower && lower.startsWith(filter));
                             }).map((item, index) => (
                                 <div  key={index} onClick={() => (setSeem(false), printArg(item.name), setOthload(true) ,setProjectName(item.name))} className="w-[100%] cursor-pointer h-[40px] pt-3 pb-3 text-white bg-slate-900  rounded-[10px] flex items-center justify-center text-xs font-bars2"> <p>
                                     {item.name}</p></div>
