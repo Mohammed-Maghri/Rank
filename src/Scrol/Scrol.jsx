@@ -65,7 +65,7 @@ export default function Scrol({objectvalue}) {
         if (res.status >= 400 && res.status < 600) {
           setLogs(false);
           Cookies.remove('access_token');
-          window.location.href = "https://1337leets.com";
+          // window.location.href = "https://1337leets.com";
         }
         return  res.json();
       }).then((data) => {

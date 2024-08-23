@@ -43,7 +43,7 @@ export function Selector() {
       }).then((res) => {
         if (res.status >= 400 && res.status < 600) {
           Cookies.remove('access_token');
-          window.location.href =  "https://1337leets.com";
+          // window.location.href =  "https://1337leets.com";
           setLogs(false);
         }
         return res.json();
