@@ -29,7 +29,7 @@ export function Nav() {
     setLogs(false);
   }
   const functionClick = ((index) => {
-    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://leets1337-test-af8d38d88919.herokuapp.com/calculator"):  index == 2 ? (window.location.href = "https://leets1337-test-af8d38d88919.herokuapp.com/model") : (index == 3 ? (window.location.href = "https://leets1337-test-af8d38d88919.herokuapp.com/PeerFinder") : (<></>));
+    index == 0 ? (navigate("/home")) : index == 1 ? (window.location.href = "https://www.1337leets.com/calculator"):  index == 2 ? (window.location.href = "https://www.1337leets.com/model") : (index == 3 ? (window.location.href = "https://www.1337leets.com/PeerFinder") : (<></>));
   })
 
   const object = [{bars: 'Rank'}, {bars: 'Xp-Cal'}, {bars: 'Ai'}, {bars: 'Peer-Fi'}];
