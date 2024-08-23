@@ -11,7 +11,7 @@ import meme from "../clips/memem.jpeg";
 export default function Auth() {
     const navigate = useNavigate();
     const {enable, setEnable} = useContext(context);
-    const api = "https://leets1337-3f387c570577.herokuapp.com/api/v1/authenticate";
+    const api = "https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/authenticate";
     const functionNavigate = (path) => {
         window.open(path, '_blank');
     }

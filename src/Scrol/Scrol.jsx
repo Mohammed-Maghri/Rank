@@ -261,7 +261,7 @@ export default function Scrol({objectvalue}) {
           forloads &&
         <div className="h-[100px] w-[100%] flex items-center justify-center">
           {!wait &&
-            <button onClick={() => fuctionFetchmore("https://leets1337-3f387c570577.herokuapp.com/api/v1/home")} className="btn btn-outline btn-warning">Load More</button>
+            <button onClick={() => fuctionFetchmore("https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/home")} className="btn btn-outline btn-warning">Load More</button>
           }
           {wait &&
           <span className="loading loading-dots bg-yellow-500 loading-lg"></span>
