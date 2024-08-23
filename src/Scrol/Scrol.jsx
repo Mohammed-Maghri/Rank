@@ -108,7 +108,7 @@ export default function Scrol({objectvalue}) {
         }
         {
           all.slice(0).map((item, index) => (
-            <div onClick={() => (cardSlect(index))}  key={index} style={{ backgroundColor : `transparent`}} className=" bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] rounded-[20px] duration-500 cursor-pointer  h-[140px]">
+            <div onClick={() => (cardSlect(index))}  key={index} style={{ backgroundColor : `transparent`}} className="z-40 bg-gray-400 flex items-center justify-start w-[100%] max-w-[800px] rounded-[20px] duration-500 cursor-pointer  h-[140px]">
               {/* <div className=" absolute w-[70px] h-[70px] border-solid z-100    top-[150px]">
                 <img style={{transform: "rotate(-45deg)"}} src={taj}/>
               </div> */}
