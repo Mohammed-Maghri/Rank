@@ -70,6 +70,7 @@ export function Home() {
 			body: await JSON.stringify(test),
 		}).then(response =>  response.json())
 		.then(async (data) => {
+			console.log(data);
 			Cookies.set('access_token', data.token);
 			localStorage.setItem('profileImage', data.profileImage);
 			Cookies.set("month", data.poolMonth);
