@@ -28,7 +28,7 @@ export function Home() {
 	const navigate = useNavigate();
 	const val =  new  URLSearchParams(window.location.search).get('code');
 		test.code = val;
-	console.log(test);
+
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		if (testtok == undefined) {
@@ -57,7 +57,7 @@ export function Home() {
 		}).catch((err) => {
 			Cookies.remove('access_token');
 			console.log("erro has been occured", err);
-			// window.location.href = "https://1337leets.com";
+			window.location.href = "https://1337leets.com";
 		})
 	}
 	
@@ -70,7 +70,6 @@ export function Home() {
 			body: await JSON.stringify(test),
 		}).then(response =>  response.json())
 		.then(async (data) => {
-			console.log(data);
 			Cookies.set('access_token', data.token);
 			localStorage.setItem('profileImage', data.profileImage);
 			Cookies.set("month", data.poolMonth);
@@ -83,7 +82,7 @@ export function Home() {
 			seTrue(true);
 		}).catch((error) => {
 			console.log("Error in fetching ", error);
-			// window.location.href = "https://1337leets.com";
+			window.location.href = "https://1337leets.com";
 		});
 	}
 	
