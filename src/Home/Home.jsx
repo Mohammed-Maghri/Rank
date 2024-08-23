@@ -28,7 +28,7 @@ export function Home() {
 	const navigate = useNavigate();
 	const val =  new  URLSearchParams(window.location.search).get('code');
 		test.code = val;
-	
+	console.log(test);
 	const  getapi =  (api, testtok) => {
 		obj.access_token = testtok;
 		if (testtok == undefined) {
