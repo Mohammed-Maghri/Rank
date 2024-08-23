@@ -88,6 +88,9 @@ export function Selector() {
             <div onClick={() => (setCamp("Tetouan"), setCampus(55))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
               <p className="text-black"> Tetouan </p>
             </div>
+            <div onClick={() => (setCamp("Rabat"), setCampus(75))} className="w-[90%] flex items-center justify-center h-[30px] rounded-[5px] duration-300 cursor-pointer hover:bg-slate-300 ">
+              <p className="text-black"> Rabat </p>
+            </div>
           </div>
           }
         </div>
