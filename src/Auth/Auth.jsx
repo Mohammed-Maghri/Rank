@@ -62,7 +62,7 @@ export default function Auth() {
                     <p> Try Later </p>
                     </div> */}
                 <div className="flex items-center min-w-[300px] flex-col justify-start  w-[80%] h-[200px]">
-                    <div style={{boxShadow: '0px 0px 5px red'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
+                    <div style={{boxShadow: '0px 0px 5px yellow'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
                      justify-center h-[60px] border-solid rounded-[20px] border-yellow-400 border-[2px] duration-300 hover:scale-105">
                         <p className="text-yellow-400 font-bars3"> Login </p>
                     </div>
