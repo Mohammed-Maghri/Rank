@@ -82,7 +82,7 @@ export function Home() {
 			seTrue(true);
 		}).catch((error) => {
 			console.log("Error in fetching ", error);
-			window.location.href = "https://1337leets.com";
+			// window.location.href = "https://1337leets.com";
 		});
 	}
 	
