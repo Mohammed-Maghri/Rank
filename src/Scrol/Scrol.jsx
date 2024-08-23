@@ -90,7 +90,7 @@ export default function Scrol({objectvalue}) {
       }
   },[all])
     return(
-        <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] rounded-[10px]">
+        <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] z-40 rounded-[10px]">
         <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
         <div className=" border-solid border-white  flex items-center justify-center gap-[10px] flex-col  w-[100%] h-[50px] "></div>
         {!forloads &&
@@ -259,7 +259,7 @@ export default function Scrol({objectvalue}) {
         }
         {
           forloads &&
-        <div className="h-[100px] w-[100%] flex items-center justify-center">
+        <div className="h-[100px] w-[100%] flex items-center justify-center z-40">
           {!wait &&
             <button onClick={() => fuctionFetchmore("https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/home")} className="btn btn-outline btn-warning">Load More</button>
           }
