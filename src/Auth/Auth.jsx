@@ -7,6 +7,7 @@ import Cookies from "js-cookie";
 import { context } from "../context";
 import { BsFillLightningFill } from "react-icons/bs";
 import meme from "../clips/memem.jpeg";
+import { VscGithubAlt } from "react-icons/vsc";
 
 export default function Auth() {
     const navigate = useNavigate();
@@ -76,6 +77,10 @@ export default function Auth() {
                 </div>
              </div>
              <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
+                <div className=" flex items-center justify-center  w-[100%]  text-white font-bold gap-2 font-bars2">
+                    <p className="hover:underline cursor-pointer" onClick={() => functionNavigate('https://github.com/MohammedMaghri')}> Drop a Follow On Github -- : </p>
+                    <VscGithubAlt  onClick={() => functionNavigate('https://github.com/MohammedMaghri')} className="w-[30px] h-[30px] text-yellow-400 cursor-pointer hover:scale-110 duration-200" />
+                </div>
             <p className="font-bars2 text-[8px] text-white"> We are still in the process of approving this website. If you encounter any issues or have </p>
             <p className="font-bars2 text-[8px] text-white "> any improvement suggestions , please contact me on Discord : </p>
             <p className="text-[10px] font-extrabold  font-bars2 text-white"> tr1ple.x.x.x </p>
