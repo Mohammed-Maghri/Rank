@@ -73,7 +73,7 @@ export function Selector() {
       other = 0;
     }}
     return (
-      <div className="w-[100%] h-[40px] flex items-center justify-center z-50">
+      <div className="w-[100%] h-[40px] flex items-center justify-center z-40">
       <div className="flex items-center gap-[10px] justify-around min-w-[400px]w-[40%] h-[100%]">
         <div  onClick={() => (visible == false ? (setVisible(true) , setVisible2(false), setValue(false)) : (setVisible(false)))} className="w-[120px] h-[100%]  rounded-[20px]  flex items-center justify-center text-sm font-bars2 text-white  cursor-pointer  
         duration-300 gap-1 border-solid border-white border-[2px] border-opacity-20  font-extrabold duration-700 hover:bg-yellow-500 hover:border-opacity-100"> <p> {camp} </p> <FaChevronDown className="w-[10px] h-[10px]" />
