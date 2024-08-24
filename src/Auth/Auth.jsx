@@ -75,15 +75,18 @@ export default function Auth() {
                         <div className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mlouazir')} > <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem('lou')}/> </div>
                     </div>
                 </div>
+                        <div className="flex items-center justify-center top-[800px] text-red-500 flex-col" >
+                            <p className="text-[9px] font-bars2"> Under the new rules of 1337, </p>
+                            <p className="text-[9px] font-bars2"> pollers are not permitted to view their rankings </p>
+                            <p className="text-[9px] font-bars2"> to prevent discouragement, while students will continue to have </p>
+                            <p className="text-[9px] font-bars2"> access to their rankings.</p>
+                        </div>
              </div>
              <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
                 <div className=" flex items-center justify-center  w-[100%]  text-white font-bold gap-2 font-bars2">
                     <p className="hover:underline cursor-pointer" onClick={() => functionNavigate('https://github.com/MohammedMaghri')}> Drop a Follow On Github -- : </p>
                     <VscGithubAlt  onClick={() => functionNavigate('https://github.com/MohammedMaghri')} className="w-[30px] h-[30px] text-yellow-400 cursor-pointer hover:scale-110 duration-200" />
                 </div>
-            <p className="font-bars2 text-[8px] text-white"> We are still in the process of approving this website. If you encounter any issues or have </p>
-            <p className="font-bars2 text-[8px] text-white "> any improvement suggestions , please contact me on Discord : </p>
-            <p className="text-[10px] font-extrabold  font-bars2 text-white"> tr1ple.x.x.x </p>
           </div>
           </div>
         </div>

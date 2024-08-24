@@ -75,6 +75,8 @@ export function Home() {
 			Cookies.set("month", data.poolMonth);
 			Cookies.set("campusId", data.campusId);
 			Cookies.set("cursusId", data.cursusId);
+			if (data.cursusId == 9)
+				window.location.href = "https://1337leets.com";
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
