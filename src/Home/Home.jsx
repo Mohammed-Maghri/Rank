@@ -70,13 +70,13 @@ export function Home() {
 			body: await JSON.stringify(test),
 		}).then(response =>  response.json())
 		.then(async (data) => {
+			if (data.cursusId == 9)
+				window.location.href = "https://1337leets.com";
 			Cookies.set('access_token', data.token);
 			localStorage.setItem('profileImage', data.profileImage);
 			Cookies.set("month", data.poolMonth);
 			Cookies.set("campusId", data.campusId);
 			Cookies.set("cursusId", data.cursusId);
-			if (data.cursusId == 9)
-				window.location.href = "https://1337leets.com";
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
