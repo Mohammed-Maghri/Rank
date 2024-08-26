@@ -37,7 +37,7 @@ import bou from "../clips/bou.png";
 import zech from "../clips/zech.png";
 import obihi from "../clips/obih.png";
 import thecat from "../clips/cat.png"
-
+import frat from "../clips/frat.png"
 export default function Scrol({objectvalue}) {
     const {logs, setLogs} = useContext(context);
     const {all, setAll} = useContext(context);
@@ -118,6 +118,9 @@ export default function Scrol({objectvalue}) {
             <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[115px]">
               
               {loadingstate == false ? (
+                item.login == "skasmi" ? (
+                <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={frat}/>
+                ):
                 item.profileImage === "null" ? (
                 <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={thecat}/>
                 ):
