@@ -91,8 +91,7 @@ export default function Scrol({objectvalue}) {
       )
       }
   },[all])
-  console.log(all[0].profileImage);
-  console.log(all[10].profileImage);
+  console.log(all);
     return(
         <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] z-30 rounded-[10px]">
         <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
