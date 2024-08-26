@@ -36,7 +36,7 @@ import mso from "../clips/maso.png";
 import bou from "../clips/bou.png";
 import zech from "../clips/zech.png";
 import obihi from "../clips/obih.png";
-import cat from "../clips/cat.png"
+import thecat from "../clips/cat.png"
 
 export default function Scrol({objectvalue}) {
     const {logs, setLogs} = useContext(context);
@@ -118,7 +118,7 @@ export default function Scrol({objectvalue}) {
               
               {loadingstate == false ? (
                 item.profileImage == "" ? (
-                <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={cat}/>
+                <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={thecat}/>
                 ):
               item.login == "youbihi" ? (
                 <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={obihi}/>
