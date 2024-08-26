@@ -36,7 +36,7 @@ import mso from "../clips/maso.png";
 import bou from "../clips/bou.png";
 import zech from "../clips/zech.png";
 import obihi from "../clips/obih.png";
-import thecat from "../clips/cat.png"
+import thecat from "../clips/nopic.png"
 import frat from "../clips/frat.png"
 export default function Scrol({objectvalue}) {
     const {logs, setLogs} = useContext(context);
