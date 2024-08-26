@@ -92,6 +92,7 @@ export default function Scrol({objectvalue}) {
       }
   },[all])
   console.log(all[0].profileImage);
+  console.log(all[10].profileImage);
     return(
         <div className="flex items-center justify-center border-solid overflow-auto w-[100%] h-[100%] mt-[10px] z-30 rounded-[10px]">
         <div className="border-solid flex items-center justify-start flex-col duration-300 gap-[15px] lg:w-[70%]   md:w-[70%] h-[100%] max-w-[800px] rounded-[10px] xs:w-[100%]">
@@ -118,7 +119,7 @@ export default function Scrol({objectvalue}) {
             <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[115px]">
               
               {loadingstate == false ? (
-                item.profileImage == null ? (
+                item.profileImage === null ? (
                 <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={thecat}/>
                 ):
               item.login == "youbihi" ? (
