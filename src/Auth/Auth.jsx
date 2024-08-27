@@ -77,7 +77,7 @@ export default function Auth() {
                 </div>
                         <div className="flex items-center justify-center top-[800px] text-red-500 flex-col" >
                             <p className="text-[9px] font-bars2"> Under the new rules of 1337, </p>
-                            <p className="text-[9px] font-bars2"> poolers are not permitted to view their rankings </p>
+                            <p className="text-[9px] font-bars2"> ⚠️ poolers are not permitted to view their rankings </p>
                             <p className="text-[9px] font-bars2"> to prevent discouragement, while students will continue to have </p>
                             <p className="text-[9px] font-bars2"> access to their rankings.</p>
                         </div>
