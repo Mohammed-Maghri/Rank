@@ -124,7 +124,7 @@ export default function Scrol({objectvalue}) {
               {loadingstate == false ? (
                 item.login == "akoutate" ? (
                 <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={ala}/>
-                );
+                ):
                 item.login == "oel-feng" ? (
                 <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={fnj}/>
                 ):
