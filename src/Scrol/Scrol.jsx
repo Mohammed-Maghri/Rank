@@ -40,7 +40,8 @@ import thecat from "../clips/nopic.png"
 import frat from "../clips/frat.png"
 import fnj from "../clips/fnj.png";
 import ala from "../clips/ala.png"
-import rd from "../clips/rd.jsx"
+import rd from "../clips/rd.png"
+import { GiFullMotorcycleHelmet } from "react-icons/gi";
 
 
 export default function Scrol({objectvalue}) {
