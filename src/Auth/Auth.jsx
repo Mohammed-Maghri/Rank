@@ -82,12 +82,12 @@ export default function Auth() {
                             <p className="text-[9px] font-bars2"> access to their rankings.</p>
                         </div>
              </div>
-             <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
+             {/* <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
                 <div className=" flex items-center justify-center  w-[100%]  text-white font-bold gap-2 font-bars2">
                     <p className="hover:underline cursor-pointer" onClick={() => functionNavigate('https://github.com/MohammedMaghri')}> Drop a Follow On Github --: </p>
                     <VscGithubAlt  onClick={() => functionNavigate('https://github.com/MohammedMaghri')} className="w-[30px] h-[30px] text-yellow-400 cursor-pointer hover:scale-110 duration-200" />
                 </div>
-          </div>
+          </div> */}
           </div>
         </div>
       );
