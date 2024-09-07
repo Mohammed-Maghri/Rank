@@ -194,7 +194,9 @@ export function Calculator() {
                             </div>
                             <div>
                                 <div className="flex gap-[10px] items-center justify-center w-[100%] h-[60px] rounded-[10px] ">
-                                    <p className="font-bars2  text-[30px] font-extrabold text-white"> {las} </p>
+                                    {las == "NaN" ? 
+                                    ( <p className="font-bars2  text-[30px] font-extrabold text-white"> Please Provide An Output ! </p>) : 
+                                    (<p className="font-bars2  text-[30px] font-extrabold text-white"> {las} </p>)}
                                 <div onClick={() => (funcAdd())} className="w-[30px] cursor-pointer duration-300 hover:scale-110 h-[30px] ">
                                     <IoMdAddCircle className="text-green-500 w-[100%] h-[100%]" />
                                 </div>
