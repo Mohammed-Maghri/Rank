@@ -21,8 +21,8 @@ export default function Auth() {
             window.location.href = thepath;
         }, 1000);
     }
-
-
+    if (Cookies.get('access_token') != NaN && Cookies.get('log') == '1337')
+            navigate('/home');
     Cookies.remove('access_token');
     Cookies.remove('campusId');
     Cookies.remove('cursusId');
