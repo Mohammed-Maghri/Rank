@@ -15,7 +15,7 @@ export default function Auth() {
     const api = "https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/authenticate";
     if (Cookies.get('access_token') != NaN && Cookies.get('log') == '1337'){
         console.log("here");
-        navigate('/home');
+        window.location.href = "https://www.1337leets.com/home";
     }
     const functionNavigate = (path) => {
         window.open(path, '_blank');
