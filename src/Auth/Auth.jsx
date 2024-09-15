@@ -13,6 +13,10 @@ export default function Auth() {
     const navigate = useNavigate();
     const {enable, setEnable} = useContext(context);
     const api = "https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/authenticate";
+    if (Cookies.get('access_token') != NaN && Cookies.get('log') == '1337'){
+        console.log("here");
+        navigate('/home');
+    }
     const functionNavigate = (path) => {
         window.open(path, '_blank');
     }
@@ -21,13 +25,7 @@ export default function Auth() {
             window.location.href = thepath;
         }, 1000);
     }
-    if (Cookies.get('access_token') != NaN && Cookies.get('log') == '1337')
-            navigate('/home');
     Cookies.remove('access_token');
-    Cookies.remove('campusId');
-    Cookies.remove('cursusId');
-    Cookies.remove('poolYear');
-    Cookies.remove('month');
     Cookies.remove('log');
     localStorage.setItem('pics', me);
     localStorage.setItem('lou', lou);
