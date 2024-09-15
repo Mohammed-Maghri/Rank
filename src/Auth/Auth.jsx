@@ -13,9 +13,10 @@ export default function Auth() {
     const navigate = useNavigate();
     const {enable, setEnable} = useContext(context);
     const api = "https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/authenticate";
+    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-39d663e4409f75359ed40f93604b1492f29cc61d16f1eced3f7b7b81ee1dcb78&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2Fhome&response_type=code";
     if (Cookies.get('access_token') != NaN && Cookies.get('log') == '1337'){
         console.log("here");
-        window.location.href = "https://www.1337leets.com/home";
+        window.location.href = token;
     }
     const functionNavigate = (path) => {
         window.open(path, '_blank');
@@ -31,7 +32,6 @@ export default function Auth() {
     Cookies.remove('month');
     localStorage.setItem('pics', me);
     localStorage.setItem('lou', lou);
-    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-39d663e4409f75359ed40f93604b1492f29cc61d16f1eced3f7b7b81ee1dcb78&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2Fhome&response_type=code";
     return (
         <div className="w-[100%] bg-black h-[100vh] flex items-center justify-center">
           <Starfield
