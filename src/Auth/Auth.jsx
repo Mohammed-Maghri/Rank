@@ -14,10 +14,6 @@ export default function Auth() {
     const {enable, setEnable} = useContext(context);
     const api = "https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/authenticate";
     const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-39d663e4409f75359ed40f93604b1492f29cc61d16f1eced3f7b7b81ee1dcb78&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2Fhome&response_type=code";
-    if (Cookies.get('access_token') != NaN && Cookies.get('log') == '1337'){
-        console.log("here");
-        window.location.href = token;
-    }
     const functionNavigate = (path) => {
         window.open(path, '_blank');
     }
@@ -26,6 +22,8 @@ export default function Auth() {
             window.location.href = thepath;
         }, 1000);
     }
+    Cookies.remove('access_token');
+    Cookies.remove('log');
     Cookies.remove('campusId');
     Cookies.remove('cursusId');
     Cookies.remove('poolYear');
