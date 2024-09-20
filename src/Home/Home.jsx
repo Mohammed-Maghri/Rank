@@ -80,7 +80,7 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
-			await getapi("https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/home", Cookies.get('access_token'));
+			await getapi("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/home", Cookies.get('access_token'));
 			seTrue(true);
 		}).catch((error) => {
 			console.log("Error in fetching ", error);
@@ -91,7 +91,7 @@ export function Home() {
 useEffect(() => {
 	setTimeout( async () => {
 		if (Cookies.get('access_token') == undefined || !Cookies.get('access_token')) {
-			functionapi('https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/authenticate');
+			functionapi('https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/authenticate');
 		}
 	}, 300);
 }, [])
@@ -99,7 +99,7 @@ useEffect(() => {
 useEffect( async () => {
 	setTimeout(async () => {
 		Cookies.get('access_token') &&
-			await getapi("https://leets1337-test-af8d38d88919.herokuapp.com/api/v1/home", Cookies.get('access_token'));
+			await getapi("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/home", Cookies.get('access_token'));
 	}, 1200);
 }, [])
 
