@@ -74,10 +74,8 @@ export default function Auth() {
                     </div>
                 </div>
                         <div className="flex items-center justify-center top-[800px] text-red-500 flex-col" >
-                            <p className="text-[9px] font-bars2"> Under the new rules of 1337, </p>
-                            <p className="text-[9px] font-bars2"> ⚠️ poolers are not permitted to view their rankings </p>
-                            <p className="text-[9px] font-bars2"> to prevent discouragement, while students will continue to have </p>
-                            <p className="text-[9px] font-bars2"> access to their rankings.</p>
+                            <p className="text-[9px] font-bars2"> Pool is Over 🎉 </p>
+                            <p className="text-[9px] font-bars2"> To E2 🏃🏼‍♂️</p>
                         </div>
              </div>
              <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
