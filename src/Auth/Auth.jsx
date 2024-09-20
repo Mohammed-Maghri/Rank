@@ -42,7 +42,7 @@ export default function Auth() {
           flex items-center justify-start  flex-col absolute z-50">
             <div className="  w-[100%] flex items-start justify-end h-[10%]">
                 <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className=" w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
-                    <div onClick={() => (cally(token))} className="w-[70%] font-medium text-white text-sm font-bars2 flex items-center  justify-center h-[100%]" >
+                    <div  className="w-[70%] font-medium text-white text-sm font-bars2 flex items-center  justify-center h-[100%]" >
                         <p> Beta-V </p>
                     </div>
                     <div className="w-[20%] flex items-center justify-start text-white">
