@@ -73,9 +73,9 @@ export default function Auth() {
                         <div className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mlouazir')} > <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem('lou')}/> </div>
                     </div>
                 </div>
-                        <div className="flex items-center justify-center top-[800px] text-red-500 flex-col" >
-                            <p className="text-[9px] font-bars2"> Pool is Over 🎉 </p>
-                            <p className="text-[9px] font-bars2"> To E2 🏃🏼‍♂️</p>
+                        <div className="flex items-center justify-center top-[800px] text-white flex-col" >
+                            <p className="text-[15px] font-bars2"> Pool is Over 🎉 </p>
+                            <p className="text-[15px] font-bars2"> To E2 🏃🏼‍♂️</p>
                         </div>
              </div>
              <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
