@@ -26,6 +26,7 @@ export function Home() {
 	const {all, setAll} = useContext(context);
 	const [thetrue, seTrue] = useState(false);
 	const navigate = useNavigate();
+	const {username, seTusername} = useContext(context);
 	const val =  new  URLSearchParams(window.location.search).get('code');
 		test.code = val;
 
@@ -80,6 +81,8 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
+			Cookies.set("Who", data.login);
+			seTusername(Cookies.get("Who"));
 			await getapi("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/home", Cookies.get('access_token'));
 			seTrue(true);
 		}).catch((error) => {
