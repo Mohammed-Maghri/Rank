@@ -1,13 +1,91 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import pic from "../clips/mmaghri.jpg";
 import pas from "../clips/pass.png";
+import kta from "../clips/taj.jpeg";
+
 import { useState } from "react";
+import { context } from "../context";
+import Cookies from "js-cookie";
 
 import "../Nav/Nav.css";
+import { functionVisible } from "../Nav/Nav";
 
 const ob = [{}];
 
+
+const names = [{pico : [ pic , pic], project : "Minishell", status : "Waiting For Eval !"}, 
+{pico : [pic ], project : "CPP Module 06", status : "Waiting For Eval !"}, 
+{pico : [pic ,  pic , pic, pic , pic], project : "Transdense", status : "Waiting For Eval !"}];
+
+const Componnent = () => {
+	const {username, seTusername} = useContext(context);
+  // seTusername(Cookies.get("Who"));
+  const [obv, seTobv] = useState(false);
+  const [values, setValues] = useState([]);
+
+  const fetchCorections = async (link) => {
+    const obj = {dateOne : "2024-09-28" , dateTwo : "2024-09-30"};
+    console.log(JSON.stringify(obj));
+    await fetch(link , {
+      method : 'POST',
+      headers : {
+        'Content-Type' : 'application/json',
+				'Authorization': `Bearer ${Cookies.get('access_token')}`
+      }, body : await JSON.stringify(obj),
+    }).then((response) => response.json()).then((data) => {
+      (data) ? seTobv(true) : seTobv(false) ;
+      setValues(data);
+    }).catch((err) => {
+      console.log("Error 0" , err);
+    })
+  };
+
+
+  const functionRedirect = (value) => {
+      window.open("https://profile.intra.42.fr/users/" + value , '_blank');
+  };
+  fetchCorections("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/test");
+  return (
+    <div className=" rounded-[10px]  [&::-webkit-scrollbar]:hidden gap-1 [-ms-overflow-style:none] [scrollbar-width:none] flex-col flex  items-center pt-1 h-[100%] w-[100%] bg-slate-800 overflow-auto">
+        {obv && values.map((items, index) => (
+          <div className="w-[98%] h-[65px] flex items-center justify-center flex-col border-solid border-yellow-400 border-[2px] hover:cursor-pointer hover:bg-slate-600  rounded-[10px]">
+          <div className="flex items-center justify-center w-[100%] rounded-[10px]  h-[50%]">
+          {items.users.map((it, index ) => (
+            <div onClick={() => (functionRedirect(it.login))} style={{boxShadow : "0px 0px 3px white "}} className="border-solid z-20 border-white hover:scale-110 hover:duration-150 cursor-pointer  border-[2px] w-[37px] h-[37px] rounded-[50%]">
+                  <img src={kta} className="object-cover rounded-[50%] h-[100%] w-[100%]" />
+                </div>
+              ))
+            }
+            </div>
+            <div className="rounded-[8px] w-[100%] h-[50%] bg-slate-900">
+            <div className="flex items-center pt-2 justify-center   h-[50%]">
+            <p  className="font-bars2 text-white z-20 font-bold "> {items.project_gitlab_path.substring(items.project_gitlab_path.lastIndexOf('/') + 1)} </p>
+            </div>
+            <div className=" h-[50%] rounded-[10px] flex items-center justify-center" >
+            <p className="font-bars2 text-xs text-red-500 font-bold"> {items.status} </p>
+            </div>
+            </div>
+            </div>
+          ))
+      }
+      {!obv && 
+        <div className="w-[100%] h-[100%] border-[4px] flex items-center justify-center rounded-[5px] border-solid border-yellow-300">
+          <span className="loading loading-infinity loading-lg text-yellow-300"></span>
+        </div>
+      }
+    </div>
+  )
+};
+
 export function Dropdown(name, pic) {
+    // const [all , setall] = useContext(context);
+    
+    const [visiblity, setvisibility] = useState(false);
+
+    useEffect(() => {
+      (Cookies.get("Who") == "mmaghri" || Cookies.get("Who") == "mlouazir") ? setvisibility(true) : setvisibility(false);
+    }, []);
+  
     const [vip, setVip] = useState(false);
     return (
         <div className=" absolute flex items-start justify-end top-[65px] w-[400px] h-[200px] ">
@@ -35,11 +113,18 @@ export function Dropdown(name, pic) {
                         ))
                 ):(
                     <div className="w-[100%] text-white flex-col h-[100%] flex font-bars2 text-sm items-center justify-center">
-                    <p> Sorry ! The Vip Option only</p>
-                    <p> Accessible</p>
-                    <p> To the Owners Of the</p>
-                    <p> VIP-PASS </p>
-                    <img className="w-[22px] h-[22px]" src={pas} />
+                      {visiblity && 
+                        <Componnent />
+                      }
+                      {!visiblity && 
+                        <>
+                        <p> Sorry ! The Vip Option only</p>
+                        <p> Accessible</p>
+                        <p> To the Owners Of the</p>
+                        <p> VIP-PASS </p> 
+                       <img className="w-[22px] h-[22px]" src={pas} /> 
+                        </>
+                      }
                     </div>
                 )
             }
