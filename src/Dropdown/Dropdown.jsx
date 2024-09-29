@@ -29,12 +29,13 @@ const Componnent = () => {
     const month =  dataDate.getMonth() + 1;
     const day = dataDate.getDay();
   
-    tomorow.setDate(day + 1);
+    tomorow.setDate(dataDate.getDay() + 1);
     const tomorow = new Date(dataDate);
     const tomyear = tomorow.getFullYear();
     const tomday = tomorow.getDay();
     const tommonth = tomorow.getMonth() + 1;
     
+    console.log((year + "-" + month + "-" + day), (tomyear + "-" + tommonth + "-" + tomday));
     const obj = {dateOne : (year + "-" + month + "-" + day), dateTwo : (tomyear + "-" + tommonth + "-" + tomday)};
     console.log(JSON.stringify(obj));
     await fetch(link , {
