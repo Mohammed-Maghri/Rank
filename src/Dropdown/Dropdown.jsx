@@ -24,7 +24,7 @@ const Componnent = () => {
   const [values, setValues] = useState([]);
 
   const fetchCorections = async (link) => {
-    const obj = {dateOne : "2024-09-28" , dateTwo : "2024-09-30"};
+    const obj = {dateOne : "2024-09-29" , dateTwo : "2024-09-30"};
     console.log(JSON.stringify(obj));
     await fetch(link , {
       method : 'POST',
