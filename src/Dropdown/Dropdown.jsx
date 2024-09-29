@@ -24,7 +24,18 @@ const Componnent = () => {
   const [values, setValues] = useState([]);
 
   const fetchCorections = async (link) => {
-    const obj = {dateOne : "2024-09-29" , dateTwo : "2024-09-30"};
+    const dataDate = new Date() ;
+    const year = dataDate.getFullYear();
+    const month =  dataDate.getMonth() + 1;
+    const day = dataDate.getDay();
+  
+    tomorow.setDate(day + 1);
+    const tomorow = new Date(dataDate);
+    const tomyear = tomorow.getFullYear();
+    const tomday = tomorow.getDay();
+    const tommonth = tomorow.getMonth() + 1;
+    
+    const obj = {dateOne : (year + "-" + month + "-" + day), dateTwo : (tomyear + "-" + tommonth + "-" + tomday)};
     console.log(JSON.stringify(obj));
     await fetch(link , {
       method : 'POST',
