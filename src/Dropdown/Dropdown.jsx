@@ -29,8 +29,8 @@ const Componnent = () => {
     const month =  dataDate.getMonth() + 1;
     const day = dataDate.getDay();
   
-    tomorow.setDate(dataDate.getDay() + 1);
     const tomorow = new Date(dataDate);
+    tomorow.setDate(dataDate.getDay() + 1);
     const tomyear = tomorow.getFullYear();
     const tomday = tomorow.getDay();
     const tommonth = tomorow.getMonth() + 1;
