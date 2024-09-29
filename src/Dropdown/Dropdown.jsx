@@ -27,12 +27,12 @@ const Componnent = () => {
     const dataDate = new Date() ;
     const year = dataDate.getFullYear();
     const month =  dataDate.getMonth() + 1;
-    const day = dataDate.getDay();
+    const day = dataDate.getDate();
   
     const tomorow = new Date(dataDate);
     tomorow.setDate(dataDate.getDay() + 1);
     const tomyear = tomorow.getFullYear();
-    const tomday = tomorow.getDay();
+    const tomday = tomorow.getDate();
     const tommonth = tomorow.getMonth() + 1;
     
     console.log((year + "-" + month + "-" + day), (tomyear + "-" + tommonth + "-" + tomday));
