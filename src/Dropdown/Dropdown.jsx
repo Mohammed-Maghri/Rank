@@ -36,7 +36,7 @@ const Componnent = () => {
     const tommonth = tomorow.getMonth() + 1;
     
     console.log((year + "-" + month + "-" + day), (tomyear + "-" + tommonth + "-" + tomday));
-    const obj = {dateOne : "2024-9-29", dateTwo : "2024-9-30"};
+    const obj = {dateOne :(year + "-" + month + "-" + day), dateTwo : (tomyear + "-" + tommonth + "-" + tomday)};
     console.log(JSON.stringify(obj));
     await fetch(link , {
       method : 'POST',
