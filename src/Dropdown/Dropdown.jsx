@@ -56,7 +56,9 @@ const Componnent = () => {
   const functionRedirect = (value) => {
       window.open("https://profile.intra.42.fr/users/" + value , '_blank');
   };
-  fetchCorections("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/test");
+  useEffect(() => {
+    fetchCorections("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/test");
+  }, [])
   return (
     <div className=" rounded-[10px]  [&::-webkit-scrollbar]:hidden gap-1 [-ms-overflow-style:none] [scrollbar-width:none] flex-col flex  items-center pt-1 h-[100%] w-[100%] bg-slate-800 overflow-auto">
         {obv && values.map((items, index) => (
