@@ -30,7 +30,7 @@ const Componnent = () => {
     const day = dataDate.getDate();
   
     const tomorow = new Date(dataDate);
-    tomorow.setDate(dataDate.getDay() + 1);
+    tomorow.setDate(dataDate.getDate() + 1);
     const tomyear = tomorow.getFullYear();
     const tomday = tomorow.getDate();
     const tommonth = tomorow.getMonth() + 1;
