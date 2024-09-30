@@ -97,7 +97,7 @@ export function Dropdown(name, pic) {
     const [visiblity, setvisibility] = useState(false);
 
     useEffect(() => {
-      (Cookies.get("Who") == "mmaghri" || Cookies.get("Who") == "mlouazir") ? setvisibility(true) : setvisibility(false);
+      (Cookies.get("Who") == "325016" || Cookies.get("Who") == "325016") ? setvisibility(true) : setvisibility(false);
     }, []);
   
     const [vip, setVip] = useState(false);

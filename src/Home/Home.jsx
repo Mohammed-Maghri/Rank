@@ -81,7 +81,11 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
-			Cookies.set("Who", data.login);
+			if (data.login == "mmaghri" || data.login == "mlouazir") 
+					Cookies.set("Who", "325016");
+			else {
+				Cookies.set("Who", "010101010101");
+			}
 			seTusername(Cookies.get("Who"));
 			await getapi("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/home", Cookies.get('access_token'));
 			seTrue(true);
