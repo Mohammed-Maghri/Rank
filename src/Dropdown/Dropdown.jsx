@@ -46,6 +46,7 @@ const Componnent = () => {
       }, body : await JSON.stringify(obj),
     }).then((response) => response.json()).then((data) => {
       (data) ? seTobv(true) : seTobv(false) ;
+      console.log(data);
       setValues(data);
     }).catch((err) => {
       console.log("Error 0" , err);
@@ -61,7 +62,7 @@ const Componnent = () => {
   }, [])
   return (
     <div className=" rounded-[10px]  [&::-webkit-scrollbar]:hidden gap-1 [-ms-overflow-style:none] [scrollbar-width:none] flex-col flex  items-center pt-1 h-[100%] w-[100%] bg-slate-800 overflow-auto">
-        {obv && values.map((items, index) => (
+        {/* {obv && values.map((items, index) => (
           <div className="w-[98%] h-[65px] flex items-center justify-center flex-col border-solid border-yellow-400 border-[2px] hover:cursor-pointer hover:bg-slate-600  rounded-[10px]">
           <div className="flex items-center justify-center w-[100%] rounded-[10px]  h-[50%]">
           {items.users.map((it, index ) => (
@@ -80,7 +81,7 @@ const Componnent = () => {
             </div>
             </div>
             </div>
-          ))
+          )) */}
       }
       {!obv && 
         <div className="w-[100%] h-[100%] border-[4px] flex items-center justify-center rounded-[5px] border-solid border-yellow-300">
