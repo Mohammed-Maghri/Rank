@@ -74,7 +74,7 @@ const Componnent = () => {
             </div>
             <div className="rounded-[8px] w-[100%] h-[50%] bg-slate-900">
             <div className="flex items-center pt-2 justify-center   h-[50%]">
-              {(items.project_gitlab_path == null) ? <p  className="font-bars2 text-white z-20 font-bold "> Williii Mkaymch Smiya hh </p> :
+              {(items.project_gitlab_path == null) ? <p  className="font-bars2 text-white z-20 font-bold "> EXAM </p> :
               <p  className="font-bars2 text-white z-20 font-bold "> {items.project_gitlab_path.substring(items.project_gitlab_path.lastIndexOf('/') + 1)} </p>
               }
             </div>
