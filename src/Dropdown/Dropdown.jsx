@@ -46,8 +46,8 @@ const Componnent = () => {
       }, body : await JSON.stringify(obj),
     }).then((response) => response.json()).then((data) => {
       (data) ? seTobv(true) : seTobv(false) ;
-      (Object.keys(data).length() == 0) ? setValues(true) : setValues(false);
-      if (Object.keys(data).length() == 0)
+      (Object.keys(data).length == 0) ? setValues(true) : setValues(false);
+      if (Object.keys(data).length == 0)
           console.log("iTs empty !");
       console.log(data);
       setValues(data);
