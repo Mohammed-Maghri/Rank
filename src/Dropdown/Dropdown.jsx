@@ -68,7 +68,7 @@ const Componnent = () => {
   return (
     <div className=" rounded-[10px]  [&::-webkit-scrollbar]:hidden gap-1 [-ms-overflow-style:none] [scrollbar-width:none] flex-col flex  items-center pt-1 h-[100%] w-[100%] bg-slate-800 overflow-auto">
       {empty &&
-        <div className="w-[100%] h-[100%]">
+        <div className="w-[100%] h-[100%] flex items-center justify-center">
           <p className="text-white text-md font-bold font-bars2"> No Push For the Day </p>
         </div>
       }
