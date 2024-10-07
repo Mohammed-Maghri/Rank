@@ -47,6 +47,8 @@ const Componnent = () => {
     }).then((response) => response.json()).then((data) => {
       (data) ? seTobv(true) : seTobv(false) ;
       (data.length() == 0) ? setValues(true) : setValues(false);
+      if (data.length() == 0)
+          console.log("iTs empty !");
       console.log(data);
       setValues(data);
     }).catch((err) => {
