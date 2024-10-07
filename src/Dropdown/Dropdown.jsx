@@ -16,10 +16,10 @@ const ob = [{}];
 const names = [{pico : [ pic , pic], project : "Minishell", status : "Waiting For Eval !"}, 
 {pico : [pic ], project : "CPP Module 06", status : "Waiting For Eval !"}, 
 {pico : [pic ,  pic , pic, pic , pic], project : "Transdense", status : "Waiting For Eval !"}];
-const [empty, setEmpty] = useState(false);
 const Componnent = () => {
-	const {username, seTusername} = useContext(context);
+  const {username, seTusername} = useContext(context);
   // seTusername(Cookies.get("Who"));
+  const [empty, setEmpty] = useState(false);
   const [obv, seTobv] = useState(false);
   const [values, setValues] = useState([]);
 
