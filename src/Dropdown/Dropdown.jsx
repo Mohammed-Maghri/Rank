@@ -65,14 +65,14 @@ const Componnent = () => {
 
   return (
     <div className=" rounded-[10px]  [&::-webkit-scrollbar]:hidden gap-1 [-ms-overflow-style:none] [scrollbar-width:none] flex-col flex  items-center pt-1 h-[100%] w-[100%] bg-slate-800 overflow-auto">
+      {empty &&
+        <div className="w-[100%] h-[100%]">
+          <p className="text-white text-md font-bold font-bars2"> No Push For the Day </p>
+        </div>
+      }
         {obv && values.map((items, index) => (
           <div className="w-[98%] h-[65px] flex items-center justify-center flex-col border-solid border-yellow-400 border-[2px] hover:cursor-pointer hover:bg-slate-600  rounded-[10px]">
           <div className="flex items-center justify-center w-[100%] rounded-[10px]  h-[50%]">
-            {empty &&
-              <div className="w-[100%] h-[100%]">
-                <p className="text-white text-md font-bold font-bars2"> No Push For the Day </p>
-              </div>
-            }
           {items.users.map((it, index ) => (
             <div onClick={() => (functionRedirect(it.login))} style={{boxShadow : "0px 0px 3px white "}} className="border-solid z-20 border-white hover:scale-110 hover:duration-150 cursor-pointer  border-[2px] w-[37px] h-[37px] rounded-[50%]">
                   <img src={kta} className="object-cover rounded-[50%] h-[100%] w-[100%]" />
