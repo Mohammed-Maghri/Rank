@@ -16,7 +16,7 @@ const ob = [{}];
 const names = [{pico : [ pic , pic], project : "Minishell", status : "Waiting For Eval !"}, 
 {pico : [pic ], project : "CPP Module 06", status : "Waiting For Eval !"}, 
 {pico : [pic ,  pic , pic, pic , pic], project : "Transdense", status : "Waiting For Eval !"}];
-
+const [empty, setEmpty] = useState(false);
 const Componnent = () => {
 	const {username, seTusername} = useContext(context);
   // seTusername(Cookies.get("Who"));
@@ -46,6 +46,7 @@ const Componnent = () => {
       }, body : await JSON.stringify(obj),
     }).then((response) => response.json()).then((data) => {
       (data) ? seTobv(true) : seTobv(false) ;
+      (data.length() == 0) ? setValues(true) : setValues(false);
       console.log(data);
       setValues(data);
     }).catch((err) => {
@@ -57,14 +58,21 @@ const Componnent = () => {
   const functionRedirect = (value) => {
       window.open("https://profile.intra.42.fr/users/" + value , '_blank');
   };
+
   useEffect(() => {
     fetchCorections("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/test");
   }, [])
+
   return (
     <div className=" rounded-[10px]  [&::-webkit-scrollbar]:hidden gap-1 [-ms-overflow-style:none] [scrollbar-width:none] flex-col flex  items-center pt-1 h-[100%] w-[100%] bg-slate-800 overflow-auto">
         {obv && values.map((items, index) => (
           <div className="w-[98%] h-[65px] flex items-center justify-center flex-col border-solid border-yellow-400 border-[2px] hover:cursor-pointer hover:bg-slate-600  rounded-[10px]">
           <div className="flex items-center justify-center w-[100%] rounded-[10px]  h-[50%]">
+            {empty &&
+              <div className="w-[100%] h-[100%]">
+                <p className="text-white text-md font-bold font-bars2"> No Push For the Day </p>
+              </div>
+            }
           {items.users.map((it, index ) => (
             <div onClick={() => (functionRedirect(it.login))} style={{boxShadow : "0px 0px 3px white "}} className="border-solid z-20 border-white hover:scale-110 hover:duration-150 cursor-pointer  border-[2px] w-[37px] h-[37px] rounded-[50%]">
                   <img src={kta} className="object-cover rounded-[50%] h-[100%] w-[100%]" />
