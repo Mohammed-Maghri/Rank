@@ -15,7 +15,7 @@ import me from "../clips/this.png";
 import loua from "../clips/loua.png";
 import asad from "../clips/asad.png";
 import Cookies from "js-cookie";
-import mma from "../clips/me.PNG"
+import mma from "../clips/me.JPG"
 import cat from "../clips/taj.jpeg"
 import first from "../clips/crown.png"
 import sec from "../clips/22.png"
