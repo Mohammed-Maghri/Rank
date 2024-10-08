@@ -15,7 +15,7 @@ import me from "../clips/this.png";
 import loua from "../clips/loua.png";
 import asad from "../clips/asad.png";
 import Cookies from "js-cookie";
-import mma from "../clips/mmaghri.jpg"
+import mma from "../clips/me.JPG"
 import cat from "../clips/taj.jpeg"
 import first from "../clips/crown.png"
 import sec from "../clips/22.png"
@@ -183,7 +183,7 @@ export default function Scrol({objectvalue}) {
                 item.login == "sel-jett" ? (
                   <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={kta}/>
                 ):item.login == "mmaghri" ? (
-                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={"https://drive.google.com/file/d/11zvthk3oXaBhyH5hfC_qLPbgH6OlA7uS/view?usp=drive_link"}/>
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={mma}/>
                 ):item.login == "mlouazir" ? (
                   <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={loua}/>
                 ):item.login == "asnaji" ?(
