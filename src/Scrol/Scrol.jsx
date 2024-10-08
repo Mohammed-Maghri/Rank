@@ -183,7 +183,7 @@ export default function Scrol({objectvalue}) {
                 item.login == "sel-jett" ? (
                   <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={kta}/>
                 ):item.login == "mmaghri" ? (
-                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={meme}/>
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={"https://drive.google.com/file/d/11zvthk3oXaBhyH5hfC_qLPbgH6OlA7uS/view?usp=drive_link"}/>
                 ):item.login == "mlouazir" ? (
                   <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={loua}/>
                 ):item.login == "asnaji" ?(
