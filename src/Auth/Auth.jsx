@@ -51,14 +51,14 @@ export default function Auth() {
                 </div>
             </div>
             <div  className="xs:w-[80%] flex items-center justify-start  rounded-[20px] h-[70%] max-w-[600px] gap-[20px] flex-col">
-                <div  className="w-[80%] flex items-end justify-center h-[30%] rounded-[10px] bg-transparent">
+                {/* <div  className="w-[80%] flex items-end justify-center h-[30%] rounded-[10px] bg-transparent">
                     <p className="font-bars4 font-bold text-6xl text-white"> 1337Leets </p>
-                </div>
-                    {/* <div className="text-red-500 text-sm font-bars2   w-[100%] h-[100px] flex items-center justify-center flex-col">
+                </div> */}
+                    <div className="text-red-500 text-sm font-bars2   w-[100%] h-[100px] flex items-center justify-center flex-col">
                     <span className="loading loading-spinner text-error"></span>
                     <p> site on maintenance </p>
                     <p> Try Later </p>
-                    </div> */}
+                    </div>
                 <div className="flex items-center min-w-[300px] flex-col justify-start  w-[80%] h-[200px]">
                     <div style={{boxShadow: '0px 0px 5px yellow'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
                      justify-center h-[60px] border-solid rounded-[20px] border-yellow-400 border-[2px] duration-300 hover:scale-105">
