@@ -75,8 +75,6 @@ export default function Auth() {
                 </div>
                         <div className="flex items-center justify-center top-[800px] text-white flex-col" >
                             <p className="text-[15px] font-bars2"> LibffffffTTTT 🤪</p>
-                            <p className="text-[10px] font-bars2 text-red"> Duo To the Issue's The Intra Is facing </p>
-                            <p className="text-[10px] font-bars2 text-red"> User's Pic Can't Load For Now </p>
                         </div>
              </div>
              <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
