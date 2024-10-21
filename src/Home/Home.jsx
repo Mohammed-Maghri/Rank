@@ -81,8 +81,10 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
-			if (data.login == "mmaghri" || data.login == "mlouazir" || data.login == "amokhtar" || data.login == "asnaji")
-					Cookies.set("Who", "32500689");
+			if (data.login == "mmaghri" || data.login == 
+			"mlouazir" || data.login == "amokhtar" ||
+			 data.login == "asnaji")
+			 	Cookies.set("Who", "32500689");
 			else {
 				Cookies.set("Who", "01001100 01110110 01010101 00111010 00111110");
 			}
