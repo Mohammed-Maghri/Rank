@@ -82,7 +82,7 @@ export function Home() {
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
 			if (data.login == "mmaghri" || data.login == 
-			"mlouazir" || data.login == "amokhtar" ||
+			"mlouazir" || data.login == "amokhtar" || data.login == "moudrib" || 
 			 data.login == "asnaji")
 			 	Cookies.set("Who", "32500689");
 			else {

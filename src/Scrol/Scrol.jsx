@@ -45,6 +45,8 @@ import { GiFullMotorcycleHelmet } from "react-icons/gi";
 import ad from "../clips/ad.png"
 import abk from "../clips/abk.png"
 import asir from "../clips/asir.png"
+import redex from '../clips/redex.png'
+import Ahmed from '../clips/Ahmed.png'
 
 export default function Scrol({objectvalue}) {
     const {logs, setLogs} = useContext(context);
@@ -126,8 +128,14 @@ export default function Scrol({objectvalue}) {
             <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[115px]">
               
               {loadingstate == false ? (
+                item.login == "aghounam" ? (
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={Ahmed}/>
+                ):
                 item.login == "alaassir" ? (
                   <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={asir}/>
+                ):
+                item.login == "aitaouss" ? (
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={redex}/>
                 ):
                 item.login == "abkacimi" ? (
                 <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={abk}/>
