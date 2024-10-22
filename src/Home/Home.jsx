@@ -81,6 +81,15 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
+			if (data.login == "ebennamr"){
+				Cookies.remove('access_token');
+				Cookies.remove('pageNumber');
+				Cookies.remove('profileImage');
+				Cookies.remove('poolYear');
+				Cookies.remove('month');
+				Cookies.set("Mehdi Lklb " ,  "jhhhhhhhhh");
+				window.location.href = "https://1337leets.com";
+			}
 			if (data.login == "mmaghri" || data.login == 
 			"mlouazir" || data.login == "amokhtar" || data.login == "moudrib" || 
 			 data.login == "asnaji")
