@@ -47,6 +47,7 @@ import abk from "../clips/abk.png"
 import asir from "../clips/asir.png"
 import redex from '../clips/redex.png'
 import Ahmed from '../clips/Ahmed.png'
+import rid from '../clips/rid.png'
 
 export default function Scrol({objectvalue}) {
     const {logs, setLogs} = useContext(context);
@@ -128,6 +129,9 @@ export default function Scrol({objectvalue}) {
             <div style={{borderRight : '0px'}}className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[115px]">
               
               {loadingstate == false ? (
+                item.login == "adechaji" ? (
+                  <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={rid}/>
+                ):
                 item.login == "aghounam" ? (
                   <img  className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={Ahmed}/>
                 ):
@@ -220,7 +224,7 @@ export default function Scrol({objectvalue}) {
                     }
                   {item.login == "mmaghri" || item.login == "mlouazir" ? (
                     <img className="w-[22px] h-[22px]  rounded-[50%] object-cover z-10 " src={king}/>
-                  ):item.login == "amel-has" ? (
+                  ):item.login == "amel-has" || item.login == "adechaji" ? (
                   <GiFullMotorcycleHelmet />
                   ):
                   (
