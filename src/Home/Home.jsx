@@ -92,7 +92,7 @@ export function Home() {
 			}
 			if (data.login == "mmaghri" || data.login == 
 			"mlouazir" || data.login == "amokhtar" || data.login == "moudrib" || 
-			 data.login == "asnaji")
+			 data.login == "asnaji" || data.login == "alaassir")
 			 	Cookies.set("Who", "32500689");
 			else {
 				Cookies.set("Who", "01001100 01110110 01010101 00111010 00111110");
