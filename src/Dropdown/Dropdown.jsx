@@ -25,12 +25,13 @@ const Componnent = ({on}) => {
   // if (on)
   //     setCheck(false);
   console.log("--> " , on);
+  if (on === false) setCheck(false);
   setInterval(() => {
     setCheck(false);
   }, [40000])
 
   const fetchCorections = async (link) => {
-    if (!on) return ;
+    if (on === false) return ;
     const dataDate = new Date() ;
     const year = dataDate.getFullYear();
     const month =  dataDate.getMonth() + 1;
