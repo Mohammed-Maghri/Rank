@@ -24,6 +24,7 @@ const Componnent = ({on}) => {
   const [check, setCheck] = useState(true);
   // if (on)
   //     setCheck(false);
+  console.log("--> " , on);
   setInterval(() => {
     setCheck(false);
   }, [40000])
