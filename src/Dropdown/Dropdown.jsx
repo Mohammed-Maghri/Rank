@@ -29,8 +29,7 @@ const Componnent = ({on}) => {
   }, [40000])
 
   const fetchCorections = async (link) => {
-    if (!check)
-      return ;
+    if (!on) return ;
     const dataDate = new Date() ;
     const year = dataDate.getFullYear();
     const month =  dataDate.getMonth() + 1;
@@ -56,6 +55,8 @@ const Componnent = ({on}) => {
       console.log(data);
       setValues(data);
     }).catch((err) => {
+      if (err === 500)
+          setCheck(false);
       console.log("Error 0" , err);
       setCheck(false);
     })
@@ -101,11 +102,11 @@ const Componnent = ({on}) => {
       }
       {!obv && 
         <div className="w-[100%] h-[100%] border-[4px] flex items-center justify-center rounded-[5px] border-solid border-yellow-300">
-          {!check &&
+          {check &&
             <span className="loading loading-infinity loading-lg text-yellow-300"></span>
           }
-          {check &&
-          <div className="w-[100%] h-full">
+          {!check &&
+          <div className="w-[100%] flex items-center justify-center h-full">
             <p className="text-white font-bars2 text-xs"> See How Weak U ar </p>
             <p className="text-white font-bars2 text-xs"> Reading the Code-Base To </p>
             <p className="text-white font-bars2 text-xs"> By-pass the Front-end ... ohh </p>
