@@ -99,10 +99,10 @@ const Componnent = ({on}) => {
       }
       {!obv && 
         <div className="w-[100%] h-[100%] border-[4px] flex items-center justify-center rounded-[5px] border-solid border-yellow-300">
-          {check &&
+          {!check &&
             <span className="loading loading-infinity loading-lg text-yellow-300"></span>
           }
-          {!check &&
+          {check &&
           <>
             <p className="text-white font-bars2 text-sm"> See How Weak U ar </p>
             <p className="text-white font-bars2 text-sm"> Reading the Code-Base To </p>
