@@ -18,11 +18,14 @@ const names = [{pico : [ pic , pic], project : "Minishell", status : "Waiting Fo
 {pico : [pic ,  pic , pic, pic , pic], project : "Transdense", status : "Waiting For Eval !"}];
 const Componnent = () => {
   const {username, seTusername} = useContext(context);
-  // seTusername(Cookies.get("Who"));
   const [empty, setEmpty] = useState(false);
   const [obv, seTobv] = useState(false);
   const [values, setValues] = useState([]);
+  const [check, setCheck] = useState(true);
 
+  setInterval(() => {
+    setCheck(false);
+  }, [40000])
   const fetchCorections = async (link) => {
     const dataDate = new Date() ;
     const year = dataDate.getFullYear();
@@ -37,7 +40,6 @@ const Componnent = () => {
     
     console.log((year + "-" + month + "-" + day), (tomyear + "-" + tommonth + "-" + tomday));
     const obj = {dateOne :(year + "-" + month + "-" + day), dateTwo : (tomyear + "-" + tommonth + "-" + tomday)};
-    console.log(JSON.stringify(obj));
     await fetch(link , {
       method : 'POST',
       headers : {
@@ -51,9 +53,9 @@ const Componnent = () => {
       setValues(data);
     }).catch((err) => {
       console.log("Error 0" , err);
+      setCheck(false);
     })
   };
-
 
   const functionRedirect = (value) => {
       window.open("https://profile.intra.42.fr/users/" + value , '_blank');
@@ -95,7 +97,19 @@ const Componnent = () => {
       }
       {!obv && 
         <div className="w-[100%] h-[100%] border-[4px] flex items-center justify-center rounded-[5px] border-solid border-yellow-300">
-          <span className="loading loading-infinity loading-lg text-yellow-300"></span>
+          {check &&
+            <span className="loading loading-infinity loading-lg text-yellow-300"></span>
+          }
+          {!check &&
+          <>
+            <p className="text-white font-bars2 text-sm"> See How Weak U ar </p>
+            <p className="text-white font-bars2 text-sm"> Reading the Code-Base To </p>
+            <p className="text-white font-bars2 text-sm"> By-pass the Front-end </p>
+            <p className="text-white font-bars2 text-sm"> I mean Copying Other's People Stupidity </p>
+            <p className="text-white font-bars2 text-sm"> Cause U aint Smart Enough To Read the Code Base !!!</p>
+            <p className="text-white font-bars2 text-sm"> Poooor Baby Go Cry </p>
+          </>
+          }
         </div>
       }
     </div>
@@ -106,7 +120,7 @@ export function Dropdown(name, pic) {
     // const [all , setall] = useContext(context);
     
     const [visiblity, setvisibility] = useState(false);
-
+    const [checkseen, setCheckSeen] = useState(true);
     useEffect(() => {
       (Cookies.get("PoorLittleMan") == "CRYINTHECORNER")? setvisibility(true) : setvisibility(false);
     }, []);
