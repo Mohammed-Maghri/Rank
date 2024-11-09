@@ -22,8 +22,8 @@ const Componnent = ({on}) => {
   const [obv, seTobv] = useState(false);
   const [values, setValues] = useState([]);
   const [check, setCheck] = useState(true);
-  if (on == false)
-      setCheck(false);
+  // if (on)
+  //     setCheck(false);
   setInterval(() => {
     setCheck(false);
   }, [40000])
