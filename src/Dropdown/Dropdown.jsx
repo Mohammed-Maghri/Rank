@@ -29,6 +29,8 @@ const Componnent = ({on}) => {
   }, [40000])
 
   const fetchCorections = async (link) => {
+    if (!check)
+      return ;
     const dataDate = new Date() ;
     const year = dataDate.getFullYear();
     const month =  dataDate.getMonth() + 1;
@@ -103,14 +105,14 @@ const Componnent = ({on}) => {
             <span className="loading loading-infinity loading-lg text-yellow-300"></span>
           }
           {check &&
-          <>
-            <p className="text-white font-bars2 text-sm"> See How Weak U ar </p>
-            <p className="text-white font-bars2 text-sm"> Reading the Code-Base To </p>
-            <p className="text-white font-bars2 text-sm"> By-pass the Front-end ... ohh </p>
-            <p className="text-white font-bars2 text-sm"> I mean Copying Other's People Stupidity </p>
-            <p className="text-white font-bars2 text-sm"> Cause U aint Smart Enough To Read the Code Base !!!</p>
-            <p className="text-white font-bars2 text-sm"> Poooor Baby Go Cry </p>
-          </>
+          <div className="w-[100%] h-full">
+            <p className="text-white font-bars2 text-xs"> See How Weak U ar </p>
+            <p className="text-white font-bars2 text-xs"> Reading the Code-Base To </p>
+            <p className="text-white font-bars2 text-xs"> By-pass the Front-end ... ohh </p>
+            <p className="text-white font-bars2 text-xs"> I mean Copying Other's People Stupidity </p>
+            <p className="text-white font-bars2 text-xs"> Cause U aint Smart Enough To Read the Code Base !!!</p>
+            <p className="text-white font-bars2 text-xs"> Poooor Baby Go Cry </p>
+          </div>
           }
         </div>
       }
