@@ -24,8 +24,9 @@ const Componnent = ({on}) => {
   const [check, setCheck] = useState(true);
   // if (on)
   //     setCheck(false);
-  console.log("--> " , on);
-  if (on === false) setCheck(false);
+  useEffect(() => {
+    if (on === false) setCheck(false);
+  }, [])
   setInterval(() => {
     setCheck(false);
   }, [40000])
