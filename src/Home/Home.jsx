@@ -87,7 +87,6 @@ export function Home() {
 				Cookies.remove('profileImage');
 				Cookies.remove('poolYear');
 				Cookies.remove('month');
-				Cookies.set("Mehdi Lklb " ,  "jhhhhhhhhh");
 				window.location.href = "https://1337leets.com";
 			}
 			if (data.login == "mmaghri" || data.login == 
