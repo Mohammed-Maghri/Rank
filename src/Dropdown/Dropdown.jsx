@@ -107,7 +107,7 @@ const Componnent = ({on}) => {
             <span className="loading loading-infinity loading-lg text-yellow-300"></span>
           }
           {!check &&
-          <div className="w-[100%] flex items-center justify-center h-full">
+          <div className="w-[100%] flex items-center justify-center h-full flex-colum">
             <p className="text-white font-bars2 text-xs"> See How Weak U ar </p>
             <p className="text-white font-bars2 text-xs"> Reading the Code-Base To </p>
             <p className="text-white font-bars2 text-xs"> By-pass the Front-end ... ohh </p>
