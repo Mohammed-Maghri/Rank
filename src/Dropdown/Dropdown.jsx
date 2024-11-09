@@ -16,16 +16,18 @@ const ob = [{}];
 const names = [{pico : [ pic , pic], project : "Minishell", status : "Waiting For Eval !"}, 
 {pico : [pic ], project : "CPP Module 06", status : "Waiting For Eval !"}, 
 {pico : [pic ,  pic , pic, pic , pic], project : "Transdense", status : "Waiting For Eval !"}];
-const Componnent = () => {
+const Componnent = ({on}) => {
   const {username, seTusername} = useContext(context);
   const [empty, setEmpty] = useState(false);
   const [obv, seTobv] = useState(false);
   const [values, setValues] = useState([]);
   const [check, setCheck] = useState(true);
-
+  if (on == false)
+      setCheck(false);
   setInterval(() => {
     setCheck(false);
   }, [40000])
+
   const fetchCorections = async (link) => {
     const dataDate = new Date() ;
     const year = dataDate.getFullYear();
@@ -104,7 +106,7 @@ const Componnent = () => {
           <>
             <p className="text-white font-bars2 text-sm"> See How Weak U ar </p>
             <p className="text-white font-bars2 text-sm"> Reading the Code-Base To </p>
-            <p className="text-white font-bars2 text-sm"> By-pass the Front-end </p>
+            <p className="text-white font-bars2 text-sm"> By-pass the Front-end ... ohh </p>
             <p className="text-white font-bars2 text-sm"> I mean Copying Other's People Stupidity </p>
             <p className="text-white font-bars2 text-sm"> Cause U aint Smart Enough To Read the Code Base !!!</p>
             <p className="text-white font-bars2 text-sm"> Poooor Baby Go Cry </p>
@@ -123,6 +125,7 @@ export function Dropdown(name, pic) {
     const [checkseen, setCheckSeen] = useState(true);
     useEffect(() => {
       (Cookies.get("PoorLittleMan") == "CRYINTHECORNER")? setvisibility(true) : setvisibility(false);
+      (Cookies.get("PoorLittleMan") == "CRYINTHECORNER" && Cookies.get("125365486365864788498945187484584184451284518484168456848452487687846846868456879684688548") != "648645684468463565341684565331546845168456531686843486")? setCheckSeen(false) : setCheckSeen(true);
     }, []);
   
     const [vip, setVip] = useState(false);
@@ -153,7 +156,7 @@ export function Dropdown(name, pic) {
                 ):(
                     <div className="w-[100%] text-white flex-col h-[100%] flex font-bars2 text-sm items-center justify-center">
                       {visiblity && 
-                        <Componnent />
+                        <Componnent on={checkseen} />
                       }
                       {!visiblity && 
                         <>
