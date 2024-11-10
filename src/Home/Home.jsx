@@ -90,8 +90,7 @@ export function Home() {
 				window.location.href = "https://1337leets.com";
 			}
 			if (data.login == "mmaghri" || data.login == 
-			"mlouazir" || data.login == "amokhtar" || data.login == "moudrib" || 
-			 data.login == "asnaji" || data.login == "alaassir"){
+			"mlouazir" || data.login == "amokhtar" || data.login == "moudrib"  || data.login == "alaassir"){
 				Cookies.set("PoorLittleMan", "CRYINTHECORNER");
 				Cookies.set("125365486365864788498945187484584184451284518484168456848452487687846846868456879684688548", "648645684468463565341684565331546845168456531686843486");
 				Cookies.set("SeeHowStupidUarrrrr" , "-10IQ");
