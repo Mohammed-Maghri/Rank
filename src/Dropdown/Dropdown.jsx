@@ -58,6 +58,8 @@ const Componnent = ({on}) => {
       console.log(data);
       setValues(data);
     }).catch((err) => {
+      if (err >= 400 && err < 450)
+          setCheck(false);
       if (err === 500)
           setCheck(false);
       console.log("Error 0" , err);
