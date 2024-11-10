@@ -62,7 +62,6 @@ const Componnent = ({on}) => {
           setCheck(false);
       if (err === 500)
           setCheck(false);
-      console.log("Error 0" , err);
       setCheck(false);
     })
   };
@@ -132,8 +131,10 @@ export function Dropdown(name, pic) {
     const [visiblity, setvisibility] = useState(false);
     const [checkseen, setCheckSeen] = useState(true);
     useEffect(() => {
+      // Umm mmm mm m m m mm m m m Woow Ur Doing Good U maybe can Reach the Vip Now !!!! :( Not Reallyyy  Even with These Tokens Set To ur Browser : )
       (Cookies.get("PoorLittleMan") == "CRYINTHECORNER")? setvisibility(true) : setvisibility(false);
       (Cookies.get("PoorLittleMan") == "CRYINTHECORNER" && Cookies.get("125365486365864788498945187484584184451284518484168456848452487687846846868456879684688548") != "648645684468463565341684565331546845168456531686843486")? setCheckSeen(false) : setCheckSeen(true);
+      // Changing The GWT to my username won't Make a change
     }, []);
   
     const [vip, setVip] = useState(false);
@@ -148,7 +149,7 @@ export function Dropdown(name, pic) {
                 {!vip &&
               <div className="w-[100%] h-[100%] flex items-center overflow-y-auto gap-[2px] flex-col  justify-start">
                 {
-                    ob[0].name == "mmaghri" ? (
+                    ob[0].name == "mmaghri" ? ( // Why im I Cheking On this Ohhhhh 
                         ob.map((item, index) => (
                             <div key={index} className="w-[80%] p-[2px] rounded-[10px] duration-200 cursor-pointer hover:scale-105 bg-yellow-400 h-[25px]  flex items-center justify-center flex-row ">
                             <div className="w-[30%]  flex items-center justify-center  h-[100%]">
