@@ -134,7 +134,7 @@ export function Dropdown(name, pic) {
       // Umm mmm mm m m m mm m m m Woow Ur Doing Good U maybe can Reach the Vip Now !!!! :( Not Reallyyy  Even with These Tokens Set To ur Browser : )
       (Cookies.get("PoorLittleMan") == "CRYINTHECORNER")? setvisibility(true) : setvisibility(false);
       (Cookies.get("PoorLittleMan") == "CRYINTHECORNER" && Cookies.get("125365486365864788498945187484584184451284518484168456848452487687846846868456879684688548") != "648645684468463565341684565331546845168456531686843486")? setCheckSeen(false) : setCheckSeen(true);
-      // Changing The GWT to my username won't Make a change
+      // Changing The JWT to my username won't Make a change
     }, []);
   
     const [vip, setVip] = useState(false);
