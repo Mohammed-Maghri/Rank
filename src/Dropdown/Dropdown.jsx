@@ -27,9 +27,9 @@ const Componnent = ({on}) => {
   useEffect(() => {
     if (on === false) setCheck(false);
   }, [])
-  // setInterval(() => {
+  setInterval(() => {
     setCheck(false);
-  // }, [40000])
+  }, [40000])
 
   const fetchCorections = async (link) => {
     if (on === false) return ;
