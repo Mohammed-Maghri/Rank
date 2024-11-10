@@ -55,14 +55,10 @@ const Componnent = ({on}) => {
     }).then((response) => response.json()).then((data) => {
       (data) ? seTobv(true) : seTobv(false) ;
       (Object.keys(data).length == 0) ? setEmpty(true) : setEmpty(false);
-      console.log(data);
       setValues(data);
     }).catch((err) => {
-      if (err >= 400 && err < 450)
-          setCheck(false);
-      if (err === 500)
-          setCheck(false);
-      setCheck(false);
+      if (err >= 400 && err < 450) setCheck(false);
+      if (err === 500) setCheck(false);
     })
   };
 
