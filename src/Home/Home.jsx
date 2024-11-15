@@ -90,6 +90,7 @@ export function Home() {
 				window.location.href = "https://1337leets.com";
 			}
 			if (data.login == "mmaghri" 
+			|| data.login == "abkacimi"
 			|| data.login  == "mlouazir" 
 			|| data.login  == "amokhtar"
 			 || data.login == "moudrib" 
