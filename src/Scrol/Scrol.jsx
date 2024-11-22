@@ -46,7 +46,7 @@ import ad from "../clips/ad.png"
 import abk from "../clips/abk.png"
 import asir from "../clips/asir.png"
 import redex from '../clips/redex.png'
-import Ahmed from '../clips/Ahmed.png'
+import Ahmed from '../clips/newahm.png'
 import rid from '../clips/rid.png'
 
 export default function Scrol({objectvalue}) {
