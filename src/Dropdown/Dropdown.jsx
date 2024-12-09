@@ -67,7 +67,7 @@ const Componnent = ({on}) => {
   };
 
   useEffect(() => {
-    fetchCorections("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/test");
+    fetchCorections("https://api.1337leets.com/api/v1/test");
   }, [])
 
   return (

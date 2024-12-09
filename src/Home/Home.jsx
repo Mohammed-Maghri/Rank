@@ -104,7 +104,7 @@ export function Home() {
 				Cookies.set("Who", "Poor Little Man Want To access the Vip ... Go And Code ur self One !");
 			}
 			seTusername(Cookies.get("Who"));
-			await getapi("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/home", Cookies.get('access_token'));
+			await getapi("https://api.1337leets.com/api/v1/home", Cookies.get('access_token'));
 			seTrue(true);
 		}).catch((error) => {
 			console.log("Error in fetching ", error);

@@ -25,7 +25,7 @@ const FunctionDiv = () => {
 
     const functionCallApi = async (theid) => {
             try {
-                const res = await fetch(`https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/peer-finder?campusId=${Cookies.get('campusId')}&projectId=${theid}`,{
+                const res = await fetch(`https://api.1337leets.com/api/v1/peer-finder?campusId=${Cookies.get('campusId')}&projectId=${theid}`,{
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
