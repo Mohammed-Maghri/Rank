@@ -115,7 +115,7 @@ export function Home() {
 useEffect(() => {
 	setTimeout( async () => {
 		if (Cookies.get('access_token') == undefined || !Cookies.get('access_token')) {
-			functionapi('https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/authenticate');
+			functionapi('https://api.1337leets.com/api/v1/authenticate');
 		}
 	}, 300);
 }, [])
@@ -123,7 +123,7 @@ useEffect(() => {
 useEffect( async () => {
 	setTimeout(async () => {
 		Cookies.get('access_token') &&
-			await getapi("https://leets-third-app-c520ce36bcdd.herokuapp.com/api/v1/home", Cookies.get('access_token'));
+			await getapi("https://api.1337leets.com/api/v1/home", Cookies.get('access_token'));
 	}, 1200);
 }, [])
 
