@@ -74,7 +74,7 @@ export default function Auth() {
                     </div>
                 </div>
                         <div className="flex items-center justify-center top-[800px] text-white flex-col" >
-                            <p className="text-[15px] font-bars2"> LibffffffTTTT 🤪</p>
+                            <p className="text-[15px] font-bars2"> The Web Site Gonna Be Back In few Minuts ! </p>
                         </div>
              </div>
              <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
