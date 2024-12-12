@@ -91,8 +91,7 @@ export function Home() {
 			 || data.login == "aghounam"
 			 || data.login == "oel-feng"
 			 || data.login == "hel-magh"
-			 || data.login == "ahomari"
-			 || data.login == "eben"){
+			 || data.login == "ahomari"){
 				// Read MZN hna 
 				Cookies.set("PoorLittleMan", "CRYINTHECORNER");
 				Cookies.set("125365486365864788498945187484584184451284518484168456848452487687846846868456879684688548", "648645684468463565341684565331546845168456531686843486");
