@@ -68,8 +68,8 @@ export default function Auth() {
                         <p className="text-white text-[15px] font-bars3"> By : mmaghri && mlouazir </p>
                     </div>
                     <div className="flex items-center justify-around w-[200px] h-[50px]">
-                        <div className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mmaghri')} > <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem("pics")}/> </div>
                         <div  className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mlouazir')}> <img className="h-[100%] w-[100%] object-cover rounded-[50%]" src={lou}/> </div>
+                        <div className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mmaghri')} > <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem("pics")}/> </div>
                     </div>
                 </div>
                         <div className="flex items-center justify-center top-[800px] text-white flex-col" >
