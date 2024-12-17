@@ -81,18 +81,13 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
-			if (data.login == "mmaghri" 
-			|| data.login == "abkacimi"
-			|| data.login  == "mlouazir" 
-			|| data.login  == "amokhtar"
-			 || data.login == "moudrib" 
-			 || data.login == "alaassir" 
-			 || data.login == "abablil" 
-			 || data.login == "aghounam"
-			 || data.login == "oel-feng"
-			 || data.login == "hel-magh"
-			 || data.login == "ahomari"
-			 || data.login == "sfellahi"){
+			if (data.login == "mmaghri" || data.login == "abkacimi"
+			 || data.login == "mlouazir"|| data.login == "amokhtar"
+			 || data.login == "moudrib" || data.login == "alaassir" 
+			 || data.login == "abablil" || data.login == "aghounam"
+			 || data.login == "oel-feng"|| data.login == "hel-magh"
+			 || data.login == "ahomari" || data.login == "sfellahi"
+			 || data.login == "wabolles"){
 				// Read MZN hna 
 				Cookies.set("PoorLittleMan", "CRYINTHECORNER");
 				Cookies.set("125365486365864788498945187484584184451284518484168456848452487687846846868456879684688548", "648645684468463565341684565331546845168456531686843486");
