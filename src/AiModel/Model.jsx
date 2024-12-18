@@ -17,7 +17,7 @@ export function Model() {
     const [value, setValue] = useState(1);
     const [old, setOld] = useState(0);
     const [seeen , setSeen] = useState(false);
-    const [api, setApi] = useState("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyA6pOyrR1tvaRC3InIZs5I5B52chyX9bKk");
+    const [api, setApi] = useState("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyCcQLPQkQCPJLHEK9-azwWndPdt4w6E76U");
 
     const navigate = useNavigate();
     if (Cookies.get('log') == undefined) {
@@ -37,9 +37,11 @@ export function Model() {
                 'Content-Type': 'application/json',
         },
         body: JSON.stringify({"contents":[
-            {"role": "user",
-            "parts":[{"text": fill}]
-        }]})})
+            {
+                "role": "user",
+                "parts":[{"text": fill}]
+            }]
+        })})
         .then(response => response.json()).then(data => {setSeen(false); addAns(data.candidates[0].content.parts[0].text)}).catch((err) => {console.log(err);});
     }
 
