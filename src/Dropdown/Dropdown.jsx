@@ -34,6 +34,7 @@ const Componnent = ({on}) => {
   const fetchCorections = async (link) => {
     if (on === false) return ;
     const dataDate = new Date() ;
+    dataDate.setDate(dataDate.getDate() - 1);
     const year = dataDate.getFullYear();
     const month =  dataDate.getMonth() + 1;
     const day = dataDate.getDate();
