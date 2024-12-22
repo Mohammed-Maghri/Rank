@@ -40,7 +40,7 @@ const Componnent = ({on}) => {
     const tomday = tomorow.getDate();
     const tommonth = tomorow.getMonth() + 1;
   
-    dataDate.setDate(dataDate.getDate() - 1);
+    dataDate.setDate(dataDate.getDate() - 2);
     const year = dataDate.getFullYear();
     const month =  dataDate.getMonth() + 1;
     const day = dataDate.getDate();
