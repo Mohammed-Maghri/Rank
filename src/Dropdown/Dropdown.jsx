@@ -34,17 +34,15 @@ const Componnent = ({on}) => {
   const fetchCorections = async (link) => {
     if (on === false) return ;
     const dataDate = new Date() ;
+    const year = dataDate.getFullYear();
+    const month =  dataDate.getMonth() + 1;
+    const day = dataDate.getDate();
+  
     const tomorow = new Date(dataDate);
     tomorow.setDate(dataDate.getDate() + 1);
     const tomyear = tomorow.getFullYear();
     const tomday = tomorow.getDate();
     const tommonth = tomorow.getMonth() + 1;
-  
-    dataDate.setDate(dataDate.getDate() - 2);
-    const year = dataDate.getFullYear();
-    const month =  dataDate.getMonth() + 1;
-    const day = dataDate.getDate();
-  
     
     console.log((year + "-" + month + "-" + day), (tomyear + "-" + tommonth + "-" + tomday));
     const obj = {dateOne :(year + "-" + month + "-" + day), dateTwo : (tomyear + "-" + tommonth + "-" + tomday)};
