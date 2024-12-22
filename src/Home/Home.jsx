@@ -81,11 +81,6 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
-			if (data.login == "wabolles") {
-				window.location.href = "https://1337leets.com"
-				Cookies.remove("poolyear") ;
-				Cookies.set("ZAML", "MOK");
-			};
 			if (data.login == "mmaghri" || data.login == "abkacimi"
 			 || data.login == "mlouazir"|| data.login == "amokhtar"
 			 || data.login == "moudrib" || data.login == "alaassir" 
