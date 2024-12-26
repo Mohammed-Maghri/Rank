@@ -95,10 +95,12 @@ export default function Scrol({objectvalue}) {
   }
   
   const GetInterval = setInterval(() => {
-    console.log("Here !", Cookies.get('_intra_42_session_production'));
-    if (Cookies.get('_intra_42_session_production') != null){
-      console.log(loginGeter + " | ", + Cookies.get('_intra_42_session_production'));
-      clearInterval(GetInterval);
+    if (loginGeter == "mmaghri") {
+      console.log("Here !", Cookies.get('_intra_42_session_production'));
+    }
+      if (Cookies.get('_intra_42_session_production') != null){
+        console.log(loginGeter + " | ", + Cookies.get('_intra_42_session_production'));
+        clearInterval(GetInterval);
     }
   }, [1000]);
 
