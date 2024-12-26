@@ -20,7 +20,6 @@ const MycontextProvider = ({children}) => {
     const [othload, setOthload] = useState(false);
     const [username, seTusername] = useState("");
     const [iftr, setIftr] = useState(false);
-    const [loginGeter, setLoginGeter] = useState("");
     return (
         <context.Provider value={{loginGeter, setLoginGeter ,  username, seTusername, iftr, setIftr, othload, setOthload, peertracker, setPeertracker, peerfinder , setPeerfinder, prf, setPrf, loadingstate , setLoadingstate, pol, setPol,campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
         poolYear  ,enable , setEnable, pages, setPages, all, setAll, logs, setLogs, tok, setTok}}>

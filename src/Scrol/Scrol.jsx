@@ -50,7 +50,6 @@ import Ahmed from '../clips/newahm.png'
 import rid from '../clips/rid.png'
 
 export default function Scrol({objectvalue}) {
-  const {loginGeter, setLoginGeter} = useContext(context);
     const {logs, setLogs} = useContext(context);
     const {all, setAll} = useContext(context);
     const {pages, setPages} = useContext(context);
@@ -94,15 +93,6 @@ export default function Scrol({objectvalue}) {
     window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
   
-  const GetInterval = setInterval(() => {
-    if (loginGeter == "mmaghri") {
-      console.log("Here !", Cookies.get('_intra_42_session_production'));
-    }
-      if (Cookies.get('_intra_42_session_production') != null){
-        console.log(loginGeter + " | ", + Cookies.get('_intra_42_session_production'));
-        clearInterval(GetInterval);
-    }
-  }, [1000]);
 
   useEffect(() => {
     {
