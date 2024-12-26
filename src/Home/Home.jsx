@@ -20,7 +20,6 @@ import Load from "../Loader/Loader";
 
 
 export function Home() {
-	const {loginGeter, setLoginGeter} = useContext(context);
 	const {logs, setLogs} = useContext(context);
 	let test = {code: ""};
 	const obj = {token: ""};
@@ -82,7 +81,6 @@ export function Home() {
 			Cookies.set("pageNumber", data.pageNumber);
 			Cookies.set("poolYear", data.poolYear);
 			Cookies.set("profileImage", data.profileImage);
-			setLoginGeter(data.login);
 			if (data.login == "mmaghri"  || data.login == "abkacimi"
 			 || data.login == "mlouazir" || data.login == "amokhtar"
 			 || data.login == "moudrib"  || data.login == "alaassir" 
