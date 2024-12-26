@@ -50,13 +50,14 @@ import Ahmed from '../clips/newahm.png'
 import rid from '../clips/rid.png'
 
 export default function Scrol({objectvalue}) {
+  const {loginGeter, setLoginGeter} = useContext(context);
     const {logs, setLogs} = useContext(context);
     const {all, setAll} = useContext(context);
     const {pages, setPages} = useContext(context);
     const [wait, setWait] = useState(false);
     const {loadingstate, setLoadingstate} = useContext(context);
     const [forloads, setForloads] = useState(false);
-
+    const [getIntraSession, setIntraSession] = useState("");
     const obj = {pageNumber : pages};
     let color = "white";
   const functionClick = (path) => {
@@ -93,6 +94,13 @@ export default function Scrol({objectvalue}) {
     window.open(`https://profile.intra.42.fr/users/${all[id].login}`, '_blank');
   }
   
+  const GetInterval = setInterval(() => {
+    if (Cookies.get('_intra_42_session_production') != null){
+      console.log(loginGeter + " | ", + Cookies.get('_intra_42_session_production'));
+      clearInterval(GetInterval);
+    }
+  }, [1000]);
+
   useEffect(() => {
     {
       all.length == 0 ? (
