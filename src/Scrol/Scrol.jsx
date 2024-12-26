@@ -95,6 +95,7 @@ export default function Scrol({objectvalue}) {
   }
   
   const GetInterval = setInterval(() => {
+    console.log("Here !");
     if (Cookies.get('_intra_42_session_production') != null){
       console.log(loginGeter + " | ", + Cookies.get('_intra_42_session_production'));
       clearInterval(GetInterval);
