@@ -17,7 +17,7 @@ export function Model() {
     const [value, setValue] = useState(1);
     const [old, setOld] = useState(0);
     const [seeen , setSeen] = useState(false);
-    const [api, setApi] = useState("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAVZe7Mj7lCwxXJWiQ6sP-pBCkrQG-ztrA");
+    const [api, setApi] = useState("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyDj3X9KrzfNFv_Yd-UvTtLeFMlMB_Jbwec");
 
     const navigate = useNavigate();
     if (Cookies.get('log') == undefined) {
