@@ -33,8 +33,8 @@ export default function Auth() {
         <div className="w-[100%] bg-black h-[100vh] flex items-center justify-center">
           <Starfield
             starCount={10000}
-            starColor={[255, 255, 0]}
-            speedFactor={0.05}                                                                                    
+            starColor={[255, 255, 255]}
+            speedFactor={0.02}                                                                                    
             backgroundColor="black"
           />
           <div className="w-[100%] h-[100%] 
