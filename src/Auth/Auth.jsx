@@ -72,9 +72,9 @@ export default function Auth() {
                         <div className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mmaghri')} > <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem("pics")}/> </div>
                     </div>
                 </div>
-                        <div className="flex items-center justify-center top-[800px] text-white flex-col" >
+                        {/* <div className="flex items-center justify-center top-[800px] text-white flex-col" >
                             <p className="text-[15px] font-bars2"> LEETS is BACK </p>
-                        </div>
+                        </div> */}
              </div>
              <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
                 <div className=" flex items-center justify-center  w-[100%]  text-white font-bold gap-2 font-bars2">
