@@ -53,16 +53,16 @@ export default function Auth() {
                 <div  className="w-[80%] flex items-end justify-center h-[30%] rounded-[10px] bg-transparent">
                     <p className="font-bars4 font-bold text-6xl text-white"> 1337Leets </p>
                 </div>
-                    <div className="text-red-500 text-sm font-bars2   w-[100%] h-[100px] flex items-center justify-center flex-col">
+                    {/* <div className="text-red-500 text-sm font-bars2   w-[100%] h-[100px] flex items-center justify-center flex-col">
                     <span className="loading loading-spinner text-error"></span>
                     <p> site on maintenance </p>
                     <p> Try Later </p>
-                    </div>
+                    </div> */}
                 <div className="flex items-center min-w-[300px] flex-col justify-start  w-[80%] h-[200px]">
-                    {/* <div style={{boxShadow: '0px 0px 5px yellow'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
+                    <div style={{boxShadow: '0px 0px 5px yellow'}} onClick={() => (cally(token))} className=" cursor-pointer w-[200px] flex items-center 
                      justify-center h-[60px] border-solid rounded-[20px] border-yellow-400 border-[2px] duration-300 hover:scale-105">
                         <p className="text-yellow-400 font-bars3"> Login </p>
-                    </div> */}
+                    </div>
                     <div className="flex flex-col items-center justify-center  h-[100px]">
                         <p className="font-bars2 text-white font-black text-xs">Welcome to the School Rankings Board</p>
                         <p className="text-white text-[15px] font-bars3"> By : mmaghri && mlouazir </p>
@@ -72,9 +72,9 @@ export default function Auth() {
                         <div className="border-solid border-white border-[1px] cursor-pointer w-[50px] h-[50px] rounded-[50%] duration-200 hover:scale-110" onClick={() => functionNavigate('https://profile.intra.42.fr/users/mmaghri')} > <img className="h-[100%] w-[100%] rounded-[50%]" src={localStorage.getItem("pics")}/> </div>
                     </div>
                 </div>
-                        {/* <div className="flex items-center justify-center top-[800px] text-white flex-col" >
-                            <p className="text-[15px] font-bars2"> LEETS is BACK </p>
-                        </div> */}
+                        <div className="flex items-center justify-center top-[800px] text-white flex-col" >
+                            <p className="text-[15px] font-bars2"> They Can't Stop US !</p>
+                        </div>
              </div>
              <div className="w-[100%] flex items-center  justify-end flex-col h-[20%] ">
                 <div className=" flex items-center justify-center  w-[100%]  text-white font-bold gap-2 font-bars2">
