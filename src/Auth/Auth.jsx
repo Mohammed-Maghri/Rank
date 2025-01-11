@@ -66,10 +66,10 @@ export default function Auth() {
                             </div>
                         </div>
                         <div className="flex items-center justify-center gap-2 w-full h-[20%]">
-                            <div onClick={() => (functionNavigate("https://github.com/Mohammed-Maghri"))} className="w-[170px] flex items-center justify-center  h-[50px] cursor-pointer hover:scale-110 duration-200 border-solid border-[3px] border-green-500 bg-green-400 rounded-md">
+                            <div onClick={() => {functionNavigate("https://github.com/Mohammed-Maghri"); set_ButtonDeselect('none');  Cookies.set('close', false);}} className="w-[170px] flex items-center justify-center  h-[50px] cursor-pointer hover:scale-110 duration-200 border-solid border-[3px] border-green-500 bg-green-400 rounded-md">
                                 <p  className="text-white font-extrabold font-bars3 "> Follow </p>
                             </div>
-                            <div onClick={() => (functionNavigate("https://github.com/Mohammed-Maghri/Rank"))} className="w-[170px] cursor-pointer h-[50px] flex items-center hover:scale-110 duration-200 justify-center border-solid border-[3px] border-yellow-300 bg-yellow-400 rounded-md">
+                            <div onClick={() => {functionNavigate("https://github.com/Mohammed-Maghri/Rank"); set_ButtonDeselect('none');  Cookies.set('close', false);}} className="w-[170px] cursor-pointer h-[50px] flex items-center hover:scale-110 duration-200 justify-center border-solid border-[3px] border-yellow-300 bg-yellow-400 rounded-md">
                                 <p  className="text-white font-extrabold font-bars3 "> Drop a Star ⭐ </p>
                             </div>
 
