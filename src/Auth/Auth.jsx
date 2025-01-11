@@ -1,4 +1,4 @@
-import React , {useContext} from "react";
+import React , {useContext, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Starfield from 'react-starfield';
 import me from "../clips/this.png"
@@ -8,6 +8,7 @@ import { context } from "../context";
 import { BsFillLightningFill } from "react-icons/bs";
 import meme from "../clips/memem.jpeg";
 import { VscGithubAlt } from "react-icons/vsc";
+import kta from "../clips/cat.png"
 
 export default function Auth() {
     const navigate = useNavigate();
@@ -29,6 +30,7 @@ export default function Auth() {
     Cookies.remove('poolYear');
     Cookies.remove('month');
     localStorage.setItem('pics', meme);
+    const [button_Deselect, set_ButtonDeselect] = useState('flex');
     return (
         <div className="w-[100%] bg-black h-[100vh] flex items-center justify-center">
           <Starfield
@@ -39,6 +41,33 @@ export default function Auth() {
           />
           <div className="w-[100%] h-[100%] 
           flex items-center justify-start  flex-col absolute z-50">
+            <div style={{display : button_Deselect}} className=" backdrop-blur-sm items-center justify-center absolute w-full h-[100vh]">
+                <div className="flex-col rounded-[10px] flex items-start justify-start border-solid border-[5px] border-yellow-300 w-[400px] h-[400px] bg-slate-800">
+                    <div className=" mt-2 w-full h-[20px]  flex items-center justify-start">
+                        <div onClick={() => {set_ButtonDeselect('none')}} className="w-[16px] h-[16px] cursor-pointer hover:scale-105 bg-red-500 ml-2 rounded-full"></div>
+                    </div> 
+                        <div className="flex-col flex items-center justify-center  w-[100%] h-[70%]">
+                            <p className="font-bars3 font-normal text-white"> Do you find 1337Leets useful? 🤔 </p>
+                            <p className="font-bars3 font-extrabold text-white"> It would be Nice to Drop a  Follow on GitHub! 🌟 </p>
+                            <p className="font-bars3 font-bold text-white" >⭐ And Give the project a star if you like it!</p>
+                            <p className="font-bars3 font-light text-white"> You can cancel if you want to. ❌</p>
+                            <p className="font-bars2 font-light text-white"> No one will force you.  💪</p>
+                            <p className="font-bars3 font-bold text-red-400">Click the button above! ⬆️</p>
+                            <div className="w-[60px] mt-3 rounded-full h-[60px] border-solid border-white border-[2px] bg-white ">
+                                <img className="w-full h-full  rounded-full"  src={kta}></img>
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-center gap-2 w-full h-[20%]">
+                            <div className="w-[170px] flex items-center justify-center  h-[50px] cursor-pointer hover:scale-110 duration-200 border-solid border-[3px] border-green-500 bg-green-400 rounded-md">
+                                <p onClick={() => (functionNavigate("https://github.com/Mohammed-Maghri"))} className="text-white font-extrabold font-bars3 "> Follow </p>
+                            </div>
+                            <div className="w-[170px] cursor-pointer h-[50px] flex items-center hover:scale-110 duration-200 justify-center border-solid border-[3px] border-yellow-300 bg-yellow-400 rounded-md">
+                                <p onClick={() => (functionNavigate("https://github.com/Mohammed-Maghri/Rank"))} className="text-white font-extrabold font-bars3 "> Drop a Star ⭐ </p>
+                            </div>
+
+                        </div>
+                </div>
+            </div>
             <div className="  w-[100%] flex items-start justify-end h-[10%]">
                 <div style={{boxShadow : "0px 0px 10px rgb(255, 234, 0)"}} className=" w-[100px] h-[30px] flex-row items-center justify-center flex rounded-[10px] bg-yellow-400 m-[20px]">
                     <div  className="w-[70%] font-medium text-white text-sm font-bars2 flex items-center  justify-center h-[100%]" >
