@@ -8,7 +8,7 @@ import { Calculator } from './Calculator/Calculator';
 import {Game} from "./Game/Game";
 import {Model} from "./AiModel/Model";
 import { Peer } from './Peer/Peer';
-
+import { Sheets } from './Sheets/Sheets'
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/calculator" element={<Calculator/>} />
         <Route path="/Model" element={<Model/>} />
         <Route path="/PeerFinder" element={<Peer/>} />
-
+        <Route path="/evaluation_sheets" element={<Sheets/>} />
       </Routes>
     </Router>
   );
