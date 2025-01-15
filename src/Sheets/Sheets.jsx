@@ -6,6 +6,7 @@ import aprov from "../clips/approuve.png"
 import { MdArrowOutward } from "react-icons/md";
 import { Submit_Flags }from './SheetsComp'
 import {Submit_Corection} from './SheetsComp'
+import { LiaPasteSolid } from "react-icons/lia";
 
 
 export function Sheets() {
@@ -13,10 +14,10 @@ export function Sheets() {
     const [subjects, setSubject] = useState([{name : "ft_irc", date : "15-01-2025"},{name : "webserve", date : "15-01-2025"} ,{name : "ft_trencendese", date : "15-01-2025"}
     ,{name : "ft_irc", date : "15-01-2025"}]);
     return (
-        <div className="bg-black w-[100%] h-[100vh] flex items-center justify-start flex-col" >
+        <div className="bg-black w-[100%]  h-[100vh] flex items-center justify-start flex-col" >
             <Nav/>
             {clicked && 
-                <div className='w-[100%] h-[100vh] flex items-center justify-center '>
+                <div className='w-[100%] max-w-[1130px] h-[100vh] flex items-center justify-center '>
                     <div className='xs:w-[100%] sm:w-[100%] duration-150 md:w-[70%] min-w-[350px] bg-white rounded-md h-[100%]'>
                         <div className='w-[100%] h-[200px] mt-4'>
                             <div className="w-[100%] h-[40px] flex items-center justify-center">
@@ -32,11 +33,15 @@ export function Sheets() {
                             <div className='w-[100%] flex items-center justify-center h-[50px]'>
                                 <div className='w-[270px] h-[40px] flex flex-row  bg-gray-100'>
                                     <div className='w-[85%] h-full'></div>
-                                    <div className='w-[15%] bg-gray-200 h-full'></div>
+                                    <div className='flex items-center justify-center w-[15%] bg-gray-200 h-full'>
+                                        <LiaPasteSolid width={30}/>
+                                    </div>
 
                                 </div>
                             </div>
                         </div>
+                    {/* <Submit_Corection/> */}
+                    <Submit_Flags/>
                     </div>
                 </div>
             }
@@ -65,6 +70,7 @@ export function Sheets() {
                     </div>
                 </div>
                 ))}
+
             </div>
             }
         </div>

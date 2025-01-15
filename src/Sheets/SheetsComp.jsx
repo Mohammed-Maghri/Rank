@@ -16,7 +16,7 @@ import './sheets.css'
 export function Submit_Corection() {
     const [clickIthem, setClickIthem] = useState('');
     return (
-        <div className='flex  items-center gap-1 justify-center flex-row w-[100%] h-[100px] bg-white'>
+        <div className='flex  items-center gap-1 justify-center flex-row w-[100%]'>
             <div onClick={() => {setClickIthem('green')}} className={`flex items-center gap-1 rounded-sm justify-center  duration-200 w-[45%] h-[45px] ${clickIthem === 'green' ? 'bg-green-400' : 'bg-green-100' } cursor-pointer`}>
                 <LiaCheckCircleSolid className={`${clickIthem === 'green' ? 'text-white' : 'text-green-400'}`} size={20} />
                 <p className={`font-bars2 ${clickIthem === 'green' ? 'text-white' : 'text-green-400'} font-semibold`}> Yes </p>
@@ -49,11 +49,11 @@ export function Submit_Flags() {
                 <p className='p-0 m-0 text-xs font-extrabold text-black'>Don’t forget to check the flag corresponding to the defense</p>
             </div>
                 <div className=' w-[100%] gap-3 flex-row mt-1 flex items-center justify-start h-[40px]'>
-               <div onClick={() => {setCheck("ok"); setClicked(false)}} className={`min-w-[80px] cursor-pointer duration-300 flex items-center gap-1 justify-center ${check === 'ok' ? 'bg-green-500' : 'bg-green-100'}  w-[40%] h-full`}>
+               <div onClick={() => {setCheck("ok"); setClicked(false)}} className={`min-w-[80px] rounded-md cursor-pointer duration-300 flex items-center gap-1 justify-center ${check === 'ok' ? 'bg-green-500' : 'bg-green-100'}  w-[40%] h-full`}>
                     <IoCheckmarkOutline width={20} className={`${check === 'ok' ? 'text-white' : 'text-green-500'}`} />
                     <p className={`${check === 'ok' ? 'text-white' : 'text-green-500'} font-bars2  font-semibold`}> Ok </p>
                </div> 
-               <div onClick={() => {setCheck("Outstanding"); setClicked(false)}} className={`cursor-pointer duration-300 flex items-center gap-1 justify-center ${check === 'Outstanding' ? 'bg-green-500' : 'bg-green-100'} min-w-[140px] w-[60%] h-full`}>
+               <div onClick={() => {setCheck("Outstanding"); setClicked(false)}} className={`cursor-pointer duration-300 flex rounded-md items-center gap-1 justify-center ${check === 'Outstanding' ? 'bg-green-500' : 'bg-green-100'} min-w-[140px] w-[60%] h-full`}>
                     <RiStarFill className={`${check === 'Outstanding' ? 'text-white' : 'text-green-400'}`} />
                     <p className={`${check === 'Outstanding' ? 'text-white' : 'text-green-500'} font-bars2  font-semibold`}> Outstanding </p>
                 </div> 
@@ -71,7 +71,7 @@ export function Submit_Flags() {
             <div className='w-[100%] h-[100px] border-solid border-[3px] rounded-md p-4 border-gray-100 bg-white'>
                 <input  className="w-[100%] text-black  h-[100%] outline-none bg-transparent "  placeholder='Comment Here'></input>
             </div>
-            <div className='cursor-pointer hover:scale-105 duration-150 w-[100%] h-[40px] flex items-center justify-center rounded-md mt-2  bg-teal-400'>
+            <div className='cursor-pointer  w-[100%] h-[40px] flex items-center justify-center rounded-md mt-2  bg-teal-400'>
                 <p  className=' font-bars2 text-white font-bold'> Finish Evaluation</p>
             </div>
         </div>
