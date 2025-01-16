@@ -9,6 +9,7 @@ import { BsFillLightningFill } from "react-icons/bs";
 import meme from "../clips/memem.jpeg";
 import { VscGithubAlt } from "react-icons/vsc";
 import kta from "../clips/cat.png"
+import { RxCross2 } from "react-icons/rx";
 
 export default function Auth() {
     const navigate = useNavigate();
@@ -51,8 +52,10 @@ export default function Auth() {
           flex items-center justify-start  flex-col absolute z-50">
             <div style={{display : button_Deselect}} className=" backdrop-blur-sm items-center justify-center absolute w-full h-[100vh]">
                 <div className="flex-col rounded-[10px] flex items-start justify-start border-solid border-[5px] border-yellow-300 w-[400px] h-[400px] bg-slate-800">
-                    <div className=" mt-2 w-full h-[20px]  flex items-center justify-start">
-                        <div onClick={() => {set_ButtonDeselect('none');  Cookies.set('close', false); }} className="w-[16px] h-[16px] cursor-pointer hover:scale-105 bg-red-500 ml-2 rounded-full"></div>
+                    <div className=" pt-3 pb-2 w-full h-[25px]  flex items-center justify-start">
+                        <div onClick={() => {set_ButtonDeselect('none');  Cookies.set('close', false); }} className="w-[16px] h-[16px] flex items-center justify-center cursor-pointer hover:scale-105 bg-red-500 ml-2 rounded-full">
+                            <RxCross2 size={10} color="white" />
+                        </div>
                     </div> 
                         <div className="flex-col flex items-center justify-center  w-[100%] h-[70%]">
                             <p className="font-bars3 font-normal text-white"> Do you find 1337Leets useful? 🤔 </p>
@@ -61,7 +64,7 @@ export default function Auth() {
                             <p className="font-bars3 font-light text-white"> You can cancel if you want to. ❌</p>
                             <p className="font-bars2 font-light text-white"> No one will force you.  💪</p>
                             <p className="font-bars3 font-bold text-red-400"> Click the button above! ⬆️ </p>
-                            <div className="w-[60px] mt-3 rounded-full h-[60px] border-solid border-white border-[2px] bg-white ">
+                            <div className="w-[75px] mt-3 rounded-full h-[75px] border-solid border-white border-[2px] bg-white ">
                                 <img className="w-full h-full  rounded-full"  src={kta}></img>
                             </div>
                         </div>
