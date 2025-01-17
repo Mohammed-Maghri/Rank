@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 import './sheets.css'
 import { Nav } from '../Nav/Nav'
 import { BsFileEarmarkCodeFill } from "react-icons/bs";
@@ -7,18 +7,19 @@ import { MdArrowOutward } from "react-icons/md";
 import { Submit_Flags }from './SheetsComp'
 import {Submit_Corection} from './SheetsComp'
 import { LiaPasteSolid } from "react-icons/lia";
-
+import { List_comp  } from './SheetsComp';
 
 export function Sheets() {
     const [clicked , setClicked] = useState(false);
     const [subjects, setSubject] = useState([{name : "ft_irc", date : "15-01-2025"},{name : "webserve", date : "15-01-2025"} ,{name : "ft_trencendese", date : "15-01-2025"}
     ,{name : "ft_irc", date : "15-01-2025"}]);
+    const [ObjectComp, setObjComp] = useState([{component : <Submit_Corection />}, {component : <Submit_Corection/>}, {component : <Submit_Flags/>}, {component : <Submit_Corection/>}, {component : <Submit_Corection/>},{component : <Submit_Corection/>}, {component : <Submit_Corection/>}]);
     return (
         <div className="bg-black w-[100%]  h-[100vh] flex items-center justify-start flex-col" >
             <Nav/>
             {clicked && 
                 <div className='w-[100%] max-w-[1130px] h-[100vh] flex items-center justify-center '>
-                    <div className='xs:w-[100%] sm:w-[100%] duration-150 md:w-[70%] min-w-[350px] bg-white rounded-md h-[100%]'>
+                    <div className='xs:w-[100%] sm:w-[100%] duration-150 md:w-[70%] min-w-[350px] overflow-scroll bg-white rounded-md h-[100%]'>
                         <div className='w-[100%] h-[200px] mt-4'>
                             <div className="w-[100%] h-[40px] flex items-center justify-center">
                                 <p className='font-bars2 text-black font-bold text-xl'>SCALE FOR PROJECT</p>
@@ -40,8 +41,7 @@ export function Sheets() {
                                 </div>
                             </div>
                         </div>
-                    <Submit_Corection/>
-                    <Submit_Flags/>
+                    <List_comp comp={ObjectComp}/>
                     </div>
                 </div>
             }

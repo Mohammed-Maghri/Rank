@@ -13,6 +13,18 @@ import { BsFileEarmarkCodeFill } from "react-icons/bs";
 import { VscVerifiedFilled } from "react-icons/vsc";
 import './sheets.css'
 
+export const List_comp = ({comp}) => {
+    return (
+        <div className='flex gap-1 items-center justify-center flex-col w-[100%] bg-white'>
+            {
+                comp.map((item , index) => (
+                    <>{item.component}</>
+                ))
+            }
+        </div>
+    )
+};
+
 export function Submit_Corection() {
     const [clickIthem, setClickIthem] = useState('');
     return (
