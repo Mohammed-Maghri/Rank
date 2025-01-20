@@ -31,16 +31,13 @@ const Head = ({ projectName, numEvaluation }) => {
   );
 };
 
-const SheetHeader = ({ projectName, numEvaluation, SubjectLink }) => {
+const SheetHeader = ({ projectName, numEvaluation, SubjectLink = [] }) => {
   return (
-    <div className="text-black max-w-[800px]">
+    <div className="text-black w-full">
       <Head projectName={projectName} numEvaluation={numEvaluation} />
-      <div className="scale-section-infos col-sm-12 scale-div">
-        <div
-          className="p-0 scale-introduction dancer from-down mb-4"
-          id="introduction-24830"
-        >
-          <h3 className="text-black font-bars3 text-2xl font-extrabold mb-1">
+      <div className="">
+        <div className="mb-4" id="introduction-24830">
+          <h3 className="text-black text-3xl font-extrabold mb-1">
             Introduction
           </h3>
           <div className="flex flex-col gap-2 text-black font-normal text-sm">
@@ -64,11 +61,8 @@ const SheetHeader = ({ projectName, numEvaluation, SubjectLink }) => {
             </p>
           </div>
         </div>
-        <div
-          className="p-0 scale-guidelines dancer from-down"
-          id="guidelines-24830"
-        >
-          <h3 className="text-black font-bars3 text-2xl font-extrabold mb-1">
+        <div>
+          <h3 className="text-black text-3xl font-extrabold mb-1">
             Guidelines
           </h3>
           <div className="flex flex-col gap-2 text-black font-normal text-sm">
@@ -133,20 +127,22 @@ const SheetHeader = ({ projectName, numEvaluation, SubjectLink }) => {
           </div>
         </div>
         <hr className="my-4" />
-        <div className="dancer from-down" id="attachments-24830">
-          <h3 className="text-black font-bars3 text-2xl font-extrabold mb-1">
+        <div>
+          <h3 className="text-black text-3xl font-extrabold mb-1">
             Attachments
           </h3>
-          <div>
-            <a
-              href={SubjectLink}
-              target="_blank"
-              className="text-sm hover:underline cursor-pointer text-[#00babc]"
-              rel="noreferrer"
-            >
-              subject.pdf
-            </a>
-          </div>
+          {SubjectLink.map((link, index) => (
+            <div className="flex flex-row gap-3" key={index}>
+              <a
+                href={link}
+                target="_blank"
+                className="text-sm hover:underline cursor-pointer text-[#00babc]"
+                rel="noreferrer"
+              >
+                subject.pdf
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import { RxCross1 } from "react-icons/rx";
 export default function SubmitCorrection() {
   const [clickIthem, setClickIthem] = useState("");
   return (
-    <div className="flex  items-center gap-1 justify-center flex-row w-[100%]">
+    <div className="flex items-center gap-3 justify-center flex-row w-[100%] my-4">
       <div
         onClick={() => {
           setClickIthem("green");
