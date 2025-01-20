@@ -52,35 +52,24 @@ export function Selector() {
     })
   }
 
-  const funcSeter = (value, check, wh) => {
+  const funcSeter =  (value, check, wh) => {
     let other = 0;
-    if (check === "+") {
-      other = value;
-      if (check === "+" && wh === "pool" && ((other + 1) === 13)) {
-        other = 1;
-        setOnlyprom("Month : " + other)
-      } else {
+    if (check == "+") {other = value;
+      if (check == "+" && wh == "pool" && ((other + 1) == 13)) {other = 1; setOnlyprom("Month : " + other)}
+      else {
         other += 1;
-        if (wh === "pool") setOnlyprom("Month : " + other)
-        else setOnlyprom(other);
+        if (wh == "pool") {setOnlyprom("Month : " + other)}
+        else {setOnlyprom(other);}
       }
-    } else if (check === "-") {
-      other = value;
-      if (wh === "pool" && ((other - 1) === 0)) {
-        other = 12;
-        setOnlyprom("Month : " + other)
-      } else if (wh === "not") {
-        if ((other - 1) < 2017) {
-          other = 2024;
-          setOnlyprom(other);
-        }
-      } else {
-        other -= 1;
       }
-      if (wh === "pool") setOnlyprom("Month : " + other)
-      else setOnlyprom(other);
-    }
-  }
+    else if (check == "-") {other = value;
+      if (wh  == "pool" && ((other - 1) == 0)) {other = 12; setOnlyprom("Month : " + other)}
+      else if (wh == "not") {if((other - 1) < 2017){other = 2024;  ; setOnlyprom("Month : " + other)}}
+      else {other -= 1;}
+      if (wh == "pool") {setOnlyprom("Month : " + other)}
+      else {setOnlyprom(other);}
+    other = 0;
+  }}
 
   const closeAllDropdowns = () => {
     setVisible(false);
