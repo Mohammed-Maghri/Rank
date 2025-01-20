@@ -49,7 +49,7 @@ export default function SubmitFlags() {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <div className="w-[100%] max-w-[800px] bg-white p-3">
+    <div className="w-[100%] bg-white p-3">
       <div className="h-[50px] w-[100%] flex items-end justify-start">
         <p className="text-black font-bars3 text-2xl font-extrabold">
           {" "}

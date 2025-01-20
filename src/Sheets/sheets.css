@@ -1,6 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rajdhani:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.markdown-parent ul {
+  font-weight: 700;
+  margin-left: 30px;
+  list-style-type: disc;
+  font-weight: 700;
+}
+
+.markdown-parent {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.markdown-parent p {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.markdown-parent code {
+  color: red;
+  background: #ececec;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+

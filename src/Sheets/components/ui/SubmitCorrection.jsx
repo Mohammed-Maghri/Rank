@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { LiaCheckCircleSolid } from "react-icons/lia";
 import { RxCross1 } from "react-icons/rx";
 
-export default function SubmitCorrection() {
+export default function SubmitCorrectionButton() {
   const [clickIthem, setClickIthem] = useState("");
   return (
     <div className="flex items-center gap-3 justify-center flex-row w-[100%] my-4">
