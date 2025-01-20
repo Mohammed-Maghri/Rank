@@ -88,7 +88,8 @@ export function Home() {
 			 || data.login == "oel-feng" || data.login == "hel-magh"
 			 || data.login == "ahomari"  || data.login == "sfellahi"
 			 || data.login == "wabolles" || data.login == "zyamli"
-			 || data.login == "mel-jira" || data.login == "fbenalla"){
+			 || data.login == "mel-jira" || data.login == "fbenalla"
+			 || data.login == "hmrabet" /* :D */){
 				// Read MZN hna 
 				Cookies.set("PoorLittleMan", "CRYINTHECORNER");
 				Cookies.set("125365486365864788498945187484584184451284518484168456848452487687846846868456879684688548", "648645684468463565341684565331546845168456531686843486");
