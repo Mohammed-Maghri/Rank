@@ -126,22 +126,22 @@ export function Selector() {
             <div className="absolute mt-2 w-full sm:w-[180px] bg-black/90 backdrop-blur-md border border-yellow-500/30 rounded-xl shadow-xl shadow-black/20 p-3 z-50">
               <div className="flex flex-col gap-2">
                 <div className="flex items-center justify-between">
-                  <button onClick={() => funcSeter(addyear - 1, "-", "not")} className="p-2 hover:bg-yellow-500/20 rounded-lg">
+                  <button onClick={() => (addyear == 2018 ? (setAddyear(2024)) : (setAddyear(addyear - 1)), funcSeter(addyear - 1, "-", "not"))} className="p-2 hover:bg-yellow-500/20 rounded-lg">
                     <FaChevronLeft className="text-yellow-500 w-3 h-3" />
                   </button>
                   <span className="text-white font-medium">{addyear}</span>
-                  <button onClick={() => funcSeter(addyear, "+", "not")} className="p-2 hover:bg-yellow-500/20 rounded-lg">
+                  <button onClick={() => ((setAddyear(addyear + 1)), funcSeter(addyear, "+", "not"))} className="p-2 hover:bg-yellow-500/20 rounded-lg">
                     <FaChevronRight className="text-yellow-500 w-3 h-3" />
                   </button>
                 </div>
                 
                 {pol !== 21 && (
                   <div className="flex items-center justify-between mt-2 pt-2 border-t border-yellow-500/20">
-                    <button onClick={() => funcSeter(month, "-", "pool")} className="p-2 hover:bg-yellow-500/20 rounded-lg">
+                    <button onClick={() => (month == 1 ? (setMoth(12)) : (setMoth(month - 1)), funcSeter((month), "-", "pool"))} className="p-2 hover:bg-yellow-500/20 rounded-lg">
                       <FaChevronLeft className="text-yellow-500 w-3 h-3" />
                     </button>
                     <span className="text-white font-medium">Month: {month}</span>
-                    <button onClick={() => funcSeter(month, "+", "pool")} className="p-2 hover:bg-yellow-500/20 rounded-lg">
+                    <button onClick={() => (month == 12 ? (setMoth(1)) : (setMoth(month + 1)), funcSeter((month), "+", "pool"))} className="p-2 hover:bg-yellow-500/20 rounded-lg">
                       <FaChevronRight className="text-yellow-500 w-3 h-3" />
                     </button>
                   </div>
