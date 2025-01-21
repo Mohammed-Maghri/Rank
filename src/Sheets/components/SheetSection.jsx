@@ -1,5 +1,5 @@
 import SubmitCorrectionSlider from "./ui/SubmitCorrectionSlider";
-import SubmitCorrectionButton from "./ui/SubmitCorrection";
+import SubmitCorrectionButton from "./ui/SubmitCorrectionButton";
 import Markdown from "react-markdown";
 
 const SheetSection = ({

@@ -98,7 +98,7 @@ export default function SubmitFlags() {
           </p>
         </div>
       </div>
-      <div className="w-[100%] grid xs:grid-cols-2 md:grid-cols-3 mt-2    flex-1">
+      <div className="w-[100%] grid xs:grid-cols-2 md:grid-cols-3 mt-2 flex-1">
         {flags.map((item, index) => (
           <>
             <div

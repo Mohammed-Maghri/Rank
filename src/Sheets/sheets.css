@@ -6,10 +6,9 @@
 @tailwind utilities;
 
 .markdown-parent ul {
-  font-weight: 700;
   margin-left: 30px;
   list-style-type: disc;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .markdown-parent {
@@ -18,7 +17,6 @@
 }
 
 .markdown-parent p {
-  font-weight: 600;
   font-size: 14px;
 }
 
@@ -28,4 +26,3 @@
   padding: 1px 3px;
   border-radius: 3px;
 }
-
