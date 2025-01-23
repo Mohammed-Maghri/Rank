@@ -6,6 +6,13 @@ export const libft = {
     "You must test the functions present in the libft, either with your own set of tests or with those of the person being evaluated.",
   bonusHeaderContent:
     "Bonuses will only be considered if the mandatory part is excellent. This means that the mandatory part must have been completed from start to finish, with perfect error handling even in the case of unexpected use. If all the mandatory points have not been awarded during this defense, no bonus points will be counted.",
+
+  // No preliminaries in this Sheet
+  preliminaries: [],
+
+  // No general Instruction in this Sheet
+  generalInstructions: [],
+
   mandatory: [
     {
       header: "Libc functions #1",

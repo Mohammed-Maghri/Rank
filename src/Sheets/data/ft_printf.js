@@ -1,10 +1,17 @@
 export const ft_printf = {
   projectName: "ft_printf",
   numEvaluation: "1",
-  SubjectLink: ["https://cdn.intra.42.fr/pdf/pdf/147351/en.subject.pdf"],
+  subjectLink: ["https://cdn.intra.42.fr/pdf/pdf/147351/en.subject.pdf"],
   mandatoryHeaderContent: "",
   bonusHeaderContent:
     "Bonuses will only be considered if the mandatory part is excellent. This means that the mandatory part must have been completed from start to finish, with perfect error handling even in the case of unexpected use. If all the mandatory points have not been awarded during this defense, no bonus points will be counted.",
+
+  // No preliminaries in this Sheet
+  preliminaries: [],
+
+  // No general Instruction in this Sheet
+  generalInstructions: [],
+
   mandatory: [
     {
       header: "",

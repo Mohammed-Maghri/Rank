@@ -1,10 +1,17 @@
 export const get_next_line = {
   projectName: "ft_printf",
   numEvaluation: "1",
-  SubjectLink: ["https://cdn.intra.42.fr/pdf/pdf/147351/en.subject.pdf"],
+  subjectLink: ["https://cdn.intra.42.fr/pdf/pdf/147230/en.subject.pdf"],
   mandatoryHeaderContent: "",
   bonusHeaderContent:
     "Evaluate the bonus part if, and only if, the mandatory part has been entirely and perfectly done, and the error management handles unexpected or bad usage. In case all the mandatory points were not passed during the defense, bonus points must be totally ignored.",
+
+  // No preliminaries in this Sheet
+  preliminaries: [],
+
+  // No general Instruction in this Sheet
+  generalInstructions: [],
+
   mandatory: [
     {
       header: "Norminette",
