@@ -49,12 +49,9 @@ export default function SubmitFlags() {
   const [clicked, setClicked] = useState(false);
 
   return (
-    <div className="w-[100%] bg-white p-3">
-      <div className="h-[50px] w-[100%] flex items-end justify-start">
-        <p className="text-black font-bars3 text-2xl font-extrabold">
-          {" "}
-          Ratings{" "}
-        </p>
+    <div className="w-full bg-white">
+      <div className="h-[50px] w-full flex items-end justify-start">
+        <h3 className="text-black font-extrabold text-3xl mb-1">Ratings</h3>
       </div>
       <div className="w-[100%] h-[30px] flex items-start justify-start ">
         <p className="p-0 m-0 text-xs font-extrabold text-black">
