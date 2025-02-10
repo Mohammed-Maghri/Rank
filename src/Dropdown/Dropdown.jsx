@@ -1,190 +1,252 @@
-import React, { useContext, useEffect } from "react";
-import pic from "../clips/mmaghri.jpg";
-import pas from "../clips/pass.png";
-import kta from "../clips/taj.jpeg";
-
+import React, { useContext, useEffect, useRef } from "react";
 import { useState } from "react";
 import { context } from "../context";
 import Cookies from "js-cookie";
-
+import { RiArrowDropDownFill } from "react-icons/ri";
+import { TbWorldSearch } from "react-icons/tb";
 import "../Nav/Nav.css";
 import { functionVisible } from "../Nav/Nav";
+import { GrDocumentOutlook } from "react-icons/gr";
+import { CiCircleMinus } from "react-icons/ci";
+import { CiCirclePlus } from "react-icons/ci";
+import { use } from "react";
+import { FuncFetch } from "../Func_Help/helper";
+import { useNavigate } from "react-router-dom";
 
-const ob = [{}];
+const CampusButton = ({ setCampus }) => {
+  const [Cliked, SetClicked] = useState(false)
+  const [Camp, setCam] = useState("Campus")
+  const Ref = useRef(null)
 
+  const [Campuses, setCampuses] = useState([
 
-const names = [{pico : [ pic , pic], project : "Minishell", status : "Waiting For Eval !"}, 
-{pico : [pic ], project : "CPP Module 06", status : "Waiting For Eval !"}, 
-{pico : [pic ,  pic , pic, pic , pic], project : "Transdense", status : "Waiting For Eval !"}];
-const Componnent = ({on}) => {
-  const {username, seTusername} = useContext(context);
-  const [empty, setEmpty] = useState(false);
-  const [obv, seTobv] = useState(false);
-  const [values, setValues] = useState([]);
-  const [check, setCheck] = useState(true);
-  // if (on)
-  //     setCheck(false);
+    { name: "Khouribga", id: 16 },
+    { name: "Bengrir", id: 21 },
+    { name: "Tetouan", id: 55 },
+    { name: "Rabat", id: 75 },
+    {name : "Paris" , id : 1},
+    {name : "Lyon" , id : 9} ,
+    {name : "Barcelona" , id : 46},
+    {name : "Mulhouse" , id : 48},
+    {name : "Lausanne" , id : 47},
+    {name : "Istanbul" , id : 49},
+    {name : "Berlin" , id : 51},
+    {name : "Florence" , id : 52},
+    {name : "Vienna" , id : 53},
+    {name : "Prague" , id : 56},
+    {name : "London" , id : 57},
+    {name : "Porto" , id : 58},
+    {name : "Luxembourg" , id : 59},
+    {name : "Perpignan" , id : 60},
+    {name : "Tokyo" , id : 26},
+    {name : "Moscow" , id : 17},
+    {name : "Madrid" , id : 22},
+    {name : "Seoul" , id : 29},
+    {name : "Rome" , id : 30},
+    {name : "Bangkok" , id : 33},
+    {name : "Amman" , id : 35},
+    {name : "Malaga" , id : 37},
+    {name : "Nice" , id : 41},
+    {name : "Abu Dhabi" , id : 43},
+    {name : "Wolfsburg" , id : 44},
+
+  ])
+
+  const FunctionCheck = (event) => {
+    if (Ref) {
+      if (Ref.current && !Ref.current.contains(event.target))
+        SetClicked(false)
+    }
+  }
   useEffect(() => {
-    if (on === false) setCheck(false);
-  }, [])
-  setInterval(() => {
-    setCheck(false);
-  }, [40000])
-
-  const fetchCorections = async (link) => {
-    if (on === false) return ;
-    const dataDate = new Date() ;
-    const year = dataDate.getFullYear();
-    const month =  dataDate.getMonth() + 1;
-    const day = dataDate.getDate();
-  
-    const tomorow = new Date(dataDate);
-    tomorow.setDate(dataDate.getDate() + 1);
-    const tomyear = tomorow.getFullYear();
-    const tomday = tomorow.getDate();
-    const tommonth = tomorow.getMonth() + 1;
-    
-    console.log((year + "-" + month + "-" + day), (tomyear + "-" + tommonth + "-" + tomday));
-    const obj = {dateOne :(year + "-" + month + "-" + day), dateTwo : (tomyear + "-" + tommonth + "-" + tomday)};
-    await fetch(link , {
-      method : 'POST',
-      headers : {
-        'Content-Type' : 'application/json',
-				'Authorization': `Bearer ${Cookies.get('access_token')}`
-      }, body : await JSON.stringify(obj),
-    }).then((response) => response.json()).then((data) => {
-      (data) ? seTobv(true) : seTobv(false) ;
-      (Object.keys(data).length == 0) ? setEmpty(true) : setEmpty(false);
-      setValues(data);
-    }).catch((err) => {
-      if (err >= 400 && err < 450) setCheck(false);
-      if (err === 500) setCheck(false);
-    })
-  };
-
-  const functionRedirect = (value) => {
-      window.open("https://profile.intra.42.fr/users/" + value , '_blank');
-  };
-
-  useEffect(() => {
-    fetchCorections("https://api.1337leets.com/api/v1/test");
+    document.addEventListener('mousedown', (event) => FunctionCheck(event))
+    return () => {
+      document.removeEventListener('mousedown', FunctionCheck);
+    };
   }, [])
 
   return (
-    <div className=" rounded-[10px]  [&::-webkit-scrollbar]:hidden gap-1 [-ms-overflow-style:none] [scrollbar-width:none] flex-col flex  items-center pt-1 h-[100%] w-[100%] bg-slate-800 overflow-auto">
-      {empty &&
-        <div className="w-[100%] h-[100%] flex items-center justify-center">
-          <p className="text-white text-md font-bold font-bars2"> No Push For the Day </p>
-        </div>
-      }
-        {obv && values.map((items, index) => (
-          <div className="w-[98%] h-[65px] flex items-center justify-center flex-col border-solid border-yellow-400 border-[2px] hover:cursor-pointer hover:bg-slate-600  rounded-[10px]">
-          <div className="flex items-center justify-center w-[100%] rounded-[10px]  h-[50%]">
-          {items.users.map((it, index ) => (
-            <div onClick={() => (functionRedirect(it.login))} style={{boxShadow : "0px 0px 3px white "}} className="border-solid z-20 border-white hover:scale-110 hover:duration-150 cursor-pointer  border-[2px] w-[37px] h-[37px] rounded-[50%]">
-                  <img src={kta} className="object-cover rounded-[50%] h-[100%] w-[100%]" />
-                </div>
-              ))
-            }
-            </div>
-            <div className="rounded-[8px] w-[100%] h-[50%] bg-slate-900">
-            <div className="flex items-center pt-2 justify-center   h-[50%]">
-              {(items.project_gitlab_path == null) ? <p  className="font-bars2 text-white z-20 font-bold "> EXAM </p> :
-              <p  className="font-bars2 text-white z-20 font-bold "> {items.project_gitlab_path.substring(items.project_gitlab_path.lastIndexOf('/') + 1).substring(0, 22)} </p>
-              }
-            </div>
-            <div className=" h-[50%] rounded-[10px] flex items-center justify-center" >
-            <p className="font-bars2 text-xs text-red-500 font-bold"> {items.status} </p>
-            </div>
-            </div>
+    <div ref={Ref} onClick={(event) => SetClicked(!Cliked)} className={` cursor-pointer hover:bg-opacity-10 flex items-center justify-center w-[220px] h-full ${!Cliked ? "hover:bg-yellow-600 hover:bg-opacity-10 border-solid border-opacity-25 border-[1px] border-yellow-500" : ""} rounded-md`}>
+      {/* <div className="w-[10px] h-[10px] rounded-sm bg-yellow-600"></div> */}
+      <p className="font-bars3 mr-2 text-white ml-2"> {Camp} </p>
+      <RiArrowDropDownFill size={25} color="#ca8a04" />
+      {Cliked &&
+        <div className={`absolute  overflow-x-hidden overflow-y-auto h-[300px] top-32 w-[130px] flex-col items-center justify-center rounded-md  bg-slate-950 border-solid border-yellow-500 border-opacity-50 border-[1px] z-50`}>
+          {Campuses.map((item, index) => (
+            <div onClick={() => (setCampus(item.id), setCam(item.name))} key={index} className="flex items-center justify-center w-[90%] h-[25px] m-2 bg-slate-950 hover:bg-slate-900">
+              <p className="font-bars3 text-white "> {item.name} </p>
             </div>
           ))
-      }
-      {!obv && 
-        <div className="w-[100%] h-[100%] border-[4px] flex items-center justify-center rounded-[5px] border-solid border-yellow-300">
-          {check &&
-            <span className="loading loading-infinity loading-lg text-yellow-300"></span>
-          }
-          {!check &&
-          <div className="w-[100%] flex items-center justify-center h-full flex-col">
-            <p className="text-white font-bars2 text-xs"> See How Weak U ar </p>
-            <p className="text-white font-bars2 text-xs"> Reading the Code-Base To </p>
-            <p className="text-white font-bars2 text-xs"> By-pass the Front-end ... ohh </p>
-            <p className="text-white font-bars2 text-xs"> I mean Copying Other's People Stupidity </p>
-            <p className="text-white font-bars2 text-xs"> Cause U aint Smart Enough To Read the Code Base !!!</p>
-            <p className="text-white font-bars2 text-xs"> Poooor Baby Go Cry </p>
-          </div>
           }
         </div>
       }
     </div>
   )
-};
+}
+const CursusButton = ({ Cursus, Number, SetNumber }) => {
+  const Ref = useRef(null)
+  const [Cliked, SetClicked] = useState(false)
+  const [Max, setMax] = useState(12)
+  const [Min, SetMin] = useState(1)
 
-export function Dropdown(name, pic) {
-    // const [all , setall] = useContext(context);
-    
-    const [visiblity, setvisibility] = useState(false);
-    const [checkseen, setCheckSeen] = useState(true);
-    useEffect(() => {
-      // Umm mmm mm m m m mm m m m Woow Ur Doing Good U maybe can Reach the Vip Now !!!! :( Not Reallyyy  Even with These Tokens Set To ur Browser : )
-      (Cookies.get("PoorLittleMan") == "CRYINTHECORNER")? setvisibility(true) : setvisibility(false);
-      (Cookies.get("PoorLittleMan") == "CRYINTHECORNER" && Cookies.get("125365486365864788498945187484584184451284518484168456848452487687846846868456879684688548") != "648645684468463565341684565331546845168456531686843486")? setCheckSeen(false) : setCheckSeen(true);
-      // Changing The JWT to my username won't Make a change
-    }, []);
-  
-    const [vip, setVip] = useState(false);
-    return (
-        <div className=" absolute flex items-start justify-end top-[65px] w-[400px] h-[200px] ">
-          <div className="flex items-start justify-start bg-black flex-col z-50 w-[55%] rounded-[10px] h-[100%]">
-            <div className="w-[100%] h-[40px] rounded-[10px] flex items-center justify-center flex-row  border-solid bg-slate-900">
-              <div onClick={() => (setVip(false))} className="w-[100%] h-[100%] flex items-center justify-center font-bars2 text-white gap-[5px] font-bold duration-200 text-sm hover:bg-slate-800 cursor-pointer rounded-[10px]"><p> Vip-Option's </p> 
-              <div  className="flex items-center justify-center"> <img className="w-[15px] h-[15px]" src={pas} /></div> </div>
+  useEffect(() => {
+    if (Cursus === 'Mo') {
+      setMax(12)
+      SetMin(1)
+      SetNumber(8)
+    }
+    else {
+      setMax(2024)
+      SetMin(2019)
+      SetNumber(2024)
+    }
+  }, [Cursus])
+
+  const AddPlusFunction = (AD) => {
+    if (AD === 1)
+      if (Number > Min) SetNumber((Number) => Number - 1)
+    if (AD === 2)
+      if (Number < Max) SetNumber((Number) => Number + 1)
+  }
+
+  const ClickedInside = (event) => {
+    if (Ref.current && !Ref.current.contains(event.target))
+      SetClicked(false)
+  }
+  useEffect(() => {
+    document.addEventListener('mousedown', (event) => (ClickedInside(event)))
+  }, [])
+
+  return (
+    <div ref={Ref} className={` cursor-pointer hover:bg-opacity-10 flex items-center justify-center w-[220px] ${!Cliked ? "hover:bg-yellow-600 hover:bg-opacity-10 border-solid border-opacity-25 border-[1px] border-yellow-500" : ""} rounded-md`}>
+      {/* <div className="w-[10px] h-[10px] rounded-sm bg-yellow-600"></div> */}
+      <div onClick={() => (SetClicked(!Cliked))} className="w-full h-[40px] flex items-center justify-center flex-row ">
+        <p className="font-bars3 mr-2 text-white text-md "> {Cursus + ' ' + Number} </p>
+        <RiArrowDropDownFill size={25} color="#ca8a04" />
+      </div>
+      <>
+        {Cliked &&
+          <div className={`absolute  top-32 w-[130px] h-[40px] flex flex-row items-center justify-center rounded-md  bg-slate-950 border-solid border-yellow-500 border-opacity-50 border-[1px] z-50`}>
+            <div onClick={() => (AddPlusFunction(1))} className="w-[20%] hover:scale-110 duration-200 rounded-md flex items-center justify-center h-full">
+              <CiCircleMinus color="white" />
             </div>
-            <div className="h-[159px] w-[100%] flex items-center  p-[10px]  justify-center">
-                {!vip &&
-              <div className="w-[100%] h-[100%] flex items-center overflow-y-auto gap-[2px] flex-col  justify-start">
-                {
-                    ob[0].name == "mmaghri" ? ( // Why im I Cheking On this Ohhhhh 
-                        ob.map((item, index) => (
-                            <div key={index} className="w-[80%] p-[2px] rounded-[10px] duration-200 cursor-pointer hover:scale-105 bg-yellow-400 h-[25px]  flex items-center justify-center flex-row ">
-                            <div className="w-[30%]  flex items-center justify-center  h-[100%]">
-                            <div className="w-[20px] h-[20px] rounded-[50%]">
-                            <img src={item.pic} className="w-[100%] h-[100%] rounded-[50%] object-cover" />
-                            </div>
-                            </div>
-                            <div className="w-[70%] flex items-center justify-start text-sm text-black font-bars2 h-[100%]">
-                            <p> {item.name}</p>
-                            </div>
-                            </div>
-                        ))
-                ):(
-                    <div className="w-[100%] text-white flex-col h-[100%] flex font-bars2 text-sm items-center justify-center">
-                      {visiblity && 
-                        <Componnent on={checkseen} />
-                      }
-                      {!visiblity && 
-                        <>
-                        <p> Sorry ! The Vip Option only</p>
-                        <p> Accessible</p>
-                        <p> To the Owners Of the</p>
-                        <p> VIP-PASS </p> 
-                       <img className="w-[22px] h-[22px]" src={pas} /> 
-                        </>
-                      }
-                    </div>
-                )
-            }
-              </div>
-                }
-                {
-                    vip &&
-                    <div className="w-[100%] h-[100%] flex items-center justify-center">
-
-                    </div>
-                }
+            <div className="w-[60%] flex items-center justify-center bg-slate-950 h-full">
+              <p className="font-bars3 mr-2 text-white ml-2"> {Number} </p>
+            </div>
+            <div onClick={() => (AddPlusFunction(2))} className="w-[20%] hover:scale-110 duration-200 rounded-md flex  items-center justify-center h-full">
+              <CiCirclePlus color="white" />
             </div>
           </div>
-        </div>
-    );
+        }
+      </>
+    </div>
+  )
 }
+
+const PromoButton = ({Camp, CampusSeter}) => {
+  const Ref = useRef(null)
+  const [Cliked, SetClicked] = useState(false)
+
+  const [Curs, seTcurs] = useState([
+    { Curs: 'Pool', id: 9 },
+    { Curs: 'Cursus', id: 21 }])
+    
+  const checkClick = (event) => {
+    if (Ref.current && !Ref.current.contains(event.target))
+      SetClicked(false)
+  }
+  useEffect(() => {
+    document.addEventListener('mousedown', (event) => (checkClick(event)))
+  }, [])
+
+  return (
+    <div ref={Ref} onClick={(event) => (SetClicked(!Cliked))} className={` cursor-pointer hover:bg-opacity-10 flex items-center justify-center w-[220px] h-full ${!Cliked ? "hover:bg-yellow-600 hover:bg-opacity-10 border-solid border-opacity-25 border-[1px] border-yellow-500" : ""} rounded-md`}>
+      {(Camp == 21) ? 
+        <p className="font-bars3 mr-2 text-white ml-2"> Cursus </p> : 
+        <p className="font-bars3 mr-2 text-white ml-2"> Pool </p>
+      }
+      <RiArrowDropDownFill size={25} color="#ca8a04" />
+      {Cliked &&
+        <div className={`absolute   top-32 w-[130px] flex-col items-center justify-center rounded-md  bg-slate-950 border-solid border-yellow-500 border-opacity-50 border-[1px] z-50`}>
+          {Curs.map((item, index) => (
+            <div onClick={() => (CampusSeter(item.id))} key={index} className="w-[90%] m-2 hover:bg-slate-900 flex items-center justify-center  h-[25px]">
+              <p className="font-bars3 text-white"> {item.Curs} </p>
+            </div>
+          ))
+          }
+        </div>
+      }
+    </div>
+  )
+}
+
+const DropDowns = () => {
+
+
+  //--------------- 
+  
+  
+  const { Year, SetYear } = useContext(context) // Year 
+  const { Student_State, setState } = useContext(context) // Campus Id 
+  const { campusScope, setCompusScope } = useContext(context)
+  const { Month, setMonth } = useContext(context) // Month 
+
+  const {Empty, setEmpty} = useContext(context)
+  const { LoadMore, SetLoadMore } = useContext(context) // lOAD 
+  const { StoreExist, setStoreExist } = useContext(context)
+  const { forloads, setForloads } = useContext(context)
+  //---------------
+
+  const [CursId, SetCursID] = useState('Cursus')
+  const [MonthScope, SetMonthScope] = useState(8)
+
+  const {LocalCampus, setLocalCampus} = useContext(context) // Local Scope Id Cur 
+  const {LocalDepa, setLocalDepart} = useContext(context)  // Local Scope  Id Camp
+  const {LocalMonth, setLocalmonth} = useContext(context) // Local Scope Month 
+  const {LocalYear, SetYearLocal} = useContext(context)
+  const navigate = useNavigate()
+  const ReqMore = () => {
+
+    setState(LocalCampus) // local Scope Id Setter 
+    setCompusScope(LocalDepa)
+    SetYear(LocalYear) // Year Set Local
+    setMonth(LocalMonth) // Setting the Month When Submitiing 
+
+    SetLoadMore(2) // Setting the page To 2 To Req A new One !
+  
+    if (forloads) {
+      let ObjectSend = {
+        CampID: LocalCampus,
+        CurId: LocalDepa,
+        Year: LocalYear,
+        Month : LocalMonth,
+        Load : 1
+      }
+
+      setEmpty(true)
+      setForloads(false)
+      setStoreExist([])
+      FuncFetch("https://api.1337leets.com/Users", setStoreExist, [], ObjectSend, 'DropDown', navigate , setEmpty, setForloads);
+    }
+  }
+  return (
+    <div className="items-center mb-3 justify-center flex w-full h-[45px]">
+      <div className="hidden md:block w-[22%] h-full"></div>
+      <div className="flex gap-2 items-center justify-between rounded-md h-full w-full pr-2 pl-2 max-w-[790px]">
+        <CampusButton  setCampus={setLocalCampus}/>
+        <PromoButton  Camp={LocalDepa} CampusSeter={setLocalDepart}/>
+        <CursusButton Cursus='' Number={LocalYear} SetNumber={SetYearLocal} />
+        {LocalDepa === 9 &&
+          <CursusButton Cursus='Mo' Number={LocalMonth} SetNumber={setLocalmonth} />
+        }
+
+        <div onClick={() => (ReqMore())} className="w-[40px] cursor-pointer border-opacity-60 items-center justify-center flex min-w-[40px] h-[40px] border-yellow-600 rounded-full border-solid border-[1px]">
+          <TbWorldSearch color="#ca8a04" />
+        </div>
+      </div>
+      <div className="hidden md:block w-[22%] h-full"></div>
+    </div>
+  )
+}
+
+export { DropDowns }

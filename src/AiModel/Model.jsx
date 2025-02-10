@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "../Scrol/Scrol.css";
-import { Nav } from "../Nav/Nav";
 import Starfield from 'react-starfield';
 import { useState } from "react";
 import { IoSend } from "react-icons/io5";
@@ -73,7 +72,6 @@ export function Model() {
       }
     return (
         <div className="flex items-center justify-start flex-col bg-black h-[100vh]">
-            <Nav />
             <Starfield
             starCount={700}
             starColor={[255, 255, 0]}

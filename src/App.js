@@ -6,20 +6,26 @@ import { Home } from './Home/Home';
 import Auth from './Auth/Auth';
 import { Calculator } from './Calculator/Calculator';
 import {Game} from "./Game/Game";
-import {Model} from "./AiModel/Model";
+import { Model } from "./AiModel/Model";
 import { Peer } from './Peer/Peer';
 import { Sheets } from './Sheets/Sheets'
+import Connect  from './Connection/Connect.jsx'
+import Layout from './Layout/Layout.jsx';
 
+import { Nav } from './Nav/Nav.jsx';
 function App() {
   return (
     <Router>
       <Routes>
+        <Route path='/Connect' element={<Connect/>} />
         <Route path="/" element={<Auth/>} />
-        <Route path="/home" element={<Home/>} />
-        <Route path="/calculator" element={<Calculator/>} />
-        <Route path="/Model" element={<Model/>} />
-        <Route path="/PeerFinder" element={<Peer/>} />
-        <Route path="/evaluation_sheets" element={<Sheets/>} />
+        <Route element={<Layout/>}>
+          <Route path="/home" element={<Home/>} />
+          <Route path="/calculator" element={<Calculator/>} />
+          <Route path="/Model" element={<Model/>} />
+          <Route path="/PeerFinder" element={<Peer/>} />
+          <Route path="/evaluation_sheets" element={<Sheets/>} />
+        </Route>
       </Routes>
     </Router>
   );

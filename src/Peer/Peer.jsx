@@ -9,7 +9,10 @@ import Starfield from 'react-starfield';
 import { useState } from 'react';
 import Listpeer from "./Listpeer";
 import { useNavigate } from 'react-router-dom';
+import { IoConstructOutline } from "react-icons/io5";
+
 const FunctionDiv = () => {
+	const {StoreExist, setStoreExist} = useContext(context)
     const {peerfinder, setPeerfinder} = useContext(context);
     const [projectName, setProjectName] = useState("Enter Project Name ? ");
     const [list, setList] = useState([]);
@@ -19,9 +22,11 @@ const FunctionDiv = () => {
     const {othload, setOthload} = useContext(context);
     const [iftr, setIftr] = useState(false);
 
-
     const [value , setValue] = useState("");
     const [id, setId] = useState("");
+    const {forloads, setForloads} = useContext(context);
+	const {Empty, setEmpty} = useContext(context)
+
 
     const functionCallApi = async (theid) => {
             try {
@@ -58,6 +63,9 @@ const FunctionDiv = () => {
         }
     }
     useEffect(() => {
+        setEmpty(true)
+        setForloads(false)
+        setStoreExist([])
         functionFetchjson("ft_transcendence");
     }, [])
     const printArg = (ind) => {
@@ -98,14 +106,29 @@ const FunctionDiv = () => {
 
 export function Peer() {
     const navigate = useNavigate();
-    if (Cookies.get('log') == undefined) {
-        navigate("/");}
     const {peerfinder, setPeerfinder} = useContext(context);
     const {peertracker, setPeertracker} = useContext(context);
     const {othload, setOthload} = useContext(context);
     const [iftr, setIftr] = useState(false);
+    const {StoreExist, setStoreExist} = useContext(context)
+
+    const {forloads, setForloads} = useContext(context);
+	const {Empty, setEmpty} = useContext(context)
+
+    useEffect(() => {
+        setEmpty(true)
+        setForloads(false)
+        setStoreExist([])
+    }, [])
     return (
-        <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
+        <div className="flex items-center flex-col justify-center w-[100%] h-[100vh] bg-black">
+            <div className='animate-bounce'>
+                <IoConstructOutline size={120} color='#eab308' />
+            </div>
+            <div>
+                <p className='font-bars2 text-yellow-600 font-bold text-2xl'> Under construction</p>
+            </div>
+            {/* 
             <Starfield
             starCount={700}
             starColor={[255, 255, 0]}
@@ -113,7 +136,6 @@ export function Peer() {
             backgroundColor="black"
             />
             <div className='w-[100%] items-center justify-start min-h-[120px] flex flex-col h-[18%] mb-3'>
-                <Nav />
             <FunctionDiv />
             </div>
             <div className='w-[100%] overflow-auto'>
@@ -136,7 +158,7 @@ export function Peer() {
                         <span className="loading loading-ring w-[200px] h-[200px] bg-yellow-500"></span>
                     </div>
                 }
-            </div>
+            </div> */}
         </div>
     );
 }

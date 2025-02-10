@@ -29,7 +29,6 @@ export function Game() {
             speedFactor={0.04}                                                                                    
             backgroundColor="black"
             />
-            <Nav />
             <div className="w-[100%] border-solid bg-black flex flex-col items-start justify-center h-[100%] overflow-auto ">
                     <div className=" xs:flex lg:hidden items-center justify-center  w-[100%] text-white h-[100%]">
                         <p> The Game Only playable On Big screens </p>

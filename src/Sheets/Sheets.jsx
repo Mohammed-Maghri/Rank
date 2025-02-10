@@ -16,7 +16,6 @@ export function Sheets() {
     const [ObjectComp, setObjComp] = useState([{component : <Submit_Corection />}, {component : <Submit_Corection/>}, {component : <Submit_Flags/>}, {component : <Submit_Corection/>}, {component : <Submit_Corection/>},{component : <Submit_Corection/>}, {component : <Submit_Corection/>}]);
     return (
         <div className="bg-black w-[100%]  h-[100vh] flex items-center justify-start flex-col" >
-            <Nav/>
             {clicked && 
                 <div className='w-[100%] max-w-[1130px] h-[100vh] flex items-center justify-center '>
                     <div className='xs:w-[100%] sm:w-[100%] duration-150 md:w-[70%] min-w-[350px] overflow-scroll bg-white rounded-md h-[100%]'>

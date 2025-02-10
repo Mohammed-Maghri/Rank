@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { MycontextProvider } from './context';
+import { Nav } from './Nav/Nav';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 
 root.render(
     <MycontextProvider>
-    <App />
+        <App />
     </MycontextProvider>
 );
 

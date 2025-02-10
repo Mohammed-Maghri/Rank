@@ -12,6 +12,7 @@ module.exports = {
         'bars2': ['Chakra Petch', 'sans-serif'],
         'bars3': ['Space Grotesk', 'sans-serif'],
         'bars4': ['Sankofa Display', 'sans-serif'],
+        'bars5': ['Orbitron' , 'sans-serif']
       },
       screens: {
         'xs' : '250px',

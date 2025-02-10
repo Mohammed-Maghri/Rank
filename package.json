@@ -18,8 +18,7 @@
   },
   "proxy": "http://192.168.1.115",
   "scripts": {
-    "start": "react-scripts start",
-    "start:local": "react-scripts start --host   192.168.1.115",
+    "start": "react-scripts  start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
