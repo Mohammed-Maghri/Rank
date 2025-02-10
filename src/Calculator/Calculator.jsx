@@ -146,7 +146,7 @@ export function Calculator() {
                 <div className=" duration-300 border-solid border-[1px] bg-white flex-col  bg-opacity-20  border-yellow-600
                   w-[100%] h-[95%] m-2 rounded-md flex justify-start pt-5 items-center">
                     <div className="border-solid flex items-center justify-center mt-20 bg-black  rounded-md border-[1px] border-yellow-600 w-[80%] h-24">
-                        <p className="text-white font-bars4 font-semibold text-6xl "> XP-Calculator </p>
+                        <p className="text-white font-bars4 font-semibold text-xl "> XP-Calculator </p>
                     </div>
                         <div className="gap-[6px] p-1  flex items-center w-[80%]  justify-center bg-transparent rounded-[10px] mt-5 flex-row h-[60px]">
                             <input  type="text" name="level" onChange={(e) => functioHandlechange(e)} value={vel.level} placeholder={desplay} className="input text-white w-[50%] font-bars2 border-solid border-[1px] placeholder-white border-yellow-500 bg-black  " />
