@@ -136,7 +136,7 @@ export function Calculator() {
     }
     // Col All maters Is this --> cols
     return (
-        <div className="flex items-center flex-col justify-start w-[100%] h-[100vh] bg-black">
+        <div className="flex items-center flex-col justify-start w-[100%] overflow-scroll h-[100vh] bg-black">
             <Starfield
             starCount={700}
             starColor={[255, 255, 0]}
