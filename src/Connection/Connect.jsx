@@ -12,7 +12,6 @@ const Connect = () => {
     useEffect(() => {
         const EndPoint  = "https://api.1337leets.com/Auth"
         const ParamCode = new URLSearchParams(window.location.search).get('code')
-        console.log(' ========= ', ParamCode)
         if (ParamCode == undefined && !Cookies.get('access_token'))
             navigate('/')
         else if (Cookies.get('access_token') != null && Cookies.get('access_token') != undefined){

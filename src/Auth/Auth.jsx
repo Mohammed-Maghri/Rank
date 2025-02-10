@@ -16,7 +16,7 @@ export default function Auth() {
     const navigate = useNavigate();
     const {enable, setEnable} = useContext(context);
     const api = "https://api.1337leets.com/api/v1/authenticate";
-    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-39d663e4409f75359ed40f93604b1492f29cc61d16f1eced3f7b7b81ee1dcb78&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2Fhome&response_type=code";
+    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-39d663e4409f75359ed40f93604b1492f29cc61d16f1eced3f7b7b81ee1dcb78&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2FConnect&response_type=code";
     const functionNavigate = (path) => {
         window.open(path, '_blank');
     }
