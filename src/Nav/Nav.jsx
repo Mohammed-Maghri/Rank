@@ -58,21 +58,18 @@ const CardMuchComp = ({MeData}) => {
                                 <p className="font-bars4 text-black mr-2"> Campus : </p>
                                 <p className="font-bars2 text-black font-medium mr-2"> {MeData.campus}</p>
                                 <div className="w-[142px] h-full flex items-center justify-end">
-                                    <FaUniversity color="black"/>
                                 </div>
                             </div>
                             <div className="w-full flex items-center justify-start  h-[20px] ">
                                 <p className="font-bars4 text-black text-sm mr-2"> Pool : </p>
                                 <p className="font-bars2 text-black font-medium  text-sm mr-6"> {MeData.poolMonth + " " + MeData.poolYear}</p>
                                 <div className="w-[150px] h-full flex items-center justify-end">
-                                    <MdOutlinePool color="black"/>
                                 </div>
                             </div>
                             <div className="w-full flex items-center justify-start mt-3 h-[20px] ">
                                 <p className="font-bars4 text-black text-lg mr-2"> Email : </p>
                                 <p className="font-bars2 text-black font-medium text-sm mr-2"> {MeData.email}</p>
                                 <div className="w-[57px] h-full flex items-center justify-end">
-                                    <SiAmazonsimpleemailservice color="black"/>
                                 </div>
                             </div>
                         </div>
