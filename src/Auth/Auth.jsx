@@ -11,6 +11,7 @@ import { VscGithubAlt } from "react-icons/vsc";
 import kta from "../clips/cat.png"
 import { RxCross2 } from "react-icons/rx";
 import { PiWarningOctagonLight } from "react-icons/pi";
+import { ImCross } from "react-icons/im";
 
 export default function Auth() {
     const navigate = useNavigate();
@@ -26,18 +27,51 @@ export default function Auth() {
         }, 1000);
     }
     localStorage.setItem('pics', meme);
-    const [button_Deselect, set_ButtonDeselect] = useState('flex');
+    const [button_Deselect, set_ButtonDeselect] = useState(true);
     useEffect(() => {
         if (Cookies.get('access_token') != null && Cookies.get('access_token') != undefined)
             navigate('/Home')
+        console.log(' ===== === < ' , Cookies.get('close'))
         if (Cookies.get('close') === "false") 
             {
                 console.log("rest");
-                set_ButtonDeselect('none')
+                set_ButtonDeselect(false)
             }
     }, [])
     return (
         <>
+        {
+            button_Deselect &&
+            <div className={`w-full absolute h-[100vh] flex items-center justify-center bg-white bg-opacity-25 backdrop-blur-sm z-50`}>
+            <div className="w-[370px] rounded-lg border-solid border-[2px] border-yellow-500 bg-black h-[450px]">
+                <div className="w-full mt-2 h-[25px] rounded-md ">
+                    <div onClick={() => (set_ButtonDeselect(false) , Cookies.set('close', false))} className=" cursor-pointer hover:scale-105 duration-150 h-[25px] flex items-center justify-center ml-2 w-[25px] rounded-full bg-red-600">
+                        <ImCross size={10} color="white"/>
+                    </div>
+                </div>
+                <div className="w-full h-[50%] flex flex-col items-center justify-end">
+                    <p className="font-bars2 text-white font-bold"> Do You Find 1337Leets Useful ? </p>
+                    <p className="text-white font-bars3"> Give the Project A star 🌟 </p>
+                    <p className="font-bars3 text-white "> And Drop a Follow On Github 🌝 </p>
+                    <p className="font-bars2 text-white text-sm font-bold "> If u want No (one Will Force U) </p>
+                    <p className="font-bars2 text-red-500 text-sm ">     Click The Button Above To cancel  </p>
+                </div>
+                <div className="w-full h-[70px]  flex items-center justify-center ">
+                    <div className="w-[50px] h-[50px] border-solid border-[2px] border-yellow-500 bg-white rounded-full">
+                        <img className="w-full h-full rounded-full" src={kta}></img>
+                    </div>
+                </div>
+                <div className="w-full flex flex-row items-center justify-around h-[115px] ">
+                    <div  onClick={() => (functionNavigate('https://github.com/Mohammed-Maghri'))} className="flex hover:scale-105 items-center bg-yellow-400 bg-opacity-25 duration-200 cursor-pointer justify-center w-[40%] h-[50%] rounded-lg border-solid border-[1px] border-yellow-500">
+                        <p className="text-white font-bars2"> Follow ❤️ </p>
+                    </div>
+                    <div onClick={() => (functionNavigate('https://github.com/Mohammed-Maghri/Rank'))} className="flex hover:scale-105 items-center bg-yellow-400 bg-opacity-25 duration-200 cursor-pointer justify-center w-[40%] h-[50%] rounded-lg border-solid border-[1px] border-yellow-500">
+                        <p className="text-white font-bars2"> Drop a star 🌟 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
         <div className="w-[100%] bg-black h-[100vh] flex flex-col items-center justify-center">
           <Starfield
             starCount={10000}
