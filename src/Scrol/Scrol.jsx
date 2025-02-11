@@ -285,7 +285,7 @@ export default function Scrol() {
         Month : Month,
         Load : LoadMore
       }
-      FuncFetch("https://api.1337leets.com/Users", setStoreExist, StoreExist, Obj, 'Scroll', navigate,  setEmpty, setForloads)
+      FuncFetch("http://localhost:8001/Users", setStoreExist, StoreExist, Obj, 'Scroll', navigate,  setEmpty, setForloads)
   }
   return (
     <div onScroll={() => {console.log('scr')}} className="flex-col items-center justify-start border-solid overflow-auto w-[100%] h-[100%] mt-[10px] z-30 rounded-[10px]">
@@ -321,7 +321,7 @@ export default function Scrol() {
                 !Empty &&
                 <div className="w-full h-full items-center justify-center flex-col flex">
                   <TbMoodEmptyFilled size={120} color="#ca8a04 " />
-                  <p className="text-white font-bold font-bars2 "> Nothing Here Go Search For Somthing Else !</p>
+                  <p className="text-white font-bold font-bars2 "> Nothing Here Go Search For Something Else !</p>
                 </div>
               }
             </div>

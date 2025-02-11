@@ -10,7 +10,7 @@ const Connect = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-        const EndPoint  = "https://api.1337leets.com/Auth"
+        const EndPoint  = "http://localhost:8001/Auth"
         const ParamCode = new URLSearchParams(window.location.search).get('code')
         if (ParamCode == undefined && !Cookies.get('access_token'))
             navigate('/')
