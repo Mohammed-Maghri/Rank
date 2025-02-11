@@ -143,7 +143,7 @@ export function Calculator() {
             speedFactor={0.05}                                                                                    
             backgroundColor="black"
           />
-                <div className=" duration-300 border-solid border-[1px] bg-white flex-col  bg-opacity-20  border-yellow-600
+                <div className=" duration-300 border-solid border-[1px] bg-white flex-col  overflow-y-auto  bg-opacity-20  border-yellow-600
                   w-[100%] h-[95%] m-2 rounded-md flex justify-start pt-5 items-center">
                     <div className="border-solid flex items-center justify-center mt-20 bg-black  rounded-md border-[1px] border-yellow-600 w-[80%] h-24">
                         <p className="text-white font-bars4 font-semibold text-xl "> XP-Calculator </p>
