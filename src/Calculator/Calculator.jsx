@@ -145,7 +145,7 @@ export function Calculator() {
           />
                 <div className=" duration-300 border-solid border-[1px] bg-white flex-col  overflow-y-auto  bg-opacity-20  border-yellow-600
                   w-[100%] h-[95%] m-2 rounded-md flex justify-start pt-5 items-center">
-                    <div className="border-solid flex items-center justify-center mt-20 bg-black  rounded-md border-[1px] border-yellow-600 w-[80%] h-24">
+                    <div className="border-solid flex items-center justify-center mt-20 bg-black  rounded-md border-[1px] border-yellow-600 w-[80%] h-[15%]">
                         <p className="text-white font-bars4 font-semibold text-xl "> XP-Calculator </p>
                     </div>
                         <div className="gap-[6px] p-1  flex items-center w-[80%]  justify-center bg-transparent rounded-[10px] mt-5 flex-row h-[60px]">
@@ -180,7 +180,7 @@ export function Calculator() {
                             </div>
                             <div className="w-[50%] items-center justify-end flex rounded-l-lg h-full">
                                 <div onClick={() => FunctionSetCol()} className={`w-[50px] cursor-pointer flex items-center rounded-lg duration-500  h-[25px] mr-1 border-solid border-black border-[2px] bg-white`}>
-                                    <div className={`transition-all absolute duration-300 ease-in-out mr-[3px] ${ButtonOff ? "bg-yellow-500 translate-x-0"  : "bg-black translate-x-[24px]"} ml-[3px] w-4 h-4  rounded-md`}></div>
+                                    <div className={`transition-all  duration-300 ease-in-out mr-[3px] ${ButtonOff ? "bg-yellow-500 translate-x-0"  : "bg-black translate-x-[24px]"} ml-[3px] w-4 h-4  rounded-md`}></div>
                                 </div>
                             </div>
                         </div>
@@ -203,6 +203,7 @@ export function Calculator() {
                                     </div>
                                     }
                                 </div>
+                                <div className="h-[10%] w-full"></div>
                         {/* <div className="w-[90%] max-h-[400px] flex items-start justify-center h-[400px] overflow-auto rounded-lg p-5 mt-5">
                             <div className="bg-yellow-600 flex-row border-solid border-yellow-500 border-[1px] flex items-center justify-center w-[90%] h-[40px]">
                                 <div className="items-center justify-start pl-4 flex w-[50%] h-full">
