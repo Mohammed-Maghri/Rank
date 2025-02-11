@@ -195,6 +195,10 @@ const HeaderNav = () => {
                 'authorization' : `${Token}`
             }
         })
+        if (!FetchMe.ok){
+            Cookies.remove('access_token')
+            navigate('/')
+        }
         if (FetchMe.ok){
             if (FetchMe.status > 400 && FetchMe.status < 460)
                 return 
