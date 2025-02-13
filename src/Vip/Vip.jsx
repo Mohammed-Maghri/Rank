@@ -153,7 +153,6 @@ const UserGET = ({role}) => {
             return 
         }
         const Data = await Req.json()
-        console.log(Data)
         setdata(Data)
     }
 
@@ -307,11 +306,11 @@ const ProjectShow = ({ALL, ID, ROLE}) => {
         })
         if (!DataGet.ok){
             console.log('Error !')
+            return 
         }
         const Data = await DataGet.json()
         setMainObj(Data)
         SetReload(true)
-        console.log(' --> ', Data)
     }
 
 
@@ -360,7 +359,6 @@ const Vip = () => {
     const Url = 'https://api.1337leets.com/Vip/Auth'
 
     const FetchSubject = async () => {
-        console.log('fFFFE')
         const Fet = await fetch("/Project_lvl.json")
         const Data = await Fet.json()
         const MapKey = Data.map((item) => ({
