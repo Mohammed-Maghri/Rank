@@ -11,6 +11,7 @@ import { Peer } from './Peer/Peer';
 import { Sheets } from './Sheets/Sheets'
 import Connect  from './Connection/Connect.jsx'
 import Layout from './Layout/Layout.jsx';
+import Vip from './Vip/Vip.jsx';
 
 import { Nav } from './Nav/Nav.jsx';
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Auth/>} />
         <Route element={<Layout/>}>
           <Route path="/home" element={<Home/>} />
+          <Route path="/Vip" element={<Vip/>} />
           <Route path="/calculator" element={<Calculator/>} />
           <Route path="/Model" element={<Model/>} />
           <Route path="/PeerFinder" element={<Peer/>} />

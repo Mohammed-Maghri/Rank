@@ -19,7 +19,7 @@ const MycontextProvider = ({children}) => {
     const [Campus, setCampus] = useState('')
     const [Student_State, setState] = useState('')
     const [Connection, setConnection] = useState(false)
-
+    const [GlobalData, setGlobalData] = useState([])
     const [StoreExist, setStoreExist] = useState([])
     const [logs, setLogs] = useState(false)
     const [ObjectData, setObjectData] = useState({})
@@ -51,7 +51,7 @@ const MycontextProvider = ({children}) => {
             peerfinder , setPeerfinder, prf, setPrf, loadingstate , setLoadingstate, 
             pol, setPol,campusId ,setCampusId, cursusId , setCursusId ,setPoolYear, 
             poolYear  ,enable , setEnable, pages, setPages, all, setAll, logs, 
-            setLogs, tok, setTok}}>
+            setLogs, tok, setTok, GlobalData, setGlobalData}}>
             {children}
         </context.Provider>
     );

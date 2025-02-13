@@ -76,7 +76,7 @@ const StateDropMenu = ({Seter}) => {
   const ObjectMenu = [{text : 'Rank', icon :<FaRankingStar color='#ca8a04'/>, navi : "/home"},
    {text : 'Peer-Finder', icon : <FaUsersViewfinder color='#ca8a04'/>, navi : "/PeerFinder"},
    {text : 'XP-Calculator', icon : <GrCalculator color='#ca8a04'/>, navi : "/calculator"},
-   {text : 'Vip-Pass', icon : <RiVipCrown2Fill color='#ca8a04'/>}]
+   {text : 'Vip-Pass', icon : <RiVipCrown2Fill color='#ca8a04'/>, navi : "/Vip"}]
   return (
       <div className=' bg-black ml-4 flex-col items-center justify-center top-14 absolute border-solid border-gray-800 border-[2px] rounded-md w-[180px] z-50'>
               {ObjectMenu.map((item, index) => (
@@ -130,7 +130,7 @@ const ElementsNav = () => {
   const ObjectMenu = [{text : 'Peer-Finder', icon : <FaUsersViewfinder color='#ca8a04'/>, navi : "/PeerFinder"},
           {text : 'XP-Calculator', icon : <GrCalculator color='#ca8a04'/>, navi : "/calculator"},
           {text : 'Live-Rank', icon :<FaRankingStar color='#ca8a04'/>, navi : "/home"},
-   {text : 'Vip-Pass', icon : <RiVipCrown2Fill color='#ca8a04'/>}]
+   {text : 'Vip-Pass', icon : <RiVipCrown2Fill color='#ca8a04'/>, navi : "/Vip"}]
   return (
       <div className='items-center  flex-row justify-start md:w-[70%]  h-full hidden md:flex'>
           <div className='w-[2%] h-full'></div>
@@ -154,6 +154,8 @@ const ElementsNav = () => {
 
 const HeaderNav = () => {
   const [MeData, setMeData] = useState({login : 'Tsna HH'})
+  const {GlobalData, setGlobalData} = useContext(context)
+
   const [Fetched, setFetched] = useState(false)
   const [DropMenu, SetDropMenu] = useState(false)
   const [Profile, setProfile] = useState(false)
@@ -178,7 +180,7 @@ const HeaderNav = () => {
   const navigate = useNavigate()
   const FunctionGet = async () => {
 
-    const RouteFetch = "http://localhost:8001/Me"
+    const RouteFetch = "https://api.1337leets.com/Me"
     const Token = Cookies.get('access_token')
     let FetchMe 
     try {
@@ -212,6 +214,7 @@ const HeaderNav = () => {
         setCompusScope(DataGet.cursusId)
         setMonth(DataGet.poolMonth) // Month Pool
         setMeData(DataGet) // 
+        setGlobalData(DataGet)
         setConnection(true) // Flag To Show Data When It Get Fetched 
         setFetched(true) // 
     }

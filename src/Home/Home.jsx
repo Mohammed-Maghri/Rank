@@ -22,7 +22,7 @@ export function Home() {
 
 	const navigate = useNavigate()
 	useEffect(() => {
-		const Domain = "http://localhost:8001/Users"
+		const Domain = "https://api.1337leets.com/Users"
 		let Mo
 		if (Month.length > 1) Mo = Month
 		else Mo = "0" + Month 

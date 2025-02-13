@@ -226,7 +226,7 @@ const DropDowns = () => {
       setEmpty(true)
       setForloads(false)
       setStoreExist([])
-      FuncFetch("http://localhost:8001/Users", setStoreExist, [], ObjectSend, 'DropDown', navigate , setEmpty, setForloads);
+      FuncFetch("https://api.1337leets.com/Users", setStoreExist, [], ObjectSend, 'DropDown', navigate , setEmpty, setForloads);
     }
   }
   return (
