@@ -91,7 +91,7 @@ const BoardRender = ({item, ALL}) => {
         window.open(`https://profile.intra.42.fr/` + item)
     }
     return (
-        <div  className=" min-w-[330px] max-w-[800px] h-[200px] bg-slate-50 border-solid border-[3px] border-yellow-500 rounded-sm ">
+        <div  className=" min-w-[350px] max-w-[800px] h-[200px] bg-slate-50 border-solid border-[3px] border-yellow-500 rounded-sm ">
                     <div className="w-[100%] h-[40px]  flex items-center justify-start">
                         <p className="font-bars5 text-sky-400 font-semibold sm:text-xs md:text-sm lg:text-md ml-3">{item.title}</p>
                     </div>
