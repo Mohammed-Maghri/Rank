@@ -177,32 +177,37 @@ const UserGET = ({role}) => {
         FetchReq(EndPo)
     }, [refetch])
     return (
-        <div className="w-full h-full flex-col bg-black flex items-center pt-2 justify-start gap-1 overflow-y-auto ">
+        <div className="w-full h-full  bg-black flex-col items-center justify-center pt-2  gap-1 overflow-y-auto ">
             {err && 
                 <div className="w-[200px] flex items-center justify-center rounded-lg h-[30px] bg-red-500">
                     <p className="text-white text-sm font-bars5"> Not Authorized !</p>
                 </div>
             }
-            {thedata.map((item, index) => (
-                <div className="w-[80%] max-w-[800px] min-w-[360px] h-[70px] rounded-md bg-white border-solid flex-row flex items-center justify-center border-[4px] border-yellow-600">
-                        <div className="items-center justify-center bg-white flex w-[20%] h-full">
-                            <p className="font-bars2 text-black font-extrabold text-sm mr-2"> ID: </p>
-                            <p className="font-bars4 text-black font-extrabold  text-sm mr-2"> {item.ID} </p>
-                            <SiDiscogs color="black"/>
-                        </div>
-                        <div className="items-center justify-start bg-white flex w-[50%] h-full">
-                            <div  className="w-[50px] flex items-center justify-center h-full">
-                                <ImCross onClick={() => (functionDeleteEl(EndDel, item.ID))} className="cursor-pointer" color="red"/>
+            <div className="w-full h-[100%]  items-center justify-start   flex-col overflow-y-auto">
+                {thedata.map((item, index) => (
+                    <div className="w-full flex items-center justify-center mb-1">
+                        <div className="w-[80%] max-w-[800px] min-w-[360px]  min-h-[70px]  h-[70px] rounded-md bg-white border-solid flex-row flex items-center justify-center border-[4px] border-yellow-600">
+                            <div className="items-center justify-center bg-white flex w-[20%] h-full">
+                                <p className="font-bars2 text-black font-extrabold text-sm mr-2"> ID: </p>
+                                <p className="font-bars4 text-black font-extrabold  text-sm mr-2"> {item.ID} </p>
+                                <SiDiscogs color="black"/>
                             </div>
-                            <p className="font-bars5 text-black font-extrabold mr-2"> {item.USER} </p>
-                        </div>
-                        <div className="items-center flex-row justify-center bg-white flex w-[30%] h-full">
-                            <FaUserSecret />
-                            <p className="font-bars5 text-black font-normal text-md ml-2 mr-2"> {item.ROLE} </p>
+                            <div className="items-center justify-start bg-white flex w-[50%] h-full">
+                                <div  className="w-[50px] flex items-center justify-center h-full">
+                                    <ImCross onClick={() => (functionDeleteEl(EndDel, item.ID))} className="cursor-pointer" color="red"/>
+                                </div>
+                                <p className="font-bars5 text-black font-extrabold mr-2"> {item.USER} </p>
+                            </div>
+                            <div className="items-center flex-row justify-center bg-white flex w-[30%] h-full">
+                                <FaUserSecret />
+                                <p className="font-bars5 text-black font-normal text-md ml-2 mr-2"> {item.ROLE} </p>
+                            </div>
                         </div>
                     </div>
-                ))
-                    }
+                    ))
+                } 
+                <div className="w-full h-[200px]"></div>
+            </div>
                 </div>
     )
 }
