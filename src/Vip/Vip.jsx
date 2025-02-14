@@ -329,7 +329,7 @@ const ProjectShow = ({ALL, ID, ROLE}) => {
                             }
                             </div>
                     ): ID === 1 && Relod ? (
-                        <div className={`w-full h-full bg-black ${ID === 1 ? "grid" : "flex "} md:grid-cols-2 lg:grid-cols-3  gap-2 overflow-y-auto  items-start pt-4 justify-center`}>
+                        <div className={`w-full bg-black ${ID === 1 ? "grid" : "flex "} md:grid-cols-2 lg:grid-cols-3  gap-2 overflow-y-auto  items-start pt-4 justify-center`}>
                             {
                                 MainObj.map((item, index) => (
                                     <BoardRender key={index} item={item} ALL={ALL}/>
