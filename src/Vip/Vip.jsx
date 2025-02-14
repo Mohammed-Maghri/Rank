@@ -319,7 +319,7 @@ const ProjectShow = ({ALL, ID, ROLE}) => {
     }, [])
 
     return (
-        <div className={`w-full  h-[90%]`}>
+        <div className={`w-full overflow-y-auto h-[90%]`}>
                     {ID === 1 && !Relod ? (
                         <div className={`w-full  bg-black ${ID === 1 ? "grid" : "flex "} md:grid-cols-2 lg:grid-cols-3  gap-2 overflow-y-auto  items-start pt-4 justify-center`}>
                             {
