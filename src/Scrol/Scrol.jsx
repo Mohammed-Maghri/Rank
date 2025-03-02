@@ -45,6 +45,7 @@ import { FuncFetch, StaticArray} from "../Func_Help/helper";
 import { DropDowns } from "../Dropdown/Dropdown";
 import { useNavigate } from "react-router-dom";
 import { TbMoodEmptyFilled } from "react-icons/tb";
+import adz from '../clips/adzh.png'
 
 
 // Trash Code From the First Leet Update I hv no Time or (JHD) To make this Smaller hihi 
@@ -60,6 +61,9 @@ const LoneComponenet = ({item, index, forloads, setForloads, StoreExist}) => {
                 <div style={{ borderRight: '0px' }} className=" ml-[5px] flex items-center border-solid border-yellow-500 border-[3px] justify-center   xs:w-[118px] xs:min-w-[118px] rounded-l-[25px] md:w-[118px] md:min-w-[118px] h-[115px]">
 
                   {!forloads ? (
+                    item.login == 'adzahrao' ? (
+                      <img className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={adz} />
+                    ):
                     item.login == "adechaji" ? (
                       <img className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={rid} />
                     ) :
@@ -159,7 +163,7 @@ const LoneComponenet = ({item, index, forloads, setForloads, StoreExist}) => {
                         }
                           {item.login == "mmaghri" || item.login == "mlouazir" || item.login == "abablil" ? (
                             <img className="w-[22px] h-[22px]  rounded-[50%] object-cover z-10 " src={king} />
-                          ) : item.login == "amel-has" || item.login == "adechaji" ? (
+                          ) : item.login == "amel-has" || item.login == "adechaji"  || item.login == 'adzahrao' ? (
                             <GiFullMotorcycleHelmet />
                           ) : item.login == "hmrabet" ? (
                             <SiCyberdefenders />
