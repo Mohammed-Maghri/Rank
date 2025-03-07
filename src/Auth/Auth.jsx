@@ -96,7 +96,7 @@ export default function Auth() {
                  </div>
           </div>
           <div className="w-full h-[100px] flex items-center flex-col justify-center ">
-            <p className="text-slate-200 text-sm font-bars2"> By :  mmaghri && mlouazir </p>
+            <p className="text-slate-200 text-sm font-bars2"> By :  mmaghri  </p>
           </div>
         </div>
                             </>
