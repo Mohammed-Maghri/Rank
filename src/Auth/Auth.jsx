@@ -95,7 +95,7 @@ export default function Auth() {
                         </div>
                  </div>
           </div>
-          <div className="w-full h-[100px] flex items-center flex-col justify-center ">
+          <div className="w-full h-[100px] flex items-center animate-bounce flex-col justify-center ">
             <p className="text-slate-200 text-sm font-bars2"> By :  mmaghri  </p>
           </div>
         </div>
