@@ -83,6 +83,8 @@ export default function Auth() {
                     <div  className="w-[80%] mb-2 flex items-center justify-center  rounded-[10px]  ">
                         <p className="font-bars4 font-bold text-6xl   text-white"> 1337Leets </p>
                     </div>
+                    <div>
+                    </div>
                         {/* <div className="text-red-500 text-sm font-bars2   w-[100%] h-[100px] flex items-center justify-center flex-col">
                         <span className="loading loading-spinner text-error"></span>
                         <p> site on maintenance </p>
@@ -93,6 +95,7 @@ export default function Auth() {
                             <div className="bg-black w-[10px] h-[10px] rounded-full border-solid border-[2px] border-yellow-400 mr-2"></div>
                             <p className="text-white font-semibold font-bars3"> Login </p>
                         </div>
+                            <p className="text-slate-200 text-sm font-bars2 mt-3"> Diff Script 🤣</p>
                  </div>
           </div>
           <div className="w-full h-[100px] flex items-center animate-bounce flex-col justify-center ">
