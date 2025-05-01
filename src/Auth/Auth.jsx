@@ -95,7 +95,6 @@ export default function Auth() {
                             <div className="bg-black w-[10px] h-[10px] rounded-full border-solid border-[2px] border-yellow-400 mr-2"></div>
                             <p className="text-white font-semibold font-bars3"> Login </p>
                         </div>
-                            <p className="text-slate-200 text-sm font-bars2 mt-3"> Diff Script 🤣</p>
                  </div>
           </div>
           <div className="w-full h-[100px] flex items-center animate-bounce flex-col justify-center ">
