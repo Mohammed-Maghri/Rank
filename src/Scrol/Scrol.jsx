@@ -46,7 +46,7 @@ import { DropDowns } from "../Dropdown/Dropdown";
 import { useNavigate } from "react-router-dom";
 import { TbMoodEmptyFilled } from "react-icons/tb";
 import adz from '../clips/adzh.png'
-
+import adzahrao from '../clips/adzahrao.png'
 
 // Trash Code From the First Leet Update I hv no Time or (JHD) To make this Smaller hihi 
 const LoneComponenet = ({item, index, forloads, setForloads, StoreExist}) => {
@@ -62,7 +62,7 @@ const LoneComponenet = ({item, index, forloads, setForloads, StoreExist}) => {
 
                   {!forloads ? (
                     item.login == 'adzahrao' ? (
-                      <img className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={adz} />
+                      <img className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={adzahrao} />
                     ):
                     item.login == "adechaji" ? (
                       <img className="w-[97%] h-[108px] min-h-[105px] object-cover rounded-l-[20px]" src={rid} />
@@ -161,7 +161,7 @@ const LoneComponenet = ({item, index, forloads, setForloads, StoreExist}) => {
                             `${item.login}`
                           )
                         }
-                          {item.login == "mmaghri" || item.login == "abkacimi" ||  item.login == "mlouazir" || item.login == "abablil" ? (
+                          {item.login == "mmaghri" || item.login == "adzahrao" || item.login == "abkacimi" ||  item.login == "mlouazir" || item.login == "abablil" ? (
                             <img className="w-[22px] h-[22px]  rounded-[50%] object-cover z-10 " src={king} />
                           ) : item.login == "amel-has" || item.login == "adechaji"  || item.login == 'adzahrao' ? (
                             <GiFullMotorcycleHelmet />
