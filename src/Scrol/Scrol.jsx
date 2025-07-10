@@ -228,6 +228,7 @@ const LoneComponenet = ({item, index, forloads, setForloads, StoreExist}) => {
                         ) : (
                           <div style={{ width: `${0}%` }} className="bg-yellow-400 rounded-[20px]  h-[100%]"> </div>
                         )
+                        
                         }
                       </div>
                     </div>
