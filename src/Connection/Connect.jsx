@@ -32,6 +32,7 @@ const Connect = () => {
                 navigate('/Home')
             }).catch((Error) => {
                 // navigate('/')
+                console.log('Error -> ' , Error)
             })
         }
     }, [])

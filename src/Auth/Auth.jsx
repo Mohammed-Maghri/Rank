@@ -16,7 +16,7 @@ import { ImCross } from "react-icons/im";
 export default function Auth() {
     const navigate = useNavigate();
     const {enable, setEnable} = useContext(context);
-    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-39d663e4409f75359ed40f93604b1492f29cc61d16f1eced3f7b7b81ee1dcb78&redirect_uri=https%3A%2F%2Fwww.1337leets.com%2FConnect&response_type=code";
+    const token = "https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-7852f6f9f2cd7e73e66c2e2a940ab893f431f0e3fc6244a8cdde3f773a592bc8&redirect_uri=https%3A%2F%2Foldleets.vercel.app%2FConnect&response_type=code";
     const functionNavigate = (path) => {
         window.open(path, '_blank');
     }
