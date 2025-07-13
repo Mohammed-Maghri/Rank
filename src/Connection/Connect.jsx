@@ -31,7 +31,7 @@ const Connect = () => {
                 setObjectData(Data)
                 navigate('/Home')
             }).catch((Error) => {
-                navigate('/')
+                // navigate('/')
             })
         }
     }, [])
