@@ -96,7 +96,7 @@ const CursusButton = ({ Cursus, Number, SetNumber }) => {
       SetNumber(8)
     }
     else {
-      setMax(2024)
+      setMax(2025)
       SetMin(2019)
       SetNumber(2024)
     }
